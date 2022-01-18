@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router';
+import { Routes, Route } from 'react-router-dom';
 
 import { routes } from './routes';
 
@@ -8,12 +8,12 @@ import { AppFooter } from './js/cmps/AppFooter';
 
 export function App() {
   return (
-    <>
+    <section className="main-app">
       <AppHeader />
-      <Switch>
-        {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}
-      </Switch>
+      <Routes>
+        {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
+      </Routes>
       <AppFooter />
-    </>
+    </section>
   );
 }
