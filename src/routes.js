@@ -1,9 +1,14 @@
-import { Home } from './js/pages/home-page/Home'
+import { HomePage } from './js/pages/home-page/HomePage'
+import { EditorPage } from './js/pages/editor-page/EditorPage'
 
 
 export const routes = [
     {
         path: '/',
-        component: <Home />,
+        component: <HomePage />,
+    },
+    {
+        path: '/editor',
+        component: <EditorPage />,
     }
 ]
