@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    // We might need to use variable declarations here if we want to have a theme toggler.
+    // $font-main: 
+    // $color-main: 
+    // $color-secondary: 
+}
+
+body {
+    margin: 0;
+    background-color: $bg-color;
+}
