@@ -1,5 +1,5 @@
 
-export function Home() {
+export function HomePage() {
     return (
         <section className="home">
             <section>
