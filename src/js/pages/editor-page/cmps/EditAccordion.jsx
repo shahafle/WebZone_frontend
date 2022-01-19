@@ -29,13 +29,13 @@ export function EditAccordion() {
                     <Typography>Text</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <input type="text" placeholder="Edit text"/>
+                    <input type="text" placeholder="Edit text" />
                     <input type="range" />
                     {/* <StyledTypography>Template Item #1</StyledTypography> */}
                     {/* <StyledTypography>Template Item #2</StyledTypography> */}
                 </AccordionDetails>
             </Accordion>
-            
+
         </div>
     );
 }
