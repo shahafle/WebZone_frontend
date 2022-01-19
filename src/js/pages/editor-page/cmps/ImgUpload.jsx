@@ -1,3 +1,5 @@
+import { wapElService } from '../../../services/wap-el.service'
+
 export function ImgUpload({ elementStyle, onChangeStyle }) {
 
     const onSearchImg = () => {

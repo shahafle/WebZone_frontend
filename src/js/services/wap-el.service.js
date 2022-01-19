@@ -35,7 +35,15 @@ function put(wapElToUpdate) {
     return asyncStorageService.put(STORAGE_KEY, wapElToUpdate);
 }
 
+// function getImages(serachStr){
+//     try {
+//                 const res = await axios.get(`/`);
+//                 return res.data;
+//             } catch (err) {
+        
+//             }
 
+// }
 
 // // WITH REAL SERVER :
 
