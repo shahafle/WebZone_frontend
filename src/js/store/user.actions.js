@@ -1,4 +1,4 @@
-// import { userService } from "../services/user.service.js";
+import { userService } from "../services/user.service.js";
 
 
 export function onLogin(credentials) {
@@ -41,7 +41,7 @@ export function removeUser(userId) {
             await userService.remove(userId);
             dispatch({ type: 'REMOVE_USER', userId });
         } catch (err) {
-            
+
         }
     }
 }
