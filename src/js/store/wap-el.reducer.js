@@ -12,7 +12,8 @@ const initialState = {
         "cmps": [
             {
                 "id": "37rtg",
-                "type": "wap-header",
+                "type": "section",
+                "category": "wap-header",
                 "cmps": [
                     {
                         id: '1jh21',
@@ -48,7 +49,8 @@ const initialState = {
             },
             {
                 "id": "wc03",
-                "type": "wap-section",
+                "type": "section",
+                "category": "wap-header",
                 "cmps": [
                     {
                         id: 'as21d',
@@ -62,7 +64,7 @@ const initialState = {
                             'fontSize': '40',
                             'color': '#000',
                             'letterSpacing': '1',
-                            'lineHeight': '16',
+                            // 'lineHeight': '16',
                             'textShadow': 'none',
                             'fontFamily': 'sans-serif',
                         }
