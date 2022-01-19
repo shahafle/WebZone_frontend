@@ -8,13 +8,70 @@ export const wapElService = {
     post,
     put,
     getScaleUnits,
-    findTarget
+    findTarget,
+    getTemplateSections
 }
 
 
 // WITH DEMO SERVER :
 
-const templateSections = [];
+const templateSections = [
+    {
+
+        "id": "wc03",
+        "type": "wap-section",
+        "cmps": [
+            {
+                id: 'avvva1d',
+                type: 'txt',
+                txt: 'haiush bayush',
+                style: {
+                    'textAlign': 'center',
+                    'fontWeight': '700',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '70',
+                    'color': '#a00',
+                    'letterSpacing': '1',
+                    // 'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            },
+            {
+                id: 'fsssa3s',
+                type: 'img',
+                url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
+                style: {
+                    'textAlign': 'start',
+                    'fontWeight': '400',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '16',
+                    'color': 'black',
+                    'letterSpacing': '1',
+                    'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            }
+        ],
+        "name": "wap-section-1",
+        "style": { backgroundColor: '#1baa1b' }
+
+    },
+    {
+
+    },
+    {
+
+    }
+];
+
+
+function getTemplateSections() {
+    return templateSections
+}
 
 const STORAGE_KEY = 'wapElsDB'
 
