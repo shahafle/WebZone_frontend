@@ -97,7 +97,7 @@ export function wapElReducer(state = initialState, action) {
         case 'SET_WAP':
             return newState = { ...state, wapEl: [...action.wapEl] };
         case 'ADD_WAPEL':
-            return newState = { ...state, wapEl: [...state.wapEl, action.addedWapEl] };
+            return newState = { ...state, wapEl: { ...state.wapEl, cmps: [...state.wapEl.cmps, action.wapElToAdd] } };
         case 'REMOVE_WAPEL':
             return newState = { ...state, wapEl: state.wapEl.filter(wapEl => wapEl._id !== action.wapElId) };
         case 'UPDATE_WAPEL':
