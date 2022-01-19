@@ -4,6 +4,7 @@ import { routes } from './routes';
 
 import { AppHeader } from './js/cmps/AppHeader';
 import { AppFooter } from './js/cmps/AppFooter';
+import { Login } from './js/cmps/Login';
 
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
       </Routes>
       {/* <AppFooter /> */}
+      {/* <Login /> */}
     </section>
   );
 }

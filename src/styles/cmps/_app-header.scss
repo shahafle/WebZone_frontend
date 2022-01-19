@@ -1,5 +1,5 @@
 .main-header {
-    height: 60px;
+    height: $header-size;
     background-color: $color3;
     color: $color1;
 
@@ -11,6 +11,22 @@
         }
         .nav-menu {
             gap: 1rem;
+
+            .btn-login {
+                padding: 10px 20px;
+                border-radius: $border-radius;
+                border: 1px solid white;
+                background-color: $color3;
+                color: $color1;
+                margin-left: 2rem;
+
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $color1;
+                    color: $color3;
+                }
+            }
         }
     }
 }
