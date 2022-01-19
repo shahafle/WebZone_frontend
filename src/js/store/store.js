@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import { brickReducer } from './brick.reducer.js';
+import { wapElReducer } from './wapEl.reducer.js';
 
 const rootReducer = combineReducers({
-    brickModule: brickReducer,
+    wapElModule: wapElReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
