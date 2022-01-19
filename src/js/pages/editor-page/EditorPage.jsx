@@ -1,5 +1,5 @@
 import { EditorSidebar } from './cmps/EditorSidebar';
-import { EditorBoard } from './cmps/EditorBoard.jsx';
+import { EditorBoard } from './cmps/EditorBoard';
 
 
 export function EditorPage() {

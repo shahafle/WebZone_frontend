@@ -24,22 +24,9 @@ export function addWapEl(wapElToAdd) {
     }
 }
 
-export function updateWapEl(wapElToUpdate) {
+export function updateWapEl(wap, wapElToUpdate) {
     return async (dispatch) => {
-        const updatedWapEl = await wapElService.save(wapElToUpdate)
-        dispatch({ type: 'UPDATE_WAPEL', updatedWapEl })
-        return updatedWapEl;
-    }
-}
-
-export function handleStyleChange(wapElToUpdate) {
-    return (dispatch) => {
-        dispatch({ type: 'SET_WAPEL_STYLE', wapElToUpdate })
-    }
-}
-
-export function setCurrElement(elementIds) {
-    return (dispatch) => {
-        dispatch({ type: 'SET_CURR_ELEMENT', elementIds })
+        wapElService.findTarget(wap, wapElToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = wapElToUpdate)
+        dispatch({ type: 'UPDATE_WAPEL', wap })
     }
 }

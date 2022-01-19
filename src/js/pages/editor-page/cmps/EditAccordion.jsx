@@ -1,11 +1,15 @@
 import * as React from 'react';
+import { useMemo, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-
+import { TextStyles } from './TextStyles';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateWapEl } from '../../../store/wap-el.action'
+import { updateCurrWapEl } from '../../../store/editor.action'
 
 
 
@@ -18,6 +22,26 @@ export function EditAccordion() {
         setExpanded(newExpanded ? panel : false);
     };
 
+    const currElement = useSelector(state => state.editorModule.currElement)
+    const wap = useSelector(state => state.wapElModule.wapEl)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (currElement) {
+            dispatch(updateWapEl(wap, currElement))
+        }
+    }, [currElement])
+
+    const onChangeStyle = ({ target }) => {
+        const style = {
+            styleName: target.name,
+            styleValue: target.value
+        }
+        dispatch(updateCurrWapEl(style))
+    }
+
+    if (!currElement) return <p>Choose element</p>
+    console.log('hi');
     return (
         <div className="edit-accordions-container">
 
@@ -26,11 +50,11 @@ export function EditAccordion() {
                     <Typography>Text</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    {/* <input type="text" placeholder="Edit text"/> */}
-                    {/* <input type="range" /> */}
-                    <StyledTypography><input type="text" placeholder="Edit text" /></StyledTypography>
-                    {/* <StyledTypography>Template Item #2</StyledTypography> */}
+                    <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                    {/* <StyledTypography>Template Item #1</StyledTypography>
+                    <StyledTypography>Template Item #2</StyledTypography> */}
                 </AccordionDetails>
+
             </Accordion>
 
         </div>
