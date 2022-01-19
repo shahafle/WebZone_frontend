@@ -17,10 +17,9 @@ export function removeWapEl(wapElId) {
 }
 
 export function addWapEl(wapElToAdd) {
-    return async (dispatch) => {
-        const addedWapEl = await wapElService.save(wapElToAdd)
-        dispatch({ type: 'ADD_WAPEL', addedWapEl })
-        return addedWapEl;
+    return (dispatch) => {
+        dispatch({ type: 'ADD_WAPEL', wapElToAdd })
+        return wapElToAdd;
     }
 }
 

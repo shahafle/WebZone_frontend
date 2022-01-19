@@ -9,22 +9,26 @@ export const wapElService = {
     put,
     getScaleUnits,
     findTarget,
-    getTemplateSections
+    getTemplateSections,
+    getSectionsCategories
 }
 
 
 // WITH DEMO SERVER :
+const sectionsCategories = ['wap-section', 'wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-button', 'wap-gallery', 'wap-form', 'wap-footer']
+
 
 const templateSections = [
     {
 
         "id": "wc03",
-        "type": "wap-section",
+        "type": "section",
+        "category": "wap-section",
         "cmps": [
             {
                 id: 'avvva1d',
                 type: 'txt',
-                txt: 'haiush bayush',
+                txt: 'section 1',
                 style: {
                     'textAlign': 'center',
                     'fontWeight': '700',
@@ -40,15 +44,15 @@ const templateSections = [
             },
             {
                 id: 'fsssa3s',
-                type: 'img',
-                url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
+                type: 'txt',
+                txt: 'still section 1',
                 style: {
                     'textAlign': 'start',
                     'fontWeight': '400',
                     'fontStyle': 'normal',
                     'textDecoration': 'none',
                     'fontSize': '16',
-                    'color': 'black',
+                    'color': 'brown',
                     'letterSpacing': '1',
                     'lineHeight': '16',
                     'textShadow': 'none',
@@ -56,21 +60,62 @@ const templateSections = [
                 }
             }
         ],
-        "name": "wap-section-1",
+        "name": "wap-section-1 test",
         "style": { backgroundColor: '#1baa1b' }
 
     },
     {
-
+        "id": "wch2",
+        "type": "section",
+        "category": "wap-section",
+        "cmps": [
+            {
+                id: 'h5438hd',
+                type: 'txt',
+                txt: 'section 2',
+                style: {
+                    'textAlign': 'end',
+                    'fontWeight': '400',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '70',
+                    'color': '#b1b',
+                    'letterSpacing': '2',
+                    // 'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            },
+            {
+                id: 'fsssa3s',
+                type: 'txt',
+                txt: ' still section 2 test',
+                style: {
+                    'textAlign': 'start',
+                    'fontWeight': '200',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '32',
+                    'color': 'red',
+                    'letterSpacing': '1',
+                    'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            }
+        ],
+        "name": "wap-section-2",
+        "style": { backgroundColor: '#ab1' }
     },
-    {
 
-    }
 ];
 
 
 function getTemplateSections() {
     return templateSections
+}
+function getSectionsCategories() {
+    return sectionsCategories
 }
 
 const STORAGE_KEY = 'wapElsDB'
@@ -121,9 +166,7 @@ function findTarget(data, elementId, cb) {
     }
 }
 
-function getTemplateSections(type) {
-    return templateSections
-}
+
 
 
 
