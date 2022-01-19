@@ -1,7 +1,7 @@
 
 
 export function ImageStyles({ elementStyle, onChangeStyle }) {
-   return <div>
+   return <div className="flex column edit-style-section">
       <label >Border radius:
          <input type="range" min={0} max={100} onChange={onChangeStyle} name='borderRadius' value={+elementStyle.borderRadius} />
       </label>

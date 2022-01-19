@@ -43,7 +43,7 @@ export function EditAccordion() {
     }
 
     if (!currElement) return <p>Choose element</p>
-    console.log(currElement);
+
     return (
         <div className="edit-accordions-container">
 
