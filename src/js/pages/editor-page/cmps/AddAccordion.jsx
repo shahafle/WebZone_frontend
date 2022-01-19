@@ -1,10 +1,16 @@
 import * as React from 'react';
+import { useMemo, useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import { useDispatch, useSelector } from 'react-redux';
+import { addWapEl } from '../../../store/wap-el.action'
+import { updateCurrWapEl } from '../../../store/editor.action'
+
+
 
 
 
@@ -59,6 +65,22 @@ export function AddAccordion() {
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+
+    const wap = useSelector(state => state.wapElModule.wapEl)
+    const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(updateWapEl(wap, currElement))
+    // }, [currElement])
+
+
+
+
+    const onAddWapEl = ({ target }) => {
+        const elementToAdd = target.value
+        dispatch(addWapEl(elementToAdd))
+    }
+
 
     return (
         <div>
