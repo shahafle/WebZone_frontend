@@ -76,6 +76,7 @@ function getTemplateSections(type) {
 
 
 
+// }
 
 // // WITH REAL SERVER :
 
