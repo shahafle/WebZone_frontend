@@ -15,7 +15,7 @@ export const wapElService = {
 
 
 // WITH DEMO SERVER :
-const sectionsCategories = ['wap-section', 'wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-button', 'wap-gallery', 'wap-form', 'wap-footer']
+const sectionsCategories = ['wap-section', 'wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
 
 
 const templateSections = [
