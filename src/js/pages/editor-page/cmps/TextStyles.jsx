@@ -19,9 +19,9 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       <label>Letter spacing:
          <input type="range" min={0} max={100} onChange={onChangeStyle} name='letterSpacing' value={+elementStyle.letterSpacing} />
       </label>
-      <label>Line height:
+      {/* <label>Line height:
          <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
-      </label>
+      </label> */}
       <label>Text shadow:
          <select name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
             <option value="none">none</option>

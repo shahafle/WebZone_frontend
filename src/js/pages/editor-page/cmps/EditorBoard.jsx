@@ -19,7 +19,7 @@ export function EditorBoard() {
             comp.cmps.map((cmp, i) => {
                const style = wapElService.getScaleUnits(cmp.style)
                if (cmp.type === 'txt') return <p key={i} style={style} onClick={() => onSetCurrElement(cmp)} >{cmp.txt}</p>
-               else if (cmp.type === 'img') return <img style={style} key={i} src={cmp.url} alt="iage" onClick={() => onSetCurrElement(cmp.id)} />
+               else if (cmp.type === 'img') return <img style={style} key={i} src={cmp.url} alt="iage" onClick={() => onSetCurrElement(cmp)} />
                else return ''
             })
          }
