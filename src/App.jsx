@@ -9,7 +9,7 @@ import { AppFooter } from './js/cmps/AppFooter';
 export function App() {
   return (
     <section className="main-app">
-      {/* <AppHeader /> */}
+      <AppHeader />
       <Routes>
         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
       </Routes>
