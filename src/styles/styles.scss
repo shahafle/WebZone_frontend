@@ -1,22 +1,28 @@
 // Setup
-@import './setup/variables';
-@import './setup/functions';
-@import './setup/mixins';
-@import './setup/typography';
+@import "./setup/variables";
+@import "./setup/functions";
+@import "./setup/mixins";
+@import "./setup/typography";
 
 // BASICS
 
-@import './basics/base';
-@import './basics/helpers';
-@import './basics/layout';
-@import './basics/inputs';
-@import './basics/buttons';
+@import "./basics/base";
+@import "./basics/helpers";
+@import "./basics/layout";
+@import "./basics/inputs";
+@import "./basics/buttons";
 
 // PAGES
 
-@import './pages/home';
+// HOME PAGE
+@import "./pages/home-page/home-page";
+@import "./pages/home-page/cmps/card-preview";
+
+// Editor Page
+@import './pages/editor-page/cmps/editor-sidebar';
+@import './pages/editor-page/cmps/add-accordion';
 
 // CMPS
 
-@import './cmps/app-header';
-@import './cmps/app-footer';
+@import "./cmps/app-header";
+@import "./cmps/app-footer";

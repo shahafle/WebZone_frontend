@@ -1,0 +1,23 @@
+.top-fold {
+    & .hero {
+        height: 250px;
+        margin-bottom: 3rem;
+    }
+
+    & span {
+        color: rgb(236, 20, 20);
+        font-size: 1.2rem;
+    }
+
+    & a {
+        color: black;
+        cursor: pointer;
+        margin-bottom: 3rem;
+    }
+}
+
+.below-fold {
+    & .editor-img {
+        height: 250px;
+    }
+}

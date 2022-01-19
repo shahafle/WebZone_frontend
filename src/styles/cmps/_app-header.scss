@@ -1,0 +1,16 @@
+.main-header{
+   background-color: gold;  
+   & .header-content{
+       margin: 0 0.8rem;
+       margin-bottom: 1rem
+   }
+}
+
+.main-nav{
+    & .container > *{
+        color: black;
+        text-decoration:none;
+        margin:4px;
+        cursor: pointer;
+    }
+}
