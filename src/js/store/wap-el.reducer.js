@@ -26,7 +26,7 @@ const initialState = {
                             'fontSize': '40',
                             'color': '#000',
                             'letterSpacing': '1',
-                            'lineHeight': '16',
+                            // 'lineHeight': '16',
                             'textShadow': 'none',
                             'fontFamily': 'sans-serif',
                         }
@@ -35,11 +35,15 @@ const initialState = {
                         id: '98asd',
                         type: 'img',
                         url: 'https://m.media-amazon.com/images/I/61Jigwd1kKL._AC_SX425_.jpg',
-                        style: { 'height': '20px' }
+                        style: {
+                            'borderRadius': '0',
+                            'width': '100'
+                        }
                     }
                 ],
                 "name": "wap-header-1",
                 "style": {
+
                 }
             },
             {
@@ -68,16 +72,8 @@ const initialState = {
                         type: 'img',
                         url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
                         style: {
-                            'textAlign': 'start',
-                            'fontWeight': '400',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '16',
-                            'color': 'black',
-                            'letterSpacing': '1',
-                            'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif',
+                            'borderRadius': '0',
+                            'width': '100'
                         }
                     }
                 ],

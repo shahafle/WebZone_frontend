@@ -41,10 +41,13 @@ function put(wapElToUpdate) {
 function getScaleUnits(style) {
     const pxFields = [
         'fontSize', 'letterSpacing', 'lineHeight', 'borderRadius', 'paddingBlockStart',
-        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd',];
+        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd'];
+    const precentFields = ['width']
     const styleCopy = JSON.parse(JSON.stringify(style))
     for (let attr in styleCopy) {
-        styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
+        if (pxFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + 'px'
+        else if (precentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%'
+        // styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
     }
 
     return styleCopy
