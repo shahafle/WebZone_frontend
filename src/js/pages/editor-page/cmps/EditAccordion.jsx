@@ -13,9 +13,6 @@ import { updateCurrWapEl } from '../../../store/editor.action'
 
 
 
-
-
-
 // Accordions
 
 export function EditAccordion() {
