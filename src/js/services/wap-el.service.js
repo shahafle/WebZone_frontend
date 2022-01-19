@@ -1,6 +1,7 @@
+import { asyncStorageService } from './async-storage.service.js';
 
 
-export const brickService = {
+export const wapElService = {
     query,
     getById,
     remove,
@@ -11,28 +12,27 @@ export const brickService = {
 
 // WITH DEMO SERVER :
 
-import { asyncStorageService } from './async-storage-service.js';
 
-const STORAGE_KEY = 'bricksDB'
+const STORAGE_KEY = 'wapElsDB'
 
 function query() {
     return asyncStorageService.query(STORAGE_KEY)
 }
 
-function getById(brickId) {
-    return asyncStorageService.get(STORAGE_KEY, brickId);
+function getById(wapElId) {
+    return asyncStorageService.get(STORAGE_KEY, wapElId);
 }
 
-function remove(brickId) {
-    return asyncStorageService.remove(STORAGE_KEY, brickId);
+function remove(wapElId) {
+    return asyncStorageService.remove(STORAGE_KEY, wapElId);
 }
 
-function post(brickToAdd) {
-    return asyncStorageService.post(STORAGE_KEY, brickToAdd);
+function post(wapElToAdd) {
+    return asyncStorageService.post(STORAGE_KEY, wapElToAdd);
 }
 
-function put(brickToUpdate) {
-    return asyncStorageService.put(STORAGE_KEY, brickToUpdate);
+function put(wapElToUpdate) {
+    return asyncStorageService.put(STORAGE_KEY, wapElToUpdate);
 }
 
 
@@ -48,13 +48,13 @@ function put(brickToUpdate) {
 // import axios from 'axios';
 
 // const serverPort = 3030;
-// const BASE_URL = `http://localhost:${serverPort}/api/brick`;
+// const BASE_URL = `http://localhost:${serverPort}/api/wapEl`;
 
 
 // *** NOTE : localhost and 127.0.0.1 may be the same in theory, but practically the axios requests url HAS TO match the url in the open browser *** \\
 
 
-// // get bricks
+// // get wapEls
 // async function query() {
 //     try {
 //         const res = await axios.get(BASE_URL);
@@ -64,32 +64,32 @@ function put(brickToUpdate) {
 //     }
 // }
 
-// // get brick by id
-// async function getById(brickId) {
+// // get wapEl by id
+// async function getById(wapElId) {
 //     try {
-//         const res = await axios.get(`${BASE_URL}/${brickId}`)
+//         const res = await axios.get(`${BASE_URL}/${wapElId}`)
 //         return res.data;
 //     } catch (err) {
 
 //     }
 // }
 
-// // delete brick
-// async function remove(brickId) {
+// // delete wapEl
+// async function remove(wapElId) {
 //     try {
-//         const res = await axios.delete(`${BASE_URL}/${brickId}`);
+//         const res = await axios.delete(`${BASE_URL}/${wapElId}`);
 //         return res.data;
 //     } catch (err) {
 
 //     }
 // }
 
-// // add a new brick / update an existing brick
-// async function save(brickToSave) {
-//     if (brickToSave._id) {
+// // add a new wapEl / update an existing wapEl
+// async function save(wapElToSave) {
+//     if (wapElToSave._id) {
 //         // update
 //         try {
-//             const res = await axios.put(`${BASE_URL}/${brickToSave._id}`, brickToSave)
+//             const res = await axios.put(`${BASE_URL}/${wapElToSave._id}`, wapElToSave)
 //             return res.data;
 //         } catch (err) {
 
@@ -97,7 +97,7 @@ function put(brickToUpdate) {
 //     } else {
 //         // add
 //         try {
-//             const res = await axios.post(BASE_URL, brickToSave);
+//             const res = await axios.post(BASE_URL, wapElToSave);
 //             return res.data;
 //         } catch (err) {
 

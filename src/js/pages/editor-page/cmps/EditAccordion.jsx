@@ -9,9 +9,6 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 
 
 
-
-
-
 // Accordions
 
 export function EditAccordion() {
@@ -29,9 +26,9 @@ export function EditAccordion() {
                     <Typography>Text</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <input type="text" placeholder="Edit text" />
-                    <input type="range" />
-                    {/* <StyledTypography>Template Item #1</StyledTypography> */}
+                    {/* <input type="text" placeholder="Edit text"/> */}
+                    {/* <input type="range" /> */}
+                    <StyledTypography><input type="text" placeholder="Edit text" /></StyledTypography>
                     {/* <StyledTypography>Template Item #2</StyledTypography> */}
                 </AccordionDetails>
             </Accordion>

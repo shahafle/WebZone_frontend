@@ -6,6 +6,6 @@ export function EditorPage() {
 
    return <main>
       <EditorSidebar />
-      {/* <EditorBoard /> */}
+      <EditorBoard />
    </main>
 }

@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -11,6 +13,6 @@ html {
 }
 
 body {
-    background-color: #acacac;
+    background-color: $color1;
     margin: 0;
 }
