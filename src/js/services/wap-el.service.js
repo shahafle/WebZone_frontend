@@ -6,12 +6,15 @@ export const wapElService = {
     getById,
     remove,
     post,
-    put
+    put,
+    getScaleUnits,
+    findTarget
 }
 
 
 // WITH DEMO SERVER :
 
+const templateSections = [];
 
 const STORAGE_KEY = 'wapElsDB'
 
@@ -35,13 +38,40 @@ function put(wapElToUpdate) {
     return asyncStorageService.put(STORAGE_KEY, wapElToUpdate);
 }
 
-// function getImages(serachStr){
-//     try {
-//                 const res = await axios.get(`/`);
-//                 return res.data;
-//             } catch (err) {
-        
-//             }
+function getScaleUnits(style) {
+    const pxFields = [
+        'fontSize', 'letterSpacing', 'lineHeight', 'borderRadius', 'paddingBlockStart',
+        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd',];
+    const styleCopy = JSON.parse(JSON.stringify(style))
+    for (let attr in styleCopy) {
+        styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
+    }
+
+    return styleCopy
+}
+
+function findTarget(data, elementId, cb) {
+    if (!data.cmps) return;
+    const elementIdx = data.cmps.findIndex(cmp => cmp.id === elementId);
+    if (elementIdx > -1) {
+        cb(data.cmps, elementIdx)
+        return
+    } else {
+        data.cmps.forEach(cmp => findTarget(cmp, elementId, cb));
+    }
+}
+
+function getTemplateSections(type) {
+    return templateSections
+}
+
+
+
+
+
+
+
+
 
 // }
 

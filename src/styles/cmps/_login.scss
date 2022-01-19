@@ -1,0 +1,65 @@
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 300px;
+    padding: 2rem;
+    background-color: $color3;
+    color: $color1;
+    border-radius: 10px;
+
+    i {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border-radius: 5px;
+        user-select: none;
+        cursor: default;
+
+        transition: background-color 150ms;
+
+        &:hover {
+            background-color: tomato;
+        }
+    }
+
+    .pfp {
+        width: 60px;
+        height: 60px;
+        background-color: $color1;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+    }
+
+    form {
+        gap: 20px;
+
+        .wrapper {
+            gap: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        button {
+            margin: unset;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+}

@@ -1,5 +1,5 @@
 .editor-sidebar {
     background-color: $color3;
-    height: 100vh; // for development phase, later we'll account for the header
+    height: calc(100vh - $header-size);
     width: 300px;
 }

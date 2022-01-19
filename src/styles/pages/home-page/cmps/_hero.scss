@@ -1,0 +1,43 @@
+.hero {
+    width: 100%;
+    height: calc(80vh - $header-size);
+    position: relative;
+
+    .hero-content {
+        max-width: 1000px;
+
+        & > * {
+            width: 50%;
+        }
+
+        .hero-text {
+            gap: 2rem;
+
+            h1 {
+                font-size: 4rem;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        border: 1px solid black;
+        background-color: $color2;
+        color:white;
+        margin-top: 8rem;
+        
+        position: absolute;
+        bottom: 0;
+        
+        transition: all .3s;
+        
+        &:hover {
+            background-color: inherit;
+            color: black;
+        }
+    }
+}

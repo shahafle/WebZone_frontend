@@ -16,6 +16,7 @@
 
 // HOME PAGE
 @import "./pages/home-page/home-page";
+@import "./pages/home-page/cmps/hero";
 @import "./pages/home-page/cmps/card-preview";
 
 // Editor Page
@@ -27,3 +28,5 @@
 
 @import "./cmps/app-header";
 @import "./cmps/app-footer";
+@import "./cmps/screen";
+@import "./cmps/login";
