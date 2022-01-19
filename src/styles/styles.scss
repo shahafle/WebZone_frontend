@@ -16,6 +16,10 @@
 
 @import './pages/home';
 
+// Editor Page
+@import './pages/editor-page/cmps/editor-sidebar';
+@import './pages/editor-page/cmps/add-accordion';
+
 // CMPS
 
 @import './cmps/app-header';
