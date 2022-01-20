@@ -1,27 +1,23 @@
 .editor-sidebar {
-    // position: fixed;
     background-color: $color3;
-    height: calc(100vh - $header-size);
-    width: 300px;
-    flex-shrink: 0;
-    // border-top: 1px solid rgba(120, 120, 120, .7);
-    box-shadow: 0 -1px 0 0 rgba(120, 120, 120, 0.7);
+    height: calc(100vh - $header-height);
+    width: $sidebar-width;
+    border-top: 1px solid #404757;
+    position: fixed;
 
     .tab {
         flex-grow: 1;
-        padding: 20px 0;
+        padding: 1rem 0;
         text-align: center;
-        background-color: $color1;
+        background-color: #404757;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        font-weight: 700;
+        cursor: pointer;
 
         &.active {
             background-color: $color3;
             color: white;
-        }
-        &.add.active {
-            border-bottom-right-radius: 1rem;
-        }
-        &.edit.active {
-            border-bottom-left-radius: 1rem;
         }
     }
 }

@@ -17,3 +17,30 @@ body {
     background-color: $color1;
     margin: 0;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+    cursor: default;
+}
+
+// ::-webkit-scrollbar:double-button {
+// }
+
+::-webkit-scrollbar-track {
+    background: lightgray;
+    border-radius: 10px;
+    margin-block: 2px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b4b4b4;
+    border-radius: 10px;
+    border: 3px solid lightgray;
+
+    transition: 200ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}

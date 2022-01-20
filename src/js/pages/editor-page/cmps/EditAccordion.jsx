@@ -6,6 +6,7 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateWap } from '../../../store/wap.action'
@@ -14,8 +15,6 @@ import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
 
 
-
-// Accordions
 
 export function EditAccordion() {
     const [expanded, setExpanded] = React.useState('panel1');
@@ -51,15 +50,15 @@ export function EditAccordion() {
         dispatch(updateCurrElementAttr(currElement, attr))
     }
 
-    if (!currElement) return <p>Choose element</p>
+    if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
 
     return (
-        <div className="edit-accordions-container">
+        <div className="accordions-container">
 
             {(currElement.type === 'txt' || currElement.type === 'btn') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Text</Typography>
+                         <SummaryTypography>Text</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
@@ -68,7 +67,7 @@ export function EditAccordion() {
             {currElement.type === 'img' &&
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Image</Typography>
+                        <SummaryTypography>Image</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <ImageStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
@@ -77,7 +76,7 @@ export function EditAccordion() {
             {currElement.type === 'btn' &&
                 <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Button</Typography>
+                        <SummaryTypography>Button</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <ButtonStyles element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} />
@@ -97,7 +96,7 @@ export function EditAccordion() {
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-    borderBottom: `1px solid gray`,
+    borderBottom: '1px solid rgba(120, 120, 120, .7)',
     background: 'transparent',
     color: '#eee'
 }));
@@ -106,7 +105,8 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
     <MuiAccordionSummary
-        expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: '#eee' }} />}
+        // expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1.1rem', color: '#eee' }} />}
+        expandIcon={<ArrowRightIcon sx={{ fontSize: '2.5rem', color: '#eee' }} />}
         {...props}
     />
 ))(({ theme }) => ({
@@ -114,21 +114,27 @@ const AccordionSummary = styled((props) => (
         transform: 'rotate(90deg)',
     },
     '& .MuiAccordionSummary-content': {
-        marginLeft: theme.spacing(1),
+        margin: '10px',
+        padding: '5px 0'
     },
 }));
 
 // Accordion Details Styling
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    // pediting: '1rem 2rem',
-    pediting: `${theme.spacing(2)} ${theme.spacing(4)}`,
-    borderTop: '1px solid rgba(0, 0, 0, .125)',
+    padding: `${theme.spacing(2)} ${theme.spacing(4)}`,
+    borderTop: '1px solid rgba(60, 60, 60, .5)',
 }));
 
 // Typography Styling
 
+const SummaryTypography = styled(Typography)(({ theme }) => ({
+    padding: '5px 0',
+    textTransform: 'capitalize',
+    fontSize: '1.1rem',
+    fontWeight: 700
+}));
+
 const StyledTypography = styled(Typography)(({ theme }) => ({
-    // pediting: '1rem 2rem',
-    pediting: `${theme.spacing(2)} 0`,
+    padding: `${theme.spacing(1)} 0`,
 }));

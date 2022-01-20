@@ -16,8 +16,12 @@ export function EditorSidebar() {
 
    return <section className="editor-sidebar">
       <div className="tabs flex">
-         <div className={`tab add ${activeTab === 'add' ? 'active' : ''}`} onClick={() => setActiveTab('add')}>Add</div>
-         <div className={`tab edit ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>Edit</div>
+         <div className={`tab add ${activeTab === 'add' ? 'active' : ''}`}
+            style={{ borderBottomRightRadius: `${activeTab === 'add' ? 0 : '1rem'}` }}
+            onClick={() => setActiveTab('add')}>Add</div>
+         <div className={`tab edit ${activeTab === 'edit' ? 'active' : ''}`}
+            style={{ borderBottomLeftRadius: `${activeTab === 'edit' ? 0 : '1rem'}` }}
+            onClick={() => setActiveTab('edit')}>Edit</div>
       </div>
       {activeTab === 'add' && <AddAccordion />}
       {activeTab === 'edit' && <EditAccordion />}

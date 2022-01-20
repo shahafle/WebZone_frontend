@@ -1,8 +1,12 @@
 .main-header {
-    height: $header-size;
+    height: $header-height;
     background-color: $color3;
     color: $color1;
     padding: 0 1.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index:999;
 
     .logo {
         font-size: 2.2rem;
@@ -14,7 +18,7 @@
 
         .btn-login {
             padding: 10px 20px;
-            border-radius: $border-radius;
+            border-radius: 1000px;
             border: 1px solid white;
             background-color: $color3;
             color: $color1;
@@ -28,4 +32,9 @@
             }
         }
     }
+}
+
+// Used for EditorPage positioning
+.placeholder {
+    height: $header-height;
 }

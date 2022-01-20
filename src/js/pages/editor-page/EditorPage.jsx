@@ -4,7 +4,7 @@ import { EditorBoard } from './cmps/EditorBoard';
 
 export function EditorPage() {
 
-   return <main className='editor-page flex'>
+   return <main className='editor-page'>
       <EditorSidebar />
       <EditorBoard />
    </main>

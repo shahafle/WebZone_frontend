@@ -6,16 +6,11 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useDispatch, useSelector } from 'react-redux';
 import { addElement } from '../../../store/wap.action';
 import { wapService } from '../../../services/wap.service'
 
-
-
-
-
-
-// Accordions
 
 export function AddAccordion() {
     const [expanded, setExpanded] = React.useState('panel1');
@@ -38,11 +33,11 @@ export function AddAccordion() {
 
 
     return (
-        <div>
+        <div className="accordions-container">
             {sectionCategories.map((category, i) => {
                 return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
                     <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
-                        <Typography style={{ textTransform: 'capitalize' }}>{category.substring(4, category.length)}</Typography>
+                        <SummaryTypography>{category.substring(4, category.length)}</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         {templateSections.filter(section => section.category === category).map(section => {
@@ -74,7 +69,8 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
     <MuiAccordionSummary
-        expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: '#eee' }} />}
+        // expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1.1rem', color: '#eee' }} />}
+        expandIcon={<ArrowRightIcon sx={{ fontSize: '2.5rem', color: '#eee' }} />}
         {...props}
     />
 ))(({ theme }) => ({
@@ -82,22 +78,27 @@ const AccordionSummary = styled((props) => (
         transform: 'rotate(90deg)',
     },
     '& .MuiAccordionSummary-content': {
-        marginLeft: theme.spacing(1),
+        margin: '10px',
+        padding: '5px 0'
     },
 }));
 
 // Accordion Details Styling
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    // padding: '1rem 2rem',
     padding: `${theme.spacing(2)} ${theme.spacing(4)}`,
     borderTop: '1px solid rgba(60, 60, 60, .5)',
 }));
 
 // Typography Styling
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-    // padding: '1rem 2rem',
-    padding: `${theme.spacing(2)} 0`,
+const SummaryTypography = styled(Typography)(({ theme }) => ({
+    padding: '5px 0',
+    textTransform: 'capitalize',
+    fontSize: '1.1rem',
+    fontWeight: 700
 }));
 
+const StyledTypography = styled(Typography)(({ theme }) => ({
+    padding: `${theme.spacing(1)} 0`,
+}));

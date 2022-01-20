@@ -1,9 +1,9 @@
 .editor-board{
+   margin: 15px;
    background-color: white;
-   margin: 10px 25px;
-   flex-grow: 1;
    box-shadow: grey 0 0 5px 2px;
-   align-self: flex-start;
+   grid-column: 2/3;
+
 
    &:hover{
       cursor: pointer;

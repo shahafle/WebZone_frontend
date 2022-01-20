@@ -9,6 +9,7 @@ export function AppHeader() {
 
 
     return (
+        <>
         <header className="main-header flex justify-between align-center">
             <Link className="clean-link logo" to="/">Brix</Link>
             <nav className="nav-menu flex align-center">
@@ -18,5 +19,8 @@ export function AppHeader() {
                 <button className="nav-link btn-login" onClick={() => dispatch(shouldShowLogin(true))}> Login</button>
             </nav>
         </header>
+        <div className="placeholder"></div>
+        {/* The above is used for the Editor Page positioning */}
+        </>
     )
 } 
