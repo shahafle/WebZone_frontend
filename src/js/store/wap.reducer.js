@@ -188,7 +188,7 @@ const initialState = {
                                 "txt": 'Order now',
                                 "name": 'orderBtn',
                                 "style": {
-                                    'borderRadius': '10',
+                                    // 'borderRadius': '1000',
                                     'backgroundColor': '#f1ffff',
                                     'color': 'black',
                                     'textAlign': 'center',

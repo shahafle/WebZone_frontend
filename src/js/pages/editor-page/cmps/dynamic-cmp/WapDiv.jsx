@@ -15,7 +15,7 @@ export function WapDiv(props) {
             onMouseOver={({ target }) => { target.classList.add('element-hover') }}
             style={style}
             className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
-            asdsad
+            {/* asdsad */}
             {
                cmp.cmps && cmp.cmps.map(c => {
                   const propsCopy = { ...props }
