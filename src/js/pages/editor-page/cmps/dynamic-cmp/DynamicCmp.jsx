@@ -9,7 +9,7 @@ import { WapTxt } from './WapTxt';
 export function DynamicCmp(props) {
    const { cmp } = props
    const style = wapService.getScaleUnits(cmp.style)
-   // < div > {
+
    switch (cmp.type) {
       case 'txt': return <WapTxt {...props} style={style} />
 
@@ -22,6 +22,5 @@ export function DynamicCmp(props) {
       default:
          break;
    }
-   {/* }
-      </div > */}
+
 }

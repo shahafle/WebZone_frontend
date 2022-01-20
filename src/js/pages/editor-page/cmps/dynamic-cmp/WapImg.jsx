@@ -10,6 +10,6 @@ export function WapImg(props) {
          onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
          onMouseOver={({ target }) => { target.classList.add('element-hover') }}
          onClick={(ev) => onSetCurrElement(ev, cmp)} alt="No img" />
-      <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
+      {cmp.id === currElementId && < FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />}
    </span>
 }

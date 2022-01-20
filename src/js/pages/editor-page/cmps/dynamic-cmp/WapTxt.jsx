@@ -10,7 +10,7 @@ export function WapTxt(props) {
          onMouseOver={({ target }) => { target.classList.add('element-hover') }}>
          {cmp.txt}
       </p>
-      <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
+      {cmp.id === currElementId && <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />}
    </span>
 
 }
