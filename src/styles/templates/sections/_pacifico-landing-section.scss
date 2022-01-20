@@ -2,7 +2,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 500px;
 
     .pacifico-header {
         display: flex;
@@ -18,18 +17,11 @@
     .pacifico-main {
         display: flex;
         flex-direction: column;
-
-        span {
-            margin-inline-end: 10px;
-            margin-inline-start: 10px;
-            & > :first-child {
-                margin-top: 1.5rem;
-            }
-        }
+        padding: 20px;
+        gap: 90px;
 
         & > :last-child {
             margin: auto;
-            margin-top: 3rem;
             a {
                 height: 35px;
                 border: solid 1px black;
