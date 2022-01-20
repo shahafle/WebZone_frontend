@@ -15,7 +15,7 @@ export const wapService = {
 
 
 // WITH DEMO SERVER :
-const sectionsCategories = ['wap-section', 'wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
+const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
 
 
 const templateSections = [
@@ -43,8 +43,8 @@ const templateSections = [
                 }
             },
         ],
-        "name": "wap-section-1 test",
-        "style": { backgroundColor: '#F3F9E3', border: '2px solid black' }
+        "name": "wap-section-1-test",
+        "style": {}
 
     },
     {
@@ -55,55 +55,37 @@ const templateSections = [
             id: 'fas9hnhdp',
             type: 'txt',
             txt: 'contact us',
-            style: {
-                'fontSize': '24',
-                'textAlign': 'center'
-            }
+            style: {}
         },
         {
             'id': 's77hy',
             'type': 'section',
-            'style': { display: 'flex' },
+            'style': {},
             'cmps': [
                 {
                     id: 'sdn7sdbh',
                     type: 'img',
                     url: 'https://cdn-icons-png.flaticon.com/512/124/124010.png',
-                    style: {
-                        'borderRadius': '0',
-                        'width': '20',
-                        'textAlign': 'center'
-
-                    }
+                    style: {}
                 },
                 {
                     id: 's888sjjd',
                     type: 'img',
                     url: 'https://cdn-icons-png.flaticon.com/512/174/174855.png',
-                    style: {
-                        'borderRadius': '0',
-                        'width': '20'
-                    }
+                    style: {}
                 },
                 {
                     id: 'fkoxjsu',
                     type: 'img',
                     url: 'https://cdn-icons.flaticon.com/png/512/3256/premium/3256013.png?token=exp=1642680125~hmac=304e45579081d52e83454c519d56a3f6',
-                    style: {
-                        'borderRadius': '0',
-                        'width': '20',
-                        'textAlign': 'center'
-
-                    }
+                    style: {}
                 },
             ]
         }
 
         ],
-        "name": "wap-footer-1",
-        "style": {
-            border: '2px solid black', textAlign: 'center'
-        }
+        "name": "wap-footer-test-1",
+        "style": {}
     },
     {
         "id": "rfdf7he4",
@@ -138,8 +120,8 @@ const templateSections = [
                 }
             },
         ],
-        "name": "wap-card-1",
-        "style": { display: 'flex', alignItems: 'center' }
+        "name": "wap-card-test-1",
+        "style": { backgroundColor: '#DDFDFE' }
     },
     {
         "id": "ascuhas",
@@ -153,9 +135,9 @@ const templateSections = [
                 txt: 'im a meaningfull text cmp',
                 style: {
                     'borderRadius': '0',
-                    'backgroundColor': '#61aa',
+                    'backgroundColor': '#4460C6',
                     'color': '#fff6ff',
-                    'textAlign': 'start',
+                    'textAlign': 'center',
                     'fontWeight': '400',
                     'fontStyle': 'normal',
                     'textDecoration': 'none',
@@ -167,8 +149,8 @@ const templateSections = [
                 }
             },
         ],
-        "name": "wap-txt-1",
-        "style": { border: '2px solid black' }
+        "name": "wap-txt-test-1",
+        "style": { backgroundColor: '#4460C6', }
     },
     {
         "id": "5dsh47h",
@@ -212,8 +194,8 @@ const templateSections = [
                 }
             },
         ],
-        "name": "wap-gallery-1",
-        "style": { backgroundColor: '#D4F2DB', border: '2px solid black', display: 'flex' }
+        "name": "wap-gallery-test-1",
+        "style": { backgroundColor: '#D4F2DB' }
     },
     {
         "id": "dh74h",
@@ -240,7 +222,7 @@ const templateSections = [
         {
             'id': '6s8df4',
             'type': 'section',
-            'style': { backgroundColor: '#1aa', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
+            'style': {},
             'cmps': [
                 {
 
@@ -285,8 +267,8 @@ const templateSections = [
                 }
             ]
         }],
-        "name": "wap-header-1",
-        "style": { backgroundColor: '#1aa', display: 'flex', justifyContent: 'space-between' }
+        "name": "wap-header-test-1",
+        "style": {}
     },
     {
         "id": "fjoehdt",
@@ -305,8 +287,8 @@ const templateSections = [
                 }
             }
         ],
-        "name": "wap-hero-1",
-        "style": { border: '2px solid black' }
+        "name": "wap-hero-test-1",
+        "style": {}
     },
 ];
 

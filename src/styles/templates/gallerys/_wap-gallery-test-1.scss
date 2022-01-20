@@ -1,0 +1,8 @@
+.wap-gallery-test-1 {
+    border: 2px solid black;
+    display: flex;
+
+    & img {
+        padding: 1rem;
+    }
+}
