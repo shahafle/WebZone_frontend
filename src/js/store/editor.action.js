@@ -17,7 +17,6 @@ export function updateCurrElementStyle(currElement, style) {
 
 export function updateCurrElementAttr(currElement, attr) {
    return (dispatch) => {
-      console.log('hi');
       const { attrName, attrValue } = attr;
       const updatedElement = { ...currElement, [attrName]: attrValue }
       dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement })

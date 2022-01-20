@@ -19,8 +19,8 @@ export function EditorBoard() {
       dispatch(removeElement(wap, cmp))
    }
 
-   return <div>
+   return <section className='editor-board'>
       {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onRemoveElement={onRemoveElement} onSetCurrElement={onSetCurrElement} cmp={cmp} />
       )}
-   </div>
+   </section>
 }

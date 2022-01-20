@@ -2,4 +2,5 @@
     background-color: $color3;
     height: calc(100vh - $header-size);
     width: 300px;
+    flex-shrink: 0;
 }

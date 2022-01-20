@@ -10,6 +10,6 @@ export function WapBtn(props) {
 
    return <div>
       <a style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} href='##'>{cmp.txt}</a>
-      <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
+      <FaTrash onClick={(ev) => onDeleteElement(ev, cmp)} />
    </div>
 }

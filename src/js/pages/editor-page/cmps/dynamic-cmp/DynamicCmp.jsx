@@ -20,10 +20,10 @@ export function DynamicCmp(props) {
       case 'btn':
          return <WapBtn {...props} style={style} />
       case 'section':
-         return <section onClick={(ev) => onSetCurrElement(ev, cmp)} style={style} >
+         return <div onClick={(ev) => onSetCurrElement(ev, cmp)} style={style} className={cmp.name || ''} >
             {cmp.cmps && cmp.cmps.map(c => <DynamicCmp key={c.id} cmp={c} onSetCurrElement={onSetCurrElement} onRemoveElement={onRemoveElement} />)}
             {/* <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} /> */}
-         </ section>
+         </ div>
 
       default:
          break;
