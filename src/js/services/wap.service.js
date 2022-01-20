@@ -17,7 +17,7 @@ export const wapService = {
 
 
 // WITH DEMO SERVER :
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
+const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map,video,form
 
 
 const templateSections = [
@@ -290,6 +290,25 @@ const templateSections = [
             }
         ],
         "name": "wap-hero-test-1",
+        "style": {}
+    },
+    {
+        "id": "shhs7",
+        "type": "section",
+        "category": "wap-map",
+        "cmps": [
+            {
+
+                id: 'dfnvfdjd',
+                type: 'map',
+                url: `https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg`,//just a photo
+                style: {
+                    'borderRadius': '0',
+                    'width': '100'
+                }
+            }
+        ],
+        "name": "wap-map-1",
         "style": {}
     },
 ];

@@ -7,10 +7,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        span {
+            margin-inline-end: 10px;
+            margin-inline-start: 10px;
+        }
     }
+
     .pacifico-main {
         display: flex;
         flex-direction: column;
+        padding: 20px;
+        gap: 90px;
 
         & > span:last-of-type {
             margin: 0 auto;
