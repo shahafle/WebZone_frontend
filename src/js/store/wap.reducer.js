@@ -102,7 +102,7 @@ const initialState = {
                 ],
                 "name": "wap-header-2",
                 "style": {}
-            },
+            }
         ],
         "isPublished": true
     }
