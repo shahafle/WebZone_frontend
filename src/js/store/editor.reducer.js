@@ -9,7 +9,7 @@ export function editorReducer(state = initialState, action) {
 
       case 'SET_CURR_ELEMENT': {
          let { element } = action;
-         return newState = { ...state, currElement: element };
+         return newState = { ...state, currElement: { ...element } };
       }
 
       case 'UPDATE_CURR_ELEMENT': {

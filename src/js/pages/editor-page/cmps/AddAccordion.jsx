@@ -65,7 +65,7 @@ export function AddAccordion() {
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-    borderBottom: `1px solid gray`,
+    borderBottom: '1px solid rgba(120, 120, 120, .7)',
     background: 'transparent',
     color: '#eee'
 }));
@@ -91,7 +91,7 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
     // padding: '1rem 2rem',
     padding: `${theme.spacing(2)} ${theme.spacing(4)}`,
-    borderTop: '1px solid rgba(0, 0, 0, .125)',
+    borderTop: '1px solid rgba(60, 60, 60, .5)',
 }));
 
 // Typography Styling
