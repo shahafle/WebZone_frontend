@@ -8,8 +8,8 @@ export function WapBtn(props) {
       return <a style={style} href={cmp.url}>{cmp.txt}</a>
    }
 
-   return <div>
+   return <span>
       <a style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} href='##' className={cmp.id === currElementId ? 'edit-active' : ''}>{cmp.txt}</a>
       <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
-   </div>
+   </span>
 }
