@@ -28,71 +28,82 @@ const templateSections = [
             {
                 id: 'avvva1d',
                 type: 'txt',
-                txt: 'section 1',
+                txt: 'empty section 1',
                 style: {
                     'textAlign': 'center',
                     'fontWeight': '700',
                     'fontStyle': 'normal',
                     'textDecoration': 'none',
-                    'fontSize': '70',
-                    'color': '#a00',
+                    'fontSize': '20',
+                    'color': 'black',
                     'letterSpacing': '1',
                     // 'lineHeight': '16',
                     'textShadow': 'none',
                     'fontFamily': 'sans-serif',
                 }
             },
-            {
-                id: 'fsssa3s',
-                type: 'txt',
-                txt: 'still section 1',
-                style: {
-                    'textAlign': 'start',
-                    'fontWeight': '400',
-                    'fontStyle': 'normal',
-                    'textDecoration': 'none',
-                    'fontSize': '16',
-                    'color': 'brown',
-                    'letterSpacing': '1',
-                    'lineHeight': '16',
-                    'textShadow': 'none',
-                    'fontFamily': 'sans-serif',
-                }
-            }
         ],
         "name": "wap-section-1 test",
-        "style": { backgroundColor: '#1baa1b' }
+        "style": { backgroundColor: '#F3F9E3', border: '2px solid black' }
 
     },
     {
         "id": "ahsd7fh",
         "type": "section",
         "category": "wap-footer",
-        "cmps": [
-            {
-
-                id: 'fas9hnhdp',
-                type: 'btn',
-                url: 'https://www.google.com',
-                txt: 'click',
-                style: {
-                    'borderRadius': '0',
-                    'backgroundColor': '#61a68a',
-                    'color': '#fff6ff'
-                }
-            },
-            {
-                id: 'sdn7sdbh',
-                type: 'img',
-                url: 'https://media.istockphoto.com/photos/hippie-group-singing-and-dancing-in-a-field-picture-id180694839?b=1&k=20&m=180694839&s=170667a&w=0&h=l4DCmPFir5_ADorfUS-w4bF4BeriN-GNHdIiAbjdRo0=',
-                style: {
-                    'borderRadius': '0',
-                    'width': '100'
-                }
+        "cmps": [{
+            id: 'fas9hnhdp',
+            type: 'txt',
+            txt: 'contact us',
+            style: {
+                'fontSize': '24',
+                'textAlign': 'center'
             }
+        },
+        {
+            'id': 's77hy',
+            'type': 'section',
+            'style': { display: 'flex' },
+            'cmps': [
+                {
+                    id: 'sdn7sdbh',
+                    type: 'img',
+                    url: 'https://cdn-icons-png.flaticon.com/512/124/124010.png',
+                    style: {
+                        'borderRadius': '0',
+                        'width': '20',
+                        'textAlign': 'center'
+
+                    }
+                },
+                {
+                    id: 's888sjjd',
+                    type: 'img',
+                    url: 'https://cdn-icons-png.flaticon.com/512/174/174855.png',
+                    style: {
+                        'borderRadius': '0',
+                        'width': '20'
+                    }
+                },
+                {
+                    id: 'fkoxjsu',
+                    type: 'img',
+                    url: 'https://cdn-icons.flaticon.com/png/512/3256/premium/3256013.png?token=exp=1642680125~hmac=304e45579081d52e83454c519d56a3f6',
+                    style: {
+                        'borderRadius': '0',
+                        'width': '20',
+                        'textAlign': 'center'
+
+                    }
+                },
+            ]
+        }
+
         ],
         "name": "wap-footer-1",
-        "style": { border: '2px solid black' }
+        "style": {
+            border: '2px solid black', textAlign: 'center'
+        }
     },
     {
         "id": "rfdf7he4",
@@ -105,7 +116,7 @@ const templateSections = [
                 url: 'https://media.istockphoto.com/photos/african-american-woman-day-dreaming-in-public-park-on-beautiful-day-picture-id1289286426?b=1&k=20&m=1289286426&s=170667a&w=0&h=4e53OLksvcme-rwNZA0V57nFV4LG9343xZs6tY4xuLg=',
                 style: {
                     'borderRadius': '0',
-                    'width': '100'
+                    'width': '100',
                 }
             },
             {
@@ -123,11 +134,12 @@ const templateSections = [
                     'lineHeight': '16',
                     'textShadow': 'none',
                     'fontFamily': 'sans-serif',
+                    'margin': '10px'
                 }
             },
         ],
         "name": "wap-card-1",
-        "style": { border: '2px solid black', display: 'flex' }
+        "style": { display: 'flex', alignItems: 'center' }
     },
     {
         "id": "ascuhas",
@@ -169,7 +181,7 @@ const templateSections = [
                 url: 'https://media.istockphoto.com/photos/people-looking-at-modern-art-picture-id1280209683?b=1&k=20&m=1280209683&s=170667a&w=0&h=eej9lucGB24N18lZI4n7T5Lp2idCEX2wgbRutpLvKQw=',
                 style: {
                     'borderRadius': '0',
-                    'width': '100'
+                    'width': '100',
                 }
             },
             {
@@ -178,7 +190,7 @@ const templateSections = [
                 url: 'https://media.istockphoto.com/photos/chinese-painting-exhibition-picture-id534335744?b=1&k=20&m=534335744&s=170667a&w=0&h=a2Hm2yaWC7VCX4tF_N64tftkEXVdJu-OTzE9N47venk=',
                 style: {
                     'borderRadius': '0',
-                    'width': '100'
+                    'width': '100',
                 }
             },
             {
@@ -187,7 +199,7 @@ const templateSections = [
                 url: 'https://media.istockphoto.com/photos/woman-looking-at-picture-collection-picture-id1270572069?b=1&k=20&m=1270572069&s=170667a&w=0&h=8IKGq68xWRh3YDZ9261DiVFmEZF_73YqC5DkRoC4WoU=',
                 style: {
                     'borderRadius': '0',
-                    'width': '100'
+                    'width': '100',
                 }
             },
             {
@@ -196,7 +208,7 @@ const templateSections = [
                 url: 'https://media.istockphoto.com/photos/examining-the-masters-picture-id539057683?b=1&k=20&m=539057683&s=170667a&w=0&h=9ncugdiTmzUnvAll5gB0xEUcI6oYD4ucTKQXaEdbNDU=',
                 style: {
                     'borderRadius': '0',
-                    'width': '100'
+                    'width': '100',
                 }
             },
         ],
@@ -228,7 +240,7 @@ const templateSections = [
         {
             'id': '6s8df4',
             'type': 'section',
-            'style': { backgroundColor: '#1aa', display: 'flex', justifyContent: 'space-between' },
+            'style': { backgroundColor: '#1aa', display: 'flex', justifyContent: 'space-between', alignItems: 'center' },
             'cmps': [
                 {
 
@@ -296,54 +308,7 @@ const templateSections = [
         "name": "wap-hero-1",
         "style": { border: '2px solid black' }
     },
-    {
-        "id": "wch2",
-        "type": "section",
-        "category": "wap-section",
-        "cmps": [
-            {
-                id: 'h5438hd',
-                type: 'txt',
-                txt: 'section 2',
-                style: {
-                    'textAlign': 'end',
-                    'fontWeight': '400',
-                    'fontStyle': 'normal',
-                    'textDecoration': 'none',
-                    'fontSize': '70',
-                    'color': '#b1b',
-                    'letterSpacing': '2',
-                    // 'lineHeight': '16',
-                    'textShadow': 'none',
-                    'fontFamily': 'sans-serif',
-                }
-            },
-            {
-                id: 'fsssa3s',
-                type: 'txt',
-                txt: ' still section 2 test',
-                style: {
-                    'textAlign': 'start',
-                    'fontWeight': '200',
-                    'fontStyle': 'normal',
-                    'textDecoration': 'none',
-                    'fontSize': '32',
-                    'color': 'red',
-                    'letterSpacing': '1',
-                    // 'lineHeight': '16',
-                    'textShadow': 'none',
-                    'fontFamily': 'sans-serif',
-                }
-            }
-        ],
-        "name": "wap-section-2",
-        "style": { backgroundColor: '#ab1' }
-    },
 ];
-
-
-
-
 
 
 function getTemplateSections() {
