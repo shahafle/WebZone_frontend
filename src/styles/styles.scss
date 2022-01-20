@@ -1,8 +1,8 @@
 // Setup
+@import "./setup/typography";
 @import "./setup/variables";
 @import "./setup/functions";
 @import "./setup/mixins";
-@import "./setup/typography";
 
 // BASICS
 
@@ -32,3 +32,8 @@
 @import "./cmps/app-footer";
 @import "./cmps/screen";
 @import "./cmps/login";
+
+//TEMPLATES
+
+//HEADERS
+@import "./templates/headers/wap-header-1";
