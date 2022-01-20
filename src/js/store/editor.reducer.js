@@ -13,8 +13,7 @@ export function editorReducer(state = initialState, action) {
       }
 
       case 'UPDATE_CURR_ELEMENT': {
-         let { styleName, styleValue } = action.style;
-         return newState = { ...state, currElement: { ...state.currElement, style: { ...state.currElement.style, [styleName]: styleValue } } };
+         return newState = { ...state, currElement: action.updatedElement };
       }
       default:
          return newState

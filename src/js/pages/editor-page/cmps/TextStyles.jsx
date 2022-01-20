@@ -11,7 +11,7 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       <div>
          Decoration:
          <div>
-            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '800' : '400' } })}>B</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '700' : '400' } })}>B</button>
             <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'Italic') ? 'normal' : 'Italic' } })}>I</button>
             <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })}>U</button>
          </div>

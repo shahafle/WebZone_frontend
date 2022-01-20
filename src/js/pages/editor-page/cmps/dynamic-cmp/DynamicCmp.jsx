@@ -1,6 +1,7 @@
 import { FaTrash } from 'react-icons/fa';
 
 import { wapService } from '../../../../services/wap.service'
+import { WapBtn } from './WapBtn';
 
 export function DynamicCmp(props) {
    const { cmp, onSetCurrElement, onRemoveElement } = props
@@ -17,10 +18,7 @@ export function DynamicCmp(props) {
             <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
          </div>
       case 'btn':
-         return <div>
-            <a style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} href='##'>{cmp.txt}</a>
-            <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
-         </div>
+         return <WapBtn {...props} style={style} />
       case 'section':
          return <section onClick={(ev) => onSetCurrElement(ev, cmp)} style={style} >
             {cmp.cmps && cmp.cmps.map(c => <DynamicCmp key={c.id} cmp={c} onSetCurrElement={onSetCurrElement} onRemoveElement={onRemoveElement} />)}
