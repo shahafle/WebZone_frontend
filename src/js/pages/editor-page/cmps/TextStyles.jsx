@@ -1,14 +1,20 @@
 export function TextStyles({ elementStyle, onChangeStyle }) {
-   return <div>
+   return <div className="flex column edit-style-section">
       <div>
-         <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })}>Align left</button>
-         <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })}>Align center</button>
-         <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })}>Align right</button>
+         Align:
+         <div>
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })}>left</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })}>center</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })}>right</button>
+         </div>
       </div>
       <div>
-         <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '800' : '400' } })}>B</button>
-         <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'Italic') ? 'normal' : 'Italic' } })}>I</button>
-         <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })}>U</button>
+         Decoration:
+         <div>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '800' : '400' } })}>B</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'Italic') ? 'normal' : 'Italic' } })}>I</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })}>U</button>
+         </div>
       </div>
       <label>Font size:
          <input type="range" min={0} max={100} onChange={onChangeStyle} name='fontSize' value={+elementStyle.fontSize} />
@@ -17,11 +23,11 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
          <input type="color" onChange={onChangeStyle} name='color' value={elementStyle.color} />
       </label>
       <label>Letter spacing:
-         <input type="range" min={0} max={100} onChange={onChangeStyle} name='letterSpacing' value={+elementStyle.letterSpacing} />
+         <input type="range" min={0} max={50} onChange={onChangeStyle} name='letterSpacing' value={+elementStyle.letterSpacing} />
       </label>
-      <label>Line height:
+      {/* <label>Line height:
          <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
-      </label>
+      </label> */}
       <label>Text shadow:
          <select name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
             <option value="none">none</option>

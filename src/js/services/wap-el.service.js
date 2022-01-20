@@ -8,13 +8,115 @@ export const wapElService = {
     post,
     put,
     getScaleUnits,
-    findTarget
+    findTarget,
+    getTemplateSections,
+    getSectionsCategories
 }
 
 
 // WITH DEMO SERVER :
+const sectionsCategories = ['wap-section', 'wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
 
-const templateSections = [];
+
+const templateSections = [
+    {
+
+        "id": "wc03",
+        "type": "section",
+        "category": "wap-section",
+        "cmps": [
+            {
+                id: 'avvva1d',
+                type: 'txt',
+                txt: 'section 1',
+                style: {
+                    'textAlign': 'center',
+                    'fontWeight': '700',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '70',
+                    'color': '#a00',
+                    'letterSpacing': '1',
+                    // 'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            },
+            {
+                id: 'fsssa3s',
+                type: 'txt',
+                txt: 'still section 1',
+                style: {
+                    'textAlign': 'start',
+                    'fontWeight': '400',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '16',
+                    'color': 'brown',
+                    'letterSpacing': '1',
+                    'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            }
+        ],
+        "name": "wap-section-1 test",
+        "style": { backgroundColor: '#1baa1b' }
+
+    },
+    {
+        "id": "wch2",
+        "type": "section",
+        "category": "wap-section",
+        "cmps": [
+            {
+                id: 'h5438hd',
+                type: 'txt',
+                txt: 'section 2',
+                style: {
+                    'textAlign': 'end',
+                    'fontWeight': '400',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '70',
+                    'color': '#b1b',
+                    'letterSpacing': '2',
+                    // 'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            },
+            {
+                id: 'fsssa3s',
+                type: 'txt',
+                txt: ' still section 2 test',
+                style: {
+                    'textAlign': 'start',
+                    'fontWeight': '200',
+                    'fontStyle': 'normal',
+                    'textDecoration': 'none',
+                    'fontSize': '32',
+                    'color': 'red',
+                    'letterSpacing': '1',
+                    'lineHeight': '16',
+                    'textShadow': 'none',
+                    'fontFamily': 'sans-serif',
+                }
+            }
+        ],
+        "name": "wap-section-2",
+        "style": { backgroundColor: '#ab1' }
+    },
+
+];
+
+
+function getTemplateSections() {
+    return templateSections
+}
+function getSectionsCategories() {
+    return sectionsCategories
+}
 
 const STORAGE_KEY = 'wapElsDB'
 
@@ -40,11 +142,14 @@ function put(wapElToUpdate) {
 
 function getScaleUnits(style) {
     const pxFields = [
-        'fontSize', 'letterSpacing', 'lineHeight', 'borderRadius', 'paddingBlockStart',
-        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd',];
+        'fontSize', 'letterSpacing', 'lineHeight', 'paddingBlockStart',
+        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd'];
+    const precentFields = ['width', 'borderRadius']
     const styleCopy = JSON.parse(JSON.stringify(style))
     for (let attr in styleCopy) {
-        styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
+        if (pxFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + 'px'
+        else if (precentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%'
+        // styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
     }
 
     return styleCopy
@@ -61,9 +166,6 @@ function findTarget(data, elementId, cb) {
     }
 }
 
-function getTemplateSections(type) {
-    return templateSections
-}
 
 
 
@@ -73,6 +175,8 @@ function getTemplateSections(type) {
 
 
 
+
+// }
 
 // // WITH REAL SERVER :
 

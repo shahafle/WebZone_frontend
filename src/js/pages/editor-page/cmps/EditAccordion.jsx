@@ -10,6 +10,8 @@ import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateWapEl } from '../../../store/wap-el.action'
 import { updateCurrWapEl } from '../../../store/editor.action'
+import { ImageStyles } from './ImageStyles';
+import { ButtonStyles } from './ButtonStyles';
 
 
 
@@ -41,23 +43,39 @@ export function EditAccordion() {
     }
 
     if (!currElement) return <p>Choose element</p>
-    console.log('hi');
+
     return (
         <div className="edit-accordions-container">
 
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>Text</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
-                    {/* <StyledTypography>Template Item #1</StyledTypography>
-                    <StyledTypography>Template Item #2</StyledTypography> */}
-                </AccordionDetails>
+            {currElement.type === 'txt' &&
+                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Text</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                    </AccordionDetails>
+                </Accordion>}
+            {currElement.type === 'img' &&
+                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Image</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <ImageStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                    </AccordionDetails>
+                </Accordion>}
+            {currElement.type === 'btn' &&
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Button</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <ButtonStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                    </AccordionDetails>
+                </Accordion>}
 
-            </Accordion>
-
-        </div>
+        </div >
     );
 }
 

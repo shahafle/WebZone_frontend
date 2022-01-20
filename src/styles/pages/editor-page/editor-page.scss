@@ -1,0 +1,11 @@
+.editor-page{
+
+   .edit-style-section{
+
+      & > *{
+         display: flex;
+         justify-content: space-between;
+      }
+   }
+
+}

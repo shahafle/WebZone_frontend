@@ -12,7 +12,8 @@ const initialState = {
         "cmps": [
             {
                 "id": "37rtg",
-                "type": "wap-header",
+                "type": "section",
+                "category": "wap-header",
                 "cmps": [
                     {
                         id: '1jh21',
@@ -26,7 +27,7 @@ const initialState = {
                             'fontSize': '40',
                             'color': '#000',
                             'letterSpacing': '1',
-                            'lineHeight': '16',
+                            // 'lineHeight': '16',
                             'textShadow': 'none',
                             'fontFamily': 'sans-serif',
                         }
@@ -35,16 +36,21 @@ const initialState = {
                         id: '98asd',
                         type: 'img',
                         url: 'https://m.media-amazon.com/images/I/61Jigwd1kKL._AC_SX425_.jpg',
-                        style: { 'height': '20px' }
+                        style: {
+                            'borderRadius': '0',
+                            'width': '100'
+                        }
                     }
                 ],
                 "name": "wap-header-1",
                 "style": {
+
                 }
             },
             {
                 "id": "wc03",
-                "type": "wap-section",
+                "type": "section",
+                "category": "wap-header",
                 "cmps": [
                     {
                         id: 'as21d',
@@ -58,7 +64,7 @@ const initialState = {
                             'fontSize': '40',
                             'color': '#000',
                             'letterSpacing': '1',
-                            'lineHeight': '16',
+                            // 'lineHeight': '16',
                             'textShadow': 'none',
                             'fontFamily': 'sans-serif',
                         }
@@ -68,16 +74,8 @@ const initialState = {
                         type: 'img',
                         url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
                         style: {
-                            'textAlign': 'start',
-                            'fontWeight': '400',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '16',
-                            'color': 'black',
-                            'letterSpacing': '1',
-                            'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif',
+                            'borderRadius': '0',
+                            'width': '100'
                         }
                     }
                 ],
@@ -99,7 +97,7 @@ export function wapElReducer(state = initialState, action) {
         case 'SET_WAP':
             return newState = { ...state, wapEl: [...action.wapEl] };
         case 'ADD_WAPEL':
-            return newState = { ...state, wapEl: [...state.wapEl, action.addedWapEl] };
+            return newState = { ...state, wapEl: { ...state.wapEl, cmps: [...state.wapEl.cmps, action.wapElToAdd] } };
         case 'REMOVE_WAPEL':
             return newState = { ...state, wapEl: state.wapEl.filter(wapEl => wapEl._id !== action.wapElId) };
         case 'UPDATE_WAPEL':
