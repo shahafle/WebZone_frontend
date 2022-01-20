@@ -339,7 +339,6 @@ const templateSections = [
         "name": "wap-section-2",
         "style": { backgroundColor: '#ab1' }
     },
-
 ];
 
 

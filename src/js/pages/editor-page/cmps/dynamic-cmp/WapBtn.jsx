@@ -2,7 +2,7 @@ import { FaTrash } from 'react-icons/fa';
 
 
 export function WapBtn(props) {
-   const { cmp, onSetCurrElement, onDeleteElement, style } = props
+   const { cmp, onSetCurrElement, onRemoveElement, style } = props
 
    if (cmp.isPublished) {
       return <a style={style} href={cmp.url}>{cmp.txt}</a>
