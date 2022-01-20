@@ -13,8 +13,13 @@ export function EditorBoard() {
       dispatch(setCurrElement(cmp))
    }
 
+   const onDeleteElement = (cmp) => {
+      console.log('hi');
+      console.log(cmp);
+   }
+
    return <div>
-      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onSetCurrElement={onSetCurrElement} cmp={cmp} />
+      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onDeleteElement={onDeleteElement} onSetCurrElement={onSetCurrElement} cmp={cmp} />
       )}
    </div>
 }
