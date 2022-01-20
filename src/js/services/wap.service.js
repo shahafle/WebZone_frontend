@@ -10,12 +10,14 @@ export const wapService = {
     getScaleUnits,
     findTarget,
     getTemplateSections,
-    getSectionsCategories
+    getSectionsCategories,
+    getRandomId,
+    addIds
 }
 
 
 // WITH DEMO SERVER :
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']
+const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map,video,form
 
 
 const templateSections = [
@@ -290,6 +292,25 @@ const templateSections = [
         "name": "wap-hero-test-1",
         "style": {}
     },
+    {
+        "id": "shhs7",
+        "type": "section",
+        "category": "wap-map",
+        "cmps": [
+            {
+
+                id: 'dfnvfdjd',
+                type: 'map',
+                url: `https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg`,//just a photo
+                style: {
+                    'borderRadius': '0',
+                    'width': '100'
+                }
+            }
+        ],
+        "name": "wap-map-1",
+        "style": {}
+    },
 ];
 
 
@@ -347,6 +368,23 @@ function findTarget(data, elementId, cb) {
     }
 }
 
+function addIds(element) {
+    element.id = getRandomId()
+    if (element.cmps) {
+        element.cmps.forEach(el => addIds(el));
+    }
+}
+
+function getRandomId(length = 6, array) {
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let id = '';
+
+    for (let i = 0; i < length; i++) {
+        id += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return id;
+}
 
 
 

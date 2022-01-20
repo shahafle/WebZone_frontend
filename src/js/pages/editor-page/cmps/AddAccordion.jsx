@@ -26,8 +26,7 @@ export function AddAccordion() {
 
 
 
-    const onAddElement = (section) => {
-        const elementToAdd = section
+    const onAddElement = (elementToAdd) => {
         dispatch(addElement(elementToAdd))
     }
 

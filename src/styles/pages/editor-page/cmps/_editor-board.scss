@@ -5,12 +5,36 @@
    grid-column: 2/3;
 
 
+   *{
+      position:relative
+   }
+
    &:hover{
       cursor: pointer;
       // cursor: grab;
    }
 
+   .delete-element-btn{
+      font-size: 0.8rem;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      // border-bottom-left-radius:100%;
+      background: rgba(219, 57, 57, 0.788);
+
+      &:hover{
+         outline: none;
+         cursor: pointer;
+      }
+   }
+
    .edit-active ,.element-hover{
-      outline: gray dashed 2px;
+      outline: gray dashed 1px;
+      // outline: 1px solid ;
+      // outline-color: invert;
+      // box-shadow:  0 0 5px 1px;
    }
 }

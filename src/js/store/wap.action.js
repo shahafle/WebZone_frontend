@@ -12,6 +12,7 @@ export function loadWap() {
 export function updateWap(wap, elementToUpdate) {
     return async (dispatch) => {
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate)
+        console.log(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
@@ -25,7 +26,12 @@ export function removeElement(wap, element) {
 
 export function addElement(elementToAdd) {
     return (dispatch) => {
+        elementToAdd = JSON.parse(JSON.stringify(elementToAdd))
+        wapService.addIds(elementToAdd)
         dispatch({ type: 'ADD_ELEMENT', elementToAdd })
         return elementToAdd;
     }
 }
+
+
+

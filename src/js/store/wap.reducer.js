@@ -1,107 +1,182 @@
 
-
 const initialState = {
     wap: {
         "_id": "5e28393890dd7201a06d4e44",
         "name": "HairDresser Baluta Marketing Site",
-        "imgUrl": "http://res.cloudinary.com/webify/image/upload/v1580021948/coffe_yi0yzf.png",
         "createdBy": {
             "_id": "5e26e0b718a0891d4c995527",
             "username": "Hekro Special"
         },
         "cmps": [
             {
-                "id": "37rtg",
+                "id": "dhetv6",
                 "type": "section",
-                "category": "wap-header",
-                "cmps": [
-                    {
-                        id: '1jh21',
-                        type: 'txt',
-                        txt: 'aloha aloha',
-                        style: {
-                            'textAlign': 'start',
-                            'fontWeight': '700',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '40',
-                            'color': '#000',
-                            'letterSpacing': '1',
-                            // 'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif',
-                        }
-                    },
-                    {
-                        id: '98asd',
-                        type: 'img',
-                        url: 'https://m.media-amazon.com/images/I/61Jigwd1kKL._AC_SX425_.jpg',
-                        style: {
-                            'borderRadius': '0',
-                            'width': '100'
-                        }
-                    }
-                ],
-                "name": "wap-header-1",
+                "category": "wap-section",
+                "name": "wap-section-pacifico-landing",
                 "style": {
-
-                }
-            },
-            {
-                "id": "wc03",
-                "type": "section",
-                "category": "wap-header",
+                    backgroundImage: `url('https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')`,
+                },
                 "cmps": [
                     {
-                        id: 'as21d',
-                        type: 'txt',
-                        txt: 'Lorem ipsum',
-                        style: {
-                            'textAlign': 'start',
-                            'fontWeight': '700',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '40',
-                            'color': '#000',
-                            'letterSpacing': '1',
-                            // 'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif',
+                        "id": 'sahd6dd',
+                        "type": "section",
+                        'name': 'pacifico-header',
+                        "style": {},
+                        "cmps": [{
+                            id: '3ss66dg',
+                            type: 'txt',
+                            txt: 'Pacifico',
+                            style: {
+                                'borderRadius': '0',
+                                'color': 'white',
+                                'textAlign': 'start',
+                                'fontWeight': '550',
+                                'fontStyle': 'normal',
+                                'textDecoration': 'none',
+                                'fontSize': '40',
+                                'letterSpacing': '1',
+                                // 'lineHeight': '16',
+                                'textShadow': '5px 5px 3px black',
+                                'fontFamily': 'kalam',
+                            }
+                        },
+                        {
+                            'id': '33377fhd',
+                            'type': 'section',
+                            'style': {},
+                            'cmps': [
+                                {
+                                    id: 'sdhuf34f',
+                                    type: 'btn',
+                                    url: '#',
+                                    txt: 'About us',
+                                    style: {
+                                        'borderRadius': '0',
+                                        'backgroundColor': '',
+                                        'color': 'white',
+                                        'textAlign': 'center',
+                                        'fontWeight': '400',
+                                        'fontStyle': 'normal',
+                                        'textDecoration': 'none',
+                                        'fontSize': '18',
+                                        'letterSpacing': '1',
+                                        // 'lineHeight': '16',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
+                                    }
+                                },
+                                {
+                                    id: 'ffhg74',
+                                    type: 'btn',
+                                    url: '#',
+                                    txt: 'Reservations',
+                                    style: {
+                                        'borderRadius': '0',
+                                        'backgroundColor': '',
+                                        'color': 'white',
+                                        'textAlign': 'center',
+                                        'fontWeight': '400',
+                                        'fontStyle': 'normal',
+                                        'textDecoration': 'none',
+                                        'fontSize': '18',
+                                        'letterSpacing': '1',
+                                        // 'lineHeight': '16',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
+                                    }
+                                },
+                                {
+                                    id: 'sssllka9',
+                                    type: 'btn',
+                                    url: '#',
+                                    txt: 'Login',
+                                    style: {
+                                        'borderRadius': '',
+                                        'backgroundColor': '',
+                                        'color': 'white',
+                                        'textAlign': 'center',
+                                        'fontWeight': '400',
+                                        'fontStyle': 'normal',
+                                        'textDecoration': 'none',
+                                        'fontSize': '18',
+                                        'letterSpacing': '1',
+                                        // 'lineHeight': '16',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
+                                    }
+                                },
+                            ]
                         }
+                        ]
                     },
                     {
-                        id: '5a5as',
-                        type: 'img',
-                        url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
-                        style: {
-                            'borderRadius': '0',
-                            'width': '100'
-                        }
-                    },
-                    {
-                        id: '351dp',
-                        type: 'btn',
-                        url: '',
-                        txt: 'click',
-                        style: {
-                            'borderRadius': '0',
-                            'backgroundColor': '#61a68a',
-                            'color': '#fff6ff',
-                            'textAlign': 'center',
-                            'fontWeight': '700',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '40',
-                            'color': '#000',
-                            'letterSpacing': '1',
-                            // 'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif'
-                        }
+                        "id": '8shjhs',
+                        "type": "section",
+                        "name": "pacifico-main",
+                        "style": {},
+                        "cmps": [
+                            {
+                                "id": '1109f7s',
+                                "type": 'txt',
+                                "txt": 'Adventure is worthwhile.',
+                                "style": {
+                                    'borderRadius': '0',
+                                    'color': 'white',
+                                    'textAlign': 'center',
+                                    'fontWeight': '400',
+                                    'fontStyle': 'normal',
+                                    'textDecoration': 'none',
+                                    'fontSize': '65',
+                                    'letterSpacing': '1',
+                                    // 'lineHeight': '16',
+                                    'textShadow': '1px 1px 3px black',
+                                    'fontFamily': 'bitter',
+                                }
+                            },
+                            {
+                                "id": '127shsa',
+                                "type": 'txt',
+                                "txt": `You don\'t have to be rich to travel well.
+                                 do it here, in Pacifico.`,
+                                "style": {
+                                    'borderRadius': '0',
+                                    'color': 'white',
+                                    'textAlign': 'center',
+                                    'fontWeight': '400',
+                                    'fontStyle': 'normal',
+                                    'textDecoration': 'none',
+                                    'fontSize': '30',
+                                    'letterSpacing': '1',
+                                    // 'lineHeight': '16',
+                                    'textShadow': '1px 1px 3px black',
+                                    'fontFamily': 'bitter'
+                                }
+                            },
+                            {
+
+                                "id": 'sscvnjf8',
+                                "type": 'btn',
+                                "url": 'https://www.google.com',
+                                "txt": 'Order now',
+                                "name": 'orderBtn',
+                                "style": {
+                                    // 'borderRadius': '1000',
+                                    'backgroundColor': '#f1ffff',
+                                    'color': 'black',
+                                    'textAlign': 'center',
+                                    'fontWeight': '400',
+                                    'fontStyle': 'normal',
+                                    'textDecoration': 'none',
+                                    'fontSize': '30',
+                                    'letterSpacing': '1',
+                                    // 'lineHeight': '16',
+                                    'textShadow': 'none',
+                                    'fontFamily': 'bitter'
+                                }
+                            },
+                        ]
                     }
-                ],
-                "name": "wap-header-2",
-                "style": {}
+                ]
             },
         ],
         "isPublished": true

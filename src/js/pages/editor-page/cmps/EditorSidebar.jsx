@@ -11,6 +11,7 @@ export function EditorSidebar() {
    const currElement = useSelector(state => state.editorModule.currElement);
 
    useEffect(() => {
+      if (!currElement) return;
       setActiveTab('edit');
    }, [currElement])
 

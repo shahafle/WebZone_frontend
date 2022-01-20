@@ -7,5 +7,6 @@ export function EditorPage() {
    return <main className='editor-page'>
       <EditorSidebar />
       <EditorBoard />
-   </main>
+
+   </main >
 }

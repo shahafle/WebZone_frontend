@@ -13,7 +13,7 @@ export function editorReducer(state = initialState, action) {
       }
 
       case 'UPDATE_CURR_ELEMENT': {
-         return newState = { ...state, currElement: action.updatedElement };
+         return newState = { ...state, currElement: { ...action.updatedElement } };
       }
       default:
          return newState
