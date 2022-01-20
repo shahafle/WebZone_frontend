@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrElement } from '../../../store/editor.action'
+import { removeElement } from '../../../store/wap.action'
 import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
 
 export function EditorBoard() {
@@ -13,13 +14,13 @@ export function EditorBoard() {
       dispatch(setCurrElement(cmp))
    }
 
-   const onDeleteElement = (cmp) => {
-      console.log('hi');
-      console.log(cmp);
+   const onRemoveElement = (ev, cmp) => {
+      ev.stopPropagation()
+      dispatch(removeElement(wap, cmp))
    }
 
    return <div>
-      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onDeleteElement={onDeleteElement} onSetCurrElement={onSetCurrElement} cmp={cmp} />
+      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onRemoveElement={onRemoveElement} onSetCurrElement={onSetCurrElement} cmp={cmp} />
       )}
    </div>
 }

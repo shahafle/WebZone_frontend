@@ -29,16 +29,10 @@ export function AddAccordion() {
     // const wap = useSelector(state => state.wapModule.wap)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(updateWap(wap, currElement))
-    // }, [currElement])
-
-
 
 
     const onAddElement = (section) => {
         const elementToAdd = section
-
         dispatch(addElement(elementToAdd))
     }
 

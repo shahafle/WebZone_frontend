@@ -16,11 +16,10 @@ export function updateWap(wap, elementToUpdate) {
     }
 }
 
-export function removeElement(elementId) {
-    return async (dispatch) => {
-        const removedElement = await wapService.remove(elementId)
-        dispatch({ type: 'REMOVE_ELEMENT', elementId });
-        return removedElement;
+export function removeElement(wap, element) {
+    return (dispatch) => {
+        wapService.findTarget(wap, element.id, (cmpsArr, idx) => cmpsArr.splice(idx, 1))
+        dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
 
