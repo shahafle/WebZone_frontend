@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
 
-        & > :last-child {
+        & > span:last-of-type {
             margin: 0 auto;
             a {
                 height: 35px;

@@ -12,6 +12,9 @@ import { updateWap } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
+import { uploadImage } from "../../../store/editor.action"
+import { SectionStyle } from './SectionStyle';
+
 
 
 
@@ -47,8 +50,11 @@ export function EditAccordion() {
             attrName: target.name,
             attrValue: target.value
         }
-
         dispatch(updateCurrElementAttr(currElement, attr))
+    }
+
+    const onUploadImg = (ev, isBackground) => {
+        dispatch(uploadImage(ev, currElement, isBackground))
     }
 
     if (!currElement) return <p>Choose element</p>
@@ -71,7 +77,7 @@ export function EditAccordion() {
                         <Typography>Image</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <ImageStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                        <ImageStyles element={currElement} onChangeStyle={onChangeStyle} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
             {currElement.type === 'btn' &&
@@ -81,6 +87,15 @@ export function EditAccordion() {
                     </AccordionSummary>
                     <AccordionDetails>
                         <ButtonStyles element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} />
+                    </AccordionDetails>
+                </Accordion>}
+            {currElement.type === 'section' &&
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Section</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
 

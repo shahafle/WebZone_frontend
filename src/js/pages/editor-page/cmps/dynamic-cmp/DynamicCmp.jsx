@@ -1,5 +1,3 @@
-import { FaTrash } from 'react-icons/fa';
-
 import { wapService } from '../../../../services/wap.service'
 import { WapBtn } from './WapBtn';
 import { WapDiv } from './WapDiv';

@@ -1,5 +1,5 @@
 // import { wapElService } from "../services/wap-el.service"
-
+import { uploadImgToCloud } from '../services/cloudinary.service.js';
 
 export function setCurrElement(element) {
    return (dispatch) => {
@@ -20,5 +20,22 @@ export function updateCurrElementAttr(currElement, attr) {
       const { attrName, attrValue } = attr;
       const updatedElement = { ...currElement, [attrName]: attrValue }
       dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement })
+   }
+}
+
+export function uploadImage(ev, element, isBackground) {
+   return async (dispatch) => {
+      if (!ev.target.value) return
+      try {
+         const cloudUrl = await uploadImgToCloud(ev)
+         if (isBackground) {
+            element = { ...element, style: { ...element.style, backgroundImage: `url(${cloudUrl})` } }
+         } else {
+            element.url = cloudUrl;
+         }
+         dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement: element })
+      } catch (err) {
+         console.log(err);
+      }
    }
 }

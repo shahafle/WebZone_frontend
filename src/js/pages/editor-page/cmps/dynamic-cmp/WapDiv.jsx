@@ -1,10 +1,29 @@
-import { FaTrash } from 'react-icons/fa';
 import { DynamicCmp } from './DynamicCmp';
 import { Draggable } from 'react-beautiful-dnd';
 
 export function WapDiv(props) {
    const { cmp, onSetCurrElement, onRemoveElement, currElementId, style, idx } = props
-   console.log(typeof idx);
+
+   if (cmp.isPublished) {
+      return <div
+         style={style}
+         className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
+         {
+            cmp.cmps && cmp.cmps.map(c => {
+               const propsCopy = { ...props }
+               delete propsCopy.cmp
+               return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
+            })
+         }
+
+      </ div >
+
+
+   }
+
+
+
+
    return (<Draggable draggableId={cmp.id} index={idx}>
       {(provided) => {
          return <div  {...provided.draggableProps}
@@ -23,8 +42,7 @@ export function WapDiv(props) {
                   return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
                })
             }
-            <span className='delete-element-btn'>X</span>
-            {/* {cmp.id === currElementId && < FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />} */}
+            {cmp.id === currElementId && <i className='delete-element-btn' onClick={(ev) => onRemoveElement(ev, cmp)}>X</i>}
 
          </ div >
       }}
