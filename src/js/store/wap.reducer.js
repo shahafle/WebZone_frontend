@@ -21,7 +21,7 @@ const initialState = {
                         txt: 'aloha aloha',
                         style: {
                             'textAlign': 'start',
-                            'fontWeight': '800',
+                            'fontWeight': '700',
                             'fontStyle': 'normal',
                             'textDecoration': 'none',
                             'fontSize': '40',
@@ -58,7 +58,7 @@ const initialState = {
                         txt: 'Lorem ipsum',
                         style: {
                             'textAlign': 'start',
-                            'fontWeight': '800',
+                            'fontWeight': '700',
                             'fontStyle': 'normal',
                             'textDecoration': 'none',
                             'fontSize': '40',
@@ -77,13 +77,34 @@ const initialState = {
                             'borderRadius': '0',
                             'width': '100'
                         }
+                    },
+                    {
+                        id: '351dp',
+                        type: 'btn',
+                        url: '',
+                        txt: 'click',
+                        style: {
+                            'borderRadius': '0',
+                            'backgroundColor': '#61a68a',
+                            'color': '#fff6ff',
+                            'textAlign': 'center',
+                            'fontWeight': '700',
+                            'fontStyle': 'normal',
+                            'textDecoration': 'none',
+                            'fontSize': '40',
+                            'color': '#000',
+                            'letterSpacing': '1',
+                            // 'lineHeight': '16',
+                            'textShadow': 'none',
+                            'fontFamily': 'sans-serif'
+                        }
                     }
                 ],
                 "name": "wap-section-1",
                 "style": {}
             }
         ],
-        "isPublic": true
+        "isPublished": true
     }
 }
 

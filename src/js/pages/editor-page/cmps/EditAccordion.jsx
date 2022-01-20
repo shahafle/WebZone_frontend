@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useMemo, useEffect } from 'react';
+import { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -9,9 +9,9 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateWap } from '../../../store/wap.action'
-import { updateCurrElement } from '../../../store/editor.action'
+import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
-import { ButtonStyles } from './ButtonStyles';
+import { ButtonStyles } from './BtnStyles';
 
 
 
@@ -39,7 +39,16 @@ export function EditAccordion() {
             styleName: target.name,
             styleValue: target.value
         }
-        dispatch(updateCurrElement(style))
+        dispatch(updateCurrElementStyle(currElement, style))
+    }
+
+    const onChangeAttr = ({ target }) => {
+        const attr = {
+            attrName: target.name,
+            attrValue: target.value
+        }
+
+        dispatch(updateCurrElementAttr(currElement, attr))
     }
 
     if (!currElement) return <p>Choose element</p>
@@ -47,7 +56,7 @@ export function EditAccordion() {
     return (
         <div className="edit-accordions-container">
 
-            {currElement.type === 'txt' &&
+            {(currElement.type === 'txt' || currElement.type === 'btn') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                         <Typography>Text</Typography>
@@ -71,7 +80,7 @@ export function EditAccordion() {
                         <Typography>Button</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <ButtonStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                        <ButtonStyles element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} />
                     </AccordionDetails>
                 </Accordion>}
 

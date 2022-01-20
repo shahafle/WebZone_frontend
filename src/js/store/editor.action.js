@@ -7,8 +7,19 @@ export function setCurrElement(element) {
    }
 }
 
-export function updateCurrElement(style) {
+export function updateCurrElementStyle(currElement, style) {
    return (dispatch) => {
-      dispatch({ type: 'UPDATE_CURR_ELEMENT', style })
+      const { styleName, styleValue } = style;
+      const updatedElement = { ...currElement, style: { ...currElement.style, [styleName]: styleValue } }
+      dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement })
+   }
+}
+
+export function updateCurrElementAttr(currElement, attr) {
+   return (dispatch) => {
+      console.log('hi');
+      const { attrName, attrValue } = attr;
+      const updatedElement = { ...currElement, [attrName]: attrValue }
+      dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement })
    }
 }
