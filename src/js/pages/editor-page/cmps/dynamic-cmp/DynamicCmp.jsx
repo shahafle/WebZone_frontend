@@ -1,8 +1,8 @@
-import { wapElService } from '../../../../services/wap-el.service'
+import { wapService } from '../../../../services/wap.service'
 
 export function DynamicCmp(props) {
    const { cmp, onSetCurrElement } = props
-   const style = wapElService.getScaleUnits(cmp.style)
+   const style = wapService.getScaleUnits(cmp.style)
    switch (cmp.type) {
       case 'txt':
          return <p style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} >{cmp.txt}</p>

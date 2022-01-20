@@ -1,7 +1,7 @@
 
 
 const initialState = {
-    wapEl: {
+    wap: {
         "_id": "5e28393890dd7201a06d4e44",
         "name": "HairDresser Baluta Marketing Site",
         "imgUrl": "http://res.cloudinary.com/webify/image/upload/v1580021948/coffe_yi0yzf.png",
@@ -89,57 +89,20 @@ const initialState = {
 
 
 
-export function wapElReducer(state = initialState, action) {
+export function wapReducer(state = initialState, action) {
 
     let newState = state;
 
     switch (action.type) {
         case 'SET_WAP':
-            return newState = { ...state, wapEl: [...action.wapEl] };
-        case 'ADD_WAPEL':
-            return newState = { ...state, wapEl: { ...state.wapEl, cmps: [...state.wapEl.cmps, action.wapElToAdd] } };
-        case 'REMOVE_WAPEL':
-            return newState = { ...state, wapEl: state.wapEl.filter(wapEl => wapEl._id !== action.wapElId) };
-        case 'UPDATE_WAPEL':
-            return newState = { ...state, wapEl: { ...action.wap } };
-        // case 'SET_WAPEL_STYLE': {
-        //     const { styleName, styleValue } = action.wapElToUpdate;
-
-        //     newState = JSON.parse(JSON.stringify(state))
-        //     const newCurrElement = { ...newState.currElement, style: { ...newState.currElement.style, [styleName]: styleValue } }
-
-        //     newState = { ...newState, currElement: newCurrElement }
-        //     // findTarget(newState.wapEl, newCurrElement.id, (cmpsArr, idx) => cmpsArr[idx] = newCurrElement)
-        //     return newState
-        // }
+            return newState = { ...state, wap: [...action.wap] };
+        case 'UPDATE_WAP':
+            return newState = { ...state, wap: { ...action.wap } };
+        case 'ADD_ELEMENT':
+            return newState = { ...state, wap: { ...state.wap, cmps: [...state.wap.cmps, action.elementToAdd] } };
+        case 'REMOVE_ELEMENT':
+            return newState = { ...state, wap: state.wap.filter(element => element._id !== action.elementId) };
         default:
             return newState;
     }
 }
-
-
-
-
-
-        // case 'SET_WAPEL_STYLE':
-        //     newState = {
-        //         ...state,
-        //         wapEl: {
-        //             ...state.wapEl,
-        //             sections: state.wapEl.sections.map(section => {
-        //                 return (section.id !== sectionId)
-        //                     ? section
-        //                     : {
-        //                         ...section,
-        //                         cmps: section.cmps.map(cmp => {
-        //                             return (cmp.id !== elementId)
-        //                                 ? cmp
-        //                                 : {
-        //                                     ...cmp,
-        //                                     style: { ...cmp.style, [styleName]: styleValue }
-        //                                 }
-        //                         })
-        //                     }
-        //             })
-        //         }
-        //     }

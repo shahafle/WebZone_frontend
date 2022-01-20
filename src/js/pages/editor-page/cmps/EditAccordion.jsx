@@ -8,8 +8,8 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateWapEl } from '../../../store/wap-el.action'
-import { updateCurrWapEl } from '../../../store/editor.action'
+import { updateWap } from '../../../store/wap.action'
+import { updateCurrElement } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './ButtonStyles';
 
@@ -25,12 +25,12 @@ export function EditAccordion() {
     };
 
     const currElement = useSelector(state => state.editorModule.currElement)
-    const wap = useSelector(state => state.wapElModule.wapEl)
+    const wap = useSelector(state => state.wapModule.wap)
     const dispatch = useDispatch()
 
     useEffect(() => {
         if (currElement) {
-            dispatch(updateWapEl(wap, currElement))
+            dispatch(updateWap(wap, currElement))
         }
     }, [currElement])
 
@@ -39,7 +39,7 @@ export function EditAccordion() {
             styleName: target.name,
             styleValue: target.value
         }
-        dispatch(updateCurrWapEl(style))
+        dispatch(updateCurrElement(style))
     }
 
     if (!currElement) return <p>Choose element</p>

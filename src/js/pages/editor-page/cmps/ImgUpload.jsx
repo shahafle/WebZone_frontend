@@ -1,4 +1,4 @@
-import { wapElService } from '../../../services/wap-el.service'
+// import { wapService } from '../../../services/wap.service'
 
 export function ImgUpload({ elementStyle, onChangeStyle }) {
 

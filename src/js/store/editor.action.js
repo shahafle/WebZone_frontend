@@ -1,4 +1,4 @@
-import { wapElService } from "../services/wap-el.service"
+// import { wapElService } from "../services/wap-el.service"
 
 
 export function setCurrElement(element) {
@@ -7,7 +7,7 @@ export function setCurrElement(element) {
    }
 }
 
-export function updateCurrWapEl(style) {
+export function updateCurrElement(style) {
    return (dispatch) => {
       dispatch({ type: 'UPDATE_CURR_ELEMENT', style })
    }

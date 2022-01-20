@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import { wapElReducer } from './wap-el.reducer.js';
+import { wapReducer } from './wap.reducer.js';
 import { editorReducer } from './editor.reducer.js';
 
 const rootReducer = combineReducers({
-    wapElModule: wapElReducer,
+    wapModule: wapReducer,
     editorModule: editorReducer,
 })
 

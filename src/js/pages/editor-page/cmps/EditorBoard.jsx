@@ -6,7 +6,7 @@ export function EditorBoard() {
 
    const dispatch = useDispatch()
 
-   const wap = useSelector(state => state.wapElModule.wapEl)
+   const wap = useSelector(state => state.wapModule.wap)
 
    const onSetCurrElement = (ev, cmp) => {
       ev.stopPropagation()

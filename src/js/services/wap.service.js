@@ -1,7 +1,7 @@
 import { asyncStorageService } from './async-storage.service.js';
 
 
-export const wapElService = {
+export const wapService = {
     query,
     getById,
     remove,
@@ -144,12 +144,11 @@ function getScaleUnits(style) {
     const pxFields = [
         'fontSize', 'letterSpacing', 'lineHeight', 'paddingBlockStart',
         'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd'];
-    const precentFields = ['width', 'borderRadius']
+    const percentFields = ['width', 'borderRadius']
     const styleCopy = JSON.parse(JSON.stringify(style))
     for (let attr in styleCopy) {
         if (pxFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + 'px'
-        else if (precentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%'
-        // styleCopy[attr] = (pxFields.includes(attr)) ? styleCopy[attr] + 'px' : styleCopy[attr];
+        else if (percentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%'
     }
 
     return styleCopy
