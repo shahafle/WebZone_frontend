@@ -5,9 +5,25 @@
    box-shadow: grey 0 0 5px 2px;
    align-self: flex-start;
 
+   *{
+      position:relative
+   }
+
    &:hover{
       cursor: pointer;
       // cursor: grab;
+   }
+
+   .delete-element-btn{
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+      border-top-right-radius:0;
+      border-top-left-radius:0;
+      border-bottom-right-radius:0;
+      border-bottom-left-radius:100%;
+      background: red;
    }
 
    .edit-active ,.element-hover{

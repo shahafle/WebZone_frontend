@@ -15,7 +15,7 @@ export function WapDiv(props) {
             onMouseOver={({ target }) => { target.classList.add('element-hover') }}
             style={style}
             className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
-            asdsad
+            {/* asdsad */}
             {
                cmp.cmps && cmp.cmps.map(c => {
                   const propsCopy = { ...props }
@@ -23,7 +23,8 @@ export function WapDiv(props) {
                   return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
                })
             }
-            {cmp.id === currElementId && < FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />}
+            <span className='delete-element-btn'>X</span>
+            {/* {cmp.id === currElementId && < FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />} */}
 
          </ div >
       }}
