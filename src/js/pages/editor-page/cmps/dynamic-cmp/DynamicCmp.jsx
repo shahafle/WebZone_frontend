@@ -1,10 +1,10 @@
 import { FaTrash } from 'react-icons/fa';
 
-import { wapElService } from '../../../../services/wap-el.service'
+import { wapService } from '../../../../services/wap.service'
 
 export function DynamicCmp(props) {
    const { cmp, onSetCurrElement, onDeleteElement } = props
-   const style = wapElService.getScaleUnits(cmp.style)
+   const style = wapService.getScaleUnits(cmp.style)
    switch (cmp.type) {
       case 'txt':
          return <div>
