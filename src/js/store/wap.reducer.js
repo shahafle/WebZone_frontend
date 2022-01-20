@@ -10,13 +10,15 @@ const initialState = {
             "username": "Hekro Special"
         },
         "cmps": [
+
+
             {
                 "id": "37rtg",
                 "type": "section",
-                "category": "wap-header",
+                "category": "wap-hero",
                 "cmps": [
                     {
-                        id: '1jh21',
+                        id: '7shhcj',
                         type: 'txt',
                         txt: 'aloha aloha',
                         style: {
@@ -33,76 +35,116 @@ const initialState = {
                         }
                     },
                     {
-                        id: '98asd',
+                        id: '77shhdg',
                         type: 'img',
-                        url: 'https://m.media-amazon.com/images/I/61Jigwd1kKL._AC_SX425_.jpg',
+                        url: 'https://media.istockphoto.com/photos/hot-air-balloons-flying-over-the-botan-canyon-in-turkey-picture-id1297349747?b=1&k=20&m=1297349747&s=170667a&w=0&h=oH31fJty_4xWl_JQ4OIQWZKP8C6ji9Mz7L4XmEnbqRU=',
                         style: {
                             'borderRadius': '0',
                             'width': '100'
                         }
-                    }
-                ],
-                "name": "wap-header-1",
-                "style": {
+                    },
 
-                }
-            },
-            {
-                "id": "wc03",
-                "type": "section",
-                "category": "wap-header",
-                "cmps": [
-                    {
-                        id: 'as21d',
-                        type: 'txt',
-                        txt: 'Lorem ipsum',
-                        style: {
-                            'textAlign': 'start',
-                            'fontWeight': '700',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '40',
-                            'color': '#000',
-                            'letterSpacing': '1',
-                            // 'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif',
-                        }
-                    },
-                    {
-                        id: '5a5as',
-                        type: 'img',
-                        url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
-                        style: {
-                            'borderRadius': '0',
-                            'width': '100'
-                        }
-                    },
-                    {
-                        id: '351dp',
-                        type: 'btn',
-                        url: '',
-                        txt: 'click',
-                        style: {
-                            'borderRadius': '0',
-                            'backgroundColor': '#61a68a',
-                            'color': '#fff6ff',
-                            'textAlign': 'center',
-                            'fontWeight': '700',
-                            'fontStyle': 'normal',
-                            'textDecoration': 'none',
-                            'fontSize': '40',
-                            'color': '#000',
-                            'letterSpacing': '1',
-                            // 'lineHeight': '16',
-                            'textShadow': 'none',
-                            'fontFamily': 'sans-serif'
-                        }
-                    }
+
                 ],
-                "name": "wap-header-2",
+                "name": "wap-hero-test-2",
                 "style": {}
-            },
+            }
+
+
+
+            // {
+            //     "id": "37rtg",
+            //     "type": "section",
+            //     "category": "wap-header",
+            //     "cmps": [
+            //         {
+            //             id: '1jh21',
+            //             type: 'txt',
+            //             txt: 'aloha aloha',
+            //             style: {
+            //                 'textAlign': 'start',
+            //                 'fontWeight': '700',
+            //                 'fontStyle': 'normal',
+            //                 'textDecoration': 'none',
+            //                 'fontSize': '40',
+            //                 'color': '#000',
+            //                 'letterSpacing': '1',
+            //                 // 'lineHeight': '16',
+            //                 'textShadow': 'none',
+            //                 'fontFamily': 'sans-serif',
+            //             }
+            //         },
+            //         {
+            //             id: '98asd',
+            //             type: 'img',
+            //             url: 'https://m.media-amazon.com/images/I/61Jigwd1kKL._AC_SX425_.jpg',
+            //             style: {
+            //                 'borderRadius': '0',
+            //                 'width': '100'
+            //             }
+            //         }
+            //     ],
+            //     "name": "wap-header-1",
+            //     "style": {
+
+            //     }
+            // },
+            // {
+            //     "id": "wc03",
+            //     "type": "section",
+            //     "category": "wap-header",
+            //     "cmps": [
+            //         {
+            //             id: 'as21d',
+            //             type: 'txt',
+            //             txt: 'Lorem ipsum',
+            //             style: {
+            //                 'textAlign': 'start',
+            //                 'fontWeight': '700',
+            //                 'fontStyle': 'normal',
+            //                 'textDecoration': 'none',
+            //                 'fontSize': '40',
+            //                 'color': '#000',
+            //                 'letterSpacing': '1',
+            //                 // 'lineHeight': '16',
+            //                 'textShadow': 'none',
+            //                 'fontFamily': 'sans-serif',
+            //             }
+            //         },
+            //         {
+            //             id: '5a5as',
+            //             type: 'img',
+            //             url: 'https://www.cdc.gov/healthypets/images/covid/dog-and-cat.jpg?_=46111',
+            //             style: {
+            //                 'borderRadius': '0',
+            //                 'width': '100'
+            //             }
+            //         },
+            //         {
+            //             id: '351dp',
+            //             type: 'btn',
+            //             url: '',
+            //             txt: 'click',
+            //             style: {
+            //                 'borderRadius': '0',
+            //                 'backgroundColor': '#61a68a',
+            //                 'color': '#fff6ff',
+            //                 'textAlign': 'center',
+            //                 'fontWeight': '700',
+            //                 'fontStyle': 'normal',
+            //                 'textDecoration': 'none',
+            //                 'fontSize': '40',
+            //                 'color': '#000',
+            //                 'letterSpacing': '1',
+            //                 // 'lineHeight': '16',
+            //                 'textShadow': 'none',
+            //                 'fontFamily': 'sans-serif'
+            //             }
+            //         }
+            //     ],
+            //     "name": "wap-header-2",
+            //     "style": {}
+            // },
         ],
         "isPublished": true
     }
