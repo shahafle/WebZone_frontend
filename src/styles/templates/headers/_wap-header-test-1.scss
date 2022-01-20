@@ -1,0 +1,9 @@
+.wap-header-test-1 {
+    background-color: wheat;
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+        align-items: center;
+    }
+}
