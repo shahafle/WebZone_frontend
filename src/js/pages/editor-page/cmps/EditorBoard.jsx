@@ -8,6 +8,7 @@ export function EditorBoard() {
    const dispatch = useDispatch()
 
    const wap = useSelector(state => state.wapModule.wap)
+   const currElement = useSelector(state => state.editorModule.currElement)
 
    const onSetCurrElement = (ev, cmp) => {
       ev.stopPropagation()
@@ -20,7 +21,7 @@ export function EditorBoard() {
    }
 
    return <section className='editor-board'>
-      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onRemoveElement={onRemoveElement} onSetCurrElement={onSetCurrElement} cmp={cmp} />
+      {wap.cmps.map((cmp, i) => <DynamicCmp key={i} onRemoveElement={onRemoveElement} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} />
       )}
    </section>
 }

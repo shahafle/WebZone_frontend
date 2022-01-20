@@ -4,26 +4,55 @@ import { wapService } from '../../../../services/wap.service'
 import { WapBtn } from './WapBtn';
 
 export function DynamicCmp(props) {
-   const { cmp, onSetCurrElement, onRemoveElement } = props
+
+   const { cmp, onSetCurrElement, onRemoveElement, currElementId } = props
    const style = wapService.getScaleUnits(cmp.style)
    switch (cmp.type) {
       case 'txt':
-         return <div>
-            <p style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} >{cmp.txt}</p>
+         return <p style={style}
+            className={cmp.id === currElementId ? 'edit-active' : ''}
+            onClick={(ev) => onSetCurrElement(ev, cmp)}
+            onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
+            onMouseOver={({ target }) => { target.classList.add('element-hover') }}>
+            {cmp.txt}
             <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
-         </div>
+         </p>
+
+
+
       case 'img':
          return <div>
-            <img style={style} src={cmp.url} onClick={(ev) => onSetCurrElement(ev, cmp)} alt="No img" />
+            <img style={style}
+               className={cmp.id === currElementId ? 'edit-active' : ''}
+               src={cmp.url}
+               onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
+               onMouseOver={({ target }) => { target.classList.add('element-hover') }}
+               onClick={(ev) => onSetCurrElement(ev, cmp)} alt="No img" />
             <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} />
          </div>
+
+
       case 'btn':
          return <WapBtn {...props} style={style} />
+
+
       case 'section':
-         return <div onClick={(ev) => onSetCurrElement(ev, cmp)} style={style} className={cmp.name || ''} >
-            {cmp.cmps && cmp.cmps.map(c => <DynamicCmp key={c.id} cmp={c} onSetCurrElement={onSetCurrElement} onRemoveElement={onRemoveElement} />)}
+         return <div onClick={(ev) => onSetCurrElement(ev, cmp)}
+            onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
+            onMouseOver={({ target }) => { target.classList.add('element-hover') }}
+            style={style}
+            className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
+
+            {
+               cmp.cmps && cmp.cmps.map(c => {
+                  const propsCopy = { ...props }
+                  delete propsCopy.cmp
+                  return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
+               })
+            }
             {/* <FaTrash onClick={(ev) => onRemoveElement(ev, cmp)} /> */}
-         </ div>
+
+         </ div >
 
       default:
          break;
