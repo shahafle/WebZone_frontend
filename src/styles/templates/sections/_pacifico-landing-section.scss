@@ -1,0 +1,19 @@
+.wap-section-pacifico-landing {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .pacifico-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pacifico-main {
+        display: flex;
+        flex-direction: column;
+
+        & > :last-child {
+            margin: 0 auto;
+        }
+    }
+}
