@@ -12,7 +12,7 @@ const initialState = {
                 "id": "dhetv6",
                 "type": "section",
                 "category": "wap-section",
-                "name": "wap-section-pacifico-landing",
+                "name": "wap-section-1",
                 "style": {
                     backgroundImage: `url('https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')`,
                 },
