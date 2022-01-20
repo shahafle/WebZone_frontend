@@ -16,7 +16,6 @@ export function editorReducer(state = initialState, action) {
          let { styleName, styleValue } = action.style;
          return newState = { ...state, currElement: { ...state.currElement, style: { ...state.currElement.style, [styleName]: styleValue } } };
       }
-
       default:
          return newState
    }

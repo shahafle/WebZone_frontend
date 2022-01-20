@@ -79,13 +79,14 @@ const initialState = {
                         }
                     }
                 ],
-                "name": "wap-section-1",
+                "name": "wap-header-2",
                 "style": {}
-            }
+            },
         ],
         "isPublic": true
     }
 }
+
 
 
 
@@ -100,8 +101,6 @@ export function wapReducer(state = initialState, action) {
             return newState = { ...state, wap: { ...action.wap } };
         case 'ADD_ELEMENT':
             return newState = { ...state, wap: { ...state.wap, cmps: [...state.wap.cmps, action.elementToAdd] } };
-        case 'REMOVE_ELEMENT':
-            return newState = { ...state, wap: state.wap.filter(element => element._id !== action.elementId) };
         default:
             return newState;
     }
