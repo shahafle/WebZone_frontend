@@ -1,13 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 // import { useHistory } from "react-router-dom";
+
+import { shouldShowLogin } from '../store/system.action';
+
+import userProfile from '../../assets/imgs/user.png';
+
+import { FcGoogle } from 'react-icons/fc'
+import { FaFacebookF } from 'react-icons/fa'
 
 import { Screen } from './Screen';
 
 export function Login() {
 
     const [credentials, setCredentials] = useState({ username: '', password: '' });
-    // const history = useHistory();
 
+    const dispatch = useDispatch();
+    // const history = useHistory();
     const inputRef = useRef();
 
     useEffect(() => {
@@ -32,8 +41,10 @@ export function Login() {
     return (
         <Screen>
             <section className="login">
-                <i>&times;</i>
-                <div className="pfp"></div>
+                <i className="flex justify-center align-center" onClick={() => dispatch(shouldShowLogin(false))}>&times;</i>
+                <div className="pfp">
+                    <img src={userProfile} alt="" />
+                </div>
                 <form className="flex column" onSubmit={onLogin}>
                     <div className="wrapper flex column">
                         <label htmlFor="username">Username</label>
@@ -47,13 +58,15 @@ export function Login() {
 
                     <button className="align-self-start">Sign in</button>
                 </form>
-                <div>
+                <div className="google-login flex align-center">
+                    <div className="icon flex justify-center align-center"><FcGoogle /></div>
                     <button>Continue with Google</button>
                 </div>
-                <div>
+                <div className="facebook-login flex align-center">
+                    <div className="icon flex justify-center align-center"><FaFacebookF /></div>
                     <button>Continue with Facebook</button>
                 </div>
-                <p>Not a member yet? <span>Sign up</span></p>
+                <p>Don't have an account yet? <span>Sign up</span></p>
             </section>
         </Screen>
     )

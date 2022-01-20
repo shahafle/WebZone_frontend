@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 import { routes } from './routes';
 
@@ -8,6 +9,9 @@ import { Login } from './js/cmps/Login';
 
 
 export function App() {
+
+  const isLoginShown = useSelector(state => state.systemModule.isLoginShown);
+
   return (
     <section className="main-app">
       <AppHeader />
@@ -15,7 +19,7 @@ export function App() {
         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
       </Routes>
       {/* <AppFooter /> */}
-      {/* <Login /> */}
+      {isLoginShown && <Login />}
     </section>
   );
 }

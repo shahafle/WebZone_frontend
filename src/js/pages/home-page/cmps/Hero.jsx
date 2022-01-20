@@ -8,7 +8,7 @@ export function Hero() {
                 <div className="hero-text flex column">
                     <h1>Build & Design your own website</h1>
                     <h3>Our platform was designed by top notch developers in order to provide you with the best experience possible.</h3>
-                    <p>Pick up a premade website template to dive deep in the world of web design and explore the platform.</p>
+                    <p>Pick up a premade website template and dive deep in the world of web design and explore the platform.</p>
                 </div>
                 <img src={heroSvg} alt="Hero Image" />
             </div>
