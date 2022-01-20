@@ -4,7 +4,6 @@ import { Draggable } from 'react-beautiful-dnd';
 
 export function WapDiv(props) {
    const { cmp, onSetCurrElement, onRemoveElement, currElementId, style, idx } = props
-   console.log(typeof idx);
    return (<Draggable draggableId={cmp.id} index={idx}>
       {(provided) => {
          return <div  {...provided.draggableProps}

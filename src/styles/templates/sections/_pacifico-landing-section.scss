@@ -2,18 +2,34 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 500px;
 
     .pacifico-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        span {
+            margin-inline-end: 10px;
+            margin-inline-start: 10px;
+        }
     }
+
     .pacifico-main {
         display: flex;
         flex-direction: column;
 
+        span {
+            margin-inline-end: 10px;
+            margin-inline-start: 10px;
+            & > :first-child {
+                margin-top: 1.5rem;
+            }
+        }
+
         & > :last-child {
-            margin: 0 auto;
+            margin: auto;
+            margin-top: 3rem;
             a {
                 height: 35px;
                 border: solid 1px black;

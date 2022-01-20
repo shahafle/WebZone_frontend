@@ -65,8 +65,8 @@ const initialState = {
                                 'fontSize': '40',
                                 'letterSpacing': '1',
                                 // 'lineHeight': '16',
-                                'textShadow': 'none',
-                                'fontFamily': 'Montserrat',
+                                'textShadow': '5px 5px 3px black',
+                                'fontFamily': 'kalam',
                             }
                         },
                         {
@@ -87,11 +87,11 @@ const initialState = {
                                         'fontWeight': '400',
                                         'fontStyle': 'normal',
                                         'textDecoration': 'none',
-                                        'fontSize': '16',
+                                        'fontSize': '18',
                                         'letterSpacing': '1',
                                         // 'lineHeight': '16',
-                                        'textShadow': 'none',
-                                        'fontFamily': 'sans-serif',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
                                     }
                                 },
                                 {
@@ -107,11 +107,11 @@ const initialState = {
                                         'fontWeight': '400',
                                         'fontStyle': 'normal',
                                         'textDecoration': 'none',
-                                        'fontSize': '16',
+                                        'fontSize': '18',
                                         'letterSpacing': '1',
                                         // 'lineHeight': '16',
-                                        'textShadow': 'none',
-                                        'fontFamily': 'sans-serif',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
                                     }
                                 },
                                 {
@@ -127,11 +127,11 @@ const initialState = {
                                         'fontWeight': '400',
                                         'fontStyle': 'normal',
                                         'textDecoration': 'none',
-                                        'fontSize': '16',
+                                        'fontSize': '18',
                                         'letterSpacing': '1',
                                         // 'lineHeight': '16',
-                                        'textShadow': 'none',
-                                        'fontFamily': 'sans-serif',
+                                        'textShadow': '5px 5px 3px black',
+                                        'fontFamily': 'bitter',
                                     }
                                 },
                             ]
@@ -151,33 +151,34 @@ const initialState = {
                                 "style": {
                                     'borderRadius': '0',
                                     'color': 'white',
-                                    'textAlign': 'start',
+                                    'textAlign': 'center',
+                                    'fontWeight': '400',
+                                    'fontStyle': 'normal',
+                                    'textDecoration': 'none',
+                                    'fontSize': '65',
+                                    'letterSpacing': '1',
+                                    // 'lineHeight': '16',
+                                    'textShadow': '1px 1px 3px black',
+                                    'fontFamily': 'bitter',
+                                }
+                            },
+                            {
+                                "id": '127shsa',
+                                "type": 'txt',
+                                "txt": `You don\'t have to be rich to travel well.
+                                 do it here, in Pacifico.`,
+                                "style": {
+                                    'borderRadius': '0',
+                                    'color': 'white',
+                                    'textAlign': 'center',
                                     'fontWeight': '400',
                                     'fontStyle': 'normal',
                                     'textDecoration': 'none',
                                     'fontSize': '30',
                                     'letterSpacing': '1',
                                     // 'lineHeight': '16',
-                                    'textShadow': 'none',
-                                    'fontFamily': 'sans-serif',
-                                }
-                            },
-                            {
-                                "id": '127shsa',
-                                "type": 'txt',
-                                "txt": 'You don\'t have to be rich to travel well. do it here ,in Pacifico.',
-                                "style": {
-                                    'borderRadius': '0',
-                                    'color': 'white',
-                                    'textAlign': 'start',
-                                    'fontWeight': '400',
-                                    'fontStyle': 'normal',
-                                    'textDecoration': 'none',
-                                    'fontSize': '16',
-                                    'letterSpacing': '1',
-                                    // 'lineHeight': '16',
-                                    'textShadow': 'none',
-                                    'fontFamily': 'sans-serif',
+                                    'textShadow': '1px 1px 3px black',
+                                    'fontFamily': 'bitter'
                                 }
                             },
                             {
@@ -195,11 +196,11 @@ const initialState = {
                                     'fontWeight': '400',
                                     'fontStyle': 'normal',
                                     'textDecoration': 'none',
-                                    'fontSize': '16',
+                                    'fontSize': '30',
                                     'letterSpacing': '1',
                                     // 'lineHeight': '16',
                                     'textShadow': 'none',
-                                    'fontFamily': 'sans-serif',
+                                    'fontFamily': 'bitter'
                                 }
                             },
                         ]
