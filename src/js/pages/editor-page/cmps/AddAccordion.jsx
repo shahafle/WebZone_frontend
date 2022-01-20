@@ -14,6 +14,58 @@ import { wapService } from '../../../services/wap.service'
 
 
 
+
+// Accordions
+
+export function AddAccordion() {
+    const [expanded, setExpanded] = React.useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panel : false);
+    };
+
+    const templateSections = wapService.getTemplateSections()
+    const sectionCategories = wapService.getSectionsCategories()
+    // const wap = useSelector(state => state.wapModule.wap)
+    const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(updateWap(wap, currElement))
+    // }, [currElement])
+
+
+
+
+    const onAddElement = (section) => {
+        const elementToAdd = section
+
+        dispatch(addElement(elementToAdd))
+    }
+
+
+    return (
+        <div>
+            {sectionCategories.map((category, i) => {
+                return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
+                    <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
+                        <Typography style={{ textTransform: 'capitalize' }}>{category.substring(4, category.length)}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        {templateSections.filter(section => section.category === category).map(section => {
+                            return <div key={section.id}>
+                                <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography>
+                            </div>
+                        })
+                        }
+                    </AccordionDetails>
+                </Accordion>
+            })
+            }
+        </div>
+    );
+}
+
+
 // Accordion Styling
 
 const Accordion = styled((props) => (
@@ -55,55 +107,3 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
     padding: `${theme.spacing(2)} 0`,
 }));
 
-
-
-// Accordions
-
-export function AddAccordion() {
-    const [expanded, setExpanded] = React.useState('panel1');
-
-    const handleChange = (panel) => (event, newExpanded) => {
-        setExpanded(newExpanded ? panel : false);
-    };
-
-    const templateSections = wapService.getTemplateSections()
-    const sectionCategories = wapService.getSectionsCategories()
-    // const wap = useSelector(state => state.wapModule.wap)
-    const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     dispatch(updateWap(wap, currElement))
-    // }, [currElement])
-
-
-
-
-    const onAddElement = (section) => {
-        const elementToAdd = section
-
-        dispatch(addElement(elementToAdd))
-    }
-
-
-    return (
-        <div>
-            {sectionCategories.map((category, i) => {
-                return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
-                    <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
-                        <Typography>{category.substring(4, category.length)}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        {templateSections.filter(section => section.category === category).map(section => {
-                            return <div key={section.id}>
-                                <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography>
-                            </div>
-                        })
-                        }
-                    </AccordionDetails>
-                </Accordion>
-            })
-            }
-
-        </div>
-    );
-}

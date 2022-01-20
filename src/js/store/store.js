@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 
 import { wapReducer } from './wap.reducer.js';
 import { editorReducer } from './editor.reducer.js';
+import { systemReducer } from './system.reducer.js';
 
 const rootReducer = combineReducers({
     wapModule: wapReducer,
     editorModule: editorReducer,
+    systemModule: systemReducer,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
