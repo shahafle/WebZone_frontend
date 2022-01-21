@@ -1,4 +1,6 @@
 import { storageService } from './storage.service.js';
+import { wapService } from './wap.service.js';
+import { wapTemplate_1 } from '../../templates/wap-template-1';
 
 export const asyncStorageService = {
     query,
@@ -8,11 +10,11 @@ export const asyncStorageService = {
     remove,
 }
 
-const ENTITY_STORAGE_KEY = 'bricksDB';
+const ENTITY_STORAGE_KEY = 'wapDB';
 
 ///////////////////////// This file is a demo server with its service combined in one /////////////////////////
 
-// entityStorageKey is the local storage key (ENTITY_STORAGE_KEY), in brickService we pass it as if it was the url of the server in a xhr request.
+// entityStorageKey is the local storage key (ENTITY_STORAGE_KEY), in wapService we pass it as if it was the url of the server in a xhr request.
 
 
 // Get entities
@@ -39,12 +41,12 @@ async function remove(entityStorageKey, entityId) {
 
 // Add a new entity
 async function post(entityStorageKey, entityToAdd) {
-    // newEntity._id = utilService.getRandomId();
-    const newEntity = _createEntity(entityToAdd);
+    entityToAdd._id = wapService.getRandomId();
+    // const newEntity = _createEntity(newEntity);
     const entities = await query(entityStorageKey);
-    entities.push(newEntity);
+    entities.push(entityToAdd);
     _saveEntitiesToStorage(entityStorageKey, entities);
-    return newEntity;
+    return entityToAdd;
 }
 
 // Update an existing entity
@@ -63,8 +65,8 @@ async function put(entityStorageKey, updatedEntity) {
 function _createEntities() {
     const entities = [];
 
-    entities.push(_createEntity());
-    entities.push(_createEntity());
+    entities.push(wapTemplate_1);
+    // entities.push(_createEntity());
 
     _saveEntitiesToStorage(ENTITY_STORAGE_KEY, entities);
 
@@ -73,7 +75,13 @@ function _createEntities() {
 
 function _createEntity() {
     return {
-
+        "name": "new webApp",
+        "createdBy": {
+            "_id": "5e26e0b718a0891d4c995527",
+            "username": "Username"
+        },
+        "cmps": [],
+        "isPublished": false
     }
 }
 

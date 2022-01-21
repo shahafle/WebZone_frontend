@@ -5,8 +5,7 @@ export const wapService = {
     query,
     getById,
     remove,
-    post,
-    put,
+    save,
     getScaleUnits,
     findTarget,
     getTemplateSections,
@@ -324,24 +323,26 @@ function getSectionsCategories() {
 const STORAGE_KEY = 'wapElsDB'
 
 function query() {
+
     return asyncStorageService.query(STORAGE_KEY)
 }
 
-function getById(wapElId) {
-    return asyncStorageService.get(STORAGE_KEY, wapElId);
+async function getById(wapId) {
+    return await asyncStorageService.get(STORAGE_KEY, wapId);
 }
 
-function remove(wapElId) {
-    return asyncStorageService.remove(STORAGE_KEY, wapElId);
+function remove(wapId) {
+    return asyncStorageService.remove(STORAGE_KEY, wapId);
 }
 
-function post(wapElToAdd) {
-    return asyncStorageService.post(STORAGE_KEY, wapElToAdd);
+function save(wap) {
+    if (wap._id) {
+        return asyncStorageService.put(STORAGE_KEY, wap);
+    } else {
+        return asyncStorageService.post(STORAGE_KEY, wap);
+    }
 }
 
-function put(wapElToUpdate) {
-    return asyncStorageService.put(STORAGE_KEY, wapElToUpdate);
-}
 
 function getScaleUnits(style) {
     const pxFields = [
