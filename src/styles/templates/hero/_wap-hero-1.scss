@@ -16,6 +16,10 @@
             margin: 0 auto;
             text-align: center;
 
+            & div {
+                margin-top: 1rem;
+            }
+
             a {
                 padding: 5px 10px;
             }

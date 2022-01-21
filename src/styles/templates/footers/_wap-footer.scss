@@ -1,0 +1,11 @@
+.wap-footer-1 {
+    background-color: #1b1b1b;
+
+    & > span {
+        & > div {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+}
