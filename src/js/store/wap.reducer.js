@@ -29,8 +29,8 @@ const initialState = {
             {
                 "id": "dhetv6",
                 "type": "container",
-                "category": "wap-section",
-                "name": "wap-section-1",
+                "category": "wap-hero",
+                "name": "wap-hero-1",
                 "style": {
                     "backgroundImage": "url(\"https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")",
                 },
@@ -38,7 +38,6 @@ const initialState = {
                     {
                         "id": "sahd6dd",
                         "type": "container",
-                        "name": "pacifico-header",
                         "style": {},
                         "cmps": [
                             {
@@ -104,7 +103,6 @@ const initialState = {
                     {
                         "id": "8shjhs",
                         "type": "container",
-                        "name": "pacifico-main",
                         "style": {},
                         "cmps": [
                             {
@@ -124,8 +122,7 @@ const initialState = {
                             {
                                 "id": "127shsa",
                                 "type": "txt",
-                                "txt": `You don\"t have to be rich to travel well.
-                                 do it here, in Pacifico.`,
+                                "txt": `You don\'t have to be rich to travel well.`,
                                 "style": {
                                     ...txtStyle,
                                     "color": "white",
@@ -141,13 +138,13 @@ const initialState = {
                                 "type": "btn",
                                 "url": "https://www.google.com",
                                 "txt": "Order now",
-                                "name": "orderBtn",
                                 "style": {
                                     ...btnStyle,
                                     "backgroundColor": "#f1ffff",
                                     "textAlign": "center",
                                     "fontSize": "30",
-                                    "fontFamily": "bitter"
+                                    "fontFamily": "bitter",
+                                    "borderRadius": '1000'
                                 }
                             },
                         ]
