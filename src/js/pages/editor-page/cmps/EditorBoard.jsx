@@ -15,10 +15,10 @@ export function EditorBoard() {
       const editorWidth = sectionRef.current.offsetWidth;
 
       if (editorWidth < 600) return 'media-600';
-       else if (editorWidth < 800) return 'media-800';
-       else if (editorWidth < 1000) return 'media-1000';
-       else if (editorWidth < 1200) return 'media-1200';
-       else return '';
+      else if (editorWidth < 800) return 'media-800';
+      else if (editorWidth < 1000) return 'media-1000';
+      else if (editorWidth < 1200) return 'media-1200';
+      else return '';
    }
 
    const [mediaClass, setMediaClass] = useState('');
@@ -40,15 +40,18 @@ export function EditorBoard() {
    }
 
    const onDragEnd = (result) => {
+      // console.log('end', result);
    }
 
 
-   return <DragDropContext onDragEnd={onDragEnd}>
+   return <DragDropContext onDragEnd={onDragEnd} onDragStart={(res) => { }}>
       <Droppable droppableId='156'>
          {provided => {
-            return <section className='editor-board'
+            console.log('render droppable');
+            return <section className='editor-board' style={{ minHeight: "300px" }}
+               {...provided.droppableProps}
                ref={provided.innerRef}
-               {...provided.droppableProps}>
+            >
 
                {wap.cmps.map((cmp, i) =>
                   <DynamicCmp key={i} idx={i} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} />
