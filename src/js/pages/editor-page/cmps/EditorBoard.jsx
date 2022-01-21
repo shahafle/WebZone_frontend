@@ -45,13 +45,12 @@ export function EditorBoard() {
 
       if (!destination) return;
 
-      if (destination.droppableId === source.droppableId &&
-         destination.index === source.index) return;
+      if (destination.index === source.index) return;
 
       dispatch(switchElement(wap, res))
    }
 
-
+   // console.log(wap);
    return <DragDropContext onDragEnd={onDragEnd} onDragStart={(res) => { }}>
       <Droppable droppableId='156'>
          {provided => {

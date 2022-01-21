@@ -1,19 +1,19 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
 export const wapCard_1_2 = {
-    "id": "7C2hdg6",
+    "id": "sdfsdf56",
     "type": "container",
     "category": "wap-card",
     "name": "wap-card-1",
     "style": { ...containerStyle, "paddingBlock": "100", "paddingInline": "100" },
     "cmps": [
         {
-            "id": "sd9iF",
+            "id": "sd9jiF",
             "type": "container",
             "style": { ...containerStyle },
             "cmps": [{
 
-                "id": "Ddjs9",
+                "id": "Ddgjs9",
                 "type": "txt",
                 "txt": "Explore the wildlife",
                 "style": {
@@ -23,7 +23,7 @@ export const wapCard_1_2 = {
 
             },
             {
-                "id": "dsj8F",
+                "id": "dsj8F5f",
                 "type": "txt",
                 "txt": "Join our guided tours and you will be rewarded with life-changing experiences",
                 "style": {
@@ -34,7 +34,7 @@ export const wapCard_1_2 = {
         },
 
         {
-            "id": "DFKGOs",
+            "id": "DFzKGOs",
             "type": "container",
             "style": { ...containerStyle, },
             "cmps": [{
