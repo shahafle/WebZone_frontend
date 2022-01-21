@@ -2,12 +2,12 @@ import { DynamicCmp } from './DynamicCmp';
 import { Draggable } from 'react-beautiful-dnd';
 
 export function WapDiv(props) {
-   const { cmp, onSetCurrElement, onRemoveElement, currElementId, style, idx } = props
+   const { cmp, onSetCurrElement, currElementId, style, idx, mediaClass } = props
 
    if (cmp.isPublished) {
       return <div
          style={style}
-         className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
+         className={`${mediaClass} ${cmp.name || ''}`}>
          {
             cmp.cmps && cmp.cmps.map(c => {
                const propsCopy = { ...props }
@@ -15,10 +15,7 @@ export function WapDiv(props) {
                return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
             })
          }
-
       </ div >
-
-
    }
 
 
@@ -33,7 +30,7 @@ export function WapDiv(props) {
             onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
             onMouseOver={({ target }) => { target.classList.add('element-hover') }}
             style={style}
-            className={((cmp.id === currElementId) ? 'edit-active ' : '') + (cmp.name || '')}>
+            className={`${cmp.id === currElementId ? 'edit-active ' : ''}${cmp.category ? mediaClass : ''} ${cmp.name || ''}`}>
             {/* asdsad */}
             {
                cmp.cmps && cmp.cmps.map(c => {
@@ -42,8 +39,6 @@ export function WapDiv(props) {
                   return <DynamicCmp key={c.id} cmp={c} {...propsCopy} />
                })
             }
-            {cmp.id === currElementId && <i className='delete-element-btn' onClick={(ev) => onRemoveElement(ev, cmp)}>X</i>}
-
          </ div >
       }}
    </Draggable>)

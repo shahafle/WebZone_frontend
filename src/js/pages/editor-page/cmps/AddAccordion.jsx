@@ -94,10 +94,12 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 const SummaryTypography = styled(Typography)(({ theme }) => ({
     padding: '5px 0',
     textTransform: 'capitalize',
+    fontFamily: 'Montserrat',
     fontSize: '1.1rem',
-    fontWeight: 700
+    // fontWeight: 700
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
     padding: `${theme.spacing(1)} 0`,
+    fontFamily: 'Montserrat',
 }));
