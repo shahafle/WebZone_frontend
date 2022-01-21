@@ -1,0 +1,17 @@
+.wap-gallery-1 {
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e2;
+    & span img {
+        padding: 2rem;
+    }
+
+    & > span p {
+        display: block;
+        margin: auto;
+    }
+    & :first-child {
+        display: flex;
+        align-items: center;
+    }
+}

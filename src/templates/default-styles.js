@@ -18,12 +18,12 @@ export const btnStyle = {
 };
 
 export const imgStyle = {
-    "borderRadius": "0",
-    "width": "50",
+    "borderRadius": "",
+    "width": "100",
 };
 
 export const containerStyle = {
     "backgroundImage": "",
-    "paddingInline": "10",
-    "paddingBlock": "10"
+    "paddingInline": "30",
+    "paddingBlock": "30"
 };

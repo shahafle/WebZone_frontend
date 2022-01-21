@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrElement } from '../../../store/editor.action'
+import { switchElement } from '../../../store/wap.action'
 import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
 import { Droppable } from 'react-beautiful-dnd';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -29,8 +30,8 @@ export function EditorBoard() {
    const currElement = useSelector(state => state.editorModule.currElement);
 
    useEffect(() => {
-      window.addEventListener('resize', () => setMediaClass((getMediaClass())));
-      setMediaClass((getMediaClass()));
+      window.addEventListener('resize', () => setMediaClass(getMediaClass()));
+      setMediaClass(getMediaClass());
       return () => window.removeEventListener('resize', getMediaClass);
    }, [])
 
@@ -39,15 +40,20 @@ export function EditorBoard() {
       dispatch(setCurrElement(cmp))
    }
 
-   const onDragEnd = (result) => {
-      // console.log('end', result);
+   const onDragEnd = (res) => {
+      const { destination, source } = res;
+
+      if (!destination) return;
+
+      if (destination.index === source.index) return;
+
+      dispatch(switchElement(wap, res))
    }
 
-
+   // console.log(wap);
    return <DragDropContext onDragEnd={onDragEnd} onDragStart={(res) => { }}>
       <Droppable droppableId='156'>
          {provided => {
-            console.log('render droppable');
             return <section className='editor-board'
                {...provided.droppableProps}
                ref={provided.innerRef}
@@ -61,7 +67,6 @@ export function EditorBoard() {
 
                <div ref={sectionRef}></div>
             </section>
-
          }}
       </Droppable >
    </DragDropContext>

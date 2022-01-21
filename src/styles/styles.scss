@@ -33,18 +33,20 @@
 @import "./cmps/screen";
 @import "./cmps/login";
 
-
 //TEMPLATES
 
 //HEADERS
+@import "./templates/headers/wap-header-1";
 @import "./templates/headers/wap-header-2";
+@import "./templates/header/wap-header-3";
 
 //SECTIONS
 
 //FOOTERS
-
+@import "./templates//footers/wap-footer";
 //CARDS
 @import "./templates/cards/wap-card-1";
+@import "./templates/cards/wap-card-1-2";
 @import "./templates/cards/wap-card-2";
 @import "./templates/cards/wap-card-2-2";
 
@@ -52,6 +54,7 @@
 @import "./templates/txt/wap-txt-2";
 
 //GALLERY
+@import "./templates/gallery/wap-gallery-1";
 
 //HERO
 @import "./templates/hero/wap-hero-1";
