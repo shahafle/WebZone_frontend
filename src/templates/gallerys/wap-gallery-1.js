@@ -13,7 +13,7 @@ export const wapGallery_1 = {
         {
             "id": "ffffd8sE3s",
             "type": "txt",
-            "txt": "galleryyy.",
+            "txt": "gallery",
             "style": {
                 ...txtStyle,
                 "color": "black",
@@ -34,9 +34,27 @@ export const wapGallery_1 = {
             },
             "cmps": [
                 {
-                    "id": "shdSS123",
+                    "id": "dfkF43",
                     "type": "img",
-                    "url": "https://images.pexels.com/photos/4777687/pexels-photo-4777687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "url": "https://images.pexels.com/photos/1190690/pexels-photo-1190690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "style": { ...imgStyle }
+                },
+                {
+                    "id": "d83jfy",
+                    "type": "img",
+                    "url": "https://images.pexels.com/photos/848573/pexels-photo-848573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "style": { ...imgStyle }
+                },
+                {
+                    "id": "ssGFD453",
+                    "type": "img",
+                    "url": "https://images.pexels.com/photos/147359/pexels-photo-147359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    "style": { ...imgStyle }
+                },
+                {
+                    "id": "ASD5g3d",
+                    "type": "img",
+                    "url": "https://images.pexels.com/photos/450038/pexels-photo-450038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     "style": { ...imgStyle }
                 },
             ]

@@ -1,0 +1,16 @@
+.wap-header-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b1b1b;
+
+    & > :first-child {
+        gap: 1rem;
+        padding: 10px 5px;
+    }
+
+    & > :nth-child(2) div {
+        display: flex;
+        gap: 1rem;
+    }
+}
