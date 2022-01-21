@@ -18,7 +18,6 @@ const btnStyle = {
 const imgStyle = {
     "borderRadius": "0",
     "width": "50",
-    "height": "50"
 };
 const containerStyle = {
     "backgroundImage": "",
