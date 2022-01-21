@@ -24,6 +24,6 @@ export const imgStyle = {
 
 export const containerStyle = {
     "backgroundImage": "",
-    "paddingInline": "10",
-    "paddingBlock": "10"
+    "paddingInline": "30",
+    "paddingBlock": "30"
 };

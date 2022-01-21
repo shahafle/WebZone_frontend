@@ -32,5 +32,28 @@ export function addElement(elementToAdd) {
     }
 }
 
+export function switchElement(wap, res) {
+    return (dispatch) => {
+        const { destination, source, draggableId } = res;
+        let draggedElement = null;
+        wapService.findTarget(wap, draggableId, (cmpsArr, idx) => {
+            draggedElement = cmpsArr.splice(idx, 1)[0]
+            console.log(cmpsArr);
+        })
+        console.log(destination.droppableId);
+        if (destination.droppableId === '156') {
+            wap.cmps.splice(destination.index, 0, draggedElement)
+        }
+        wapService.findTarget(wap, destination.droppableId, (cmpsArr, idx) => {
+            console.log('hi');
+            cmpsArr[idx][destination.index] = draggedElement
+            console.log(cmpsArr);
+        })
 
+
+        // const draggedElement = wap.cmps.splice(source.index, 1)[0]
+        // wap.cmps.splice(destination.index, 0, draggedElement)
+        dispatch({ type: 'UPDATE_WAP', wap })
+    }
+}
 

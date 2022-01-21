@@ -28,7 +28,9 @@ export function DynamicCmp(props) {
          return <span {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}>
+
             {getElement()}
+            {provided.placeholder}
          </span>
       }}
    </Draggable>
