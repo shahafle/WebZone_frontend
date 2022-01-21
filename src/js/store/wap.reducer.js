@@ -15,6 +15,11 @@ const btnStyle = {
     "borderRadius": "0",
     "backgroundColor": ""
 };
+const imgStyle = {
+    "borderRadius": "0",
+    "width": "50",
+    "height": "50"
+};
 const containerStyle = {
     "backgroundImage": "",
     "paddingInline": "10",
@@ -37,13 +42,14 @@ const initialState = {
                 "category": "wap-hero",
                 "name": "wap-hero-1",
                 "style": {
+                    ...containerStyle,
                     "backgroundImage": "url(\"https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")",
                 },
                 "cmps": [
                     {
                         "id": "sahd6dd",
                         "type": "container",
-                        "style": {},
+                        "style": { ...containerStyle },
                         "cmps": [
                             {
                                 "id": "3ss66dg",
@@ -61,7 +67,7 @@ const initialState = {
                             {
                                 "id": "33377fhd",
                                 "type": "container",
-                                "style": {},
+                                "style": { ...containerStyle },
                                 "cmps": [
                                     {
                                         "id": "sdhuf34f",
@@ -108,7 +114,7 @@ const initialState = {
                     {
                         "id": "8shjhs",
                         "type": "container",
-                        "style": {},
+                        "style": { ...containerStyle, },
                         "cmps": [
                             {
                                 "id": "1109f7s",
@@ -151,11 +157,34 @@ const initialState = {
                                     "fontFamily": "bitter",
                                     "borderRadius": '1000'
                                 }
-                            },
+                            }
                         ]
                     }
+
                 ]
             },
+            {
+                "id": "7C2hdg6",
+                "type": "container",
+                "category": "wap-card",
+                "name": "wap-card-1",
+                "style": { ...containerStyle },
+                "cmps": [
+                    {
+                        "id": "726shD8",
+                        "type": "img",
+                        "url": "https://images.pexels.com/photos/4777687/pexels-photo-4777687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        "style": { ...imgStyle }
+                    },
+                    {
+                        "id": "77SGv9",
+                        "type": "txt",
+                        "txt": "Discover new worlds",
+                        "style": { ...txtStyle }
+                    }
+                ]
+
+            }
         ],
         "isPublished": true
     }
