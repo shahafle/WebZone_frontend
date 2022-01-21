@@ -1,8 +1,8 @@
-import { wapHeader_2 } from './headers/wap-header-2';
+import { wapHeader_2 } from './header/wap-header-2';
 import { wapHero_2 } from './hero/wap-hero-2';
 import { wapTxt_2 } from './txt/wap-txt-2';
-import { wapCard_2 } from './cards/wap-card-2';
-import { wapCard_2_2 } from './cards/wap-card-2-2';
+import { wapCard_2 } from './card/wap-card-2';
+import { wapCard_2_2 } from './card/wap-card-2-2';
 
 export const wapTemplate_2 = {
     "_id": "5e28393890dd7201a06d4e44",
