@@ -1,4 +1,4 @@
-import { wapTemplate_1 } from '../../templates/pacifico';
+import { wapTemplate_1 } from '../../templates/wap-template-1';
 
 
 const initialState = {

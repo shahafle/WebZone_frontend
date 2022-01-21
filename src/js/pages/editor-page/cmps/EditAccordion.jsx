@@ -63,7 +63,6 @@ export function EditAccordion() {
 
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
 
-    console.log('render');
     return (
         <div className="accordions-container">
 
