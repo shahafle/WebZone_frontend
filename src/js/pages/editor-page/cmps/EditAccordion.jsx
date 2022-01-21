@@ -58,12 +58,12 @@ export function EditAccordion() {
 
     const onRemoveElement = () => {
         dispatch(removeElement(wap, currElement));
-     }
+    }
 
 
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
 
-
+    console.log('render');
     return (
         <div className="accordions-container">
 
@@ -94,7 +94,7 @@ export function EditAccordion() {
                         <ButtonStyles element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} />
                     </AccordionDetails>
                 </Accordion>}
-            {currElement.type === 'section' &&
+            {currElement.type === 'container' &&
                 <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                         <Typography>Section</Typography>

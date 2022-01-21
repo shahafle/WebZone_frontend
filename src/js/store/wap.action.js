@@ -12,7 +12,6 @@ export function loadWap() {
 export function updateWap(wap, elementToUpdate) {
     return async (dispatch) => {
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate)
-        console.log(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
