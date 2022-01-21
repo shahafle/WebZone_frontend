@@ -15,7 +15,7 @@ export function DynamicCmp(props) {
 
       case 'btn': return <WapBtn {...props} style={style} />
 
-      case 'section': return <WapDiv  {...props} style={style} />
+      case 'container': return <WapDiv  {...props} style={style} />
 
       default:
          break;

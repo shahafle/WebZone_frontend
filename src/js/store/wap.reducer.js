@@ -1,3 +1,21 @@
+const txtStyle = {
+    'color': 'black',
+    'textAlign': 'start',
+    'textDecoration': 'none',
+    'textShadow': 'none',
+    'fontFamily': 'Poppins',
+    'fontWeight': '400',
+    'fontSize': '16',
+    'fontStyle': 'normal',
+    'letterSpacing': '1',
+    // 'lineHeight': '16',
+};
+const btnStyle = {
+    ...txtStyle,
+    "borderRadius": "0",
+    "backgroundColor": ""
+};
+
 
 const initialState = {
     wap: {
@@ -10,168 +28,126 @@ const initialState = {
         "cmps": [
             {
                 "id": "dhetv6",
-                "type": "section",
+                "type": "container",
                 "category": "wap-section",
                 "name": "wap-section-1",
                 "style": {
-                    backgroundImage: `url('https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')`,
+                    "backgroundImage": "url(\"https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")",
                 },
                 "cmps": [
                     {
-                        "id": 'sahd6dd',
-                        "type": "section",
-                        'name': 'pacifico-header',
+                        "id": "sahd6dd",
+                        "type": "container",
+                        "name": "pacifico-header",
                         "style": {},
-                        "cmps": [{
-                            id: '3ss66dg',
-                            type: 'txt',
-                            txt: 'Pacifico',
-                            style: {
-                                'borderRadius': '0',
-                                'color': 'white',
-                                'textAlign': 'start',
-                                'fontWeight': '550',
-                                'fontStyle': 'normal',
-                                'textDecoration': 'none',
-                                'fontSize': '40',
-                                'letterSpacing': '1',
-                                // 'lineHeight': '16',
-                                'textShadow': '5px 5px 3px black',
-                                'fontFamily': 'kalam',
+                        "cmps": [
+                            {
+                                "id": "3ss66dg",
+                                "type": "txt",
+                                "txt": "Pacifico",
+                                "style": {
+                                    ...txtStyle,
+                                    "color": "white",
+                                    "fontWeight": "700",
+                                    "fontSize": "40",
+                                    "textShadow": "5px 5px 3px black",
+                                    "fontFamily": "kalam",
+                                }
+                            },
+                            {
+                                "id": "33377fhd",
+                                "type": "container",
+                                "style": {},
+                                "cmps": [
+                                    {
+                                        "id": "sdhuf34f",
+                                        "type": "btn",
+                                        "url": "#",
+                                        "txt": "About us",
+                                        "style": {
+                                            ...btnStyle,
+                                            "color": "white",
+                                            "textAlign": "center",
+                                            "textShadow": "5px 5px 3px black",
+                                            "fontFamily": "bitter",
+                                        }
+                                    },
+                                    {
+                                        "id": "ffhg74",
+                                        "type": "btn",
+                                        "url": "#",
+                                        "txt": "Reservations",
+                                        "style": {
+                                            ...btnStyle,
+                                            "color": "white",
+                                            "textAlign": "center",
+                                            "textShadow": "5px 5px 3px black",
+                                            "fontFamily": "bitter",
+                                        }
+                                    },
+                                    {
+                                        "id": "sssllka9",
+                                        "type": "btn",
+                                        "url": "#",
+                                        "txt": "Login",
+                                        "style": {
+                                            ...btnStyle,
+                                            "color": "white",
+                                            "textShadow": "5px 5px 3px black",
+                                            "fontFamily": "bitter",
+                                        }
+                                    },
+                                ]
                             }
-                        },
-                        {
-                            'id': '33377fhd',
-                            'type': 'section',
-                            'style': {},
-                            'cmps': [
-                                {
-                                    id: 'sdhuf34f',
-                                    type: 'btn',
-                                    url: '#',
-                                    txt: 'About us',
-                                    style: {
-                                        'borderRadius': '0',
-                                        'backgroundColor': '',
-                                        'color': 'white',
-                                        'textAlign': 'center',
-                                        'fontWeight': '400',
-                                        'fontStyle': 'normal',
-                                        'textDecoration': 'none',
-                                        'fontSize': '18',
-                                        'letterSpacing': '1',
-                                        // 'lineHeight': '16',
-                                        'textShadow': '5px 5px 3px black',
-                                        'fontFamily': 'bitter',
-                                    }
-                                },
-                                {
-                                    id: 'ffhg74',
-                                    type: 'btn',
-                                    url: '#',
-                                    txt: 'Reservations',
-                                    style: {
-                                        'borderRadius': '0',
-                                        'backgroundColor': '',
-                                        'color': 'white',
-                                        'textAlign': 'center',
-                                        'fontWeight': '400',
-                                        'fontStyle': 'normal',
-                                        'textDecoration': 'none',
-                                        'fontSize': '18',
-                                        'letterSpacing': '1',
-                                        // 'lineHeight': '16',
-                                        'textShadow': '5px 5px 3px black',
-                                        'fontFamily': 'bitter',
-                                    }
-                                },
-                                {
-                                    id: 'sssllka9',
-                                    type: 'btn',
-                                    url: '#',
-                                    txt: 'Login',
-                                    style: {
-                                        'borderRadius': '',
-                                        'backgroundColor': '',
-                                        'color': 'white',
-                                        'textAlign': 'center',
-                                        'fontWeight': '400',
-                                        'fontStyle': 'normal',
-                                        'textDecoration': 'none',
-                                        'fontSize': '18',
-                                        'letterSpacing': '1',
-                                        // 'lineHeight': '16',
-                                        'textShadow': '5px 5px 3px black',
-                                        'fontFamily': 'bitter',
-                                    }
-                                },
-                            ]
-                        }
                         ]
                     },
                     {
-                        "id": '8shjhs',
-                        "type": "section",
+                        "id": "8shjhs",
+                        "type": "container",
                         "name": "pacifico-main",
                         "style": {},
                         "cmps": [
                             {
-                                "id": '1109f7s',
-                                "type": 'txt',
-                                "txt": 'Adventure is worthwhile.',
+                                "id": "1109f7s",
+                                "type": "txt",
+                                "txt": "Adventure is worthwhile.",
                                 "style": {
-                                    'borderRadius': '0',
-                                    'color': 'white',
-                                    'textAlign': 'center',
-                                    'fontWeight': '400',
-                                    'fontStyle': 'normal',
-                                    'textDecoration': 'none',
-                                    'fontSize': '65',
-                                    'letterSpacing': '1',
-                                    // 'lineHeight': '16',
-                                    'textShadow': '1px 1px 3px black',
-                                    'fontFamily': 'bitter',
+                                    ...txtStyle,
+                                    "color": "white",
+                                    "textAlign": "center",
+                                    "fontSize": "65",
+                                    "letterSpacing": "1",
+                                    "textShadow": "1px 1px 3px black",
+                                    "fontFamily": "bitter",
                                 }
                             },
                             {
-                                "id": '127shsa',
-                                "type": 'txt',
-                                "txt": `You don\'t have to be rich to travel well.
+                                "id": "127shsa",
+                                "type": "txt",
+                                "txt": `You don\"t have to be rich to travel well.
                                  do it here, in Pacifico.`,
                                 "style": {
-                                    'borderRadius': '0',
-                                    'color': 'white',
-                                    'textAlign': 'center',
-                                    'fontWeight': '400',
-                                    'fontStyle': 'normal',
-                                    'textDecoration': 'none',
-                                    'fontSize': '30',
-                                    'letterSpacing': '1',
-                                    // 'lineHeight': '16',
-                                    'textShadow': '1px 1px 3px black',
-                                    'fontFamily': 'bitter'
+                                    ...txtStyle,
+                                    "color": "white",
+                                    "textAlign": "center",
+                                    "fontSize": "30",
+                                    "textShadow": "1px 1px 3px black",
+                                    "fontFamily": "bitter"
                                 }
                             },
                             {
 
-                                "id": 'sscvnjf8',
-                                "type": 'btn',
-                                "url": 'https://www.google.com',
-                                "txt": 'Order now',
-                                "name": 'orderBtn',
+                                "id": "sscvnjf8",
+                                "type": "btn",
+                                "url": "https://www.google.com",
+                                "txt": "Order now",
+                                "name": "orderBtn",
                                 "style": {
-                                    // 'borderRadius': '1000',
-                                    'backgroundColor': '#f1ffff',
-                                    'color': 'black',
-                                    'textAlign': 'center',
-                                    'fontWeight': '400',
-                                    'fontStyle': 'normal',
-                                    'textDecoration': 'none',
-                                    'fontSize': '30',
-                                    'letterSpacing': '1',
-                                    // 'lineHeight': '16',
-                                    'textShadow': 'none',
-                                    'fontFamily': 'bitter'
+                                    ...btnStyle,
+                                    "backgroundColor": "#f1ffff",
+                                    "textAlign": "center",
+                                    "fontSize": "30",
+                                    "fontFamily": "bitter"
                                 }
                             },
                         ]
