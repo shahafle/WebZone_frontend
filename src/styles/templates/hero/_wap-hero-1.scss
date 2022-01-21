@@ -2,20 +2,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    padding: 100px;
+    & > span {
+        &:first-of-type p {
+            padding: 20px;
+        }
 
-    & >span:first-of-type p {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        gap: 90px;
-    }
+        &:last-of-type {
+            margin: 0 auto;
+            text-align: center;
 
-    & >span:last-of-type {
-        margin: 0 auto;
-        text-align: center;
-        // width: fit-content;
-        // display: flex;
-        // padding: 5px 10px;
-        // border: solid 1px black;
+            a {
+                padding: 5px 10px;
+            }
+        }
     }
 }

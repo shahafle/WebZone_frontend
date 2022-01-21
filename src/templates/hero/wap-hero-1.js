@@ -7,7 +7,9 @@ export const wapHero_1 = {
     "name": "wap-hero-1",
     "style": {
         ...containerStyle,
-        "backgroundImage": "url(\"https://images.pexels.com/photos/1450361/pexels-photo-1450361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")",
+        "backgroundImage": "url(\"https://images.pexels.com/photos/2189880/pexels-photo-2189880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")",
+        "paddingInline": "100",
+        "paddingBlock": "100"
     },
     "cmps": [
         {
