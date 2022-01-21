@@ -15,6 +15,11 @@ const btnStyle = {
     "borderRadius": "0",
     "backgroundColor": ""
 };
+const containerStyle = {
+    "backgroundImage": "",
+    "paddingInline": "10",
+    "paddingBlock": "10"
+}
 
 
 const initialState = {

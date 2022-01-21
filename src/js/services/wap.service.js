@@ -345,8 +345,8 @@ function put(wapElToUpdate) {
 
 function getScaleUnits(style) {
     const pxFields = [
-        'fontSize', 'letterSpacing', 'lineHeight', 'paddingBlockStart',
-        'paddingBlockEnd', 'paddingInlineStart', 'paddingInlineEnd', 'borderRadius'];
+        'fontSize', 'letterSpacing', 'lineHeight',
+        'paddingBlock', 'paddingInline', 'borderRadius'];
     const percentFields = ['width']
     const styleCopy = JSON.parse(JSON.stringify(style))
     for (let attr in styleCopy) {
