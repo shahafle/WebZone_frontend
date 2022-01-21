@@ -48,7 +48,7 @@ export function EditorBoard() {
       <Droppable droppableId='156'>
          {provided => {
             console.log('render droppable');
-            return <section className='editor-board' style={{ minHeight: "300px" }}
+            return <section className='editor-board'
                {...provided.droppableProps}
                ref={provided.innerRef}
             >

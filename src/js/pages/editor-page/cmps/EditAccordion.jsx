@@ -153,7 +153,7 @@ const SummaryTypography = styled(Typography)(({ theme }) => ({
     padding: '5px 0',
     textTransform: 'capitalize',
     fontFamily: 'Montserrat',
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     // fontWeight: 700
 }));
 

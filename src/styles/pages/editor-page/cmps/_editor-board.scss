@@ -3,11 +3,8 @@
    background-color: white;
    box-shadow: grey 0 0 5px 2px;
    grid-column: 2/3;
+   min-height: calc(100vh - $header-height - 30px);
 
-
-   *{
-      position:relative
-   }
 
    &:hover{
       cursor: pointer;

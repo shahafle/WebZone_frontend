@@ -1,0 +1,26 @@
+.wap-txt-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & > *:first-child p {
+        padding-top: 80px;
+    }
+
+    & > *:last-child p {
+        padding-bottom: 80px;
+    }
+
+
+    &::after {
+        content: "";
+        display: block;
+        width: 90%;
+        height: 4px;
+        border-radius: 2px;
+        margin: auto;
+        background-image: linear-gradient(90deg, white, gray);
+    }
+}

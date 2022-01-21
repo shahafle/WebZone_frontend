@@ -1,8 +1,9 @@
 import { wapTemplate_1 } from '../../templates/wap-template-1';
+import { wapTemplate_2 } from '../../templates/wap-template-2';
 
 
 const initialState = {
-    wap: wapTemplate_1
+    wap: wapTemplate_2
 }
 
 
