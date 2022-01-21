@@ -10,5 +10,9 @@ export const routes = [
     {
         path: '/editor',
         component: <EditorPage />,
+    },
+    {
+        path: '/editor/:wapId',
+        component: <EditorPage />,
     }
 ]

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
 import { AddAccordion } from './AddAccordion';
 import { EditAccordion } from './EditAccordion';
+import { WapActions } from './WapActions.jsx'
 
 export function EditorSidebar() {
 
@@ -26,5 +26,6 @@ export function EditorSidebar() {
       </div>
       {activeTab === 'add' && <AddAccordion />}
       {activeTab === 'edit' && <EditAccordion />}
+      <WapActions />
    </section>
 }

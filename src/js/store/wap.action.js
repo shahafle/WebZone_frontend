@@ -5,7 +5,13 @@ export function loadWap() {
     return async (dispatch) => {
         const wap = await wapService.query()
         dispatch({ type: 'SET_WAP', wap });
+    }
+}
 
+export function getWapById(wapId) {
+    return async (dispatch) => {
+        const wap = await wapService.getById(wapId)
+        dispatch({ type: 'SET_WAP', wap });
     }
 }
 

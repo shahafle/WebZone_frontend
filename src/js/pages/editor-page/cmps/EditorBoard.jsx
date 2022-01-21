@@ -13,6 +13,7 @@ export function EditorBoard() {
    const sectionRef = useRef();
 
    const getMediaClass = () => {
+      if (!sectionRef.current) return;
       const editorWidth = sectionRef.current.offsetWidth;
 
       if (editorWidth < 600) return 'media-600';
@@ -32,6 +33,7 @@ export function EditorBoard() {
    useEffect(() => {
       window.addEventListener('resize', () => setMediaClass(getMediaClass()));
       setMediaClass(getMediaClass());
+
       return () => window.removeEventListener('resize', getMediaClass);
    }, [])
 
@@ -50,7 +52,8 @@ export function EditorBoard() {
       dispatch(switchElement(wap, res))
    }
 
-   // console.log(wap);
+   if (!wap.cmps?.length) return <div className='editor-board'>Choose Template from sidebar</div>
+
    return <DragDropContext onDragEnd={onDragEnd} onDragStart={(res) => { }}>
       <Droppable droppableId='156'>
          {provided => {
