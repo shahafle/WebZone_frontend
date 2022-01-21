@@ -9,15 +9,44 @@
         flex-grow: 1;
         padding: 1rem 0;
         text-align: center;
-        background-color: #404757;
-        color: rgba(255, 255, 255, 0.5);
         font-size: 1.3rem;
         font-weight: 700;
         cursor: pointer;
 
+        background-color: #404757;
+        color: rgba(255, 255, 255, 0.5);
+        box-shadow: inset -1px -1px 4px 0px #0000008c;
+
         &.active {
             background-color: $color3;
             color: white;
+            box-shadow: unset;
+        }
+    }
+
+    .style-inputs {
+        gap: 20px;
+
+        & > * {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                padding: 10px;
+                background: transparent;
+                color: inherit;
+                font-size: 1.3rem;
+            }
+
+            button:last-child {
+                padding-right: 0;
+            }
+
+            // button:not(:last-child) {
+                // margin-inline-end: 30px;
+            // }
+
         }
     }
 }

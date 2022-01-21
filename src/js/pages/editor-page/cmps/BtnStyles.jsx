@@ -1,6 +1,6 @@
 export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
-    return <div className="felx column edit-style-section">
-        <label>Border radius:
+    return <div className="flex column style-inputs">
+        <label>Border Radius:
             <input type="range" min={0} max={100} onChange={onChangeStyle} name='borderRadius' value={element.style.borderRadius} />
         </label>
         <label>Link to:

@@ -10,7 +10,7 @@ export const wapHeader_2 = {
         {
             "id": "23l56ktjls",
             "type": "txt", // LOGO (LEFT)
-            "txt": "BIZ.",
+            "txt": "BIZZ.",
             "style": { ...txtStyle, "fontSize": "40", "fontWeight": "700", "fontStyle": "italic", "textDecoration": "underline"  }
         },
         {

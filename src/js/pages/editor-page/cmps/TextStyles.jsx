@@ -1,19 +1,25 @@
+import { FaAlignLeft } from 'react-icons/fa';
+import { FaAlignCenter } from 'react-icons/fa';
+import { FaAlignRight } from 'react-icons/fa';
+
+
 export function TextStyles({ elementStyle, onChangeStyle }) {
-   return <div className="flex column text-styles">
+   console.log('elementStyle:', elementStyle)
+   return <div className="flex column style-inputs">
       <div>
          Align :
-         <div>
-            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })}>left</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })}>center</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })}>right</button>
+         <div className="flex">
+            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })} style={{ color: elementStyle.textAlign === 'start' ? '#904bcf' : 'inherit' }}><FaAlignLeft /></button>
+            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })} style={{ color: elementStyle.textAlign === 'center' ? '#904bcf' : 'inherit' }}><FaAlignCenter /></button>
+            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })} style={{ color: elementStyle.textAlign === 'end' ? '#904bcf' : 'inherit' }}><FaAlignRight /></button>
          </div>
       </div>
       <div>
          Decoration :
          <div>
-            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '700' : '400' } })}>B</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'Italic') ? 'normal' : 'Italic' } })}>I</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })}>U</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '700' : '400' } })} style={{ fontWeight: 700, color: elementStyle.fontWeight === '700' ? '#904bcf' : 'inherit' }}>B</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'italic') ? 'normal' : 'italic' } })} style={{ fontStyle: 'italic', color: elementStyle.fontStyle === 'italic' ? '#904bcf' : 'inherit' }}>I</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })} style={{ textDecoration: 'underline', color: elementStyle.textDecoration === 'underline' ? '#904bcf' : 'inherit' }}>U</button>
          </div>
       </div>
       <label>Font Size :
@@ -38,9 +44,20 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       </label>
       <label>Font Family :
          <select name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
-            <option value="unna">Unna</option>
+            <option disabled>- Sans Serif -</option>
+            <option value="montserrat">Montserrat</option>
+            <option value="nunitosans">Nunito Sans</option>
+            <option value="poppins">Poppins</option>
+            <option value="quicksand">Quicksand</option>
+            <option value="raleway">Raleway</option>
+            <option disabled>- Serif -</option>
             <option value="bitter">Bitter </option>
+            <option value="ptserif">PT Serif</option>
+            <option value="unna">Unna</option>
+            <option disabled>- Handwriting -</option>
             <option value="kalam">Kalam</option>
+            <option value="mali">Mali</option>
+            <option value="cursive">Cursive</option>
          </select>
       </label>
    </div>

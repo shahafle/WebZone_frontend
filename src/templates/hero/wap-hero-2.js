@@ -13,7 +13,7 @@ export const wapHero_2 = {
             "id": "asldfj2lk45",
             "type": "txt", // JUMBO (CENTER)
             "txt": "Grow your business.",
-            "style": { ...txtStyle, "color": "white", "fontFamily": "Montserrat", "fontSize": "64", "letterSpacing": "4" }
+            "style": { ...txtStyle, "color": "white", "textAlign": "center", "fontFamily": "Montserrat", "fontSize": "64", "letterSpacing": "4" }
         },
 
         {
