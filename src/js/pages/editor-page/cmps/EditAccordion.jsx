@@ -9,7 +9,7 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateWap } from '../../../store/wap.action'
+import { updateWap, removeElement } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
@@ -56,16 +56,21 @@ export function EditAccordion() {
         dispatch(uploadImage(ev, currElement, isBackground))
     }
 
+    const onRemoveElement = () => {
+        dispatch(removeElement(wap, currElement));
+     }
+
+
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
 
-    
+
     return (
         <div className="accordions-container">
 
             {(currElement.type === 'txt' || currElement.type === 'btn') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                         <SummaryTypography>Text</SummaryTypography>
+                        <SummaryTypography>Text</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
@@ -99,6 +104,7 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
 
+            <button onClick={onRemoveElement}>Delete Element</button>
         </div >
     );
 }
@@ -147,8 +153,9 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 const SummaryTypography = styled(Typography)(({ theme }) => ({
     padding: '5px 0',
     textTransform: 'capitalize',
+    fontFamily: 'Montserrat',
     fontSize: '1.1rem',
-    fontWeight: 700
+    // fontWeight: 700
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
