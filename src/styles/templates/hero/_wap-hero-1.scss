@@ -3,27 +3,19 @@
     background-size: cover;
     background-position: center;
 
-    & > :first-child {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        a {
-            margin-inline-end: 10px;
-            margin-inline-start: 10px;
-        }
-    }
-
-    & > :last-child {
+    & >span:first-of-type p {
         display: flex;
         flex-direction: column;
         padding: 20px;
         gap: 90px;
+    }
 
-        & > a:last-of-type {
-            margin: 0 auto;
-            padding: 5px 10px;
-            border: solid 1px black;
-        }
+    & >span:last-of-type {
+        margin: 0 auto;
+        text-align: center;
+        // width: fit-content;
+        // display: flex;
+        // padding: 5px 10px;
+        // border: solid 1px black;
     }
 }
