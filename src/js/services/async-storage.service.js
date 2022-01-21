@@ -1,6 +1,8 @@
 import { storageService } from './storage.service.js';
 import { wapService } from './wap.service.js';
 import { wapTemplate_1 } from '../../templates/wap-template-1';
+import { wapTemplate_2 } from '../../templates/wap-template-2';
+import { wapTemplate_3 } from '../../templates/wap-template-3';
 
 export const asyncStorageService = {
     query,
@@ -10,7 +12,7 @@ export const asyncStorageService = {
     remove,
 }
 
-const ENTITY_STORAGE_KEY = 'wapDB';
+const ENTITY_STORAGE_KEY = 'template_wap_db';
 
 ///////////////////////// This file is a demo server with its service combined in one /////////////////////////
 
@@ -40,10 +42,9 @@ async function remove(entityStorageKey, entityId) {
 }
 
 // Add a new entity
-async function post(entityStorageKey, entityToAdd) {
+function post(entityStorageKey, entityToAdd) {
     entityToAdd._id = wapService.getRandomId();
-    // const newEntity = _createEntity(newEntity);
-    const entities = await query(entityStorageKey);
+    const entities = _loadEntitiesFromStorage(entityStorageKey) || [];
     entities.push(entityToAdd);
     _saveEntitiesToStorage(entityStorageKey, entities);
     return entityToAdd;
@@ -66,7 +67,8 @@ function _createEntities() {
     const entities = [];
 
     entities.push(wapTemplate_1);
-    // entities.push(_createEntity());
+    entities.push(wapTemplate_2);
+    entities.push(wapTemplate_3);
 
     _saveEntitiesToStorage(ENTITY_STORAGE_KEY, entities);
 

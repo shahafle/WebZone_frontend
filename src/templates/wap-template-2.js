@@ -5,12 +5,13 @@ import { wapCard_2 } from './card/wap-card-2';
 import { wapCard_2_2 } from './card/wap-card-2-2';
 
 export const wapTemplate_2 = {
-    "_id": "5e28393890dd7201a06d4e44",
+    "_id": "dsg3l4j6lkdsjglkjsd523",
     "name": "Business",
     "createdBy": {
         "_id": "436kljtlwkdjgajpi214jprfzlkf",
         "username": "Noy Morgenshtein"
     },
     "cmps": [wapHeader_2, wapHero_2, wapTxt_2, wapCard_2, wapCard_2_2],
-    "isPublished": true
+    "isPublished": false,
+    "isTemplate": true
 }

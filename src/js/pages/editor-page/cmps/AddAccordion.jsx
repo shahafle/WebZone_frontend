@@ -1,5 +1,10 @@
-import * as React from 'react';
 import { useMemo, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addElement } from '../../../store/wap.action';
+import { wapService } from '../../../services/wap.service';
+
+// ACCORDION
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -7,33 +12,34 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import { useDispatch, useSelector } from 'react-redux';
-import { addElement } from '../../../store/wap.action';
-import { wapService } from '../../../services/wap.service'
+// ACCORDION
 
 
 export function AddAccordion() {
-    const [expanded, setExpanded] = React.useState('panel1');
+
+    const dispatch = useDispatch();
+
+    const [expanded, setExpanded] = useState('panel1');
+    // const wap = useSelector(state => state.wapModule.wap);
+    
+    useEffect(()=>{
+        const templateSections = wapService.getTemplateSections();
+        const sectionCategories = wapService.getSectionsCategories();
+
+    },[])
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
 
-    const templateSections = wapService.getTemplateSections()
-    const sectionCategories = wapService.getSectionsCategories()
-    // const wap = useSelector(state => state.wapModule.wap)
-    const dispatch = useDispatch()
-
-
-
     const onAddElement = (elementToAdd) => {
-        dispatch(addElement(elementToAdd))
+        dispatch(addElement(elementToAdd));
     }
 
 
     return (
         <div className="accordions-container">
-            {sectionCategories.map((category, i) => {
+            {/* {sectionCategories.map((category, i) => {
                 return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
                     <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
                         <SummaryTypography>{category.substring(4, category.length)}</SummaryTypography>
@@ -48,7 +54,7 @@ export function AddAccordion() {
                     </AccordionDetails>
                 </Accordion>
             })
-            }
+            } */}
         </div>
     );
 }

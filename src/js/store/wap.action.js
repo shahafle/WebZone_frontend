@@ -1,9 +1,18 @@
 import { wapService } from '../services/wap.service.js';
 
 
-export function loadWap() {
+export function loadWaps() {
     return async (dispatch) => {
-        const wap = await wapService.query()
+        await wapService.query()
+        // dispatch({ type: 'SET_WAP', wap });
+    }
+}
+
+export function loadDraftWap() {
+    return (dispatch) => {
+        const wap = wapService.loadDraft();
+        console.log('wap:', wap)
+        if (!wap) return;
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -18,6 +27,8 @@ export function getWapById(wapId) {
 export function updateWap(wap, elementToUpdate) {
     return async (dispatch) => {
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate)
+        if (wap._id) delete wap._id;
+        wapService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
@@ -25,6 +36,7 @@ export function updateWap(wap, elementToUpdate) {
 export function removeElement(wap, element) {
     return (dispatch) => {
         wapService.findTarget(wap, element.id, (cmpsArr, idx) => cmpsArr.splice(idx, 1))
+        wapService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
@@ -33,6 +45,7 @@ export function addElement(elementToAdd) {
     return (dispatch) => {
         elementToAdd = JSON.parse(JSON.stringify(elementToAdd))
         wapService.addIds(elementToAdd)
+        wapService.addElementToDraft(elementToAdd);
         dispatch({ type: 'ADD_ELEMENT', elementToAdd })
         return elementToAdd;
     }

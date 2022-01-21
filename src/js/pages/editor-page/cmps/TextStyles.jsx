@@ -4,7 +4,6 @@ import { FaAlignRight } from 'react-icons/fa';
 
 
 export function TextStyles({ elementStyle, onChangeStyle }) {
-   console.log('elementStyle:', elementStyle)
    return <div className="flex column style-inputs">
       <div>
          Align :

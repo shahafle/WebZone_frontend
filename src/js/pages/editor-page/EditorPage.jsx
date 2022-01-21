@@ -1,19 +1,21 @@
 import { EditorSidebar } from './cmps/EditorSidebar';
 import { EditorBoard } from './cmps/EditorBoard';
 import { useEffect } from 'react';
-import { getWapById, loadWap } from '../../store/wap.action';
+import { getWapById, loadWaps, loadDraftWap } from '../../store/wap.action';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 export function EditorPage() {
 
-   const params = useParams()
-   const dispatch = useDispatch()
+   const params = useParams();
+   const dispatch = useDispatch();
 
    useEffect(() => {
-      const { wapId } = params
-      if (wapId) dispatch(getWapById(wapId))
-      // dispatch(loadWap())
+      // console.log('EDITOR PAGE LOADED')
+      // const { wapId } = params;
+      dispatch(loadDraftWap());
+      // dispatch(loadWaps());
+      // if (wapId) dispatch(getWapById(wapId));
    }, [])
 
    return <main className='editor-page'>
