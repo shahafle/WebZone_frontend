@@ -142,6 +142,7 @@ export const wapTemplate_1 = {
             "name": "wap-card-1",
             "style": { ...containerStyle },
             "cmps": [
+
                 {
                     "id": "726shD8",
                     "type": "img",
@@ -149,11 +150,20 @@ export const wapTemplate_1 = {
                     "style": { ...imgStyle }
                 },
                 {
-                    "id": "77SGv9",
-                    "type": "txt",
-                    "txt": "Discover new worlds",
-                    "style": { ...txtStyle }
-                }
+                    "id": "7a2s6H",
+                    "type": "container",
+                    "style": { ...containerStyle },
+                    "cmps": [
+                        {
+                            "id": "77SGv9",
+                            "type": "txt",
+                            "txt": "Discover new worlds",
+                            "style": { ...txtStyle }
+                        }
+                    ]
+
+                },
+
             ]
 
         }
