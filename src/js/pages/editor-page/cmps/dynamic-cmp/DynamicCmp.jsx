@@ -22,3 +22,5 @@ export function DynamicCmp(props) {
    }
 
 }
+
+// {cmp.id === currElementId && <span className='delete-element-btn' onClick={(ev) => onRemoveElement(ev, cmp)}>X</span>}
