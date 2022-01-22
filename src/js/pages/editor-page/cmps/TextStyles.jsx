@@ -130,17 +130,17 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
                <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
                   <Select
                      name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
-                     <MenuItem value="montserrat">Montserrat</MenuItem>
-                     <MenuItem value="nunitosans">Nunito Sans</MenuItem>
-                     <MenuItem value="poppins">Poppins</MenuItem>
-                     <MenuItem value="quicksand">Quicksand</MenuItem>
-                     <MenuItem value="raleway">Raleway</MenuItem>
-                     <MenuItem value="bitter">Bitter </MenuItem>
-                     <MenuItem value="ptserif">PT Serif</MenuItem>
-                     <MenuItem value="unna">Unna</MenuItem>
-                     <MenuItem value="kalam">Kalam</MenuItem>
-                     <MenuItem value="mali">Mali</MenuItem>
-                     <MenuItem value="cursive">Cursive</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'montserrat' }} value="montserrat">Montserrat</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'nunitosans' }} value="nunitosans">Nunito Sans</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'poppins' }} value="poppins">Poppins</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'quicksand' }} value="quicksand">Quicksand</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'raleway' }} value="raleway">Raleway</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'bitter' }} value="bitter">Bitter </MenuItem>
+                     <MenuItem sx={{ fontFamily: 'ptserif' }} value="ptserif">PT Serif</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'unna' }} value="unna">Unna</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'kalam' }} value="kalam">Kalam</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'mali' }} value="mali">Mali</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'cursive' }} value="cursive">Cursive</MenuItem>
                   </Select>
                </FormControl>
             </Box>
