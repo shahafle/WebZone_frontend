@@ -1,3 +1,4 @@
+import { templateService } from '../services/template.service.js';
 import { wapService } from '../services/wap.service.js';
 
 
@@ -11,14 +12,18 @@ export function loadWaps() {
 export function loadDraftWap() {
     return (dispatch) => {
         const wap = wapService.loadDraft();
-        if (!wap) return;
+        // if (!wap) return;
         dispatch({ type: 'SET_WAP', wap });
     }
 }
 
 export function getWapById(wapId) {
     return async (dispatch) => {
-        const wap = await wapService.getById(wapId)
+        let wap = await wapService.getById(wapId)
+        if (wap.isTemplate) {
+            wap = JSON.parse(JSON.stringify(wap))
+            wapService.addIds(wap)
+        }
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -65,8 +70,21 @@ export function switchElement(wap, res) {
         // })
         // console.log('destination', destination);
         // console.log('source', source);
-        const draggedElement = wap.cmps.splice(source.index, 1)[0]
-        wap.cmps.splice(destination.index, 0, draggedElement)
+
+
+        // Just intothe board
+        if (source.droppableId === destination.droppableId) {
+            const draggedElement = wap.cmps.splice(source.index, 1)[0]
+            wap.cmps.splice(destination.index, 0, draggedElement)
+        }
+        // From sidebar to board
+        else {
+            let draggedElement = templateService.getById(draggableId);
+            draggedElement = JSON.parse(JSON.stringify(draggedElement))
+            wapService.addIds(draggedElement)
+            wap.cmps.splice(destination.index, 0, draggedElement)
+            wapService.saveDraft(wap);
+        }
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }

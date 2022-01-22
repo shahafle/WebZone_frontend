@@ -1,15 +1,7 @@
 
 
 const initialState = {
-    wap: {
-        "name": "new webApp",
-        "createdBy": {
-            "_id": "5e26e0b718a0891d4c995527",
-            "username": "Username"
-        },
-        "cmps": [],
-        "isPublished": false
-    }
+    wap: null
 }
 
 

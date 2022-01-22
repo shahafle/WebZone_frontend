@@ -10,12 +10,18 @@
         padding: 1rem 0;
         text-align: center;
         font-size: 1.3rem;
-        font-weight: 700;
         cursor: pointer;
 
         background-color: #404757;
         color: rgba(255, 255, 255, 0.5);
-        box-shadow: inset -1px -1px 4px 0px #0000008c;
+
+        &.add {
+            box-shadow: inset -2px -2px 4px 0px #0000008c;
+        }
+
+        &.edit {
+            box-shadow: inset 2px -2px 4px 0px #0000008c;
+        }
 
         &.active {
             background-color: $color3;
@@ -27,6 +33,8 @@
     .style-inputs {
         gap: 20px;
 
+        font-size: .9rem;
+
         & > * {
             display: flex;
             justify-content: space-between;
@@ -36,7 +44,7 @@
                 padding: 10px;
                 background: transparent;
                 color: inherit;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             button:last-child {
