@@ -50,7 +50,7 @@ export function EditorBoard() {
 
          if (!wap?.cmps?.length) return <div  {...provided.droppableProps}
             ref={provided.innerRef}
-            className='editor-board'>Choose Template from sidebar</div>
+            className='editor-board'><div className="choose-template">Pick an element from the sidebar</div></div>
 
 
          return <section className='editor-board'
