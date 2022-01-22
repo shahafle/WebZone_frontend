@@ -16,11 +16,11 @@ export const wapGallery_1 = {
             "txt": "gallery",
             "style": {
                 ...txtStyle,
-                "color": "black",
+                "color": "#000000",
                 "textAlign": "center",
                 "fontSize": "30",
                 "letterSpacing": "1",
-                "textShadow": "1px 1px 3px black",
+                "textShadow": "1px 1px 3px #000000",
                 "fontFamily": "bitter",
             }
         },

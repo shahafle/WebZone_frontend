@@ -2,6 +2,7 @@ import { asyncStorageService } from './async-storage.service.js';
 import { storageService } from './storage.service.js';
 
 
+
 export const wapService = {
     query,
     getById,
@@ -14,8 +15,6 @@ export const wapService = {
     findTarget,
     getScaleUnits,
     addIds,
-    getTemplateSections,
-    getSectionsCategories,
     getRandomId,
 }
 
@@ -25,18 +24,6 @@ const DRAFT_STORAGE_KEY = 'draft_wap'; // Draft Wap from Local Storage
 const WAP_STORAGE_KEY = 'wap_db'; // User Saved Waps
 
 
-// WITH DEMO SERVER :
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form
-
-
-
-function getTemplateSections() {
-    // return templateSections
-}
-
-function getSectionsCategories() {
-    return sectionsCategories
-}
 
 function query() {
     return asyncStorageService.query(TEMPLATE_WAP_STORAGE_KEY)

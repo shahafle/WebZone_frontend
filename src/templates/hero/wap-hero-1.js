@@ -18,11 +18,11 @@ export const wapHero_1 = {
             "txt": "Adventure is worthwhile.",
             "style": {
                 ...txtStyle,
-                "color": "white",
+                "color": "#ffffff",
                 "textAlign": "center",
                 "fontSize": "65",
                 "letterSpacing": "1",
-                "textShadow": "1px 1px 3px black",
+                "textShadow": "1px 1px 3px #000000",
                 "fontFamily": "bitter",
             }
         },
@@ -32,10 +32,10 @@ export const wapHero_1 = {
             "txt": `You don\'t have to be rich to travel well.`,
             "style": {
                 ...txtStyle,
-                "color": "white",
+                "color": "#ffffff",
                 "textAlign": "center",
                 "fontSize": "30",
-                "textShadow": "1px 1px 3px black",
+                "textShadow": "1px 1px 3px #000000",
                 "fontFamily": "bitter"
             }
         },
@@ -47,7 +47,7 @@ export const wapHero_1 = {
             "txt": "Order now",
             "style": {
                 ...btnStyle,
-                "backgroundColor": "#f1ffff",
+                "backgroundColor": "#ffffff",
                 "textAlign": "center",
                 "fontSize": "30",
                 "fontFamily": "bitter",
