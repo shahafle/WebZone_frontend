@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { addElement } from '../../../store/wap.action';
 import { wapService } from '../../../services/wap.service';
 
+import { Droppable, Draggable } from 'react-beautiful-dnd';
+
 // ACCORDION
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
@@ -39,28 +41,53 @@ export function AddAccordion() {
         dispatch(addElement(elementToAdd));
     }
 
+    return (<Droppable droppableId='sidebar'>
+        {provided => {
+            return <div {...provided.droppableProps}
+                ref={provided.innerRef}
+                className="accordions-container">
 
-    return (
-        <div className="accordions-container">
-            {sectionCategories.map((category, i) => {
-                return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
-                    <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
-                        <SummaryTypography>{category.substring(4, category.length)}</SummaryTypography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        {templateSections.filter(section => section.category === category).map(section => {
-                            return <div key={section.id}>
-                                <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography>
-                            </div>
-                        })
-                        }
-                    </AccordionDetails>
-                </Accordion>
-            })
-            }
-        </div>
-    );
+                {sectionCategories.map((category, i) => {
+                    return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
+
+                        {/* Accordion title */}
+                        <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
+                            <SummaryTypography>{category.substring(4, category.length)}</SummaryTypography>
+                        </AccordionSummary>
+
+
+
+                        {/* Accordion items */}
+                        <AccordionDetails>
+                            {templateSections.filter(section => section.category === category).map((section, idx) => {
+                                return <Draggable key={section.id} draggableId={section.id} index={idx}>
+                                    {(provided, snapshot) => {
+                                        return <div key={section.id}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            ref={provided.innerRef}>
+                                            <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography>
+                                        </div>
+                                    }}
+                                </Draggable>
+                            })}
+                        </AccordionDetails>
+
+
+
+                    </Accordion>
+                })}
+
+            </div>
+        }}
+    </Droppable >
+
+    )
 }
+
+
+
+
 
 
 // Accordion Styling

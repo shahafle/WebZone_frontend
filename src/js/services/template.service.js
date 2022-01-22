@@ -16,6 +16,7 @@ import { wapFooter_1 } from '../../templates/footer/wap-footer-1';
 export const templateService = {
    getSectionsCategories,
    getTemplateSections,
+   getById
 }
 
 
@@ -37,10 +38,14 @@ const templateSections = [
    wapFooter_1
 ]
 
+function getSectionsCategories() {
+   return sectionsCategories
+}
+
 function getTemplateSections() {
    return templateSections
 }
 
-function getSectionsCategories() {
-   return sectionsCategories
+function getById(templateId) {
+   return templateSections.find(t => t.id === templateId)
 }

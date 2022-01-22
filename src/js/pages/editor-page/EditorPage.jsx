@@ -1,25 +1,40 @@
 import { EditorSidebar } from './cmps/EditorSidebar';
 import { EditorBoard } from './cmps/EditorBoard';
 import { useEffect } from 'react';
-import { getWapById, loadWaps, loadDraftWap } from '../../store/wap.action';
-import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { loadDraftWap, switchElement } from '../../store/wap.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { DragDropContext } from 'react-beautiful-dnd';
+
 
 export function EditorPage() {
 
-   const params = useParams();
    const dispatch = useDispatch();
 
+   const wap = useSelector(state => state.wapModule.wap);
+
+   const onDragEnd = (res) => {
+      const { destination, source } = res;
+
+      if (!destination) return;
+
+      if (destination.droppableId === 'sidebar') return
+
+      if (destination.droppableId === source.droppableId &&
+         destination.index === source.index) return;
+
+      dispatch(switchElement(wap, res))
+   }
+
+
+
    useEffect(() => {
-      // console.log('EDITOR PAGE LOADED')
-      // const { wapId } = params;
       dispatch(loadDraftWap());
-      // dispatch(loadWaps());
-      // if (wapId) dispatch(getWapById(wapId));
    }, [])
 
-   return <main className='editor-page'>
-      <EditorSidebar />
-      <EditorBoard />
-   </main >
+   return <DragDropContext onDragEnd={onDragEnd}>
+      <main className='editor-page'>
+         <EditorSidebar />
+         <EditorBoard />
+      </main >
+   </DragDropContext>
 }
