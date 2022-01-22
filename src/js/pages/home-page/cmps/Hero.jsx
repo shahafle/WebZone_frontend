@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import heroSvg from '../../../../assets/imgs/undraw_website_builder.svg'
 
 export function Hero() {
@@ -12,7 +14,7 @@ export function Hero() {
                 </div>
                 <img src={heroSvg} alt="Hero Image" />
             </div>
-            <button>Get Started</button>
+            <Link to="/templates"><button>Get Started</button></Link>
         </section>
     )
 }

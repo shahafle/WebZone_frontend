@@ -60,6 +60,11 @@ export function EditAccordion() {
         dispatch(removeElement(wap, currElement));
     }
 
+    useEffect(() => {
+        window.addEventListener('keydown', onRemoveElement);
+        return () => window.removeEventListener('keydown', onRemoveElement);
+    }, [currElement])
+
 
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
 

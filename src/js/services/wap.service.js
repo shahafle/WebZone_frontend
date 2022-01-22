@@ -9,6 +9,7 @@ export const wapService = {
     save,
     saveDraft,
     loadDraft,
+    removeDraft,
     addElementToDraft,
     findTarget,
     getScaleUnits,
@@ -25,7 +26,7 @@ const WAP_STORAGE_KEY = 'wap_db'; // User Saved Waps
 
 
 // WITH DEMO SERVER :
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map,video,form
+const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form
 
 
 
@@ -65,6 +66,10 @@ function saveDraft(wap) {
 function loadDraft() {
     const draftWap = storageService.loadFromStorage(DRAFT_STORAGE_KEY);
     return draftWap;
+}
+
+function removeDraft() {
+    storageService.removeFromStorage(DRAFT_STORAGE_KEY);
 }
 
 function addElementToDraft(elementToAdd) {

@@ -1,8 +1,10 @@
 import { storageService } from './storage.service.js';
 import { wapService } from './wap.service.js';
+
 import { wapTemplate_1 } from '../../templates/wap-template-1';
 import { wapTemplate_2 } from '../../templates/wap-template-2';
 import { wapTemplate_3 } from '../../templates/wap-template-3';
+
 
 export const asyncStorageService = {
     query,
