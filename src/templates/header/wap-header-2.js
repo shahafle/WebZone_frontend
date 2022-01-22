@@ -45,7 +45,7 @@ export const wapHeader_2 = {
             "type": "btn", // CONTACT (RIGHT)
             "url": "#",
             "txt": "CONTACT US",
-            "style": { ...btnStyle, "backgroundColor": "black", "color": "white" }
+            "style": { ...btnStyle, "backgroundColor": "black", "color": "#ffffff" }
         }
     ]
 }

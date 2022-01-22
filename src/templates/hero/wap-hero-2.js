@@ -13,20 +13,20 @@ export const wapHero_2 = {
             "id": "asldfj2lk45",
             "type": "txt", // JUMBO (CENTER)
             "txt": "Grow your business.",
-            "style": { ...txtStyle, "color": "white", "textAlign": "center", "fontFamily": "Montserrat", "fontSize": "64", "letterSpacing": "4" }
+            "style": { ...txtStyle, "color": "#ffffff", "textAlign": "center", "fontFamily": "montserrat", "fontSize": "64", "letterSpacing": "4" }
         },
 
         {
             "id": "2436t6s5dfg413s5",
             "type": "txt", // SUB-JUMBO (CENTER)
             "txt": "Boost your business with a beautiful website.",
-            "style": { ...btnStyle, "color": "white", "fontSize": "20" }
+            "style": { ...btnStyle, "color": "#ffffff", "fontSize": "20" }
         },
         {
             "id": "alsrj2lk3j5tsd",
             "type": "btn", // CTA (CENTER)
             "url": "#",
             "txt": "LEARN MORE",
-            "style": { ...txtStyle, "backgroundColor": "white", "fontSize": "24" }
+            "style": { ...txtStyle, "backgroundColor": "#ffffff", "fontSize": "24" }
         }]
 }
