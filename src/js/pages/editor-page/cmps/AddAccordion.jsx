@@ -1,5 +1,5 @@
-import { useMemo, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { addElement } from '../../../store/wap.action';
 import { wapService } from '../../../services/wap.service';
@@ -12,6 +12,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { templateService } from '../../../services/template.service';
 // ACCORDION
 
 
@@ -20,13 +21,15 @@ export function AddAccordion() {
     const dispatch = useDispatch();
 
     const [expanded, setExpanded] = useState('panel1');
+    const [templateSections, setTemplateSections] = useState([]);
+    const [sectionCategories, setSectionCategories] = useState([]);
     // const wap = useSelector(state => state.wapModule.wap);
-    
-    useEffect(()=>{
-        const templateSections = wapService.getTemplateSections();
-        const sectionCategories = wapService.getSectionsCategories();
 
-    },[])
+    useEffect(() => {
+        setTemplateSections(templateService.getTemplateSections())
+        setSectionCategories(templateService.getSectionsCategories())
+
+    }, [])
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
@@ -39,7 +42,7 @@ export function AddAccordion() {
 
     return (
         <div className="accordions-container">
-            {/* {sectionCategories.map((category, i) => {
+            {sectionCategories.map((category, i) => {
                 return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
                     <AccordionSummary aria-controls={`panel${i + 1}d-content`} id={`panel${i + 1}d-header`}>
                         <SummaryTypography>{category.substring(4, category.length)}</SummaryTypography>
@@ -54,7 +57,7 @@ export function AddAccordion() {
                     </AccordionDetails>
                 </Accordion>
             })
-            } */}
+            }
         </div>
     );
 }
