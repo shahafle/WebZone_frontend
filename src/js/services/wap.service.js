@@ -64,7 +64,19 @@ function saveDraft(wap) {
 }
 
 function loadDraft() {
-    const draftWap = storageService.loadFromStorage(DRAFT_STORAGE_KEY);
+    let draftWap = storageService.loadFromStorage(DRAFT_STORAGE_KEY);
+    if (!draftWap) {
+        draftWap = {
+            "name": "new webApp",
+            "createdBy": {
+                "_id": "5e26e0b718a0891d4c995527",
+                "username": "Username"
+            },
+            "cmps": [],
+            "isPublished": false
+        }
+        saveDraft(draftWap);
+    }
     return draftWap;
 }
 

@@ -11,7 +11,7 @@ export function loadWaps() {
 export function loadDraftWap() {
     return (dispatch) => {
         const wap = wapService.loadDraft();
-        if (!wap) return;
+        // if (!wap) return;
         dispatch({ type: 'SET_WAP', wap });
     }
 }
