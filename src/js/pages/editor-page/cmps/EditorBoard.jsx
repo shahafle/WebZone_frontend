@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { setCurrElement } from '../../../store/editor.action'
+import { setCurrElement, updateCurrElementAttr } from '../../../store/editor.action'
 import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
 import { Droppable } from 'react-beautiful-dnd';
 
@@ -28,6 +28,15 @@ export function EditorBoard() {
    const onSetCurrElement = (ev, cmp) => {
       ev.stopPropagation()
       dispatch(setCurrElement(cmp))
+   }
+
+   const handleTxtChange = ({ target }) => {
+      const attr = {
+         attrName: 'txt',
+         attrValue: target.innerText
+      }
+      console.log('hi');
+      dispatch(updateCurrElementAttr(currElement, attr))
    }
 
    const getMediaClass = () => {
@@ -59,7 +68,7 @@ export function EditorBoard() {
          >
 
             {wap.cmps.map((cmp, i) =>
-               <DynamicCmp key={i} idx={i} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} />
+               <DynamicCmp key={i} idx={i} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
             )}
 
             {provided.placeholder}

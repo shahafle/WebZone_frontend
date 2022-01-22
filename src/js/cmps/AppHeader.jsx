@@ -12,11 +12,11 @@ import logo from '../../assets/webzone/webzone-full-logo-small.png'
 export function AppHeader() {
 
     const dispatch = useDispatch();
-    const location = useLocation();
+    // const location = useLocation();
 
-    useEffect(() => {
-        if (location.pathname === '/editor') console.log('hi')
-    }, [location])
+    // useEffect(() => {
+    //     if (location.pathname === '/editor') console.log('hi')
+    // }, [location])
 
     return (
         <>

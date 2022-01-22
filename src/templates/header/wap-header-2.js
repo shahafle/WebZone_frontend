@@ -5,13 +5,14 @@ export const wapHeader_2 = {
     "type": "container", // HEADER
     "category": "wap-header",
     "name": "wap-header-2",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642883206/owopvqgsktupsrjwrpzt.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "0" },
     "cmps": [
         {
             "id": "23l56ktjls",
             "type": "txt", // LOGO (LEFT)
             "txt": "BIZZ.",
-            "style": { ...txtStyle, "fontSize": "40", "fontWeight": "700", "fontStyle": "italic", "textDecoration": "underline"  }
+            "style": { ...txtStyle, "fontSize": "40", "fontWeight": "700", "fontStyle": "italic", "textDecoration": "underline" }
         },
         {
             "id": "45356dgfasdf",
