@@ -5,7 +5,7 @@ export const wapHeader_2 = {
     "type": "container", // HEADER
     "category": "wap-header",
     "name": "wap-header-2",
-    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "30" },
+    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "0" },
     "cmps": [
         {
             "id": "23l56ktjls",

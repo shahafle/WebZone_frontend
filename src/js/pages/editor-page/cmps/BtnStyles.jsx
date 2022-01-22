@@ -57,7 +57,7 @@ const PrettoSlider = styled(Slider)({
 
 export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
     return <div className="flex column style-inputs">
-        <label>Border Radius:
+        <label>Border Radius
             {/* <input type="range" min={0} max={100} onChange={onChangeStyle} name='borderRadius' value={element.style.borderRadius} /> */}
             <Box >
                 <Box sx={{ m: 3 }} sx={{ width: 100 }} />
@@ -66,13 +66,13 @@ export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
                 />
             </Box>
         </label>
-        <label>Link to:
-            <ThemeProvider theme={theme}>
+        <label>Link to
+            {/* <ThemeProvider theme={theme}>
                 <Box>
                     <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={onChangeAttr} name='url' value={element.url} />
                 </Box>
-            </ThemeProvider>
-            {/* <input type="url" onChange={onChangeAttr} name='url' value={element.url} /> */}
+            </ThemeProvider> */}
+            <input className="url-input" type="url" onChange={onChangeAttr} name='url' value={element.url} />
         </label>
         {/* <label>border:
             <input type="range" min={0} max={10} onChange={onChangeStyle} name='border' value={elementStyle.border} />

@@ -1,54 +1,40 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
+
 export const wapCard_1_2 = {
-    "id": "sdfsdf56",
+    "id": "dglkajdlktsdsddsadasdjndDDs7shs",
     "type": "container",
     "category": "wap-card",
-    "name": "wap-card-1",
-    "style": { ...containerStyle, "paddingBlock": "100", "paddingInline": "100" },
+    "name": "wap-card-2-2",
+    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "50" },
     "cmps": [
         {
-            "id": "sd9jiF",
-            "type": "container",
+            "id": "dgsyhD66765",
+            "type": "container", // CARD TEXT CONTAINER (LEFT)
             "style": { ...containerStyle },
-            "cmps": [{
-
-                "id": "Ddgjs9",
-                "type": "txt",
-                "txt": "Explore the wildlife",
-                "style": {
-                    ...txtStyle,
-                    "fontSize": "25"
-                }
-
-            },
-            {
-                "id": "dsj8F5f",
-                "type": "txt",
-                "txt": "Join our guided tours and you will be rewarded with life-changing experiences",
-                "style": {
-                    ...txtStyle,
-                }
-            }
-            ]
-        },
-
-        {
-            "id": "DFzKGOs",
-            "type": "container",
-            "style": { ...containerStyle, },
-            "cmps": [{
-                "id": "7DFkd9",
-                "type": "img",
-                "url": "https://images.pexels.com/photos/105808/pexels-photo-105808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "style": { ...imgStyle }
-            },
-            ]
-
-        },
-
-
-
-    ]
-
+            "cmps": [
+                {
+                    "id": "hsjdfksd37DD",
+                    "type": "txt", // TITLE
+                    "txt": "NATURE",
+                    "style": { ...txtStyle, "color": "#0000008c", "fontSize": "12" }
+                },
+                {
+                    "id": "yku689tsgdsssg",
+                    "type": "txt", // SUBTITLE
+                    "txt": "Explore the wildlife",
+                    "style": { ...txtStyle, "fontSize": "20" }
+                },
+                {
+                    "id": "asdnjfsdffs3SS",
+                    "type": "txt", // PARAGRAPH
+                    "txt": "Join our guided tours, one of the most popular activity on the island and come back with life-changing experiences and captivating stories. ",
+                    "style": { ...txtStyle }
+                }]
+        }, {
+            "id": "adlgkjaswdlkj346asdddsssD3d",
+            "type": "img", // CARD IMG (RIGHT)
+            "url": "https://images.pexels.com/photos/2317904/pexels-photo-2317904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            "style": { ...imgStyle, "borderRadius": "10", "width": "100" }
+        }]
 }

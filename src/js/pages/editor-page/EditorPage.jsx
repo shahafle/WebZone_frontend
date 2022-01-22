@@ -25,11 +25,10 @@ export function EditorPage() {
       dispatch(switchElement(wap, res))
    }
 
-
-
    useEffect(() => {
       dispatch(loadDraftWap());
    }, [])
+   
 
    return <DragDropContext onDragEnd={onDragEnd}>
       <main className='editor-page'>

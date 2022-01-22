@@ -6,30 +6,40 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index:999;
+    z-index: 999;
+    font-weight: 500;
 
     .logo {
         font-size: 2.2rem;
-        font-family: kalam, 'cursive';
+        font-family: kalam, "cursive";
     }
-    
+
     .nav-menu {
-        gap: 1rem;
+        gap: 3rem;
 
-        .btn-login {
-            padding: 10px 20px;
-            border-radius: 1000px;
-            border: 1px solid white;
-            background-color: $color3;
-            color: $color1;
-            margin-left: 2rem;
+        .nav-link {
+            &.active {
+                color: $color2;
 
-            transition: all 0.3s;
-
-            &:hover {
-                background-color: $color1;
-                color: $color3;
             }
+        }
+    }
+
+    .btn-login {
+        padding: 10px 20px;
+        border-radius: 999px;
+        background-color: $color2;
+        color: $color1;
+        gap: 10px;
+        font-size: 1rem;
+        font-family: $main-font;
+        font-weight: 500;
+
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $color1;
+            color: $color3;
         }
     }
 }

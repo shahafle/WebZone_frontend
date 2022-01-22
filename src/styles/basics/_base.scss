@@ -8,9 +8,9 @@ html {
     font-size: 16px;
     font-family: $main-font;
     // We might need to use variable declarations here if we want to have a theme toggler.
-    // $font-main: 
-    // $color-main: 
-    // $color-secondary: 
+    // $font-main:
+    // $color-main:
+    // $color-secondary:
 }
 
 body {
@@ -23,14 +23,10 @@ body {
     cursor: default;
 }
 
-// ::-webkit-scrollbar:double-button {
-// }
-
 ::-webkit-scrollbar-track {
     background: lightgray;
     border-radius: 10px;
     margin-block: 2px;
-    
 }
 
 ::-webkit-scrollbar-thumb {
@@ -44,3 +40,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #a0a0a0;
 }
+
+// ::-webkit-scrollbar:double-button {
+// }

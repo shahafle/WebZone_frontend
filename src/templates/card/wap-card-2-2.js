@@ -1,7 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
-const IMG_URL = 'https://assets.website-files.com/5c6eb5400253230156de2bd6/5cdc00be4b4caf93455d66a1_placeholder%201.svg';
-
+import imgUrl from '../../assets/imgs/cards/what-we-do.jpg'
 
 export const wapCard_2_2 = {
     "id": "dglkajdlktj46132as",
@@ -36,7 +35,7 @@ export const wapCard_2_2 = {
         }, {
             "id": "adlgkjaswdlkj346asd",
             "type": "img", // CARD IMG (RIGHT)
-            "url": IMG_URL,
-            "style": { ...imgStyle, "borderRadius": "30", "width": "100" }
+            "url": imgUrl,
+            "style": { ...imgStyle, "borderRadius": "20", "width": "100" }
         }]
 }
