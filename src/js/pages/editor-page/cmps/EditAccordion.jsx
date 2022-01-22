@@ -18,7 +18,6 @@ import { SectionStyle } from './SectionStyle';
 
 
 
-
 export function EditAccordion() {
     const [expanded, setExpanded] = React.useState('panel1');
 
@@ -92,7 +91,7 @@ export function EditAccordion() {
                         <SummaryTypography>Image</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <ImageStyles element={currElement} onChangeStyle={onChangeStyle} onUploadImg={onUploadImg} />
+                        <ImageStyles element={currElement} onChangeStyle={onChangeStyle} onUploadImg={onUploadImg} onChangeAttr={onChangeAttr} />
                     </AccordionDetails>
                 </Accordion>}
             {currElement.type === 'btn' &&

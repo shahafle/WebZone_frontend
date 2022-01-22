@@ -46,7 +46,7 @@ const PrettoSlider = styled(Slider)({
 
 
 
-export function ImageStyles({ element, onChangeStyle, onUploadImg }) {
+export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr }) {
    return <div className="flex column style-inputs">
       <label >Border Radius:
          <Box >
@@ -67,8 +67,11 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg }) {
                min={1} max={200} onChange={onChangeStyle} name='width' value={+element.style.width} />
          </Box>
       </label>
-      <label> Upload Image
+      <label>Upload Image
          <input onChange={(ev) => onUploadImg(ev, false)} type="file" />
+      </label>
+      <label>Image url
+         <input onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
       </label>
    </div>
 }

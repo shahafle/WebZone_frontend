@@ -66,5 +66,8 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
         <label> Upload Background Image
             <input onChange={(ev) => onUploadImg(ev, true)} type="file" />
         </label>
+        <label>Background Image url
+            <input onChange={onChangeStyle} type="url" name='backgroundImage' />
+        </label>
     </div>
 }

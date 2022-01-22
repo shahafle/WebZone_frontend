@@ -13,7 +13,7 @@ export async function uploadImgToCloud(ev) {
          body: formData
       })
       res = await res.json();
-      console.log(res);
+
       return res.url;
 
    } catch (err) {
