@@ -13,7 +13,7 @@ export const wapGallery_1 = {
         {
             "id": "ffffd8sE3s",
             "type": "txt",
-            "txt": "gallery",
+            "txt": "Gallery",
             "style": {
                 ...txtStyle,
                 "color": "#000000",
@@ -21,7 +21,7 @@ export const wapGallery_1 = {
                 "fontSize": "30",
                 "letterSpacing": "1",
                 "textShadow": "1px 1px 3px #000000",
-                "fontFamily": "bitter",
+                "fontFamily": "quicksand",
             }
         },
         {

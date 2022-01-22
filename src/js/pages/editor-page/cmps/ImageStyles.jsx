@@ -4,7 +4,16 @@ import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { FaUpload } from "react-icons/fa";
+import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const theme = createTheme({
+   palette: {
+      primary: {
+         main: '#ffffff'
+      },
+   }
+})
 
 
 const PrettoSlider = styled(Slider)({
@@ -70,6 +79,13 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
          </Box>
       </label>
 
+      <label>Image url
+         <ThemeProvider theme={theme}>
+            <Box>
+               <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
+            </Box>
+         </ThemeProvider>
+      </label>
 
       <label className="upload-img-label flex justify-around" >
          Upload Image
@@ -77,9 +93,6 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
          <input style={{ display: 'none' }} onChange={(ev) => onUploadImg(ev, false)} type="file" />
       </label>
 
-      <label>Image url
-         <input onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
-      </label>
 
    </div>
 } 
