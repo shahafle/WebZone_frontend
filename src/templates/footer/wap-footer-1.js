@@ -72,7 +72,7 @@ export const wapFooter_1 =
         {
             "id": "sBghfh36",
             "type": "txt",
-            "txt": "© all rights reserved | Brix 2022",
+            "txt": "© all rights reserved | WEBzone 2022",
             "style": {
                 ...txtStyle,
                 "fontFamily": "bitter",
