@@ -15,7 +15,14 @@
 
         background-color: #404757;
         color: rgba(255, 255, 255, 0.5);
-        box-shadow: inset -1px -1px 4px 0px #0000008c;
+
+        &.add {
+            box-shadow: inset -2px -2px 4px 0px #0000008c;
+        }
+
+        &.edit {
+            box-shadow: inset 2px -2px 4px 0px #0000008c;
+        }
 
         &.active {
             background-color: $color3;

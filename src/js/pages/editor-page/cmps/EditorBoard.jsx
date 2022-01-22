@@ -52,7 +52,7 @@ export function EditorBoard() {
       dispatch(switchElement(wap, res))
    }
 
-   if (!wap.cmps?.length) return <div className='editor-board'>Choose Template from sidebar</div>
+   if (!wap?.cmps?.length) return <div className='editor-board'>Choose Template from sidebar</div>
 
    return <DragDropContext onDragEnd={onDragEnd} onDragStart={(res) => { }}>
       <Droppable droppableId='156'>
