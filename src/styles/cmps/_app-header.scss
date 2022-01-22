@@ -8,9 +8,8 @@
     z-index: 999;
     font-weight: 500;
 
-    .logo {
-        font-size: 2.2rem;
-        font-family: kalam, "cursive";
+    .logo img {
+        display: block;
     }
 
     .nav-menu {
@@ -19,7 +18,6 @@
         .nav-link {
             &.active {
                 color: $color2;
-
             }
         }
     }
@@ -28,7 +26,6 @@
         padding: 10px 20px;
         border-radius: 5px;
         border: 1px solid $color2;
-        // background-color: $color2;
         gap: 10px;
         font-size: 1rem;
         font-family: $main-font;
@@ -37,7 +34,6 @@
         transition: all 0.3s;
 
         &:hover {
-            // background-image: linear-gradient(90deg, rgb(103, 78, 126), rgb(151, 78, 219));
             background-color: $color2;
             color: $color1;
         }
