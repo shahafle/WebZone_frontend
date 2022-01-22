@@ -10,7 +10,6 @@
         padding: 1rem 0;
         text-align: center;
         font-size: 1.3rem;
-        font-weight: 700;
         cursor: pointer;
 
         background-color: #404757;
@@ -34,6 +33,8 @@
     .style-inputs {
         gap: 20px;
 
+        font-size: .9rem;
+
         & > * {
             display: flex;
             justify-content: space-between;
@@ -43,7 +44,7 @@
                 padding: 10px;
                 background: transparent;
                 color: inherit;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             button:last-child {
