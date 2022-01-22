@@ -107,12 +107,6 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
          <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
       </label> */}
       <label>Text Shadow
-         {/* <select name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
-               <option value="none">none</option>
-               <option value="1px 1px 3px black">Light</option>
-               <option value="5px 5px 3px black">Medium</option>
-               <option value="10px 10px 5px black">Strong</option> */}
-         {/* </select>*/}
          <ThemeProvider theme={theme}>
 
             <Box sx={{ minWidth: 120 }}>
@@ -151,22 +145,6 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
                </FormControl>
             </Box>
          </ThemeProvider>
-         {/* <select name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
-            <option disabled>- Sans Serif -</option>
-            <option value="montserrat">Montserrat</option>
-            <option value="nunitosans">Nunito Sans</option>
-            <option value="poppins">Poppins</option>
-            <option value="quicksand">Quicksand</option>
-            <option value="raleway">Raleway</option>
-            <option disabled>- Serif -</option>
-            <option value="bitter">Bitter </option>
-            <option value="ptserif">PT Serif</option>
-            <option value="unna">Unna</option>
-            <option disabled>- Handwriting -</option>
-            <option value="kalam">Kalam</option>
-            <option value="mali">Mali</option>
-            <option value="cursive">Cursive</option>
-         </select> */}
       </label>
    </div>
 }

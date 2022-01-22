@@ -1,0 +1,37 @@
+.wap-actions {
+    gap: 1rem;
+    margin-bottom: 1rem;
+    .media-btns {
+        gap: 1.5rem;
+    }
+
+    & > *:not(:last-child) {
+        color: white;
+        cursor: pointer;
+    }
+
+    svg {
+        transition: 200ms;
+    }
+
+    svg:hover {
+        transform: scale(1.3);
+    }
+    .save-publish-container {
+        gap: 1.5rem;
+    }
+
+    .save-publish-btn {
+        margin: auto;
+        padding: 8px 20px;
+        border-radius: 1000px;
+        background-color: rgba(255, 255, 255, 0.212);
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: 200ms;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.966);
+            color: #1b1b1b;
+        }
+    }
+}

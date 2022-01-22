@@ -64,13 +64,13 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
                     min={0} max={150} onChange={onChangeStyle} name='paddingInline' value={+element.style['paddingInline']} />
             </Box>
         </label>
+        <label>Image url
+            <input className="url-input" onChange={onChangeStyle} type="url" name='backgroundImage' />
+        </label>
         <label className="upload-img-label flex justify-around" >
             Upload Image
             <FaUpload />
             <input style={{ display: 'none' }} onChange={(ev) => onUploadImg(ev, true)} type="file" />
-        </label>
-        <label>Background Image url
-            <input onChange={onChangeStyle} type="url" name='backgroundImage' />
         </label>
     </div>
 }

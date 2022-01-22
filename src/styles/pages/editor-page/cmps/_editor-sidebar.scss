@@ -54,6 +54,17 @@
     }
 }
 
+.url-input {
+    height: 35px;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #ffffffd5;
+    &:focus-visible {
+        background-color: #fff;
+        border: 1px solid #fff;
+    }
+}
+
 .upload-img-label {
     background-color: rgba(255, 255, 255, 0.212);
     color: rgb(255, 255, 255);
@@ -68,6 +79,21 @@
     transition: 200ms;
     &:hover {
         background-color: rgba(255, 255, 255, 0.966);
-        color: rebeccapurple;
+        color: #663399;
+    }
+}
+
+.remove-el-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 8px 20px;
+    border-radius: 1000px;
+    background-color: rgba(255, 255, 255, 0.212);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 200ms;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.966);
+        color: #1b1b1b;
     }
 }
