@@ -47,7 +47,6 @@ const PrettoSlider = styled(Slider)({
 
 
 export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
-    console.log(element.style.borderRadius);
     return <div className="flex column style-inputs">
         <label>Border Radius:
             {/* <input type="range" min={0} max={100} onChange={onChangeStyle} name='borderRadius' value={element.style.borderRadius} /> */}

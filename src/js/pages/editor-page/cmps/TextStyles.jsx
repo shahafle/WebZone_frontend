@@ -116,13 +116,13 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
          <ThemeProvider theme={theme}>
 
             <Box sx={{ minWidth: 120 }}>
-               <FormControl sx={{ backgroundColor: '#eeeeee' }} color='primary' focused fullWidth>
+               <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
                   <Select
                      name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
                      <MenuItem value="none">none</MenuItem>
-                     <MenuItem value="1px 1px 3px #1b1b1b">Light</MenuItem>
-                     <MenuItem value="5px 5px 3px #1b1b1b">Medium</MenuItem>
-                     <MenuItem value="10px 10px 5px #1b1b1b">Strong</MenuItem>
+                     <MenuItem value="1px 1px 3px #000000">Light</MenuItem>
+                     <MenuItem value="5px 5px 3px #000000">Medium</MenuItem>
+                     <MenuItem value="10px 10px 5px #000000">Strong</MenuItem>
                   </Select>
                </FormControl>
             </Box>
@@ -133,7 +133,7 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
          <ThemeProvider theme={theme}>
 
             <Box sx={{ minWidth: 120 }}>
-               <FormControl sx={{ backgroundColor: '#eeeeee' }} color='primary' focused fullWidth>
+               <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
                   <Select
                      name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
                      <MenuItem value="montserrat">Montserrat</MenuItem>
