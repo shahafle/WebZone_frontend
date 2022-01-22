@@ -67,12 +67,12 @@ export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
             </Box>
         </label>
         <label>Link to
-            <ThemeProvider theme={theme}>
+            {/* <ThemeProvider theme={theme}>
                 <Box>
                     <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={onChangeAttr} name='url' value={element.url} />
                 </Box>
-            </ThemeProvider>
-            {/* <input type="url" onChange={onChangeAttr} name='url' value={element.url} /> */}
+            </ThemeProvider> */}
+            <input className="url-input" type="url" onChange={onChangeAttr} name='url' value={element.url} />
         </label>
         {/* <label>border:
             <input type="range" min={0} max={10} onChange={onChangeStyle} name='border' value={elementStyle.border} />
