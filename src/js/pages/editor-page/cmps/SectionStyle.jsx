@@ -2,8 +2,9 @@
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { FaUpload } from "react-icons/fa";
+
 
 const PrettoSlider = styled(Slider)({
     color: '#904BCF',
@@ -63,8 +64,11 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
                     min={0} max={150} onChange={onChangeStyle} name='paddingInline' value={+element.style['paddingInline']} />
             </Box>
         </label>
-        <label> Upload Background Image
-            <input onChange={(ev) => onUploadImg(ev, true)} type="file" />
+        <label className="upload-img-label flex justify-around" >
+            Upload Image
+            <FaUpload />
+            <input style={{ display: 'none' }} onChange={(ev) => onUploadImg(ev, true)} type="file" />
         </label>
     </div>
 }
+
