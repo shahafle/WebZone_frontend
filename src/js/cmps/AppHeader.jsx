@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import { ReactComponent as YourSvg } from '../../assets/webzone/webzone-full-logo-heavy.svg';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { AiOutlineLogin } from 'react-icons/ai'
 
 import { shouldShowLogin } from '../store/system.action';
+import logo from '../../assets/webzone/webzone-full-logo-small.png'
 
 export function AppHeader() {
 
@@ -15,11 +18,13 @@ export function AppHeader() {
         if (location.pathname === '/editor') console.log('hi')
     }, [location])
 
-
     return (
         <>
             <header className="main-header flex justify-between align-center">
-                <NavLink className="clean-link logo" to="/">Brix</NavLink>
+                <Link className="clean-link logo" to="/">
+                    {/* <YourSvg style={{ width: '100px', height: '100px' }} /> */}
+                    <img src={logo} alt="no" />
+                </Link>
                 <nav className="nav-menu flex align-center">
                     <NavLink className="clean-link nav-link" to="/templates"> TEMPLATES</NavLink>
                     <NavLink className="clean-link nav-link" to="/editor"> EDITOR</NavLink>
