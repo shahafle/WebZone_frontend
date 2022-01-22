@@ -33,9 +33,9 @@
     .style-inputs {
         gap: 20px;
 
-        font-size: .9rem;
+        font-size: 0.9rem;
 
-        & > * {
+        & > *:not(.upload-img-label) {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,5 +51,23 @@
                 padding-right: 0;
             }
         }
+    }
+}
+
+.upload-img-label {
+    background-color: rgba(255, 255, 255, 0.212);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border-radius: 1000px;
+    padding: 12px 12px;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+    gap: 20px;
+    margin: auto;
+    transition: 200ms;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.966);
+        color: rebeccapurple;
     }
 }

@@ -2,8 +2,10 @@
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { FaUpload } from "react-icons/fa";
+
+
 
 const PrettoSlider = styled(Slider)({
    color: '#904BCF',
@@ -48,7 +50,7 @@ const PrettoSlider = styled(Slider)({
 
 export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr }) {
    return <div className="flex column style-inputs">
-      <label >Border Radius:
+      <label >Border Radius
          <Box >
             <Box sx={{ m: 3 }} sx={{ width: 100 }} />
             <PrettoSlider
@@ -58,7 +60,7 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
             />
          </Box>
       </label>
-      <label >Size:
+      <label >Size
          <Box >
             <Box sx={{ m: 3 }} sx={{ width: 100 }} />
             <PrettoSlider
@@ -67,11 +69,17 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
                min={1} max={200} onChange={onChangeStyle} name='width' value={+element.style.width} />
          </Box>
       </label>
-      <label>Upload Image
-         <input onChange={(ev) => onUploadImg(ev, false)} type="file" />
+
+
+      <label className="upload-img-label flex justify-around" >
+         Upload Image
+         <FaUpload />
+         <input style={{ display: 'none' }} onChange={(ev) => onUploadImg(ev, false)} type="file" />
       </label>
+
       <label>Image url
          <input onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
       </label>
+
    </div>
-}
+} 
