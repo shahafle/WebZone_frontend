@@ -60,9 +60,15 @@ export function EditAccordion() {
         dispatch(removeElement(wap, currElement));
     }
 
+    const onRemoveElementByKey = ({ key }) => {
+        if (key === 'Delete') onRemoveElement();
+    }
+
     useEffect(() => {
-        window.addEventListener('keydown', onRemoveElement);
-        return () => window.removeEventListener('keydown', onRemoveElement);
+        window.addEventListener('keydown', onRemoveElementByKey);
+
+        return () => window.removeEventListener('keydown', onRemoveElementByKey);
+
     }, [currElement])
 
 
