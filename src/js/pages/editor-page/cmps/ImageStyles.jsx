@@ -80,6 +80,7 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
       </label>
 
       <label>Image url
+         {/* <input onChange={(ev) => onChangeAttr(ev)} type="url" name='url' /> */}
          <ThemeProvider theme={theme}>
             <Box>
                <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
