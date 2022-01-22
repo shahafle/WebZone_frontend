@@ -11,12 +11,12 @@ export const wapHeader_1 =
     },
     "cmps": [
         {
-            "id": "sasdj7",
+            "id": "savdj7",
             "type": "txt",
             "txt": "Pacifico",
             "style": {
                 ...txtStyle,
-                "color": "white",
+                "color": "#ffffff",
                 "fontFamily": "kalam",
                 "fontSize": "40",
             },
@@ -34,8 +34,8 @@ export const wapHeader_1 =
                     "url": "https://www.google.com",
                     "txt": "More details",
                     "style": {
-                        ...txtStyle,
-                        "color": "white",
+                        ...btnStyle,
+                        "color": "#ffffff",
                         "fontFamily": "bitter"
                     },
 
@@ -46,8 +46,8 @@ export const wapHeader_1 =
                     "url": "https://www.google.com",
                     "txt": "Reservations",
                     "style": {
-                        ...txtStyle,
-                        "color": "white",
+                        ...btnStyle,
+                        "color": "#ffffff",
                         "fontFamily": "bitter"
                     },
 
@@ -58,8 +58,8 @@ export const wapHeader_1 =
                     "url": "https://www.google.com",
                     "txt": "Contact us",
                     "style": {
-                        ...txtStyle,
-                        "color": "white",
+                        ...btnStyle,
+                        "color": "#ffffff",
                         "fontFamily": "bitter"
                     },
 

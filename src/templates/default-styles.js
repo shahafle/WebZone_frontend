@@ -1,9 +1,9 @@
 export const txtStyle = {
-    'color': 'black',
+    'color': '#000000',
     'textAlign': 'start',
     'textDecoration': 'none',
     'textShadow': 'none',
-    'fontFamily': 'Poppins',
+    'fontFamily': 'poppins',
     'fontWeight': '400',
     'fontSize': '16',
     'fontStyle': 'normal',

@@ -18,8 +18,8 @@ export const wapFooter_1 =
             "style": {
                 ...txtStyle,
                 "fontFamily": "kalam",
-                "textShadow": "1px 1px 3px black",
-                "color": "white",
+                "textShadow": "1px 1px 3px #000000",
+                "color": "#ffffff",
                 "fontSize": "30",
                 "textAlign": "center"
             },
@@ -39,7 +39,7 @@ export const wapFooter_1 =
                     "style": {
                         ...txtStyle,
                         "fontFamily": "bitter",
-                        "color": "white"
+                        "color": "#ffffff"
                     },
 
                 },
@@ -51,7 +51,7 @@ export const wapFooter_1 =
                     "style": {
                         ...txtStyle,
                         "fontFamily": "bitter",
-                        "color": "white"
+                        "color": "#ffffff"
                     },
 
                 },
@@ -63,7 +63,7 @@ export const wapFooter_1 =
                     "style": {
                         ...txtStyle,
                         "fontFamily": "bitter",
-                        "color": "white"
+                        "color": "#ffffff"
                     },
 
                 },
@@ -76,7 +76,7 @@ export const wapFooter_1 =
             "style": {
                 ...txtStyle,
                 "fontFamily": "bitter",
-                "color": "white",
+                "color": "#ffffff",
                 "textAlign": "center"
             },
         }
