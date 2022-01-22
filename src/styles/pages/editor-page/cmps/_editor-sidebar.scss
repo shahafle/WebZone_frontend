@@ -1,8 +1,8 @@
 .editor-sidebar {
-    background-color: $color3;
+    background-color: $color1;
     height: calc(100vh - $header-height);
     width: $sidebar-width;
-    border-top: 1px solid #404757;
+    margin-top: 5px;
     position: fixed;
 
     .tab {
@@ -12,20 +12,20 @@
         font-size: 1.3rem;
         cursor: pointer;
 
-        background-color: #404757;
-        color: rgba(255, 255, 255, 0.5);
+        // background-color: #404757;
+        // color: rgba(255, 255, 255, 0.5);
 
         &.add {
-            box-shadow: inset -2px -2px 4px 0px #0000008c;
+            // box-shadow: inset -2px -2px 4px 0px #0000008c;
         }
 
         &.edit {
-            box-shadow: inset 2px -2px 4px 0px #0000008c;
+            // box-shadow: inset 2px -2px 4px 0px #0000008c;
         }
 
         &.active {
-            background-color: $color3;
-            color: white;
+            // background-color: $color3;
+            // color: white;
             box-shadow: unset;
         }
     }
@@ -59,6 +59,7 @@
     border-radius: 5px;
     padding: 3px;
     background-color: #ffffffd5;
+
     &:focus-visible {
         background-color: #fff;
         border: 1px solid #fff;
@@ -66,8 +67,7 @@
 }
 
 .upload-img-label {
-    background-color: rgba(255, 255, 255, 0.212);
-    color: rgb(255, 255, 255);
+    border: 1px solid $color2;
     font-weight: 500;
     border-radius: 1000px;
     padding: 12px 12px;
@@ -77,9 +77,10 @@
     gap: 20px;
     margin: auto;
     transition: 200ms;
+
     &:hover {
-        background-color: rgba(255, 255, 255, 0.966);
-        color: #663399;
+        background-color: $color2;
+        color: white;
     }
 }
 
@@ -88,12 +89,12 @@
     margin: 30px auto;
     padding: 8px 20px;
     border-radius: 1000px;
-    background-color: rgba(255, 255, 255, 0.212);
-    color: rgb(255, 255, 255);
+    border: 1px solid $color2;
     cursor: pointer;
     transition: 200ms;
+
     &:hover {
-        background-color: rgba(255, 255, 255, 0.966);
-        color: #1b1b1b;
+        background-color: $color2;
+        color: white;
     }
 }

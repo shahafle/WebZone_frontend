@@ -1,8 +1,7 @@
 .main-header {
     height: $header-height;
-    background-color: $color3;
-    color: $color1;
-    padding: 0 1.5rem;
+    background-color: $color1;
+    padding: 0 30px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -27,9 +26,9 @@
 
     .btn-login {
         padding: 10px 20px;
-        border-radius: 999px;
-        background-color: $color2;
-        color: $color1;
+        border-radius: 5px;
+        border: 1px solid $color2;
+        // background-color: $color2;
         gap: 10px;
         font-size: 1rem;
         font-family: $main-font;
@@ -38,8 +37,9 @@
         transition: all 0.3s;
 
         &:hover {
-            background-color: $color1;
-            color: $color3;
+            // background-image: linear-gradient(90deg, rgb(103, 78, 126), rgb(151, 78, 219));
+            background-color: $color2;
+            color: $color1;
         }
     }
 }

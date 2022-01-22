@@ -1,12 +1,11 @@
 .wap-actions {
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     .media-btns {
         gap: 1.5rem;
     }
 
     & > *:not(:last-child) {
-        color: white;
         cursor: pointer;
     }
 
@@ -25,13 +24,12 @@
         margin: auto;
         padding: 8px 20px;
         border-radius: 1000px;
-        background-color: rgba(255, 255, 255, 0.212);
-        color: rgb(255, 255, 255);
+        border: 1px solid $color2;
         cursor: pointer;
         transition: 200ms;
         &:hover {
-            background-color: rgba(255, 255, 255, 0.966);
-            color: #1b1b1b;
+            background-color: $color2;
+            color: white;
         }
     }
 }

@@ -23,7 +23,7 @@ export function AppHeader() {
                 <nav className="nav-menu flex align-center">
                     <NavLink className="clean-link nav-link" to="/templates"> TEMPLATES</NavLink>
                     <NavLink className="clean-link nav-link" to="/editor"> EDITOR</NavLink>
-                    <NavLink className="clean-link nav-link" to="/"> COLLECTION</NavLink>
+                    <NavLink className="clean-link nav-link" to="/collection"> COLLECTION</NavLink>
                 </nav>
                 <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}>Login <AiOutlineLogin /></button>
             </header>
