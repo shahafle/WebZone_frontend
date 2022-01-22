@@ -3,6 +3,9 @@ import { FaAlignLeft } from 'react-icons/fa';
 import { FaAlignCenter } from 'react-icons/fa';
 import { FaAlignRight } from 'react-icons/fa';
 
+import { TwitterPicker } from 'react-color';
+
+
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -12,6 +15,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const colors = ['#D9E3F0', '#697689', '#1b1b1b', '#F47373',]
 
 const theme = createTheme({
    palette: {
@@ -64,7 +70,7 @@ const PrettoSlider = styled(Slider)({
 
 
 
-export function TextStyles({ elementStyle, onChangeStyle }) {
+export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
    return <div className="flex column style-inputs">
       <div>
          Align
@@ -100,9 +106,17 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
                min={0} max={50} onChange={onChangeStyle} name='letterSpacing' value={+elementStyle.letterSpacing} />
          </Box>
       </label>
-      <label>Font Color
-         <input type="color" onChange={onChangeStyle} name='color' value={elementStyle.color} />
-      </label>
+
+
+
+
+
+
+
+
+
+
+
       {/* <label>Line height:
          <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
       </label> */}
@@ -130,21 +144,25 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
                <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
                   <Select
                      name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
-                     <MenuItem value="montserrat">Montserrat</MenuItem>
-                     <MenuItem value="nunitosans">Nunito Sans</MenuItem>
-                     <MenuItem value="poppins">Poppins</MenuItem>
-                     <MenuItem value="quicksand">Quicksand</MenuItem>
-                     <MenuItem value="raleway">Raleway</MenuItem>
-                     <MenuItem value="bitter">Bitter </MenuItem>
-                     <MenuItem value="ptserif">PT Serif</MenuItem>
-                     <MenuItem value="unna">Unna</MenuItem>
-                     <MenuItem value="kalam">Kalam</MenuItem>
-                     <MenuItem value="mali">Mali</MenuItem>
-                     <MenuItem value="cursive">Cursive</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'montserrat' }} value="montserrat">Montserrat</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'nunitosans' }} value="nunitosans">Nunito Sans</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'poppins' }} value="poppins">Poppins</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'quicksand' }} value="quicksand">Quicksand</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'raleway' }} value="raleway">Raleway</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'bitter' }} value="bitter">Bitter </MenuItem>
+                     <MenuItem sx={{ fontFamily: 'ptserif' }} value="ptserif">PT Serif</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'unna' }} value="unna">Unna</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'kalam' }} value="kalam">Kalam</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'mali' }} value="mali">Mali</MenuItem>
+                     <MenuItem sx={{ fontFamily: 'cursive' }} value="cursive">Cursive</MenuItem>
                   </Select>
                </FormControl>
             </Box>
          </ThemeProvider>
+      </label>
+      <label>Font Color
+         <TwitterPicker colors={colors} width={170} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} value={elementStyle.color} />
+         {/* <input type="color" onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
       </label>
    </div>
 }
