@@ -2,8 +2,17 @@
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#ffffff'
+        },
+    }
+})
 
 const PrettoSlider = styled(Slider)({
     color: '#904BCF',
@@ -58,7 +67,12 @@ export function ButtonStyles({ element, onChangeStyle, onChangeAttr }) {
             </Box>
         </label>
         <label>Link to:
-            <input type="url" onChange={onChangeAttr} name='url' value={element.url} />
+            <ThemeProvider theme={theme}>
+                <Box>
+                    <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={onChangeAttr} name='url' value={element.url} />
+                </Box>
+            </ThemeProvider>
+            {/* <input type="url" onChange={onChangeAttr} name='url' value={element.url} /> */}
         </label>
         {/* <label>border:
             <input type="range" min={0} max={10} onChange={onChangeStyle} name='border' value={elementStyle.border} />

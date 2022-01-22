@@ -6,7 +6,7 @@ export function WapImg(props) {
          <img style={style}
             className={cmp.id === currElementId ? 'edit-active' : ''}
             src={cmp.url}
-            alt="Image" />
+            alt="Missing img" />
       </span>
    }
 
@@ -18,6 +18,6 @@ export function WapImg(props) {
          onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
          onMouseOver={({ target }) => { target.classList.add('element-hover') }}
          onClick={(ev) => onSetCurrElement(ev, cmp)}
-         alt="Image" />
+         alt="Missing img" />
    </span>
 }

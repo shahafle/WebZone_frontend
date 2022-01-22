@@ -36,4 +36,5 @@ export function EditorPage() {
          <EditorBoard />
       </main >
    </DragDropContext>
+
 }
