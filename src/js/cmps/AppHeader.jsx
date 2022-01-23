@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import { ReactComponent as YourSvg } from '../../assets/webzone/webzone-full-logo-heavy.svg';
@@ -12,15 +12,18 @@ import logo from '../../assets/webzone/webzone-full-logo-small.png'
 export function AppHeader() {
 
     const dispatch = useDispatch();
-    // const location = useLocation();
+    const location = useLocation();
 
-    // useEffect(() => {
-    //     if (location.pathname === '/editor') console.log('hi')
-    // }, [location])
+    const [homeClass, setHomeClass] = useState('home-page');
+
+    useEffect(() => {
+        if (location.pathname === '/') setHomeClass('home-page')
+        else setHomeClass('')
+    }, [location])
 
     return (
         <>
-            <header className="main-header flex justify-between align-center">
+            <header className={`main-header flex justify-between align-center ${homeClass}`}>
                 <Link className="clean-link logo" to="/">
                     {/* <YourSvg style={{ width: '100px', height: '100px' }} /> */}
                     <img src={logo} alt="no" />

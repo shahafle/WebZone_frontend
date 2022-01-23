@@ -11,7 +11,6 @@ export function updateCurrElementStyle(currElement, style) {
    return (dispatch) => {
       let { styleName, styleValue } = style;
       if (styleName === 'backgroundImage') styleValue = `url(${styleValue})`
-      console.log(styleValue);
       const updatedElement = { ...currElement, style: { ...currElement.style, [styleName]: styleValue } }
       dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement })
    }

@@ -53,6 +53,8 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
             <Box >
                 <Box sx={{ m: 3 }} sx={{ width: 100 }} />
                 <PrettoSlider
+                    valueLabelDisplay="auto"
+                    aria-label="pretto slider"
                     min={0} max={200} onChange={onChangeStyle} name='paddingBlock' value={+element.style['paddingBlock']} />
             </Box>
         </label>
@@ -60,7 +62,8 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
             <Box >
                 <Box sx={{ m: 3 }} sx={{ width: 100 }} />
                 <PrettoSlider
-
+                    valueLabelDisplay="auto"
+                    aria-label="pretto slider"
                     min={0} max={150} onChange={onChangeStyle} name='paddingInline' value={+element.style['paddingInline']} />
             </Box>
         </label>
