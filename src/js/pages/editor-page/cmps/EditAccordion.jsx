@@ -120,7 +120,7 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
 
-            <button className="remove-el-btn" onClick={onRemoveElement}>Delete Element</button>
+            <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
         </div >
     );
 }

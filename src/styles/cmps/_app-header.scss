@@ -8,6 +8,11 @@
     z-index: 999;
     font-weight: 500;
 
+    &.home-page {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(4px);
+    }
+
     .logo img {
         display: block;
     }
@@ -17,7 +22,7 @@
 
         .nav-link {
             &:hover {
-                opacity: .6;
+                opacity: 0.6;
             }
 
             &.active {

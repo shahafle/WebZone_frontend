@@ -35,7 +35,6 @@ export function EditorBoard() {
          attrName: 'txt',
          attrValue: target.innerText
       }
-      console.log('hi');
       dispatch(updateCurrElementAttr(currElement, attr))
    }
 
