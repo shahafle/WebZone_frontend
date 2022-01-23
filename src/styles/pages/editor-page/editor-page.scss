@@ -3,4 +3,25 @@
    grid-template-columns: $sidebar-width 1fr;
    overflow: auto;
    max-height: calc(100vh - $header-height);
+
+   &.drag-active{
+      .garbage{
+         opacity: 1;
+         right: 20px;
+      }
+   }
+   .garbage{
+      transition: all .2s;
+      grid-column: 2/3;
+      position: fixed;
+      right: -50px;
+      bottom: 20px;
+      background-color: rgba(185, 58, 58, 0.397);
+      font-size: 4rem;
+      width: 78px;
+      text-align: center;
+      border-radius: 50%;
+       z-index: 5005;
+      opacity: 0;
+   }
 }

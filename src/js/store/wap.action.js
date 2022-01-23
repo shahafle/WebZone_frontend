@@ -40,7 +40,6 @@ export function updateWap(wap, elementToUpdate) {
     return async (dispatch) => {
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate)
         if (wap._id) delete wap._id;
-        wapService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
@@ -48,7 +47,6 @@ export function updateWap(wap, elementToUpdate) {
 export function removeElement(wap, element) {
     return (dispatch) => {
         wapService.findTarget(wap, element.id, (cmpsArr, idx) => cmpsArr.splice(idx, 1))
-        wapService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
     }
 }
@@ -80,18 +78,27 @@ export function switchElement(wap, res) {
         // console.log('source', source);
 
 
-        // Just intothe board
-        if (source.droppableId === destination.droppableId) {
+        // Just into the board
+        if (source.droppableId === 'board' &&
+            destination.droppableId === 'board') {
+
             const draggedElement = wap.cmps.splice(source.index, 1)[0]
             wap.cmps.splice(destination.index, 0, draggedElement)
         }
+
         // From sidebar to board
-        else {
+        else if (source.droppableId === 'sidebar' &&
+            destination.droppableId === 'board') {
+
             let draggedElement = templateService.getById(draggableId);
             draggedElement = JSON.parse(JSON.stringify(draggedElement))
             wapService.addIds(draggedElement)
             wap.cmps.splice(destination.index, 0, draggedElement)
-            wapService.saveDraft(wap);
+        }
+
+        // From board to garbage
+        else {
+            wap.cmps.splice(source.index, 1);
         }
         dispatch({ type: 'UPDATE_WAP', wap })
     }
