@@ -16,6 +16,10 @@
         gap: 3rem;
 
         .nav-link {
+            &:hover {
+                opacity: .6;
+            }
+
             &.active {
                 color: $color2;
             }
@@ -36,6 +40,10 @@
         &:hover {
             background-color: $color2;
             color: $color1;
+        }
+
+        svg {
+            font-size: 20px;
         }
     }
 }

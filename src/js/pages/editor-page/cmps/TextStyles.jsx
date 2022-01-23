@@ -108,9 +108,8 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       </label> */}
       <label>Text Shadow
          <ThemeProvider theme={theme}>
-
             <Box sx={{ minWidth: 120 }}>
-               <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
+               <FormControl color='primary' focused={false} fullWidth>
                   <Select
                      name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
                      <MenuItem value="none">none</MenuItem>
@@ -125,9 +124,8 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       </label>
       <label>Font Family
          <ThemeProvider theme={theme}>
-
             <Box sx={{ minWidth: 120 }}>
-               <FormControl sx={{ backgroundColor: '#ffffff' }} color='primary' focused fullWidth>
+               <FormControl color='primary' focused={false} fullWidth>
                   <Select
                      name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
                      <MenuItem value="montserrat">Montserrat</MenuItem>
@@ -148,10 +146,3 @@ export function TextStyles({ elementStyle, onChangeStyle }) {
       </label>
    </div>
 }
-
-
-
-
-
-
-

@@ -71,7 +71,7 @@ export function EditAccordion() {
     }, [currElement])
 
 
-    if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', color: 'white', textAlign: 'center' }}>Choose an Element</p>
+    if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', textAlign: 'center' }}>Choose an Element</p>
 
     return (
         <div className="accordions-container">
