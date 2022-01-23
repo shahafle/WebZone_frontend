@@ -7,6 +7,7 @@ export const wapFooter_1 =
     "type": "container",
     "category": "wap-footer",
     "name": "wap-footer-1",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884740/bpzu89x3ly2qjw7arxr5.jpg",
     "style": {
         ...containerStyle,
     },
@@ -72,7 +73,7 @@ export const wapFooter_1 =
         {
             "id": "sBghfh36",
             "type": "txt",
-            "txt": "© all rights reserved | Brix 2022",
+            "txt": "© all rights reserved | WEBzone 2022",
             "style": {
                 ...txtStyle,
                 "fontFamily": "bitter",

@@ -5,6 +5,7 @@ export const wapFooter_2 = {
     "type": "container",
     "category": "wap-footer",
     "name": "wap-footer-2",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884810/gmvxo3rqdt4hginrevdk.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "40" },
     "cmps": [
         {

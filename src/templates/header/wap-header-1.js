@@ -6,6 +6,7 @@ export const wapHeader_1 =
     "type": "container",
     "category": "wap-header",
     "name": "wap-header-1",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642883121/g0q5rglqdbz0zhe2lytu.jpg",
     "style": {
         ...containerStyle,
     },

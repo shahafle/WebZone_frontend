@@ -10,6 +10,7 @@ import { wapCard_2_2 } from '../../templates/card/wap-card-2-2';
 import { wapGallery_1 } from '../../templates/gallery/wap-gallery-1';
 import { wapTxt_2 } from '../../templates/txt/wap-txt-2';
 import { wapFooter_1 } from '../../templates/footer/wap-footer-1';
+import { wapFooter_2 } from '../../templates/footer/wap-footer-2';
 // import { };
 
 
@@ -26,7 +27,7 @@ const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 
 const templateSections = [
    wapHeader_1,
    wapHeader_2,
-   wapHeader_3,
+   // wapHeader_3,
    wapHero_1,
    wapHero_2,
    wapCard_1,
@@ -35,7 +36,8 @@ const templateSections = [
    wapCard_2_2,
    wapGallery_1,
    wapTxt_2,
-   wapFooter_1
+   wapFooter_1,
+   wapFooter_2
 ]
 
 function getSectionsCategories() {

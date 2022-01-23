@@ -1,0 +1,10 @@
+.add-accordion{
+   overflow-y: scroll;
+   height: 700px;
+
+   .template-thumbnail{
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px 1px gray;
+   }
+}

@@ -42,6 +42,13 @@ export function EditAccordion() {
         }
         dispatch(updateCurrElementStyle(currElement, style))
     }
+    const onChangeColor = (ev, name) => {
+        const style = {
+            styleName: name,
+            styleValue: ev.hex
+        }
+        dispatch(updateCurrElementStyle(currElement, style))
+    }
 
     const onChangeAttr = ({ target }) => {
         const attr = {
@@ -82,7 +89,7 @@ export function EditAccordion() {
                         <SummaryTypography>Text</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <TextStyles elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
+                        <TextStyles onChangeColor={onChangeColor} elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
                     </AccordionDetails>
                 </Accordion>}
             {currElement.type === 'img' &&

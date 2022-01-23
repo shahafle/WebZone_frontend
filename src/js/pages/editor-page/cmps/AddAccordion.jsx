@@ -45,7 +45,7 @@ export function AddAccordion() {
         {provided => {
             return <div {...provided.droppableProps}
                 ref={provided.innerRef}
-                className="accordions-container">
+                className="add-accordion">
 
                 {sectionCategories.map((category, i) => {
                     return <Accordion key={category} expanded={expanded === `panel${i + 1}`} onChange={handleChange(`panel${i + 1}`)}>
@@ -66,7 +66,8 @@ export function AddAccordion() {
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
                                             ref={provided.innerRef}>
-                                            <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography>
+                                            {/* <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography> */}
+                                            <img onClick={() => onAddElement(section)} src={section.thumbnail} alt='thumbnail' className='template-thumbnail' />
                                         </div>
                                     }}
                                 </Draggable>
@@ -96,7 +97,7 @@ const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
     borderBottom: '1px solid rgba(120, 120, 120, .7)',
-    background: 'transparent',
+    background: 'transparent'
 }));
 
 // Accordion Summary Styling
@@ -120,8 +121,11 @@ const AccordionSummary = styled((props) => (
 // Accordion Details Styling
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: '10px 25px',
+    padding: '20px 25px',
     borderTop: '1px solid rgba(60, 60, 60, .5)',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.8rem'
 }));
 
 // Typography Styling

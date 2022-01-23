@@ -1,13 +1,22 @@
 export function WapBtn(props) {
-   const { cmp, onSetCurrElement, style, currElementId } = props
+      const { cmp, onSetCurrElement, handleTxtChange, style, currElementId } = props
 
-   if (cmp.isPublished) {
+      if (cmp.isPublished) {
+            return <span>
+                  <a style={style} href={cmp.url}>{cmp.txt}</a>
+            </span>
+      }
+
       return <span>
-            <a style={style} href={cmp.url}>{cmp.txt}</a>
-      </span>
-   }
+            <a style={style}
+                  onClick={(ev) => onSetCurrElement(ev, cmp)}
+                  href='##'
+                  className={cmp.id === currElementId ? 'edit-active' : ''}
+                  contentEditable="true"
+                  suppressContentEditableWarning={true}
+                  onBlur={handleTxtChange}
+                  spellCheck="false">
 
-   return <span>
-         <a style={style} onClick={(ev) => onSetCurrElement(ev, cmp)} href='##' className={cmp.id === currElementId ? 'edit-active' : ''}>{cmp.txt}</a>
-   </span>
+                  {cmp.txt}</a>
+      </span>
 }

@@ -5,6 +5,7 @@ export const wapTxt_2 = {
     "type": "container",
     "category": "wap-txt",
     "name": "wap-txt-2",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642885011/czcu8lhakb6kxs565bp8.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "20" },
     "cmps": [
         {

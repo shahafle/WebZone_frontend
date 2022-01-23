@@ -6,6 +6,10 @@
    min-height: calc(100vh - $header-height - 30px);
    position: relative;
 
+   :focus-visible{
+      outline: none
+   }
+
    &:hover{
       cursor: pointer;
       // cursor: grab;
@@ -27,12 +31,9 @@
          cursor: pointer;
       }
    }
-
+   
    .edit-active ,.element-hover{
       outline: gray dashed 1px;
-      // outline: 1px solid ;
-      // outline-color: invert;
-      // box-shadow:  0 0 5px 1px;
    }
 
    .choose-template  {
