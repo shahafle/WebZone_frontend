@@ -65,7 +65,8 @@ export function AddAccordion() {
                                         return <div key={section.id}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
-                                            ref={provided.innerRef}>
+                                            ref={provided.innerRef}
+                                            className='dnd-container'>
                                             {/* <StyledTypography onClick={() => onAddElement(section)}>{section.name}</StyledTypography> */}
                                             <img onClick={() => onAddElement(section)} src={section.thumbnail} alt='thumbnail' className='template-thumbnail' />
                                         </div>
