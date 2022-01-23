@@ -17,7 +17,8 @@ export function TemplatesPage() {
         <main className='templates-page'>
             <div className='head flex column'>
                 <h1>Template websites</h1>
-                <p>Pick one of the templates below and designed by top designers</p>
+                {/* <p>Pick one of the templates below and designed by top designers</p> */}
+                <p>Pick one of the prebuilt template websites below or start from scratch.</p>
             </div>
 
             <section className='templates-grid'>

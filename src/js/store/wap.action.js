@@ -12,7 +12,6 @@ export function loadWaps() {
 export function loadDraftWap() {
     return (dispatch) => {
         const wap = wapService.loadDraft();
-        // if (!wap) return;
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -28,9 +27,11 @@ export function removeDraftWap() {
 export function getWapById(wapId) {
     return async (dispatch) => {
         let wap = await wapService.getById(wapId)
+        console.log(wap);
         if (wap.isTemplate) {
             wap = JSON.parse(JSON.stringify(wap))
             wapService.addIds(wap)
+            wapService.saveDraft(wap);
         }
         dispatch({ type: 'SET_WAP', wap });
     }

@@ -38,7 +38,6 @@ function remove(wapId) {
 }
 
 function save(wap) {
-    console.log(wap);
     if (wap._id) {
         return asyncStorageService.put(WAP_STORAGE_KEY, wap);
     } else {
@@ -64,7 +63,8 @@ function loadDraft() {
                 "username": "Username"
             },
             "cmps": [],
-            "isPublished": false
+            "isPublished": false,
+            "isTemplate": false
         }
         saveDraft(draftWap);
     }

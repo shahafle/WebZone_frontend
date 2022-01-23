@@ -14,16 +14,29 @@ export function AppHeader() {
     const dispatch = useDispatch();
     const location = useLocation();
 
-    const [homeClass, setHomeClass] = useState('home-page');
+    const [scrollClass, setScrollClass] = useState('');
 
     useEffect(() => {
-        if (location.pathname === '/') setHomeClass('home-page')
-        else setHomeClass('')
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [])
+
+    useEffect(() => {
+        if (location.pathname !== '/') setScrollClass('');
     }, [location])
+
+    const handleScroll = () => {
+        if (window.scrollY < 200) setScrollClass('');
+        if (window.scrollY > 200) setScrollClass('active-scroll-1');
+        if (window.scrollY > 400) setScrollClass('active-scroll-2');
+        if (window.scrollY > 750) setScrollClass('active-scroll-3');
+    }
+
 
     return (
         <>
-            <header className={`main-header flex justify-between align-center ${homeClass}`}>
+            <header className={`main-header flex justify-between align-center ${scrollClass}`}>
                 <Link className="clean-link logo" to="/">
                     {/* <YourSvg style={{ width: '100px', height: '100px' }} /> */}
                     <img src={logo} alt="no" />

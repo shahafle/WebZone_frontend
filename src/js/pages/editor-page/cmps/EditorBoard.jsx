@@ -18,14 +18,29 @@ export function EditorBoard() {
    const currElement = useSelector(state => state.editorModule.currElement);
 
 
-
    useEffect(() => {
-      window.addEventListener('resize', () => setMediaClass(getMediaClass()));
-      setMediaClass(getMediaClass());
+      window.addEventListener('resize', handleResize);
+      handleResize();
 
       return () => window.removeEventListener('resize', getMediaClass);
    }, [])
 
+
+   const handleResize = () => {
+      setMediaClass(getMediaClass())
+   }   
+   
+   const getMediaClass = () => {
+      if (!sectionRef.current) return;
+      const editorWidth = sectionRef.current.offsetWidth;
+      
+      if (editorWidth < 600) return 'media-600';
+      else if (editorWidth < 800) return 'media-800';
+      else if (editorWidth < 1000) return 'media-1000';
+      else if (editorWidth < 1200) return 'media-1200';
+      else return '';
+   }
+   
    const onSetCurrElement = (ev, cmp) => {
       ev.stopPropagation()
       dispatch(setCurrElement(cmp))
@@ -38,20 +53,6 @@ export function EditorBoard() {
       }
       dispatch(updateCurrElementAttr(currElement, attr))
    }
-
-   const getMediaClass = () => {
-      if (!sectionRef.current) return;
-      const editorWidth = sectionRef.current.offsetWidth;
-
-      if (editorWidth < 600) return 'media-600';
-      else if (editorWidth < 800) return 'media-800';
-      else if (editorWidth < 1000) return 'media-1000';
-      else if (editorWidth < 1200) return 'media-1200';
-      else return '';
-   }
-
-
-
 
 
    return <Droppable droppableId='board'>

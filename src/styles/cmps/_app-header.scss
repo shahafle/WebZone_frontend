@@ -8,9 +8,21 @@
     z-index: 999;
     font-weight: 500;
 
-    &.home-page {
+    transition: all 1s;
+
+    &.active-scroll-1 {
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(4px);
+    }
+
+    &.active-scroll-2 {
+        background-color: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(6px);
+    }
+
+    &.active-scroll-3 {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
     }
 
     .logo img {
@@ -39,6 +51,7 @@
         font-size: 1rem;
         font-family: $main-font;
         font-weight: 500;
+        background-color: inherit;
 
         transition: all 0.3s;
 

@@ -21,7 +21,7 @@ export const templateService = {
 
 
 
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form',
+const sectionsCategories = ['wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form','wap-section',
 
 const templateSections = [
    wapHeader_1,
