@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { getWapById } from '../../store/wap.action';
+import { getWapById, removeDraftWap } from '../../store/wap.action';
 
 import { wapTemplate_1 } from '../../../templates/wap-template-1'
 import { wapTemplate_2 } from '../../../templates/wap-template-2'
@@ -24,7 +24,7 @@ export function TemplatesPage() {
 
 
                 <Link className='wap-template-thumbnail flex column'
-                    to="/editor">
+                    to="/editor" onClick={() => dispatch(removeDraftWap())}>
                     <div>Start a new project</div>
                     <div>
                         <p>+</p>
