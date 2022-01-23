@@ -7,7 +7,8 @@ import { wapFooter_2 } from './footer/wap-footer-2';
 
 export const wapTemplate_2 = {
     "_id": "dsg3l4j6lkdsjglkjsd523",
-    "name": "Business",
+    "name": "Fintech",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642926238/pjnqoxzkezbkafne8mtn.jpg",
     "createdBy": {
         "_id": "436kljtlwkdjgajpi214jprfzlkf",
         "username": "Noy Morgenshtein"

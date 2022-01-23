@@ -9,6 +9,8 @@ export const wapHeader_1 =
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642883121/g0q5rglqdbz0zhe2lytu.jpg",
     "style": {
         ...containerStyle,
+        "paddingBlock": "0",
+        "backgroundColor": "rgb(29, 55, 90)"
     },
     "cmps": [
         {
