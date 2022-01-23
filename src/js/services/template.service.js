@@ -11,7 +11,6 @@ import { wapGallery_1 } from '../../templates/gallery/wap-gallery-1';
 import { wapTxt_2 } from '../../templates/txt/wap-txt-2';
 import { wapFooter_1 } from '../../templates/footer/wap-footer-1';
 import { wapFooter_2 } from '../../templates/footer/wap-footer-2';
-// import { };
 
 
 export const templateService = {
@@ -22,7 +21,7 @@ export const templateService = {
 
 
 
-const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form
+const sectionsCategories = ['wap-header', 'wap-section', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form',
 
 const templateSections = [
    wapHeader_1,
