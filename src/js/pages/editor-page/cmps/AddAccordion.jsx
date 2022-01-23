@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { templateService } from '../../../services/template.service';
+import { PersonalVideoRounded } from '@mui/icons-material';
 // ACCORDION
 
 
@@ -34,8 +35,9 @@ export function AddAccordion() {
         dispatch(addElement(elementToAdd));
     }
 
-    
-    return (<Droppable droppableId='sidebar'>
+    return (<Droppable
+        isDropDisabled={true}
+        droppableId='sidebar'>
         {provided => {
             return <div {...provided.droppableProps}
                 ref={provided.innerRef}
@@ -56,24 +58,26 @@ export function AddAccordion() {
                             {templateSections.filter(section => section.category === category).map((section, idx) => {
                                 return <Draggable key={section.id} draggableId={section.id} index={idx}>
                                     {(provided, snapshot) => {
-                                        return <div key={section.id}
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            ref={provided.innerRef}
-                                            className='dnd-container'>
-
-                                            <img onClick={() => onAddElement(section)} src={section.thumbnail} alt='thumbnail' className='template-thumbnail' />
-                                        </div>
+                                        return <>
+                                            <div key={section.id}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                ref={provided.innerRef}
+                                                className='dnd-container'>
+                                                <img onClick={() => onAddElement(section)} src={section.thumbnail} alt='thumbnail' className='template-thumbnail' />
+                                            </div>
+                                            {snapshot.isDragging && <img src={section.thumbnail} alt='thumbnail' style={{ 'zIndex': '0' }} className='template-thumbnail' />}
+                                        </>
                                     }}
                                 </Draggable>
                             })}
                         </AccordionDetails>
 
-
-
                     </Accordion>
                 })}
-
+                <div style={{ 'display': 'none' }}>
+                    {provided.placeholder}
+                </div>
             </div>
         }}
     </Droppable >
@@ -116,7 +120,7 @@ const AccordionSummary = styled((props) => (
 // Accordion Details Styling
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: '20px 25px',
+    padding: '20px 8px',
     borderTop: '1px solid rgba(60, 60, 60, .5)',
     display: 'flex',
     flexDirection: 'column',
@@ -126,7 +130,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 // Typography Styling
 
 const SummaryTypography = styled(Typography)(({ theme }) => ({
-    padding: '5px 0',
+    // padding: '5px 0',
     textTransform: 'capitalize',
     fontFamily: 'Montserrat',
     fontSize: '1rem',

@@ -28,19 +28,19 @@ export function EditorBoard() {
 
    const handleResize = () => {
       setMediaClass(getMediaClass())
-   }   
-   
+   }
+
    const getMediaClass = () => {
       if (!sectionRef.current) return;
       const editorWidth = sectionRef.current.offsetWidth;
-      
+
       if (editorWidth < 600) return 'media-600';
       else if (editorWidth < 800) return 'media-800';
       else if (editorWidth < 1000) return 'media-1000';
       else if (editorWidth < 1200) return 'media-1200';
       else return '';
    }
-   
+
    const onSetCurrElement = (ev, cmp) => {
       ev.stopPropagation()
       dispatch(setCurrElement(cmp))
@@ -54,16 +54,16 @@ export function EditorBoard() {
       dispatch(updateCurrElementAttr(currElement, attr))
    }
 
-
+   if (!wap?.cmps) return <div>koo</div>
    return <Droppable droppableId='board'>
-      {provided => {
-
+      {(provided, snapshot) => {
          if (!wap?.cmps?.length) return <div  {...provided.droppableProps}
             ref={provided.innerRef}
             className='editor-board'><div className="choose-template">
                Pick an element from the sidebar
                {/* <Loader /> */}
-            </div></div>
+            </div>
+         </div>
 
          return <section className='editor-board'
             {...provided.droppableProps}
@@ -73,9 +73,9 @@ export function EditorBoard() {
                <DynamicCmp key={i} idx={i} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
             )}
 
-            {provided.placeholder}
 
             <div ref={sectionRef}></div>
+            {provided.placeholder}
          </section>
       }}
    </Droppable >

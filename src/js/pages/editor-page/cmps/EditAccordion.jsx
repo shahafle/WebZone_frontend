@@ -9,7 +9,7 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateWap, removeElement } from '../../../store/wap.action'
+import { updateWap, removeElement, duplicateElement } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
@@ -26,7 +26,6 @@ export function EditAccordion() {
     };
 
     const currElement = useSelector(state => state.editorModule.currElement)
-    const wap = useSelector(state => state.wapModule.wap)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -64,6 +63,10 @@ export function EditAccordion() {
 
     const onRemoveElement = () => {
         dispatch(removeElement(currElement));
+    }
+
+    const onDuplicateElement = () => {
+        dispatch(duplicateElement(currElement));
     }
 
     const onRemoveElementByKey = ({ key }) => {
@@ -120,7 +123,10 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
 
-            <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
+            <div className='other-action-container flex'>
+                <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
+                <button className="remove-el-btn" onClick={onDuplicateElement}>Duplicate Item</button>
+            </div>
         </div >
     );
 }

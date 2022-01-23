@@ -82,6 +82,20 @@ export function addElement(elementToAdd) {
     }
 }
 
+export function duplicateElement(element) {
+    return (dispatch, getState) => {
+        const { wap } = getState().wapModule;
+        const elementId = element.id
+        element = JSON.parse(JSON.stringify(element))
+        wapService.addIds(element)
+        wapService.findTarget(wap, elementId, (cmpsArr, idx) => cmpsArr.splice(idx, 0, element))
+        draftService.saveDraft(wap);
+        dispatch({ type: 'UPDATE_WAP', wap })
+        return element;
+    }
+}
+
+
 // Handles anything related to drag n drop including Adding/Removing elements
 export function switchElement(res) {
     return (dispatch, getState) => {
