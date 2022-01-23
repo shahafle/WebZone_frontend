@@ -50,6 +50,10 @@ function saveDraft(wap) {
     storageService.saveToStorage(DRAFT_STORAGE_KEY, wap);
 }
 
+function removeDraft() {
+    storageService.removeFromStorage(DRAFT_STORAGE_KEY);
+}
+
 function loadDraft() {
     let draftWap = storageService.loadFromStorage(DRAFT_STORAGE_KEY);
     if (!draftWap) {
@@ -65,10 +69,6 @@ function loadDraft() {
         saveDraft(draftWap);
     }
     return draftWap;
-}
-
-function removeDraft() {
-    storageService.removeFromStorage(DRAFT_STORAGE_KEY);
 }
 
 function addElementToDraft(elementToAdd) {

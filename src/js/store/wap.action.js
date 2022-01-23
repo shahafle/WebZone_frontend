@@ -17,6 +17,14 @@ export function loadDraftWap() {
     }
 }
 
+export function removeDraftWap() {
+    return (dispatch) => {
+        wapService.removeDraft();
+        const wap = wapService.loadDraft();
+        dispatch({ type: 'SET_WAP', wap });
+    }
+}
+
 export function getWapById(wapId) {
     return async (dispatch) => {
         let wap = await wapService.getById(wapId)

@@ -105,14 +105,10 @@
             line-height: 1.6;
             text-align: center;
             text-transform: uppercase;
+        }
 
-            &:nth-child(2) {
-                color: black;
-
-                &:hover {
-                    color:white;
-                }
-            }
+        &:nth-child(2) .button-text {
+            color: black;
         }
     }
 
