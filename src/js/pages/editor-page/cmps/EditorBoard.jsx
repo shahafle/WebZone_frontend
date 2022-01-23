@@ -57,13 +57,13 @@ export function EditorBoard() {
    if (!wap?.cmps) return <div>koo</div>
    return <Droppable droppableId='board'>
       {(provided, snapshot) => {
-         // if (!wap?.cmps?.length) return <div  {...provided.droppableProps}
-         //    ref={provided.innerRef}
-         //    className='editor-board'><div className="choose-template">
-         //       Pick an element from the sidebar
-         //       {/* <Loader /> */}
-         //    </div>
-         // </div>
+         if (!wap?.cmps?.length) return <div  {...provided.droppableProps}
+            ref={provided.innerRef}
+            className='editor-board'><div className="choose-template">
+               Pick an element from the sidebar
+               {/* <Loader /> */}
+            </div>
+         </div>
 
          return <section className='editor-board'
             {...provided.droppableProps}

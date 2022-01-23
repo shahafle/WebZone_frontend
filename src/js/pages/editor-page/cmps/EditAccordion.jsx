@@ -26,7 +26,6 @@ export function EditAccordion() {
     };
 
     const currElement = useSelector(state => state.editorModule.currElement)
-    const wap = useSelector(state => state.wapModule.wap)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -67,7 +66,7 @@ export function EditAccordion() {
     }
 
     const onDuplicateElement = () => {
-        dispatch(duplicateElement(wap, currElement));
+        dispatch(duplicateElement(currElement));
     }
 
     const onRemoveElementByKey = ({ key }) => {
