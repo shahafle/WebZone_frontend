@@ -11,15 +11,11 @@ export function EditorPage() {
 
    const dispatch = useDispatch();
 
-
    const [isDragActive, setDragActive] = useState(false)
-
-   const wap = useSelector(state => state.wapModule.wap);
 
 
    const onDragEnd = (res) => {
       const { destination, source } = res;
-      console.log(res);
       if (!destination) return;
 
       if (destination.droppableId === 'sidebar') return setDragActive(false)
@@ -31,7 +27,7 @@ export function EditorPage() {
       if (source.droppableId === 'sidebar' &&
          destination.droppableId === 'garbage') return setDragActive(false)
 
-      dispatch(switchElement(wap, res))
+      dispatch(switchElement(res))
       setDragActive(false)
    }
 
@@ -46,14 +42,9 @@ export function EditorPage() {
    }, [])
 
 
-   const onDragUpdate = (res) => {
-      console.log(res.destination?.droppableId);
-   }
-
    return <DragDropContext
       onDragEnd={onDragEnd}
-      onDragStart={onDragStart}
-      onDragUpdate={onDragUpdate}>
+      onDragStart={onDragStart}>
 
       <main className={`editor-page ${isDragActive ? 'drag-active' : ''}`}>
          <EditorSidebar />

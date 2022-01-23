@@ -31,7 +31,7 @@ export function EditAccordion() {
 
     useEffect(() => {
         if (currElement) {
-            dispatch(updateWap(wap, currElement))
+            dispatch(updateWap(currElement));
         }
     }, [currElement])
 
@@ -63,7 +63,7 @@ export function EditAccordion() {
     }
 
     const onRemoveElement = () => {
-        dispatch(removeElement(wap, currElement));
+        dispatch(removeElement(currElement));
     }
 
     const onRemoveElementByKey = ({ key }) => {

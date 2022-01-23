@@ -1,6 +1,4 @@
 import { asyncStorageService } from './async-storage.service.js';
-import { storageService } from './storage.service.js';
-
 
 
 export const wapService = {
@@ -8,33 +6,26 @@ export const wapService = {
     getById,
     remove,
     save,
-    saveDraft,
-    loadDraft,
-    removeDraft,
-    addElementToDraft,
     findTarget,
     getScaleUnits,
     addIds,
     getRandomId,
 }
 
-const TEMPLATE_WAP_STORAGE_KEY = 'template_wap_db'; // Complete Wap Templates
-const TEMPLATE_SECTION_STORAGE_KEY = 'template_section_db'; // Section Templates
-const DRAFT_STORAGE_KEY = 'draft_wap'; // Draft Wap from Local Storage
-const WAP_STORAGE_KEY = 'wap_db'; // User Saved Waps
 
+const WAP_STORAGE_KEY = 'wap_db'; // User Saved/Published Waps
 
 
 function query() {
-    return asyncStorageService.query(TEMPLATE_WAP_STORAGE_KEY)
+    return asyncStorageService.query(WAP_STORAGE_KEY);
 }
 
 async function getById(wapId) {
-    return await asyncStorageService.get(TEMPLATE_WAP_STORAGE_KEY, wapId);
+    return await asyncStorageService.get(WAP_STORAGE_KEY, wapId);
 }
 
 function remove(wapId) {
-    return asyncStorageService.remove(TEMPLATE_WAP_STORAGE_KEY, wapId);
+    return asyncStorageService.remove(WAP_STORAGE_KEY, wapId);
 }
 
 function save(wap) {
@@ -43,38 +34,6 @@ function save(wap) {
     } else {
         return asyncStorageService.post(WAP_STORAGE_KEY, wap);
     }
-}
-
-function saveDraft(wap) {
-    storageService.saveToStorage(DRAFT_STORAGE_KEY, wap);
-}
-
-function removeDraft() {
-    storageService.removeFromStorage(DRAFT_STORAGE_KEY);
-}
-
-function loadDraft() {
-    let draftWap = storageService.loadFromStorage(DRAFT_STORAGE_KEY);
-    if (!draftWap) {
-        draftWap = {
-            "name": "new webApp",
-            "createdBy": {
-                "_id": "5e26e0b718a0891d4c995527",
-                "username": "Username"
-            },
-            "cmps": [],
-            "isPublished": false,
-            "isTemplate": false
-        }
-        saveDraft(draftWap);
-    }
-    return draftWap;
-}
-
-function addElementToDraft(elementToAdd) {
-    const draftWap = loadDraft();
-    draftWap.cmps.push(elementToAdd);
-    saveDraft(draftWap);
 }
 
 function findTarget(data, elementId, cb) {
