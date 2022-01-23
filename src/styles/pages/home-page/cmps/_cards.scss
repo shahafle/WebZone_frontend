@@ -106,10 +106,6 @@
             text-align: center;
             text-transform: uppercase;
         }
-
-        &:nth-child(2) .button-text {
-            color: black;
-        }
     }
 
     &:hover {
@@ -124,6 +120,22 @@
 
         .button-text {
             color: #fff;
+        }
+    }
+}
+
+.cards {
+    :nth-child(2) button {
+        &.get-started {
+            .button-text {
+                color: #282936;
+            }
+
+            &:hover {
+                .button-text {
+                    color: #fff;
+                }
+            }
         }
     }
 }
