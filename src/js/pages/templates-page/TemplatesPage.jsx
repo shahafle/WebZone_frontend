@@ -34,7 +34,7 @@ export function TemplatesPage() {
                 {templates.map(template => {
                     return <Link key={template._id}
                         to="/editor"
-                        onClick={() => dispatch(getWapById(template.id))}
+                        onClick={() => dispatch(getWapById(template._id))}
                         className='wap-template-thumbnail flex column'>
                         <div>{template.name}</div>
                         <img src={template.thumbnail} alt="template thumbnail" />

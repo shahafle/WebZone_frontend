@@ -27,6 +27,7 @@ export function removeDraftWap() {
 
 export function getWapById(wapId) {
     return async (dispatch) => {
+        console.log(wapId);
         let wap = await wapService.getById(wapId)
         if (wap.isTemplate) {
             wap = JSON.parse(JSON.stringify(wap))
