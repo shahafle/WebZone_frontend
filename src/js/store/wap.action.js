@@ -62,6 +62,20 @@ export function addElement(elementToAdd) {
     }
 }
 
+export function duplicateElement(wap, element) {
+    return (dispatch) => {
+        const elementId = element.id
+        element = JSON.parse(JSON.stringify(element))
+        wapService.addIds(element)
+        wapService.findTarget(wap, elementId, (cmpsArr, idx) => cmpsArr.splice(idx, 0, element))
+        wapService.saveDraft(wap);
+        dispatch({ type: 'UPDATE_WAP', wap })
+        return element;
+    }
+}
+
+
+
 export function switchElement(wap, res) {
     return (dispatch) => {
         const { destination, source, draggableId } = res;

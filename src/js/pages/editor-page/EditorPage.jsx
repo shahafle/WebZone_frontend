@@ -19,7 +19,6 @@ export function EditorPage() {
 
    const onDragEnd = (res) => {
       const { destination, source } = res;
-      console.log(res);
       if (!destination) return;
 
       if (destination.droppableId === 'sidebar') return setDragActive(false)
@@ -46,14 +45,9 @@ export function EditorPage() {
    }, [])
 
 
-   const onDragUpdate = (res) => {
-      console.log(res.destination?.droppableId);
-   }
-
    return <DragDropContext
       onDragEnd={onDragEnd}
-      onDragStart={onDragStart}
-      onDragUpdate={onDragUpdate}>
+      onDragStart={onDragStart}>
 
       <main className={`editor-page ${isDragActive ? 'drag-active' : ''}`}>
          <EditorSidebar />
