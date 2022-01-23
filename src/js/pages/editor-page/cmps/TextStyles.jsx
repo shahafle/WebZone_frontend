@@ -2,8 +2,9 @@ import * as React from 'react';
 import { FaAlignLeft } from 'react-icons/fa';
 import { FaAlignCenter } from 'react-icons/fa';
 import { FaAlignRight } from 'react-icons/fa';
+import { MdOutlineColorLens } from 'react-icons/md';
 
-import { TwitterPicker } from 'react-color';
+import { TwitterPicker, CirclePicker } from 'react-color';
 
 
 import Slider from '@mui/material/Slider';
@@ -16,9 +17,10 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// for color picker
+const colors = ['#697689', '#1b1b1b', '#ffffff', '#F47373',]
 
-const colors = ['#D9E3F0', '#697689', '#1b1b1b', '#F47373',]
-
+// for selects
 const theme = createTheme({
    palette: {
       primary: {
@@ -159,8 +161,8 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
          </ThemeProvider>
       </label>
       <label>Font Color
-         <TwitterPicker colors={colors} width={170} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} value={elementStyle.color} />
-         {/* <input type="color" onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
+         <CirclePicker colors={colors} width={170} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} />
+         {/* <input type="color" style={{ width: 30, height: 30, marginRight: '1px' }} onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
       </label>
    </div>
 }
