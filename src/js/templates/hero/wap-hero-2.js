@@ -1,6 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
-import bgImg from '../../assets/imgs/heros/wap-hero-2.jpg';
+import bgImg from '../../../assets/imgs/heros/wap-hero-2.jpg';
 
 export const wapHero_2 = {
     "id": "23l5kjlasdkj643",

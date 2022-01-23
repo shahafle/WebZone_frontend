@@ -11,10 +11,7 @@ export function EditorPage() {
 
    const dispatch = useDispatch();
 
-
    const [isDragActive, setDragActive] = useState(false)
-
-   const wap = useSelector(state => state.wapModule.wap);
 
 
    const onDragEnd = (res) => {
@@ -30,7 +27,7 @@ export function EditorPage() {
       if (source.droppableId === 'sidebar' &&
          destination.droppableId === 'garbage') return setDragActive(false)
 
-      dispatch(switchElement(wap, res))
+      dispatch(switchElement(res))
       setDragActive(false)
    }
 

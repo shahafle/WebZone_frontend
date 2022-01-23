@@ -1,6 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
-import imgUrl from '../../assets/imgs/cards/what-we-do.jpg'
+import imgUrl from '../../../assets/imgs/cards/what-we-do.jpg'
 
 export const wapCard_2_2 = {
     "id": "dglkajdlktj46132as",

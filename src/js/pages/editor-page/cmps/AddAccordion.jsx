@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addElement } from '../../../store/wap.action';
-import { wapService } from '../../../services/wap.service';
 
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
@@ -24,15 +23,9 @@ export function AddAccordion() {
     const dispatch = useDispatch();
 
     const [expanded, setExpanded] = useState('panel1');
-    const [templateSections, setTemplateSections] = useState([]);
-    const [sectionCategories, setSectionCategories] = useState([]);
-    // const wap = useSelector(state => state.wapModule.wap);
 
-    useEffect(() => {
-        setTemplateSections(templateService.getTemplateSections())
-        setSectionCategories(templateService.getSectionsCategories())
-
-    }, [])
+    const templateSections = templateService.getTemplateSections();
+    const sectionCategories = templateService.getSectionsCategories();
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);

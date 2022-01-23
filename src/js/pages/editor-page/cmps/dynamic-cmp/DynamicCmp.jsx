@@ -6,7 +6,7 @@ import { WapImg } from './WapImg';
 import { WapTxt } from './WapTxt';
 
 export function DynamicCmp(props) {
-   const { cmp, idx } = props
+   const { cmp, idx, isPublished } = props
    const style = wapService.getScaleUnits(cmp.style)
 
    // const getElement = () => {

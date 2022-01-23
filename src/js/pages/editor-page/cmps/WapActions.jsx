@@ -14,10 +14,11 @@ export function WapActions() {
    }
 
    const onPublishWap = () => {
+      console.log(wap)
       // wap.isPublished = true;
       // wap.isTemplate = false;
-      const savedWap = wapService.save(wap);
-      window.open(`/publish/${savedWap._id}`, "_blank")
+      // const savedWap = wapService.save(wap);
+      // window.open(`/publish/${savedWap._id}`, "_blank")
    }
 
 
