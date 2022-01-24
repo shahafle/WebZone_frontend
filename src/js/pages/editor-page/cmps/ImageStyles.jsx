@@ -7,6 +7,8 @@ import { FaUpload } from "react-icons/fa";
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const color1 = '#1d375a';
+
 const theme = createTheme({
    palette: {
       primary: {
@@ -17,7 +19,7 @@ const theme = createTheme({
 
 
 const PrettoSlider = styled(Slider)({
-   color: '#904BCF',
+   color: color1,
    height: 8,
    '& .MuiSlider-track': {
       border: 'none',
@@ -42,7 +44,7 @@ const PrettoSlider = styled(Slider)({
       width: 32,
       height: 32,
       borderRadius: '50% 50% 50% 0',
-      backgroundColor: '#904BCF',
+      backgroundColor: color1,
       transformOrigin: 'bottom left',
       transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
       '&:before': { display: 'none' },

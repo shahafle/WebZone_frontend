@@ -19,7 +19,6 @@ export function wapReducer(state = initialState, action) {
         case 'SET_WAP':
             return newState = { ...state, wap: { ...action.wap } };
         case 'UPDATE_WAP':
-            console.log(action.wap, state.wap);
             state.wapHistory.push(state.wap)
             return newState = { ...state, wap: { ...action.wap }, wapHistory: [...state.wapHistory] };
         case 'UNDO_WAP':

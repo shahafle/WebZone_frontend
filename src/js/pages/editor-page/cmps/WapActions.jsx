@@ -27,14 +27,15 @@ export function WapActions() {
 
    return <div className="wap-actions flex column align-center">
       <div className="media-btns flex justify-between align center">
-         <FaDesktop size={28} />
-         <FaTabletAlt size={28} />
-         <FaMobileAlt size={28} />
+         <FaDesktop size={28} className='muted' />
+         <FaTabletAlt size={28} className='muted' />
+         <FaMobileAlt size={28} className='muted' />
       </div>
       <hr style={{ width: 140 }} />
       <div className="save-publish-container flex">
-         <button className="save-publish-btn" onClick={onSaveWap}>Save</button>
-         <button onClick={onPublishWap} className="save-publish-btn">Publish</button>
+         <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>
+         {/* <button className="save-btn" onClick={onSaveWap}>Save</button> */}
+         <button className="publish-btn" onClick={onPublishWap}><span>Publish</span></button>
       </div>
    </div>
 }

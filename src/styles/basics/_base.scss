@@ -14,6 +14,10 @@ html {
     // $color-secondary:
 }
 
+button,input{
+    font-family: $main-font;
+}
+
 body {
     background-color: $color1;
     margin: 0;

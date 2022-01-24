@@ -17,28 +17,30 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const color1 = '#1d375a';
+
 // for color picker
-const colors = ['#697689', '#1b1b1b', '#ffffff', '#F47373',]
+const colors = ['#1b1b1b', '#3a3a3a', '#707070', '#a0a0a0', '#d6d6d6', '#ffffff', '#1d375a', '#697689', '#a0d0bb', '#835c94', '#c84a4a', '#f0e1c8']
 
 // for selects
 const theme = createTheme({
    palette: {
       primary: {
-         // main: '#904BCF',
+         // main: color1,
          main: '#eeeeee'
       },
    }
 })
 
 const PrettoSlider = styled(Slider)({
-   color: '#904BCF',
+   color: color1,
    height: 8,
    '& .MuiSlider-track': {
       border: 'none',
    },
    '& .MuiSlider-thumb': {
-      height: 24,
-      width: 24,
+      height: 18,
+      width: 18,
       backgroundColor: '#fff',
       border: '2px solid currentColor',
       '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
@@ -53,15 +55,15 @@ const PrettoSlider = styled(Slider)({
       fontSize: 12,
       background: 'unset',
       padding: 0,
-      width: 32,
-      height: 32,
+      width: 28,
+      height: 28,
       borderRadius: '50% 50% 50% 0',
-      backgroundColor: '#904BCF',
+      backgroundColor: color1,
       transformOrigin: 'bottom left',
       transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
       '&:before': { display: 'none' },
       '&.MuiSlider-valueLabelOpen': {
-         transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
+         transform: 'translate(50%, -80%) rotate(-45deg) scale(1)',
       },
       '& > *': {
          transform: 'rotate(45deg)',
@@ -76,18 +78,18 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
    return <div className="flex column style-inputs">
       <div>
          Align
-         <div className="flex">
-            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })} style={{ color: elementStyle.textAlign === 'start' ? '#904bcf' : 'inherit' }}><FaAlignLeft /></button>
-            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })} style={{ color: elementStyle.textAlign === 'center' ? '#904bcf' : 'inherit' }}><FaAlignCenter /></button>
-            <button className="flex" onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })} style={{ color: elementStyle.textAlign === 'end' ? '#904bcf' : 'inherit' }}><FaAlignRight /></button>
+         <div className="flex btns-container align">
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'start' } })} className={elementStyle.textAlign === 'start' ? 'active' : 'muted'} ><FaAlignLeft /></button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'center' } })} className={elementStyle.textAlign === 'center' ? 'active' : 'muted'}><FaAlignCenter /></button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textAlign', value: 'end' } })} className={elementStyle.textAlign === 'end' ? 'active' : 'muted'}><FaAlignRight /></button>
          </div>
       </div>
       <div>
          Decoration
-         <div>
-            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '700' : '400' } })} style={{ fontWeight: 700, color: elementStyle.fontWeight === '700' ? '#904bcf' : 'inherit' }}>B</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'italic') ? 'normal' : 'italic' } })} style={{ fontStyle: 'italic', color: elementStyle.fontStyle === 'italic' ? '#904bcf' : 'inherit' }}>I</button>
-            <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })} style={{ textDecoration: 'underline', color: elementStyle.textDecoration === 'underline' ? '#904bcf' : 'inherit' }}>U</button>
+         <div className='flex btns-container decorations'>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontWeight', value: (elementStyle.fontWeight === '400') ? '700' : '400' } })} className={elementStyle.fontWeight === '700' ? 'active' : 'muted'}>B</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'fontStyle', value: (elementStyle.fontStyle === 'italic') ? 'normal' : 'italic' } })} className={elementStyle.fontStyle === 'italic' ? 'active' : 'muted'}>I</button>
+            <button onClick={() => onChangeStyle({ target: { name: 'textDecoration', value: (elementStyle.textDecoration === 'underline') ? 'none' : 'underline' } })} className={elementStyle.textDecoration === 'underline' ? 'active' : 'muted'}>U</button>
          </div>
       </div>
       <label>Font Size
@@ -160,9 +162,8 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
             </Box>
          </ThemeProvider>
       </label>
-      <label>Font Color
-         <CirclePicker colors={colors} width={170} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} />
-         {/* <input type="color" style={{ width: 30, height: 30, marginRight: '1px' }} onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
-      </label>
+      <label>Color</label>
+      <CirclePicker colors={colors} width={255} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} />
+      {/* <input type="color" style={{ width: 30, height: 30, marginRight: '1px' }} onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
    </div>
 }

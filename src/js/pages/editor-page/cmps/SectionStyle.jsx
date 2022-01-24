@@ -1,20 +1,20 @@
-
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { FaUpload } from "react-icons/fa";
 
+const color1 = '#1d375a';
 
 const PrettoSlider = styled(Slider)({
-    color: '#904BCF',
+    color: color1,
     height: 8,
     '& .MuiSlider-track': {
         border: 'none',
     },
     '& .MuiSlider-thumb': {
-        height: 24,
-        width: 24,
+        height: 18,
+        width: 18,
         backgroundColor: '#fff',
         border: '2px solid currentColor',
         '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
@@ -29,15 +29,15 @@ const PrettoSlider = styled(Slider)({
         fontSize: 12,
         background: 'unset',
         padding: 0,
-        width: 32,
-        height: 32,
+        width: 28,
+        height: 28,
         borderRadius: '50% 50% 50% 0',
-        backgroundColor: '#904BCF',
+        backgroundColor: color1,
         transformOrigin: 'bottom left',
         transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
         '&:before': { display: 'none' },
         '&.MuiSlider-valueLabelOpen': {
-            transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
+            transform: 'translate(50%, -80%) rotate(-45deg) scale(1)',
         },
         '& > *': {
             transform: 'rotate(45deg)',

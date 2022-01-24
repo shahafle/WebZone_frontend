@@ -1,35 +1,167 @@
 .wap-actions {
     gap: 1rem;
     margin-bottom: 2rem;
+
     .media-btns {
         gap: 1.5rem;
     }
-
-    & > *:not(:last-child) {
-        cursor: pointer;
-    }
-
+    
     svg {
-        transition: 200ms;
+        transition: .1s;
+            cursor: pointer;
     }
 
     svg:hover {
-        transform: scale(1.3);
-    }
-    .save-publish-container {
-        gap: 1.5rem;
+        transform: scale(1.1);
+        opacity: 0.9;
     }
 
-    .save-publish-btn {
-        margin: auto;
-        padding: 8px 20px;
-        border-radius: 1000px;
-        border: 1px solid $color2;
-        cursor: pointer;
-        transition: 200ms;
-        &:hover {
-            background-color: $color2;
-            color: white;
-        }
+    .save-publish-container {
+        gap: 1.3rem;
+        
+        // button {
+        //     font-size: 1.2rem;
+        //     padding: 8px 20px;
+        //     border-radius: 7px;
+        //     border: 1px solid $color2;
+        //     transition: 200ms;
+        //     width: 114px;
+
+        //     &.save-btn{
+        //         color: $color2;
+
+        //         &:hover{
+        //             background-color: $color2;
+        //             color: $color1;
+        //         }
+        //     }
+            
+        //     &.publish-btn{
+        //         background-color: $color2;
+        //         color: $color1;
+
+        //         &:hover{
+        //             filter: brightness(1.2);
+        //         }
+        //     }
+        //     // &:hover {
+        //     //     background-color: $color2;
+        //     //     color: white;
+        //     // }
+        // }
     }
 }
+
+
+// <!-- HTML !-->
+// <button class="button-48" role="button"><span class="text">Button 48</span></button>
+
+/* CSS */
+.save-btn {
+  appearance: none;
+//   background-color: #FFFFFF;
+//   border-width: 0;
+//   box-sizing: border-box;
+//   color: $color2;
+//   display: inline-block;
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  position: relative;
+//   text-align: center;
+//   text-decoration: none;
+//   text-rendering: geometricprecision;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 200ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+    border-radius: 7px;
+    width: 114px;
+    border: 1px solid $color2;
+  
+
+    &:before {
+      animation: opacityFallbackOut .5s step-end forwards;
+      backface-visibility: hidden;
+      background-color: $color2;
+      clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: translateZ(0);
+      transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    span {
+        z-index: 1;
+        position: relative;
+        color: $color2;
+    }
+
+    &:hover{
+        span{
+            color:$color1
+        }
+
+        &:before {
+            animation: opacityFallbackIn 0s step-start forwards;
+            clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+          }
+    }
+      
+}
+
+.publish-btn {
+  appearance: none;
+  background-color: $color2;
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  position: relative;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+    border-radius: 7px;
+    width: 114px;
+    border: 1px solid $color2;
+  
+
+    &:before {
+      animation: opacityFallbackOut .5s step-end forwards;
+      backface-visibility: hidden;
+      background-color: #2652aa;
+      clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: translateZ(0);
+      transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    span {
+        z-index: 1;
+        position: relative;
+        color: $color1;
+    }
+
+    &:hover{
+
+        &:before {
+            animation: opacityFallbackIn 0s step-start forwards;
+            clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+          }
+    }
+      
+}
+

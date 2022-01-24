@@ -9,6 +9,9 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { FaUndoAlt } from "react-icons/fa";
+import { IoDuplicateSharp } from "react-icons/io5";
+import { FcDeleteRow } from "react-icons/fc";
 
 import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
@@ -56,6 +59,9 @@ export function EditAccordion() {
         const style = {
             styleName: name,
             styleValue: ev.hex
+        }
+        if (name === 'backgroundColor') {
+            currElement.style.backgroundImage = '';
         }
         dispatch(updateCurrElementStyle(currElement, style))
     }
@@ -142,9 +148,9 @@ export function EditAccordion() {
                 </Accordion>}
 
             <div className='other-action-container flex'>
-                <button onClick={onRemoveElement}> Remove Item</button>
-                <button onClick={onDuplicateElement}>Duplicate Item</button>
-                <button onClick={onUndo}>Undo</button>
+                <button onClick={onRemoveElement}><FcDeleteRow /></button>
+                <button onClick={onDuplicateElement}><IoDuplicateSharp /></button>
+                <button onClick={onUndo}><FaUndoAlt /></button>
             </div>
         </div >
     );
