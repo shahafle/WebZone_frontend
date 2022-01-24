@@ -3,7 +3,10 @@ export function WapBtn(props) {
 
       if (isPublished) {
             return <span>
-                  <a style={style} href={cmp.url}>{cmp.txt}</a>
+                  <a style={style}
+                        href={cmp.url}
+                        className={cmp.className || ''}>
+                        {cmp.txt}</a>
             </span>
       }
 
@@ -11,7 +14,7 @@ export function WapBtn(props) {
             <a style={style}
                   onClick={(ev) => onSetCurrElement(ev, cmp)}
                   href='##'
-                  className={cmp.id === currElementId ? 'edit-active' : ''}
+                  className={`${cmp.id === currElementId ? 'edit-active' : ''} ${cmp.className || ''}`}
                   contentEditable="true"
                   suppressContentEditableWarning={true}
                   onBlur={handleTxtChange}

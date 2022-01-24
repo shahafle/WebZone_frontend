@@ -4,7 +4,7 @@ export function WapImg(props) {
    if (isPublished) {
       return <span>
          <img style={style}
-            className={cmp.id === currElementId ? 'edit-active' : ''}
+            className={cmp.className || ''}
             src={cmp.url}
             alt="Missing img" />
       </span>
@@ -13,7 +13,7 @@ export function WapImg(props) {
 
    return <span>
       <img style={style}
-         className={cmp.id === currElementId ? 'edit-active' : ''}
+         className={`${cmp.id === currElementId ? 'edit-active' : ''} ${cmp.className || ''}`}
          src={cmp.url}
          onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
          onMouseOver={({ target }) => { target.classList.add('element-hover') }}

@@ -7,7 +7,7 @@ export function WapDiv(props) {
    if (isPublished) {
       return <span><div
          style={style}
-         className={`${mediaClass} ${cmp.name || ''}`}>
+         className={`${mediaClass} ${cmp.className || ''}`}>
          {
             cmp.cmps && cmp.cmps.map(c => {
                const propsCopy = { ...props }
@@ -35,7 +35,7 @@ export function WapDiv(props) {
             onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
             onMouseOver={({ target }) => { target.classList.add('element-hover') }}
             style={style}
-            className={`${cmp.id === currElementId ? 'edit-active ' : ''}${cmp.category ? mediaClass : ''} ${cmp.name || ''}`}
+            className={`${cmp.id === currElementId ? 'edit-active ' : ''}${cmp.category ? mediaClass : ''} ${cmp.className || ''}`}
          >
             {
                cmp.cmps && cmp.cmps.map(c => {
