@@ -16,6 +16,15 @@
     border-radius: 17px;
     border-end-start-radius: 0;
     height: 100%;
+    gap: 40px;
+
+    .top-container {
+        flex-grow: 1;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }    
+    }
 
     .tabs {
         height: 57px;

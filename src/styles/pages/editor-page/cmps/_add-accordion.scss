@@ -1,7 +1,15 @@
 .add-accordion{
+   max-height: calc(100vh - $header-height - 20px - 233px);
    overflow-y: auto;
-   // height: 674px;
    padding: 0 13px;
+
+   &::-webkit-scrollbar {
+      width: 10px;
+   }
+
+   &::-webkit-scrollbar-track {
+      margin-top: 5px;
+   }
 
    .template-thumbnail{
       position: relative;
