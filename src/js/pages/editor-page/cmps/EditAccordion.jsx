@@ -7,6 +7,9 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { TextStyles } from './TextStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateWap, removeElement } from '../../../store/wap.action'
@@ -68,6 +71,16 @@ export function EditAccordion() {
 
     const onRemoveElementByKey = ({ key }) => {
         if (key === 'Delete') onRemoveElement();
+        toast("Wow so easy!", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+
     }
 
     useEffect(() => {
@@ -119,7 +132,7 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
-
+            <ToastContainer />
             <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
         </div >
     );
