@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { getWapTemplateById, resetDraftWap } from '../../store/wap.action';
+import { loadWapTemplate, resetDraftWap } from '../../store/wap.action';
 import { templateService } from '../../services/template.service';
 
 
@@ -31,7 +31,7 @@ export function TemplatesPage() {
                 {wapTemplates.map(wapTemplate => {
                     return <Link key={wapTemplate._id}
                         to="/editor"
-                        onClick={() => dispatch(getWapTemplateById(wapTemplate._id))}
+                        onClick={() => dispatch(loadWapTemplate(wapTemplate._id))}
                         className='wap-template-thumbnail flex column'>
                         <div>{wapTemplate.name}</div>
                         <img src={wapTemplate.thumbnail} alt="template thumbnail" />

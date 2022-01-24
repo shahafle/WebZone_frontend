@@ -1,5 +1,8 @@
 import { useSelector } from 'react-redux';
-import { wapService } from '../../../services/wap.service';
+import { useDispatch } from 'react-redux';
+
+import { saveWap } from '../../../store/wap.action';
+
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
 
@@ -7,14 +10,14 @@ import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
 export function WapActions() {
 
-   const wap = useSelector(state => state.wapModule.wap);
+   const dispatch = useDispatch();
 
    const onSaveWap = () => {
-      wapService.save(wap);
+      dispatch(saveWap());
    }
 
    const onPublishWap = () => {
-      console.log(wap)
+      console.log()
       // wap.isPublished = true;
       // wap.isTemplate = false;
       // const savedWap = wapService.save(wap);

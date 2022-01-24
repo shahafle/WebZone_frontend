@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getWapById } from '../../store/wap.action';
+import { loadWap } from '../../store/wap.action';
 import { wapService } from '../../services/wap.service';
 
 
@@ -12,9 +12,13 @@ export function CollectionPage() {
 
     const [waps, setWaps] = useState(null);
 
-    useEffect(async () => {
-        const waps = await wapService.query();
-        setWaps(waps);
+    useEffect(() => {
+        async function loadWaps() {
+            const waps = await wapService.query();
+            setWaps(waps);
+        }
+
+        loadWaps();
     }, [])
 
     const onRemoveWap = async (wapId) => {
@@ -40,9 +44,9 @@ export function CollectionPage() {
             {waps.length > 0 && <section className='collection-grid'>
                 {waps.map(wap => {
                     return <div key={wap._id}>
-                        <Link 
+                        <Link
                             to="/editor"
-                            onClick={() => dispatch(getWapById(wap._id))}
+                            onClick={() => dispatch(loadWap(wap._id))}
                             className='wap-thumbnail flex column'>
                             <div>{wap.name}</div>
                             <img src={wap.thumbnail} alt="Website Thumbnail" />
