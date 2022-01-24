@@ -17,9 +17,8 @@ export function EditorSidebar() {
 
    return <div className='sidebar-background'>
       <section className="editor-sidebar flex column justify-between">
-
+         
          <div className="top-container">
-
             <div className="tabs flex">
                <div className='tab-background'><div className={`tab add ${activeTab === 'add' ? 'active' : ''}`}
                   onClick={() => setActiveTab('add')}>Add</div></div>

@@ -1,3 +1,16 @@
+.sidebar-background {
+    margin-top: 5px;
+    padding: 5px 5px 5px 0;
+    width: $sidebar-width;
+    position: fixed;
+    height: calc(100vh - $header-height - 20px);
+
+    background-color: #1d3556b8;
+    border-end-end-radius: 17px;
+    border-start-end-radius: 17px;
+    box-shadow: 1px 1px 8px 0px #858585;
+}
+
 .editor-sidebar {
     background-color: $color1;
     border-radius: 17px;
@@ -9,13 +22,13 @@
         background-color: #dbdbdb;
         border-start-end-radius: 17px;
         border-start-start-radius: 17px;
-        
-    .tab-background{
-        background-color: #eeeeee;
-        flex-grow: 1;
-        border-start-end-radius: 17px;
-        border-start-start-radius: 17px;
-    }
+
+        .tab-background {
+            background-color: #eeeeee;
+            flex-grow: 1;
+            border-start-end-radius: 17px;
+            border-start-start-radius: 17px;
+        }
 
         .tab {
             display: grid;
@@ -23,39 +36,37 @@
             cursor: pointer;
             color: gray;
             font-size: 1.1rem;
-            transition: all 0.2s;
             height: 100%;
-            background-color:#dbdbdb ;
-            
+            background-color: #dbdbdb;
+            transition: all 0.2s;
+
             &.add {
-                &.active{
+                &.active {
                     border-start-end-radius: 17px;
                     border-start-start-radius: 17px;
                     border-start-start-radius: 0;
                     background-color: rgb(238, 238, 238);
                 }
-                // box-shadow: inset -2px -2px 4px 0px #0000008c;
-                &:not(.active){
+
+                &:not(.active) {
                     border-end-end-radius: 17px;
                 }
             }
-            
+
             &.edit {
                 border-start-end-radius: 17px;
 
-                &:not(.active){
+                &:not(.active) {
                     border-end-start-radius: 17px;
                 }
-                &.active{
+                &.active {
                     border-start-start-radius: 17px;
                     background-color: #eeeeee;
                 }
-                // box-shadow: inset 2px -2px 4px 0px #0000008c;
             }
-            
+
             &.active {
                 color: initial;
-                // box-shadow: unset;
                 font-size: 1.3rem;
             }
         }
@@ -71,8 +82,7 @@
             justify-content: space-between;
             align-items: center;
 
-
-            .btns-container{
+            .btns-container {
                 height: 27px;
                 width: 100px;
                 justify-content: space-between;
@@ -81,36 +91,40 @@
                     font-size: 1.2rem;
                     width: 27px;
                 }
-                &.align{
-                    button{    
-                        &.active{
+                &.align {
+                    button {
+                        &.active {
                             color: $color2;
                         }
-                        
-                        &.muted{
-                            path{
-                                fill: rgba($color2,0.5);
+
+                        &.muted {
+                            path {
+                                fill: rgba($color2, 0.5);
                             }
                         }
                     }
                 }
-                &.decorations{
-                    button{
+                &.decorations {
+                    button {
                         border-radius: 3px;
 
-                        &:first-child{font-weight: 700;}
-                        &:nth-child(2){font-style: italic;}
-                        &:last-child{text-decoration: underline;}
+                        &:first-child {
+                            font-weight: 700;
+                        }
+                        &:nth-child(2) {
+                            font-style: italic;
+                        }
+                        &:last-child {
+                            text-decoration: underline;
+                        }
 
-
-                        &.active{
+                        &.active {
                             color: $color2;
-                            background-color:  rgba($color2,0.1);
+                            background-color: rgba($color2, 0.1);
                         }
                     }
                 }
             }
-
         }
     }
 }
@@ -142,16 +156,16 @@
     }
 }
 
-.other-action-container{
+.other-action-container {
     padding: 20px;
     justify-content: center;
-    gap:1.5rem ;
+    gap: 1.5rem;
 
-    button{
+    button {
         width: 40px;
         height: 40px;
         display: grid;
-        place-content:center;
+        place-content: center;
         font-size: 1.1rem;
         // border-radius: 7px;
         // border: 1px solid $color2;
@@ -159,33 +173,20 @@
         cursor: pointer;
         transition: 200ms;
 
-        path{
-            fill:$color2;
+        path {
+            fill: $color2;
         }
-        
-        &:first-child{
+
+        &:first-child {
             font-size: 1.4rem;
         }
         &:hover {
             background-color: $color2;
             color: white;
 
-            path{
-                fill:$color1;
+            path {
+                fill: $color1;
             }
         }
     }
-}
-
-.sidebar-background{
-    margin-top: 5px;
-    padding: 5px 5px 5px 0;
-    width: $sidebar-width;
-    position: fixed;
-    height: calc(100vh - $header-height - 20px);
-
-    background-color: #1d3556b8;
-    border-end-end-radius: 17px;
-    border-start-end-radius: 17px;
-    box-shadow: 1px 1px 8px 0px #858585;
 }
