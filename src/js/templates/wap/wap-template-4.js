@@ -1,5 +1,5 @@
 import { wapHeader_4 } from '../header/wap-header-4'
-import { wapHero_4 } from '../header/wap-hero-4'
+import { wapHero_4 } from '../hero/wap-hero-4'
 
 export const wapTemplate_4 = {
     "_id": "sdfsduifhsdifsdDDFSDFkf88",

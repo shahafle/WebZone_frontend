@@ -29,6 +29,7 @@ export const wapHero_4 = {
 
             "id": "sdsddcasdasasdvnjsf8",
             "type": "btn",
+            "className": "wap-hero-4-btn",
             "url": "https://www.google.com",
             "txt": "Subscribe Now",
             "style": {
