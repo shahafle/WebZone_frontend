@@ -15,7 +15,6 @@ import { templateService } from '../services/template.service.js';
 export function loadWap(wapId) {
     return async (dispatch) => {
         const wap = await wapService.getById(wapId);
-        console.log(wap);
         dispatch({ type: 'SET_WAP', wap });
     }
 }

@@ -10,6 +10,7 @@ export const wapFooter_1 =
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642950318/oepu6wuifb9vzrxowmda.jpg",
     "style": {
         ...containerStyle,
+        "backgroundColor": "#1d375a"
     },
     "cmps": [
         {
@@ -30,6 +31,7 @@ export const wapFooter_1 =
             "type": "container",
             "style": {
                 ...containerStyle,
+                "backgroundColor": "#1d375a"
             },
             "cmps": [
                 {

@@ -10,7 +10,7 @@ export const wapHeader_1 =
     "style": {
         ...containerStyle,
         "paddingBlock": "0",
-        "backgroundColor": "rgb(29, 55, 90)"
+        "backgroundColor": "#1d375a"
     },
     "cmps": [
         {
@@ -29,6 +29,7 @@ export const wapHeader_1 =
             "type": "container",
             "style": {
                 ...containerStyle,
+                "backgroundColor": "#1d375a"
             },
             "cmps": [
                 {
@@ -39,7 +40,8 @@ export const wapHeader_1 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter"
+                        "fontFamily": "bitter",
+                        "backgroundColor": "#1d375a"
                     },
 
                 },
@@ -51,7 +53,8 @@ export const wapHeader_1 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter"
+                        "fontFamily": "bitter",
+                        "backgroundColor": "#1d375a"
                     },
 
                 },
@@ -63,7 +66,8 @@ export const wapHeader_1 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter"
+                        "fontFamily": "bitter",
+                        "backgroundColor": "#1d375a"
                     },
 
                 },
