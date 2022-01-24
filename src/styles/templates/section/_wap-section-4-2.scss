@@ -1,0 +1,29 @@
+.wap-section-4-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    & > * {
+        flex-basis: 50%;
+    }
+
+    .section-4-2-txt-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &:last-child {
+            margin-top: 1.5rem;
+        }
+
+        span {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: 2px solid black;
+        }
+    }
+}

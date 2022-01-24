@@ -83,11 +83,6 @@ export function ImageStyles({ element, onChangeStyle, onUploadImg, onChangeAttr 
 
       <label>Image url
          <input className="url-input" onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
-         {/* <ThemeProvider theme={theme}>
-            <Box>
-               <TextField type="url" sx={{ backgroundColor: '#ffffff' }} color='primary' onChange={(ev) => onChangeAttr(ev)} type="url" name='url' />
-            </Box>
-         </ThemeProvider> */}
       </label>
 
       <label className="upload-img-label flex justify-around" >

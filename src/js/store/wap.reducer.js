@@ -2,7 +2,7 @@
 import { wapTemplate_1 } from "../templates/wap/wap-template-1";
 import { wapTemplate_2 } from "../templates/wap/wap-template-2";
 import { wapTemplate_3 } from "../templates/wap/wap-template-3";
-
+import { wapTemplate_4 } from "../templates/wap/wap-template-4";
 import { wapTemplate_5 } from "../templates/wap/wap-template-5";
 
 const initialState = {

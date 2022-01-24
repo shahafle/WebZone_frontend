@@ -112,15 +112,6 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
       </label>
 
 
-
-
-
-
-
-
-
-
-
       {/* <label>Line height:
          <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
       </label> */}

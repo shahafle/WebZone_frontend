@@ -1,0 +1,41 @@
+.wap-section-3{
+   text-align: center;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   // flex-direction: column;
+   align-content: center;
+   position: relative;
+   
+   &>span{
+      &>img{
+         min-width: 150px;
+      }
+   }
+   
+   .content-container{
+      border: 5px solid rgb(87, 40, 87);
+      transform:translate(-30px, 174px);
+      gap:20px;
+      
+
+      img{
+         display: grid;
+      }
+
+      &>:last-child{
+         align-self: start;
+      }
+   }
+   
+      
+      
+      //Media query
+      &.media-800{
+         grid-template-columns: repeat(1,1fr);
+         
+         .content-container{
+
+         transform:translate(0px, 30px);
+      }
+   }
+}

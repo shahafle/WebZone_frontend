@@ -6,7 +6,7 @@ export const wapFooter_1 =
     "id": "s78Dgj6",
     "type": "container",
     "category": "wap-footer",
-    "name": "wap-footer-1",
+    "className": "wap-footer-1",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642950318/oepu6wuifb9vzrxowmda.jpg",
     "style": {
         ...containerStyle,

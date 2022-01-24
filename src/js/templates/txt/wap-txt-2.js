@@ -20,5 +20,20 @@ export const wapTxt_2 = {
             "type": "txt", // PARAGRAPH (CENTER)
             "txt": "Grow your business, establish your brand, and put your customers first.",
             "style": { ...btnStyle, "textAlign": "center", "fontFamily": "montserrat", "fontSize": "32" }
-        }]
+        }
+    ]
 }
+
+// {
+//     "id": "l243186tlwkjdg",
+//     "type": "video", // PARAGRAPH (CENTER)
+//     "url": "sasdasdds",
+//     "height": "200"
+// },
+// {
+//     "id": "l243186t5as4ddg",
+//     "type": "input", // PARAGRAPH (CENTER)
+//     "label": "sasdasdds",
+//     "placeholder": "nameIt",
+//     "inputType": "number"
+// }
