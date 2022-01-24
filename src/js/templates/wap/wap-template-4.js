@@ -9,7 +9,7 @@ import { wapFooter_4 } from '../footer/wap-footer-4'
 export const wapTemplate_4 = {
     "_id": "sdfsduifhsdifsdDDFSDFkf88",
     "name": "CoffeeClub",
-    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642926845/rlhviliowwd0fi2oblsm.jpg",
+    "thumbnail": "",
     "createdBy": {
         "_id": "asdjkhagsdiuywqgyuqwbasdf444545fFjf",
         "username": "Roi Yotvat"

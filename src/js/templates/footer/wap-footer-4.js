@@ -7,7 +7,7 @@ export const wapFooter_4 =
     "type": "container",
     "category": "wap-footer",
     "className": "wap-footer-4",
-    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884810/gmvxo3rqdt4hginrevdk.jpg",
+    "thumbnail": "",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "40", "backgroundColor": "#6f4e37" },
     "cmps": [
         {
@@ -80,6 +80,7 @@ export const wapFooter_4 =
                 {
                     "id": "yabadadbdo12398",
                     "type": "container",
+                    "className": "input-container flex column",
                     "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#6f4e37" },
                     "cmps": [
                         {
@@ -88,10 +89,22 @@ export const wapFooter_4 =
                             "txt": "Join our Newsletter",
                             "style": { ...txtStyle, "color": "#ffcc78" }
                         },
-                        // {
-                        //     "id":"222999478fgdsjke",
-                        //     "type":"input"
-                        // }
+                        {
+                            "id": "dddfklgofkrifj",
+                            "type": "input",
+                            "label": "Full Name",
+                            "placeholder": "Your Full Name",
+                            "inputType": "text"
+                        },
+
+                        {
+                            "id": "dhjcvns123ASD123ASd",
+                            "type": "input",
+                            "label": "Email",
+                            "placeholder": "Your Email Address",
+                            "inputType": "email"
+                        }
+
                     ]
 
                 }

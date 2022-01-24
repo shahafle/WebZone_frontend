@@ -14,4 +14,24 @@
     & > span > p {
         margin-top: 60px;
     }
+
+    .input-container {
+        gap: 8px;
+        label {
+            color: #ffffff;
+        }
+
+        input {
+            border-radius: 5px;
+            height: 30px;
+            padding: 3px;
+        }
+
+        input[type="text"] {
+            margin-left: 20px;
+        }
+        input[type="email"] {
+            margin-left: 55px;
+        }
+    }
 }

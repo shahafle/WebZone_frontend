@@ -5,7 +5,7 @@ export const wapSection_4 = {
     "type": "container",
     "category": "wap-section",
     "className": "wap-section-4",
-    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884263/icgjjwnmhdnaqgzxahhs.jpg",
+    "thumbnail": "",
     "style": {
         ...containerStyle,
         "paddingBlock": "320",

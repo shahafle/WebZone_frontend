@@ -6,7 +6,7 @@ export const wapHeader_4 =
     "type": "container",
     "category": "wap-header",
     "className": "wap-header-4",
-    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642950099/mute1ysfnzjcsrlexz25.jpg",
+    "thumbnail": "",
     "style": {
         ...containerStyle,
         "paddingBlock": "0",
