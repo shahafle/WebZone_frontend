@@ -1,76 +1,85 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
-export const wapHeader_1 =
+export const wapHeader_4 =
 {
-    "id": "vvJklf8",
+    "id": "vvJklf8ffffdss",
     "type": "container",
     "category": "wap-header",
-    "className": "wap-header-1",
+    "className": "wap-header-4",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642950099/mute1ysfnzjcsrlexz25.jpg",
     "style": {
         ...containerStyle,
         "paddingBlock": "0",
-        "backgroundColor": "#1d375a"
+        "backgroundColor": "#6f4e37"
     },
     "cmps": [
         {
-            "id": "savdj7",
+            "id": "aDDDsgaCCjvj4",
             "type": "txt",
-            "txt": "Pacifico",
+            "txt": "CoffeeClub",
             "style": {
                 ...txtStyle,
                 "color": "#ffffff",
-                "fontFamily": "kalam",
                 "fontSize": "40",
             },
-        },
-        {
-            "id": "ssbcgdhsa1",
+        }, {
+            "id": "dddbcgsssaadJJhg",
             "type": "container",
             "style": {
                 ...containerStyle,
-                "backgroundColor": "#1d375a"
+                "backgroundColor": "#6f4e37"
             },
             "cmps": [
                 {
-                    "id": "sasdj7",
+                    "id": "sasasdasdAAAAAAdasd",
                     "type": "btn",
                     "url": "https://www.google.com",
-                    "txt": "More details",
+                    "txt": "Shop",
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter",
-                        "backgroundColor": "#1d375a"
+                        "backgroundColor": "#6f4e37"
                     },
 
                 },
                 {
-                    "id": "sdhgFjs7",
+                    "id": "sdhgFDds4asdjCCvksj11244",
                     "type": "btn",
                     "url": "https://www.google.com",
-                    "txt": "Reservations",
+                    "txt": "Subscription",
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter",
-                        "backgroundColor": "#1d375a"
+                        "backgroundColor": "#6f4e37"
                     },
 
                 },
                 {
-                    "id": "dCjs654s",
+                    "id": "dCjs65asd7777ddd4s",
                     "type": "btn",
                     "url": "https://www.google.com",
-                    "txt": "Contact us",
+                    "txt": "About us",
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "fontFamily": "bitter",
-                        "backgroundColor": "#1d375a"
+                        "backgroundColor": "#6f4e37"
+                    },
+
+                },
+                {
+                    "id": "dCjs6asdhhf4fjfjGGf777ddd4s",
+                    "type": "btn",
+                    "url": "https://www.google.com",
+                    "txt": "FAQ",
+                    "style": {
+                        ...btnStyle,
+                        "color": "#ffffff",
+                        "backgroundColor": "#6f4e37"
                     },
 
                 },
             ]
-        }]
+        }
+
+    ]
 }

@@ -37,9 +37,9 @@ export function EditorPage() {
       }
    }
 
-   useEffect(() => {
-      dispatch(loadDraftWap());
-   }, [])
+   // useEffect(() => {
+   //    dispatch(loadDraftWap());
+   // }, [])
 
 
    return <DragDropContext

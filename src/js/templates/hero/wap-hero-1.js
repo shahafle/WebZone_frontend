@@ -4,7 +4,7 @@ export const wapHero_1 = {
     "id": "dhetv6",
     "type": "container",
     "category": "wap-hero",
-    "name": "wap-hero-1",
+    "className": "wap-hero-1",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884263/icgjjwnmhdnaqgzxahhs.jpg",
     "style": {
         ...containerStyle,
