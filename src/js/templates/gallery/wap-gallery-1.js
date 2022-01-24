@@ -3,7 +3,7 @@ export const wapGallery_1 = {
     "id": "sdjS6dg",
     "type": "container",
     "category": "wap-gallery",
-    "name": "wap-gallery-1",
+    "className": "wap-gallery-1",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884869/qiuwysb9f15spo7nclqc.jpg",
     "style": {
         ...containerStyle,

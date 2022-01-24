@@ -5,7 +5,7 @@ export const wapCard_1_2 = {
     "id": "dglkajdlktsdsddsadasdjndDDs7shs",
     "type": "container",
     "category": "wap-card",
-    "name": "wap-card-1-2",
+    "className": "wap-card-1-2",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884589/kaolhfa8wqwqjbgbr5ro.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "50" },
     "cmps": [
