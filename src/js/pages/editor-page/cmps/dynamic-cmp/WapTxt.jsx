@@ -4,7 +4,7 @@ export function WapTxt(props) {
    if (isPublished) {
       return <span>
          <p style={style}
-            className={cmp.id === currElementId ? 'edit-active' : ''}>
+            className={cmp.className || ''}>
             {cmp.txt}
          </p>
       </span>
@@ -12,7 +12,7 @@ export function WapTxt(props) {
 
    return <span>
       <p style={style}
-         className={cmp.id === currElementId ? 'edit-active' : ''}
+         className={`${cmp.id === currElementId ? 'edit-active' : ''} ${cmp.className || ''}`}
          onClick={(ev) => onSetCurrElement(ev, cmp)}
          onMouseOut={(ev) => { ev.target.classList.remove('element-hover') }}
          onMouseOver={({ target }) => { target.classList.add('element-hover') }}
