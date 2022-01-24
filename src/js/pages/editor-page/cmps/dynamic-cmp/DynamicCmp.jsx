@@ -4,10 +4,16 @@ import { WapBtn } from './WapBtn';
 import { WapDiv } from './WapDiv';
 import { WapImg } from './WapImg';
 import { WapTxt } from './WapTxt';
+import { WapVideo } from './WapVideo';
+import { WapInput } from './WapInput';
 
 export function DynamicCmp(props) {
-   const { cmp, idx, isPublished } = props
-   const style = wapService.getScaleUnits(cmp.style)
+   const { cmp, idx } = props
+
+   let style = {}
+   if (cmp.style) {
+      style = wapService.getScaleUnits(cmp.style)
+   }
 
    // const getElement = () => {
    switch (cmp.type) {
@@ -18,6 +24,10 @@ export function DynamicCmp(props) {
       case 'btn': return <WapBtn {...props} style={style} />
 
       case 'container': return <WapDiv  {...props} style={style} />
+
+      case 'video': return <WapVideo  {...props} style={style} />
+
+      case 'input': return <WapInput  {...props} style={style} />
 
       default:
          break;
