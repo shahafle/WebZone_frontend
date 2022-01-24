@@ -166,7 +166,7 @@ export function EditAccordion() {
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
-            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme='dark' />
+            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}><FcDeleteRow /></button>
                 <button onClick={onDuplicateElement}><IoDuplicateSharp /></button>
