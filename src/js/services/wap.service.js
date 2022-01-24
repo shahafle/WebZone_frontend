@@ -8,7 +8,7 @@ export const wapService = {
     save,
     findTarget,
     getScaleUnits,
-    addIds,
+    replaceIds,
     getRandomId,
 }
 
@@ -61,10 +61,10 @@ function getScaleUnits(style) {
     return styleCopy
 }
 
-function addIds(element) {
+function replaceIds(element) {
     element.id = getRandomId()
     if (element.cmps) {
-        element.cmps.forEach(el => addIds(el));
+        element.cmps.forEach(el => replaceIds(el));
     }
 }
 

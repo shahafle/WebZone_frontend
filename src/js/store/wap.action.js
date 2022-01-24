@@ -9,14 +9,43 @@ import { templateService } from '../services/template.service.js';
 // 3. *IMPORTANT - No matter which wap was loaded to the editor, a DRAFT wap will be created.
 
 
-// *** USER wap actions *** //
+// *** CRUD wap actions *** //
 
-// Load wap from user collection to editor page
-// * CURRENTLY NOT IN USE, WILL BE USED WHEN USER WAPS WILL BE SUPPORTED *
+// Load wap from USER collection to editor page
 export function getWapById(wapId) {
     return async (dispatch) => {
         const wap = await wapService.getById(wapId);
         dispatch({ type: 'SET_WAP', wap });
+    }
+}
+
+// Load wap from TEMPLATE collection to editor page
+export function getWapTemplateById(wapTemplateId) {
+    return async (dispatch) => {
+        let wap = await templateService.getWapTemplateById(wapTemplateId);
+        wap = JSON.parse(JSON.stringify(wap));
+        wapService.replaceIds(wap);
+        draftService.saveDraft(wap);
+        dispatch({ type: 'SET_WAP', wap });
+    }
+}
+
+export function updateWap(elementToUpdate) {
+    return async (dispatch, getState) => {
+        const { wap } = getState().wapModule;
+        wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate);
+        if (wap._id) delete wap._id; // DISCUSS ABOUT THIS
+        draftService.saveDraft(wap);
+        dispatch({ type: 'UPDATE_WAP', wap });
+    }
+}
+
+export function saveWap() {
+    return async (dispatch, getState) => {
+        const { wap } = getState().wapModule;
+        await wapService.save(wap);
+        console.log('saved!', wap);
+        // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
     }
 }
 
@@ -38,30 +67,7 @@ export function resetDraftWap() {
 }
 
 
-// *** TEMPLATE wap actions *** //
-
-export function getWapTemplateById(wapTemplateId) {
-    return async (dispatch) => {
-        let wap = await templateService.getWapTemplateById(wapTemplateId);
-        wap = JSON.parse(JSON.stringify(wap));
-        wapService.addIds(wap);
-        draftService.saveDraft(wap);
-        dispatch({ type: 'SET_WAP', wap });
-    }
-}
-
-
-// *** GENERAL wap actions *** //
-
-export function updateWap(elementToUpdate) {
-    return async (dispatch, getState) => {
-        const { wap } = getState().wapModule;
-        wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate);
-        if (wap._id) delete wap._id; // DISCUSS ABOUT THIS
-        draftService.saveDraft(wap);
-        dispatch({ type: 'UPDATE_WAP', wap });
-    }
-}
+// *** ELEMENT wap actions *** //
 
 export function removeElement(element) {
     return (dispatch, getState) => {
@@ -75,7 +81,7 @@ export function removeElement(element) {
 export function addElement(elementToAdd) {
     return (dispatch) => {
         elementToAdd = JSON.parse(JSON.stringify(elementToAdd));
-        wapService.addIds(elementToAdd);
+        wapService.replaceIds(elementToAdd);
         draftService.addElementToDraft(elementToAdd);
         dispatch({ type: 'ADD_ELEMENT', elementToAdd });
         return elementToAdd;
@@ -87,7 +93,7 @@ export function duplicateElement(element) {
         const { wap } = getState().wapModule;
         const elementId = element.id
         element = JSON.parse(JSON.stringify(element))
-        wapService.addIds(element)
+        wapService.replaceIds(element)
         wapService.findTarget(wap, elementId, (cmpsArr, idx) => cmpsArr.splice(idx, 0, element))
         draftService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap })
@@ -130,7 +136,7 @@ export function switchElement(res) {
 
             let draggedElement = templateService.getTemplateSectionById(draggableId);
             draggedElement = JSON.parse(JSON.stringify(draggedElement));
-            wapService.addIds(draggedElement);
+            wapService.replaceIds(draggedElement);
             wap.cmps.splice(destination.index, 0, draggedElement);
         }
 
