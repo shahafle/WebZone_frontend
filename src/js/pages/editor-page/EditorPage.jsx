@@ -38,7 +38,7 @@ export function EditorPage() {
    }
 
    useEffect(() => {
-      dispatch(loadDraftWap());
+      // dispatch(loadDraftWap());
    }, [])
 
 

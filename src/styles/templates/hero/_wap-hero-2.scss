@@ -4,11 +4,12 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    height: 700px;
+    height: 70vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    background-attachment: fixed;
+    
     span:last-child {
         margin-top: 100px;
     }
