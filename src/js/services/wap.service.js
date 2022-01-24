@@ -8,7 +8,7 @@ export const wapService = {
     save,
     findTarget,
     getScaleUnits,
-    addIds,
+    replaceIds,
     getRandomId,
 }
 
@@ -61,14 +61,15 @@ function getScaleUnits(style) {
     return styleCopy
 }
 
-function addIds(element) {
-    element.id = getRandomId()
+function replaceIds(element) {
+    if (!element._id) element.id = getRandomId();
+
     if (element.cmps) {
-        element.cmps.forEach(el => addIds(el));
+        element.cmps.forEach(el => replaceIds(el));
     }
 }
 
-function getRandomId(length = 6, array) {
+function getRandomId(length = 10, array) {
     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let id = '';
 

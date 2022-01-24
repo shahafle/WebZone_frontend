@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getWapById } from '../../store/wap.action'
+import { loadWap } from '../../store/wap.action'
 import { DynamicCmp } from '../editor-page/cmps/dynamic-cmp/DynamicCmp';
 import { wapService } from '../../../js/services/wap.service';
 import { Loader } from '../../../assets/imgs/svg/Loader.jsx'
@@ -18,7 +18,7 @@ export function PublishPage() {
     const wap = useSelector(state => state.wapModule.wap);
 
     useEffect(() => {
-        dispatch(getWapById(wapId));
+        dispatch(loadWap(wapId));
     }, [])
 
 

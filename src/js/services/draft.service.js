@@ -5,7 +5,6 @@ export const draftService = {
     saveDraft,
     loadDraft,
     resetDraft,
-    addElementToDraft,
 }
 
 const DRAFT_WAP_STORAGE_KEY = 'draft_wap'; // Draft Wap from Local Storage
@@ -38,12 +37,6 @@ function loadDraft() {
 function resetDraft() {
     _removeDraft();
     return loadDraft();
-}
-
-function addElementToDraft(elementToAdd) {
-    const draftWap = loadDraft();
-    draftWap.cmps.push(elementToAdd);
-    saveDraft(draftWap);
 }
 
 function _removeDraft() {

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -10,14 +12,14 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
+import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
+
 import { TextStyles } from './TextStyles';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateWap, removeElement } from '../../../store/wap.action'
-import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
-import { uploadImage } from "../../../store/editor.action"
 import { SectionStyle } from './SectionStyle';
+import { BgcStyles } from './BgcStyles.jsx';
 
 
 
@@ -29,14 +31,20 @@ export function EditAccordion() {
     };
 
     const currElement = useSelector(state => state.editorModule.currElement)
-    const wap = useSelector(state => state.wapModule.wap)
     const dispatch = useDispatch()
 
     useEffect(() => {
         if (currElement) {
             dispatch(updateWap(currElement));
         }
+        window.addEventListener('keydown', onRemoveElementByKey);
+
+        return () => window.removeEventListener('keydown', onRemoveElementByKey);
     }, [currElement])
+
+
+
+    //Edit functions
 
     const onChangeStyle = ({ target }) => {
         const style = {
@@ -45,6 +53,7 @@ export function EditAccordion() {
         }
         dispatch(updateCurrElementStyle(currElement, style))
     }
+
     const onChangeColor = (ev, name) => {
         const style = {
             styleName: name,
@@ -69,6 +78,10 @@ export function EditAccordion() {
         dispatch(removeElement(currElement));
     }
 
+    const onDuplicateElement = () => {
+        dispatch(duplicateElement(currElement));
+    }
+
     const onRemoveElementByKey = ({ key }) => {
         if (key === 'Delete') onRemoveElement();
         toast("Wow so easy!", {
@@ -83,12 +96,10 @@ export function EditAccordion() {
 
     }
 
-    useEffect(() => {
-        window.addEventListener('keydown', onRemoveElementByKey);
+    const onUndo = () => {
+        dispatch(undo());
+    }
 
-        return () => window.removeEventListener('keydown', onRemoveElementByKey);
-
-    }, [currElement])
 
 
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', textAlign: 'center' }}>Choose an Item</p>
@@ -124,7 +135,7 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
             {currElement.type === 'container' &&
-                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                         <Typography>Section</Typography>
                     </AccordionSummary>
@@ -132,8 +143,26 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
+<<<<<<< HEAD
             <ToastContainer />
             <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
+=======
+            {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
+                <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Background Color</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <BgcStyles element={currElement} onChangeColor={onChangeColor} />
+                    </AccordionDetails>
+                </Accordion>}
+
+            <div className='other-action-container flex'>
+                <button onClick={onRemoveElement}> Remove Item</button>
+                <button onClick={onDuplicateElement}>Duplicate Item</button>
+                <button onClick={onUndo}>Undo</button>
+            </div>
+>>>>>>> 08525a6130cb19a2f38072a41c480aa5e0691851
         </div >
     );
 }

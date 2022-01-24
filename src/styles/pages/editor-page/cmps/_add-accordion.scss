@@ -1,9 +1,9 @@
 .add-accordion{
-   overflow-y: scroll;
-   height: 700px;
+   overflow-y: auto;
+   height: 674px;
+   padding: 0 13px;
 
    .template-thumbnail{
-      z-index: 350650604;
       position: relative;
       width: 100%;
       border-radius: 5px;

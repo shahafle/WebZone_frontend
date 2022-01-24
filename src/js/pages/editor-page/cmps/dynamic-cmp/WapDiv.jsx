@@ -58,7 +58,8 @@ export function WapDiv(props) {
 
    return <Draggable key={cmp.id} draggableId={cmp.id} index={idx}>
       {(provided, snapshot) => {
-         return <span
+
+         return <div
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
@@ -80,7 +81,7 @@ export function WapDiv(props) {
                   })
                }
             </ div >
-         </span>
+         </div>
       }}
    </Draggable>
 }
