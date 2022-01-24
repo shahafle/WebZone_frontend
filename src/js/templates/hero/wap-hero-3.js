@@ -10,7 +10,7 @@ export const wapHero_3 = {
    "style": {
       ...containerStyle,
       "backgroundImage": "url(\"https://images.unsplash.com/photo-1490367605959-06955305859b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\")",
-      "paddingInline": "30",
+      "paddingInline": "30", "paddingBlock": "120",
    },
    "cmps": [
       {
@@ -22,7 +22,7 @@ export const wapHero_3 = {
             {
                "id": "zx561l3k5tlad",
                "type": "txt", // TITLE
-               "txt": "Sweatheart i'm home",
+               "txt": "Something sweet for everyone",
                "style": { ...txtStyle, "fontSize": "50", "color": "#ffffff", "textAlign": "center", "letterSpacing": "7", "text-shadow": "rgb(0 0 0) 1px 1px 3px" }
             },
             {

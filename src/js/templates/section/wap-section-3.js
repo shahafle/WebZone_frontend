@@ -6,7 +6,7 @@ export const wapSection_3 = {
    "category": "wap-section",
    "className": "wap-section-3",
    "thumbnail": "",
-   "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "50" },
+   "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "36" },
    "cmps": [
       {
          "id": "alkdfsjlk34jt5lksjxc",
@@ -29,7 +29,7 @@ export const wapSection_3 = {
             {
                "id": "zxc2l3k5jtrlad",
                "type": "txt", // TITLE
-               "txt": "Sweatheart i'm home",
+               "txt": "Sweetheart i'm home",
                "style": { ...txtStyle, "fontSize": "40", "fontFamily": "kalam", "textShadow": "rgb(0 0 0) 1px 1px 3px" }
             },
             {
@@ -43,7 +43,7 @@ export const wapSection_3 = {
                "type": "btn", // BUTTON
                "url": "",
                "txt": "Explore more",
-               "style": { ...btnStyle, "textDecoration": "underline" }
+               "style": { ...btnStyle, "textDecoration": "underline", "backgroundColor": "#ffffff00" }
             }
          ]
       }]

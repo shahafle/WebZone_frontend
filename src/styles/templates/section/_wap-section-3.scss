@@ -14,9 +14,9 @@
    
    .content-container{
       border: 5px solid rgb(87, 40, 87);
+      box-shadow: 0 0 7px 1px #e4e4e499,inset 0 0 7px 1px #e4e4e499;
       transform:translate(-30px, 174px);
       gap:20px;
-      
 
       img{
          display: grid;
