@@ -54,7 +54,8 @@ export function EditorBoard() {
       dispatch(updateCurrElementAttr(currElement, attr))
    }
 
-   if (!wap?.cmps) return <div>koo</div>
+   if (!wap?.cmps) return <div>Loading...</div>
+
    return <Droppable droppableId='board'>
       {(provided, snapshot) => {
          if (!wap?.cmps?.length) return <div  {...provided.droppableProps}

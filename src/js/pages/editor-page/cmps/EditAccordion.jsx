@@ -23,6 +23,8 @@ import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
 import { SectionStyle } from './SectionStyle';
 import { BgcStyles } from './BgcStyles.jsx';
+import { VideoStyles } from './VideoStyles';
+import { InputStyles } from './InputStyles';
 
 
 
@@ -130,6 +132,7 @@ export function EditAccordion() {
                         <TextStyles onChangeColor={onChangeColor} elementStyle={currElement.style} onChangeStyle={onChangeStyle} />
                     </AccordionDetails>
                 </Accordion>}
+
             {currElement.type === 'img' &&
                 <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -139,6 +142,7 @@ export function EditAccordion() {
                         <ImageStyles element={currElement} onChangeStyle={onChangeStyle} onUploadImg={onUploadImg} onChangeAttr={onChangeAttr} />
                     </AccordionDetails>
                 </Accordion>}
+
             {currElement.type === 'btn' &&
                 <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -148,6 +152,7 @@ export function EditAccordion() {
                         <ButtonStyles element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} />
                     </AccordionDetails>
                 </Accordion>}
+
             {currElement.type === 'container' &&
                 <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -157,6 +162,7 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
+
             {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
                 <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -166,6 +172,27 @@ export function EditAccordion() {
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
+
+            {currElement.type === 'video' &&
+                <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <SummaryTypography>Video</SummaryTypography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <VideoStyles element={currElement} onChangeAttr={onChangeAttr} />
+                    </AccordionDetails>
+                </Accordion>}
+
+            {currElement.type === 'input' &&
+                <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <SummaryTypography>Input</SummaryTypography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <InputStyles element={currElement} onChangeAttr={onChangeAttr} />
+                    </AccordionDetails>
+                </Accordion>}
+
             <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}><FcDeleteRow /></button>
