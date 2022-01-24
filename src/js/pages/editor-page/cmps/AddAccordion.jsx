@@ -134,7 +134,7 @@ const SummaryTypography = styled(Typography)(({ theme }) => ({
     textTransform: 'capitalize',
     fontFamily: 'Montserrat',
     fontSize: '1rem',
-    // fontWeight: 700
+    fontWeight: 500
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({

@@ -1,7 +1,7 @@
 export function WapImg(props) {
-   const { cmp, onSetCurrElement, currElementId, style } = props
+   const { cmp, onSetCurrElement, currElementId, style, isPublished } = props
 
-   if (cmp.isPublished) {
+   if (isPublished) {
       return <span>
          <img style={style}
             className={cmp.id === currElementId ? 'edit-active' : ''}

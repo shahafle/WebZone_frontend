@@ -1,13 +1,17 @@
+// For user authentication
 import Axios from 'axios';
+const axios = Axios.create({
+    withCredentials: true // Means a cookie will always be sent
+})
 
+
+// *** NOTE : localhost and 127.0.0.1 may be the same in theory, but practically the axios requests url HAVE TO match the url in the open browser *** \\
+
+const serverPort = 3030;
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
-    : '//localhost:3030/api/'
+    : `//localhost:${serverPort}/api/`
 
-
-var axios = Axios.create({
-    withCredentials: true
-})
 
 export const httpService = {
     get(endpoint, data) {
@@ -36,10 +40,10 @@ async function ajax(endpoint, method = 'GET', data = null) {
     } catch (err) {
         console.log(`Had Issues ${method}ing to the backend, endpoint: ${endpoint}, with data: ${data}`);
         console.dir(err);
-        if (err.response && err.response.status === 401) {
-            sessionStorage.clear();
-            window.location.assign('/');
-        }
-        throw err;
+        // if (err.response && err.response.status === 401) {
+        //     sessionStorage.clear();
+        //     window.location.assign('/');
+        // }
+        throw err; // Take care of errors in the components
     }
 }

@@ -20,10 +20,7 @@ export function PublishPage() {
     useEffect(() => {
         dispatch(loadWap(wapId));
     }, [])
-
-
     if (!wap) return <Loader />
-
     return (
         <div>
             {wap && wap.cmps.map((cmp, i) => {

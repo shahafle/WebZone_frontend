@@ -2,9 +2,9 @@ import { DynamicCmp } from './DynamicCmp';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
 export function WapDiv(props) {
-   const { cmp, onSetCurrElement, currElementId, style, idx, mediaClass } = props
+   const { cmp, onSetCurrElement, currElementId, style, idx, mediaClass, isPublished } = props
 
-   if (cmp.isPublished) {
+   if (isPublished) {
       return <span><div
          style={style}
          className={`${mediaClass} ${cmp.name || ''}`}>

@@ -37,7 +37,7 @@ const wapTemplates = [
    wapTemplate_2
 ]
 
-const sectionsCategories = ['wap-header', 'wap-hero', 'wap-txt', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form','wap-section',
+const sectionsCategories = ['wap-header', 'wap-hero', 'wap-text', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form','wap-section',
 
 const templateSections = [
    wapHeader_1,

@@ -1,4 +1,4 @@
-import { asyncStorageService } from './async-storage.service.js';
+import { httpService } from './http.service.js';
 
 
 export const wapService = {
@@ -13,49 +13,69 @@ export const wapService = {
 }
 
 
-const WAP_STORAGE_KEY = 'wap_db'; // User Saved/Published Waps
-
-
-// *** DEMO Axios Requests *** //
-
+// *** Axios Requests *** //
 
 // Get waps
 async function query() {
-    return await asyncStorageService.query(WAP_STORAGE_KEY);
+    try {
+        const waps = await httpService.get('wap');
+        return waps;
+    } catch (err) {
+
+    }
 }
 
 // Get wap by id
 async function getById(wapId) {
-    return await asyncStorageService.get(WAP_STORAGE_KEY, wapId);
+    try {
+        const wap = await httpService.get(`wap/${wapId}`);
+        return wap;
+    } catch (err) {
+
+    }
 }
 
 // Remove wap
 async function remove(wapId) {
-    return await asyncStorageService.remove(WAP_STORAGE_KEY, wapId);
+    try {
+        const removedWap = await httpService.delete(`wap/${wapId}`);
+        return removedWap;
+    } catch (err) {
+
+    }
 }
 
 // Update an existing wap / Add a new wap
-async function save(wap) {
-    if (wap._id) {
+async function save(wapToSave) {
+    if (wapToSave._id) {
         // Update
-        return await asyncStorageService.put(WAP_STORAGE_KEY, wap);
+        try {
+            const updatedWap = await httpService.put(`wap/${wapToSave._id}`, wapToSave);
+            return updatedWap;
+        } catch (err) {
+
+        }
     } else {
         // Add
-        return await asyncStorageService.post(WAP_STORAGE_KEY, wap);
+        try {
+            const addedWap = await httpService.post('wap', wapToSave);
+            return addedWap;
+        } catch (err) {
+
+        }
     }
 }
 
 
 // *** Wap Utils *** //
 
-
 // Find any cmp inside the wap by recurssion
 function findTarget(data, elementId, cb) {
     if (!data.cmps) return;
     const elementIdx = data.cmps.findIndex(cmp => cmp.id === elementId);
     if (elementIdx > -1) {
-        cb(data.cmps, elementIdx)
-        return
+        cb(data.cmps, elementIdx);
+        return;
     } else {
         data.cmps.forEach(cmp => findTarget(cmp, elementId, cb));
     }
@@ -66,14 +86,16 @@ function getScaleUnits(style) {
     const pxFields = [
         'fontSize', 'letterSpacing', 'lineHeight',
         'paddingBlock', 'paddingInline', 'borderRadius'];
-    const percentFields = ['width']
-    const styleCopy = JSON.parse(JSON.stringify(style))
+
+    const percentFields = ['width'];
+
+    const styleCopy = JSON.parse(JSON.stringify(style));
     for (let attr in styleCopy) {
-        if (pxFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + 'px'
-        else if (percentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%'
+        if (pxFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + 'px';
+        else if (percentFields.includes(attr)) styleCopy[attr] = styleCopy[attr] + '%';
     }
 
-    return styleCopy
+    return styleCopy;
 }
 
 // Replace the ids of all cmps inside a wap TEMPLATE

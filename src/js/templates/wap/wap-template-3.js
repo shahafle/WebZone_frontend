@@ -8,6 +8,5 @@ export const wapTemplate_3 = {
       "username": "Shahaf Levi"
    },
    "cmps": [wapHeader_3],
-   "isPublished": false,
    "isTemplate": true
 }

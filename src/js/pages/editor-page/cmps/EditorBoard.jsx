@@ -70,7 +70,7 @@ export function EditorBoard() {
             ref={provided.innerRef}
          >
             {wap.cmps.map((cmp, i) =>
-               <DynamicCmp key={i} idx={i} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
+               <DynamicCmp key={i} idx={i} isPublished={false} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
             )}
 
 

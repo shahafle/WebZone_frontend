@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { Link, } from 'react-router-dom'
 
 import { saveWap } from '../../../store/wap.action';
 
@@ -11,17 +12,18 @@ import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 export function WapActions() {
 
    const dispatch = useDispatch();
+   const wap = useSelector(state => state.wapModule.wap)
 
    const onSaveWap = () => {
       dispatch(saveWap());
    }
 
-   const onPublishWap = () => {
-      console.log()
-      // wap.isPublished = true;
-      // wap.isTemplate = false;
-      // const savedWap = wapService.save(wap);
-      // window.open(`/publish/${savedWap._id}`, "_blank")
+   const onPublish = () => {
+      dispatch(saveWap(openPublish));
+   }
+
+   const openPublish = (wapId) => {
+      window.open(`/publish/${wapId}`, "_blank")
    }
 
 
@@ -35,7 +37,7 @@ export function WapActions() {
       <div className="save-publish-container flex">
          <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>
          {/* <button className="save-btn" onClick={onSaveWap}>Save</button> */}
-         <button className="publish-btn" onClick={onPublishWap}><span>Publish</span></button>
+         <button className="publish-btn" onClick={onPublish}><span>Publish</span></button>
       </div>
    </div>
 }

@@ -12,6 +12,8 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { FaUndoAlt } from "react-icons/fa";
 import { IoDuplicateSharp } from "react-icons/io5";
 import { FcDeleteRow } from "react-icons/fc";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
@@ -80,10 +82,22 @@ export function EditAccordion() {
 
     const onRemoveElement = () => {
         dispatch(removeElement(currElement));
+        toast.error("Andddddd it\'s gone !", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
     const onDuplicateElement = () => {
         dispatch(duplicateElement(currElement));
+        toast("BAM ! Another one", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
     const onRemoveElementByKey = ({ key }) => {
@@ -92,6 +106,12 @@ export function EditAccordion() {
 
     const onUndo = () => {
         dispatch(undo());
+        toast("I\'m back !", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
 
@@ -131,7 +151,7 @@ export function EditAccordion() {
             {currElement.type === 'container' &&
                 <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Section</Typography>
+                        <SummaryTypography>Section</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
@@ -140,13 +160,13 @@ export function EditAccordion() {
             {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
                 <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Background Color</Typography>
+                        <SummaryTypography>Background Color</SummaryTypography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
-
+            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme='dark' />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}><FcDeleteRow /></button>
                 <button onClick={onDuplicateElement}><IoDuplicateSharp /></button>
@@ -201,7 +221,7 @@ const SummaryTypography = styled(Typography)(({ theme }) => ({
     textTransform: 'capitalize',
     fontFamily: 'Montserrat',
     fontSize: '1rem',
-    // fontWeight: 700
+    fontWeight: 500
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({

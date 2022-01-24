@@ -6,17 +6,17 @@ export const wapFooter_2 = {
     "category": "wap-footer",
     "name": "wap-footer-2",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884810/gmvxo3rqdt4hginrevdk.jpg",
-    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "40" },
+    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "40", "backgroundColor": "#0b0b0b" },
     "cmps": [
         {
             "id": "l2k4j523ptrsdjpojgf34l65kjts",
             "type": "container", // TEXT COLUMNS CONTAINER
-            "style": { ...containerStyle, "paddingBlock": "0" },
+            "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#0b0b0b" },
             "cmps": [
                 {
                     "id": "3p45jyepofhjpsdojf235",
                     "type": "container", // TEXT COLUMN CONTAINER (LEFT)
-                    "style": { ...containerStyle, "paddingBlock": "0" },
+                    "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#0b0b0b" },
                     "cmps": [
                         {
                             "id": "p234o6jpwodjgfsjglj235tsd",
@@ -53,7 +53,7 @@ export const wapFooter_2 = {
                 {
                     "id": "p23o5jpwdgsd354",
                     "type": "container", // TEXT COLUMN CONTAINER (CENTER LEFT)
-                    "style": { ...containerStyle, "paddingBlock": "0" },
+                    "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#0b0b0b" },
                     "cmps": [
                         {
                             "id": "5498y7er4ghs3d5f13465",
@@ -78,7 +78,7 @@ export const wapFooter_2 = {
                 {
                     "id": "3456t453sfdgh1h43",
                     "type": "container", // TEXT COLUMN CONTAINER (CENTER RIGHT)
-                    "style": { ...containerStyle, "paddingBlock": "0" },
+                    "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#0b0b0b" },
                     "cmps": [
                         {
                             "id": "64598h1g5h1d35fg",
@@ -121,7 +121,7 @@ export const wapFooter_2 = {
                 {
                     "id": "6e5tr4y65345ye",
                     "type": "container", // TEXT COLUMN CONTAINER (RIGHT)
-                    "style": { ...containerStyle, "paddingBlock": "0" },
+                    "style": { ...containerStyle, "paddingBlock": "0", "backgroundColor": "#0b0b0b" },
                     "cmps": [
                         {
                             "id": "2943854t9d8wsg6s5g1d",
