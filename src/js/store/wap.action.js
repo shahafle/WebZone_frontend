@@ -15,6 +15,7 @@ import { templateService } from '../services/template.service.js';
 export function loadWap(wapId) {
     return async (dispatch) => {
         const wap = await wapService.getById(wapId);
+        console.log(wap);
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -40,11 +41,11 @@ export function updateWap(elementToUpdate) {
     }
 }
 
-export function saveWap() {
+export function saveWap(cb) {
     return async (dispatch, getState) => {
         const { wap } = getState().wapModule;
-        await wapService.save(wap);
-        console.log('saved!', wap);
+        const savedWap = await wapService.save(wap);
+        if (cb) cb(savedWap._id)
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
     }
 }

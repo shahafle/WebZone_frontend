@@ -31,7 +31,9 @@ function query(entityStorageKey, delay = 1000) {
 // Get entity by id
 async function get(entityStorageKey, entityId) {
     const entities = await query(entityStorageKey);
-    const entity = entities.find(entity => entity._id === entityId);
+    const entity = entities.find(entity => {
+        return entity._id === entityId
+    });
     return entity;
 }
 

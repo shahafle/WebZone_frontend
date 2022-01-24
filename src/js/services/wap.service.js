@@ -28,11 +28,11 @@ function remove(wapId) {
     return asyncStorageService.remove(WAP_STORAGE_KEY, wapId);
 }
 
-function save(wap) {
+async function save(wap) {
     if (wap._id) {
-        return asyncStorageService.put(WAP_STORAGE_KEY, wap);
+        return await asyncStorageService.put(WAP_STORAGE_KEY, wap);
     } else {
-        return asyncStorageService.post(WAP_STORAGE_KEY, wap);
+        return await asyncStorageService.post(WAP_STORAGE_KEY, wap);
     }
 }
 

@@ -1,7 +1,7 @@
 export function WapTxt(props) {
-   const { cmp, onSetCurrElement, handleTxtChange, currElementId, style } = props
+   const { cmp, onSetCurrElement, handleTxtChange, currElementId, style, isPublished } = props
 
-   if (cmp.isPublished) {
+   if (isPublished) {
       return <span>
          <p style={style}
             className={cmp.id === currElementId ? 'edit-active' : ''}>
