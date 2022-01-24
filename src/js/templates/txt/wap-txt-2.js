@@ -3,7 +3,7 @@ import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles'
 export const wapTxt_2 = {
     "id": "l234j5tlksjd",
     "type": "container",
-    "category": "wap-txt",
+    "category": "wap-text",
     "name": "wap-txt-2",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642885011/czcu8lhakb6kxs565bp8.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "20" },

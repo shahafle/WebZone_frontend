@@ -14,7 +14,7 @@ export const txtStyle = {
 export const btnStyle = {
     ...txtStyle,
     "borderRadius": "0",
-    "backgroundColor": ""
+    "backgroundColor": "#ffffff"
 };
 
 export const imgStyle = {
@@ -23,7 +23,8 @@ export const imgStyle = {
 };
 
 export const containerStyle = {
-    "backgroundImage": "",
     "paddingInline": "30",
-    "paddingBlock": "30"
+    "paddingBlock": "30",
+    "backgroundColor": "#ffffff",
+    "backgroundImage": "",
 };
