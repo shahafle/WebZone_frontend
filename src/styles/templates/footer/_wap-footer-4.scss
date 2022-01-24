@@ -1,0 +1,17 @@
+.wap-footer-4 {
+    & > span > div {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0;
+        max-width: 1500px;
+        margin: auto;
+
+        p {
+            margin: 10px 0;
+        }
+    }
+
+    & > span > p {
+        margin-top: 60px;
+    }
+}

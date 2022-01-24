@@ -9,20 +9,21 @@ export const wapHero_4 = {
     "style": {
         ...containerStyle,
         "paddingInline": "50",
-        "paddingBlock": "200"
+        "paddingBlock": "200",
+        "backgroundImage": "url(https://images.pexels.com/photos/942802/pexels-photo-942802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)"
     },
     "cmps": [
         {
             "id": "110ddaas9f7s",
             "type": "txt",
-            "txt": "Monthly roasted coffee subscriptions",
+            "className": "wap-hero-4-txt",
+            "txt": "Monthly coffee subscriptions.",
             "style": {
                 ...txtStyle,
-                "color": "#334748",
+                "color": "#1b1b1b",
                 // "textAlign": "center",
                 "fontSize": "65",
                 "letterSpacing": "1",
-                "textShadow": "1px 1px 3px #000000",
             }
         },
         {
@@ -37,7 +38,9 @@ export const wapHero_4 = {
                 "textAlign": "center",
                 "fontSize": "30",
                 "color": "#ffffff",
-                "backgroundColor": "#6f4e37"
+                "backgroundColor": "#6f4e37",
+                "borderRadius": "1000"
+
             }
         }
     ]

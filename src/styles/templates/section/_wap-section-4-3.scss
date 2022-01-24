@@ -1,0 +1,33 @@
+.wap-section-4 {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.wap-section-4-3-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .section-4-3-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        // background-size: cover;
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+
+            .icon {
+                display: grid;
+                width: 30px;
+                margin: auto;
+            }
+        }
+    }
+}
