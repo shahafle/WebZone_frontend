@@ -1,4 +1,3 @@
-// import { wapElService } from "../services/wap-el.service"
 import { uploadImgToCloud } from '../services/cloudinary.service.js';
 
 export function setCurrElement(element) {
@@ -34,7 +33,6 @@ export function uploadImage(ev, element, isBackground) {
          } else {
             element.url = cloudUrl;
          }
-         console.log(cloudUrl);
          dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement: element })
       } catch (err) {
          console.log(err);

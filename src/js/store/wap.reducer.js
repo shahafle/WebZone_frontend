@@ -6,6 +6,7 @@ import { wapTemplate_3 } from "../templates/wap/wap-template-3";
 
 const initialState = {
     wap: null,
+    wapHistory: []
     // wap: wapTemplate_2
 }
 
@@ -18,9 +19,11 @@ export function wapReducer(state = initialState, action) {
         case 'SET_WAP':
             return newState = { ...state, wap: { ...action.wap } };
         case 'UPDATE_WAP':
-            return newState = { ...state, wap: { ...action.wap } };
-        case 'ADD_ELEMENT':
-            return newState = { ...state, wap: { ...state.wap, cmps: [...state.wap.cmps, action.elementToAdd] } };
+            console.log(action.wap, state.wap);
+            state.wapHistory.push(state.wap)
+            return newState = { ...state, wap: { ...action.wap }, wapHistory: [...state.wapHistory] };
+        case 'UNDO_WAP':
+            return newState = { ...state, wap: { ...action.wap }, wapHistory: [...action.wapHistory] };
         default:
             return newState;
     }

@@ -114,18 +114,22 @@
     }
 }
 
-.remove-el-btn {
-    display: block;
-    margin: 30px auto;
-    padding: 8px 20px;
-    border-radius: 1000px;
-    border: 1px solid $color2;
-    cursor: pointer;
-    transition: 200ms;
+.other-action-container{
+    padding: 20px;
+    justify-content: space-between;
 
-    &:hover {
-        background-color: $color2;
-        color: white;
+    button{
+        display: block;
+        padding: 8px 20px;
+        border-radius: 1000px;
+        border: 1px solid $color2;
+        cursor: pointer;
+        transition: 200ms;
+        
+        &:hover {
+            background-color: $color2;
+            color: white;
+        }
     }
 }
 

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -7,14 +9,15 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+
+import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
+import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
+
 import { TextStyles } from './TextStyles';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateWap, removeElement, duplicateElement } from '../../../store/wap.action'
-import { updateCurrElementStyle, updateCurrElementAttr } from '../../../store/editor.action'
 import { ImageStyles } from './ImageStyles';
 import { ButtonStyles } from './BtnStyles';
-import { uploadImage } from "../../../store/editor.action"
 import { SectionStyle } from './SectionStyle';
+import { BgcStyles } from './BgcStyles.jsx';
 
 
 
@@ -32,7 +35,14 @@ export function EditAccordion() {
         if (currElement) {
             dispatch(updateWap(currElement));
         }
+        window.addEventListener('keydown', onRemoveElementByKey);
+
+        return () => window.removeEventListener('keydown', onRemoveElementByKey);
     }, [currElement])
+
+
+
+    //Edit functions
 
     const onChangeStyle = ({ target }) => {
         const style = {
@@ -41,6 +51,7 @@ export function EditAccordion() {
         }
         dispatch(updateCurrElementStyle(currElement, style))
     }
+
     const onChangeColor = (ev, name) => {
         const style = {
             styleName: name,
@@ -73,12 +84,10 @@ export function EditAccordion() {
         if (key === 'Delete') onRemoveElement();
     }
 
-    useEffect(() => {
-        window.addEventListener('keydown', onRemoveElementByKey);
+    const onUndo = () => {
+        dispatch(undo());
+    }
 
-        return () => window.removeEventListener('keydown', onRemoveElementByKey);
-
-    }, [currElement])
 
 
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', textAlign: 'center' }}>Choose an Item</p>
@@ -114,7 +123,7 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
             {currElement.type === 'container' &&
-                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                         <Typography>Section</Typography>
                     </AccordionSummary>
@@ -122,10 +131,20 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
+            {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
+                <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>Background Color</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <BgcStyles element={currElement} onChangeColor={onChangeColor} />
+                    </AccordionDetails>
+                </Accordion>}
 
             <div className='other-action-container flex'>
-                <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
-                <button className="remove-el-btn" onClick={onDuplicateElement}>Duplicate Item</button>
+                <button onClick={onRemoveElement}> Remove Item</button>
+                <button onClick={onDuplicateElement}>Duplicate Item</button>
+                <button onClick={onUndo}>Undo</button>
             </div>
         </div >
     );

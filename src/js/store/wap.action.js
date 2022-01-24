@@ -73,11 +73,13 @@ export function removeElement(element) {
 }
 
 export function addElement(elementToAdd) {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const { wap } = getState().wapModule;
         elementToAdd = JSON.parse(JSON.stringify(elementToAdd));
         wapService.addIds(elementToAdd);
-        draftService.addElementToDraft(elementToAdd);
-        dispatch({ type: 'ADD_ELEMENT', elementToAdd });
+        wap.cmps.push(elementToAdd);
+        draftService.saveDraft(wap);
+        dispatch({ type: 'UPDATE_WAP', wap });
         return elementToAdd;
     }
 }
@@ -141,5 +143,25 @@ export function switchElement(res) {
 
         draftService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap });
+    }
+}
+
+export function undo() {
+    return async (dispatch, getState) => {
+        const { wapHistory } = getState().wapModule;
+        const { currElement } = getState().editorModule;
+
+        if (!wapHistory.length) return
+        let prevWap = wapHistory.pop()
+
+        prevWap = JSON.parse(JSON.stringify(prevWap));
+        draftService.saveDraft(prevWap);
+        console.log(wapHistory[wapHistory.length - 1].cmps[0].cmps[0]);
+        console.log(wapHistory[wapHistory.length - 2].cmps[0].cmps[0]);
+        wapService.findTarget(prevWap, currElement.id, (cmpsArr, idx) => {
+            dispatch({ type: 'UPDATE_CURR_ELEMENT', currElement: cmpsArr[idx] })
+        })
+
+        dispatch({ type: 'UNDO_WAP', wap: prevWap, wapHistory });
     }
 }
