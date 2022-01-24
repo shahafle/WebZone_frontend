@@ -143,10 +143,7 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
-<<<<<<< HEAD
-            <ToastContainer />
             <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
-=======
             {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
                 <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -156,13 +153,12 @@ export function EditAccordion() {
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
-
+            <ToastContainer />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}> Remove Item</button>
                 <button onClick={onDuplicateElement}>Duplicate Item</button>
                 <button onClick={onUndo}>Undo</button>
             </div>
->>>>>>> 08525a6130cb19a2f38072a41c480aa5e0691851
         </div >
     );
 }
