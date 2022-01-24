@@ -9,6 +9,8 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
@@ -82,6 +84,16 @@ export function EditAccordion() {
 
     const onRemoveElementByKey = ({ key }) => {
         if (key === 'Delete') onRemoveElement();
+        toast("Wow so easy!", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+
     }
 
     const onUndo = () => {
@@ -131,6 +143,7 @@ export function EditAccordion() {
                         <SectionStyle element={currElement} onChangeStyle={onChangeStyle} onChangeAttr={onChangeAttr} onUploadImg={onUploadImg} />
                     </AccordionDetails>
                 </Accordion>}
+            <button className="remove-el-btn" onClick={onRemoveElement}>Remove Item</button>
             {(currElement.type === 'container' || currElement.type === 'btn' || currElement.type === 'txt') &&
                 <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -140,7 +153,7 @@ export function EditAccordion() {
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
-
+            <ToastContainer />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}> Remove Item</button>
                 <button onClick={onDuplicateElement}>Duplicate Item</button>
