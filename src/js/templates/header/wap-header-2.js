@@ -4,7 +4,7 @@ export const wapHeader_2 = {
     "id": "4w3664tw65ds1fg3",
     "type": "container", // HEADER
     "category": "wap-header",
-    "name": "wap-header-2",
+    "className": "wap-header-2",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642883206/owopvqgsktupsrjwrpzt.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "0" },
     "cmps": [

@@ -119,7 +119,7 @@ export function EditAccordion() {
     if (!currElement) return <p style={{ padding: '20px', marginTop: '50px', textAlign: 'center' }}>Choose an Item</p>
 
     return (
-        <div className="accordions-container">
+        <div className="edit-accordion">
 
             {(currElement.type === 'txt' || currElement.type === 'btn') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -210,7 +210,7 @@ const AccordionSummary = styled((props) => (
 // Accordion Details Styling
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: '10px 25px',
+    padding: '20px 8px',
     borderTop: '1px solid rgba(60, 60, 60, .5)',
 }));
 
