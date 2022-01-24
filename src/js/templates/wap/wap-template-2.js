@@ -14,6 +14,5 @@ export const wapTemplate_2 = {
         "username": "Noy Morgenshtein"
     },
     "cmps": [wapHeader_2, wapHero_2, wapTxt_2, wapCard_2, wapCard_2_2, wapFooter_2],
-    "isPublished": false,
     "isTemplate": true
 }

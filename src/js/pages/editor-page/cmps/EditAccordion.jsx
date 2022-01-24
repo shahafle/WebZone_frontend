@@ -76,28 +76,36 @@ export function EditAccordion() {
 
     const onRemoveElement = () => {
         dispatch(removeElement(currElement));
+        toast.error("Andddddd it\'s gone !", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
     const onDuplicateElement = () => {
         dispatch(duplicateElement(currElement));
+        toast("BAM ! Another one", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
     const onRemoveElementByKey = ({ key }) => {
         if (key === 'Delete') onRemoveElement();
-        toast("Wow so easy!", {
-            position: "bottom-left",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        })
-
     }
 
     const onUndo = () => {
         dispatch(undo());
+        toast("I\'m back !", {
+            position: "bottom-center", autoClose: 3000,
+            hideProgressBar: false, closeOnClick: true,
+            pauseOnHover: true, draggable: true,
+            progress: undefined,
+        })
     }
 
 
@@ -153,7 +161,7 @@ export function EditAccordion() {
                         <BgcStyles element={currElement} onChangeColor={onChangeColor} />
                     </AccordionDetails>
                 </Accordion>}
-            <ToastContainer />
+            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme='dark' />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}> Remove Item</button>
                 <button onClick={onDuplicateElement}>Duplicate Item</button>
