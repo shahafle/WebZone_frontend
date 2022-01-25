@@ -71,3 +71,8 @@
 .placeholder {
     height: $header-height;
 }
+
+.main-header.display-none,
+.placeholder.display-none {
+    display: none;
+}

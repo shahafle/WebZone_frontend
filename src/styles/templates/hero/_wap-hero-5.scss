@@ -15,9 +15,8 @@
     }
 
     .wap-hero-5-content {
-
         :nth-child(2) p {
-            width: clamp(200px, 50%, 500px);
+            min-width: 500px;
         }
 
         a {

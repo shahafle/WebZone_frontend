@@ -23,7 +23,7 @@ export function WapActions() {
    }
 
    const openPublish = (wapId) => {
-      window.open(`/publish/${wapId}`, "_blank")
+      window.open(`/publish/${wapId}`, "_blank");
    }
 
 

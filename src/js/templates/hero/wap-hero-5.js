@@ -8,7 +8,7 @@ export const wapHero_5 = {
     "category": "wap-hero",
     "className": "wap-hero-5",
     "thumbnail": "",
-    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "30", "backgroundImage": `url(${bgImg})` },
+    "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "0", "backgroundImage": `url(${bgImg})` },
     "cmps": [
         {
             "id": "345lk7yjflsdkgjs09gj2343t",
