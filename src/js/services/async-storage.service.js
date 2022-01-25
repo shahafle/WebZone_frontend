@@ -14,7 +14,7 @@ export const asyncStorageService = {
     remove,
 }
 
-const ENTITY_STORAGE_KEY = 'wap_db';
+const ENTITY_STORAGE_KEY = 'wap'; // User saved/published waps. This will be wap collection in wap_db
 
 ///////////////////////// This file is a demo server with its service combined in one /////////////////////////
 

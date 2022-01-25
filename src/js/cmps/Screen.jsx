@@ -1,9 +1,9 @@
 
 
-export function Screen({children}) {
+export function Screen({children, cb}) {
 
     return (
-        <div className="screen">
+        <div className="screen" onClick={cb}>
             {children}
         </div>
     )

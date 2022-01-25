@@ -38,7 +38,7 @@ export const templateService = {
 
 const wapTemplates = [
    wapTemplate_1,
-   wapTemplate_2
+   wapTemplate_2,
 ]
 
 const sectionsCategories = ['wap-header', 'wap-hero', 'wap-section', 'wap-text', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form 'wap-form','wap-section',

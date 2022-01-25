@@ -13,7 +13,7 @@ export const wapService = {
 }
 
 
-const WAP_STORAGE_KEY = 'wap_db'; // User Saved/Published Waps
+const WAP_STORAGE_KEY = 'wap'; // User saved/published waps. This will be wap collection in wap_db
 
 
 // *** DEMO Axios Requests *** //

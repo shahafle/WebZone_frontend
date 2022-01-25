@@ -1,13 +1,27 @@
 import { userService } from "../services/user.service.js";
 
 
+export function onSignup(credentials) {
+    return async (dispatch) => {
+        try {
+            const user = await userService.signup(credentials);
+            dispatch({ type: 'SET_USER', user });
+        } catch (err) {
+            console.log('Something went wrong, check the provided credentials')
+            console.log(credentials);
+        }
+
+    }
+}
+
 export function onLogin(credentials) {
     return async (dispatch) => {
         try {
             const user = await userService.login(credentials);
             dispatch({ type: 'SET_USER', user });
         } catch (err) {
-
+            console.log('Something went wrong, invalid username or password, compare credentials to db');
+            console.log(credentials);
         }
     }
 }
@@ -23,17 +37,8 @@ export function onLogout() {
     }
 }
 
-export function onSignup(credentials) {
-    return async (dispatch) => {
-        try {
-            const user = await userService.signup(credentials);
-            dispatch({ type: 'SET_USER', user });
-        } catch (err) {
 
-        }
-
-    }
-}
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 export function removeUser(userId) {
     return async dispatch => {

@@ -4,11 +4,12 @@ import { wapTemplate_2 } from "../templates/wap/wap-template-2";
 import { wapTemplate_3 } from "../templates/wap/wap-template-3";
 import { wapTemplate_4 } from "../templates/wap/wap-template-4";
 import { wapTemplate_5 } from "../templates/wap/wap-template-5";
+import { wapTemplate_6 } from "../templates/wap/wap-template-6";
 
 const initialState = {
     // wap: null,
     wapHistory: [],
-    wap: wapTemplate_4
+    wap: wapTemplate_6
 }
 
 

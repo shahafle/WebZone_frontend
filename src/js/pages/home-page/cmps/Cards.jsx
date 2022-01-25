@@ -49,10 +49,9 @@ export function Cards() {
             </div>
 
             <div className="card-container flex">
-                <div className='content-container flex align-center'>
-                    <div className='other-diagonal'>
-
-                        <div className="slide-in-right card-text flex column">
+                <div className="content-container flex align-center">
+                    <div className="other-diagonal flex align-center">
+                        <div className="card-text flex column slide-in-right">
                             <h1>Inviting</h1>
                             <h2>Build Together</h2>
                             <p>Invite your friends or family to help you build the website of your dreams! Simpley click the "Work Together" link inside the editor and send them a link! Did we mention that the platform is compatible with any device? So what are you waiting for?</p>
