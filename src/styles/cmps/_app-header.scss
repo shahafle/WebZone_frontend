@@ -1,14 +1,14 @@
 .main-header {
     height: $header-height;
     // background-color: $color1;
-    padding: 0 30px;
+    padding: 0 100px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
     font-weight: 500;
 
-    transition: all 1s;
+    transition: all .5s;
 
     &.active-scroll-1 {
         background-color: rgba(255, 255, 255, 0.8);

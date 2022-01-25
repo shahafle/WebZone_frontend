@@ -50,8 +50,7 @@ export function Cards() {
 
             <div className="card-container flex">
                 <div className='content-container flex align-center'>
-                    <div className='other-diagonal'>
-
+                    <div className='other-diagonal flex align-center'>
                         <div className="card-text flex column">
                             <h1>Inviting</h1>
                             <h2>Build Together</h2>

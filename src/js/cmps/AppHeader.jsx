@@ -39,8 +39,8 @@ export function AppHeader() {
     }, [location])
 
     const handleScroll = () => {
-        if (window.scrollY < 200) setHeaderClass('');
-        if (window.scrollY > 200) setHeaderClass('active-scroll-1');
+        if (window.scrollY < 140) setHeaderClass('');
+        if (window.scrollY > 140) setHeaderClass('active-scroll-1');
         if (window.scrollY > 400) setHeaderClass('active-scroll-2');
         if (window.scrollY > 750) setHeaderClass('active-scroll-3');
     }

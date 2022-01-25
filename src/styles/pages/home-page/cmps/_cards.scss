@@ -30,13 +30,13 @@
                 background-color: #383838;
                 transform: skewY(22deg );
                 gap: 0;
+                height: 100vh;
                 
                 .other-diagonal{
                     flex-basis: unset;
-                    transform: skewY(-11deg);
-                    display: flex;
-                    padding: 50px 7%;
                     gap: 50px;
+                    padding: 50px 7%;
+                    transform: skewY(-11deg);
                 }
             }
         }
@@ -131,8 +131,7 @@
             bottom: 0;
             padding: 0.75rem 0;
             margin: 0 0 0 1.85rem;
-            // color: #282936;
-            color: white;
+            color: #282936;
             font-weight: 700;
             line-height: 1.6;
             text-align: center;
@@ -157,16 +156,10 @@
 }
 
 .cards {
-    :nth-child(2) button {
+    :nth-child(3) button {
         &.get-started {
             .button-text {
-                color: #282936;
-            }
-
-            &:hover {
-                .button-text {
-                    color: #fff;
-                }
+                        color: #fff;
             }
         }
     }
