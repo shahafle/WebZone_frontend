@@ -1,4 +1,6 @@
+import { storageService } from './storage.service';
 import { asyncStorageService } from './async-storage.service';
+
 import { httpService } from './http.service';
 
 export const userService = {
@@ -6,71 +8,118 @@ export const userService = {
     logout,
     signup,
     getLoggedinUser,
-    getById,
-    remove,
-    update,
+    // getById,
+    // remove,
+    // update,
 }
 
 
-const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser';
+const USER_STORAGE_KEY = 'user'; // this will be user collection in wap_db
+const LOGGEDIN_USER_STORAGE_KEY = 'loggedinUser'; // currently logged in user in sessionStorage
+
 // let gWatchedUser = null;
 
 
-// To help debugging from console
-// window.userService = userService;
+async function signup(credentials) {
+    // Frontend Demo :
+    const user = await asyncStorageService.post(USER_STORAGE_KEY, credentials);
+    return _setUserSession(user); // <-- Login after signup
 
-
-async function getById(userId) {
-    const user = await asyncStorageService.get('user', userId);
-    // const user = await httpService.get(`user/${userId}`)
-    // gWatchedUser = user;
-    return user;
-}
-
-function remove(userId) {
-    return asyncStorageService.remove('user', userId);
-    // return httpService.delete(`user/${userId}`)
-}
-
-async function update(user) {
-    await asyncStorageService.put('user', user);
-    // user = await httpService.put(`user/${user._id}`, user);
-    // Handle case in which admin updates other user's details
-    if (getLoggedinUser()._id === user._id) _saveLocalUser(user);
-    return user;
-}
-
-async function login(userCred) {
-    const users = await asyncStorageService.query('user');
-    const user = users.find(user => user.username === userCred.username);
-    // return _saveLocalUser(user);
-
-    // const user = await httpService.post('auth/login', userCred);
+    // Backend :
+    // const user = await httpService.post('auth/signup', credentials);
     // socketService.emit('set-user-socket', user._id);
-    if (user) return _saveLocalUser(user);
 }
 
-async function signup(userCred) {
-    const user = await asyncStorageService.post('user', userCred);
-    // const user = await httpService.post('auth/signup', userCred);
+async function login(credentials) {
+    // Frontend Demo :
+    const users = await asyncStorageService.query(USER_STORAGE_KEY);
+    const user = users.find(user => user.username === credentials.username && user.password === credentials.password);
+    if (user) {
+        console.log('Loggedin Successfully');
+        console.log(user);
+        return _setUserSession(user);
+    } else console.log('Invalid username or password.');
+
+    // Backend :
+    // const user = await httpService.post('auth/login', credentials);
     // socketService.emit('set-user-socket', user._id);
-    return _saveLocalUser(user);
 }
 
 async function logout() {
-    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-    // socketService.emit('unset-user-socket');
-    return await httpService.post('auth/logout');
-}
+    // Frontend Demo :
+    _clearSession();
 
-function _saveLocalUser(user) {
-    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-    return user
+    // Backend :
+    // socketService.emit('unset-user-socket');
+    // return await httpService.post('auth/logout');
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
+    // Frontend Demo :
+    return  _getUserFromSession() || null;
+
+    // Backend : ?
 }
+
+// This is relevant when backend is connected
+// (async () => {
+//     const user = getLoggedinUser();
+//     if (user) socketService.emit('set-user-socket', user._id)
+// })();
+
+
+///////////////// *** Private Functions *** /////////////////
+
+
+function _setUserSession(user) {
+    storageService.saveToSession(LOGGEDIN_USER_STORAGE_KEY, user);
+    return user
+}
+
+function _clearSession() {
+    storageService.removeFromSession(LOGGEDIN_USER_STORAGE_KEY);
+}
+
+function _getUserFromSession() {
+    const user = storageService.loadFromSession(LOGGEDIN_USER_STORAGE_KEY);
+    return user;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// async function getById(userId) {
+//     const user = await asyncStorageService.get('user', userId);
+//     // const user = await httpService.get(`user/${userId}`)
+//     // gWatchedUser = user;
+//     return user;
+// }
+
+
+// function remove(userId) {
+//     return asyncStorageService.remove('user', userId);
+//     // return httpService.delete(`user/${userId}`)
+// }
+
+
+// async function update(user) {
+//     await asyncStorageService.put('user', user);
+//     // user = await httpService.put(`user/${user._id}`, user);
+//     // Handle case in which admin updates other user's details
+//     if (getLoggedinUser()._id === user._id) _setUserSession(user);
+//     return user;
+// }
 
 
 // (async ()=>{

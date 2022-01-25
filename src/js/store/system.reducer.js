@@ -9,7 +9,7 @@ export function systemReducer(state = initialState, action) {
 
     switch (action.type) {
         case 'SET_IS_LOGIN_SHOWN':
-            newState = { ...state, isLoginShown: action.bool }
+            newState = { ...state, isLoginShown: action.shouldShow }
             break;
     }
 
