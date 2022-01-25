@@ -10,7 +10,7 @@ export const wapHeader_4 =
     "style": {
         ...containerStyle,
         "paddingBlock": "0",
-        "backgroundColor": "#6f4e37"
+        "backgroundColor": "#ffffff00"
     },
     "cmps": [
         {
@@ -21,13 +21,15 @@ export const wapHeader_4 =
                 ...txtStyle,
                 "color": "#ffffff",
                 "fontSize": "40",
+                "fontWeight": "700",
+                "textShadow": "5px 5px 3px #000000"
             },
         }, {
             "id": "dddbcgsssaadJJhg",
             "type": "container",
             "style": {
                 ...containerStyle,
-                "backgroundColor": "#6f4e37"
+                "backgroundColor": "#ffffff00"
             },
             "cmps": [
                 {
@@ -38,7 +40,8 @@ export const wapHeader_4 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "backgroundColor": "#6f4e37"
+                        "fontWeight": "700",
+                        "backgroundColor": "#ffffff00"
                     },
 
                 },
@@ -50,7 +53,8 @@ export const wapHeader_4 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "backgroundColor": "#6f4e37"
+                        "fontWeight": "700",
+                        "backgroundColor": "#ffffff00"
                     },
 
                 },
@@ -62,7 +66,8 @@ export const wapHeader_4 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "backgroundColor": "#6f4e37"
+                        "fontWeight": "700",
+                        "backgroundColor": "#ffffff00"
                     },
 
                 },
@@ -74,7 +79,8 @@ export const wapHeader_4 =
                     "style": {
                         ...btnStyle,
                         "color": "#ffffff",
-                        "backgroundColor": "#6f4e37"
+                        "fontWeight": "700",
+                        "backgroundColor": "#ffffff00"
                     },
 
                 },

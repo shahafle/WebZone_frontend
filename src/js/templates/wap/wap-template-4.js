@@ -14,6 +14,6 @@ export const wapTemplate_4 = {
         "_id": "asdjkhagsdiuywqgyuqwbasdf444545fFjf",
         "username": "Roi Yotvat"
     },
-    "cmps": [wapHeader_4, wapHero_4, wapSection_4, wapSection_4_4, wapSection_4_3, wapSection_4_2, wapFooter_4],
+    "cmps": [wapHero_4, wapSection_4, wapSection_4_4, wapSection_4_3, wapSection_4_2, wapFooter_4],//wapHeader_4
     "isTemplate": true
 }

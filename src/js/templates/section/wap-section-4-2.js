@@ -1,5 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
-
+import freeBeans from '../../../assets/imgs/template_4/freeBeans.png'
+import cup from '../../../assets/imgs/template_4/Cup.png'
 export const wapSection_4_2 = {
     "id": "dheaasdddasdJJJJkfkds74",
     "type": "container",
@@ -20,13 +21,13 @@ export const wapSection_4_2 = {
                 ...containerStyle,
                 "paddingInline": "0",
                 "paddingBlock": "150",
-                "backgroundImage": "url(https://static.wixstatic.com/media/84770f_220fb2706df2481698ec768594e4e767~mv2.png/v1/fill/w_1903,h_1046,al_b,q_95,usm_0.66_1.00_0.01/84770f_220fb2706df2481698ec768594e4e767~mv2.webp)"
+                "backgroundImage": `url(${freeBeans})`
             },
             "cmps": [
                 {
                     "id": "dfkF43asdasdasdjfjfFFFasgas123123",
                     "type": "img",
-                    "url": "https://static.wixstatic.com/media/84770f_e0fa23f0ecda46dc95424cf148bc1430~mv2.png/v1/fill/w_523,h_533,al_c,q_85,usm_0.66_1.00_0.01/Cup.webp",
+                    "url": cup,
                     "style": { ...imgStyle }
                 },
                 {

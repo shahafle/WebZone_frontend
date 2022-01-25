@@ -1,17 +1,20 @@
 
 
 const initialState = {
-    isLoginShown: false
+    isLoginShown: false,
+    isLoading: false
+
 }
 
 export function systemReducer(state = initialState, action) {
-    let newState = state;
-
     switch (action.type) {
         case 'SET_IS_LOGIN_SHOWN':
-            newState = { ...state, isLoginShown: action.bool }
-            break;
+            return { ...state, isLoginShown: action.bool }
+        case 'LOADING_START':
+            return { ...state, isLoading: true }
+        case 'LOADING_DONE':
+            return { ...state, isLoading: false }
+        default: return state
     }
-
-    return newState;
 }
+

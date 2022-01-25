@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, } from 'react-router-dom'
+import { createJpegFromElement } from '../../../services/cloudinary.service'
 
 import { saveWap } from '../../../store/wap.action';
 
@@ -14,12 +15,18 @@ export function WapActions() {
    const dispatch = useDispatch();
    const wap = useSelector(state => state.wapModule.wap)
 
-   const onSaveWap = () => {
+   const onSaveWap = async () => {
+      const editorBoard = document.querySelector('.editor-board')
+      console.log(editorBoard.clientWidth);
+      console.dir(editorBoard);
+      wap.thumbnail = await createJpegFromElement(editorBoard, editorBoard.clientWidth, (editorBoard.clientWidth * 0.7))
       dispatch(saveWap());
    }
 
    const onPublish = () => {
       dispatch(saveWap(openPublish));
+
+
    }
 
    const openPublish = (wapId) => {
