@@ -49,7 +49,7 @@ export function CollectionPage() {
                             onClick={() => dispatch(loadWap(wap._id))}
                             className='wap-thumbnail flex column'>
                             <div>{wap.name}</div>
-                            <img src={wap.thumbnail} alt="Website Thumbnail" />
+                            {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" />}
                         </Link>
                         <button onClick={() => onRemoveWap(wap._id)}>Remove Wap</button>
                     </div>

@@ -1,6 +1,7 @@
 import { wapService } from '../services/wap.service.js';
 import { draftService } from '../services/draft.service.js';
 import { templateService } from '../services/template.service.js';
+import { loadingStart, loadingDone } from './system.action'
 
 
 // *** KEY NOTES *** //
@@ -14,7 +15,9 @@ import { templateService } from '../services/template.service.js';
 // Load wap from USER collection to editor page
 export function loadWap(wapId) {
     return async (dispatch) => {
+        // dispatch(loadingStart())
         const wap = await wapService.getById(wapId);
+        // dispatch(loadingDone())
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -46,6 +49,7 @@ export function saveWap(cb) {
         const { wap } = getState().wapModule;
         const savedWap = await wapService.save(wap);
         if (cb) cb(savedWap._id)
+
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
     }
 }

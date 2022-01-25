@@ -1,4 +1,5 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
+import pot from '../../../assets/imgs/template_4/pot.png'
 
 export const wapSection_4_4 = {
     "id": "dheaasdDDDdddDDDDddDdjssdfkj2349876",
@@ -68,7 +69,7 @@ export const wapSection_4_4 = {
                 {
                     "id": "qweqwekkkfodppdosurher633",
                     "type": "img",
-                    "url": "https://leescoffeetea.com/wp-content/uploads/2019/11/Coffee-Deco-2-1024x656.png",
+                    "url": pot,
                     "style": { ...imgStyle }
                 },
             ]

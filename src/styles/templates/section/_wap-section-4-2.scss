@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     & > * {
         flex-basis: 50%;

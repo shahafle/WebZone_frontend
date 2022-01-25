@@ -1,4 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
+import gif from '../../../assets/imgs/template_4/cofee_bgc.gif';
+import draw from '../../../assets/imgs/template_4/draw.png';
 
 export const wapSection_4_3 = {
     "id": "dddggafgsjh123",
@@ -10,7 +12,7 @@ export const wapSection_4_3 = {
         ...containerStyle,
         "paddingBlock": "200",
         "paddingInline": "0",
-        "backgroundImage": "url(https://nationalcoffeeblog.files.wordpress.com/2017/11/giphy-5.gif?w=791&h=379)"
+        "backgroundImage": `url(${gif})`
     },
     "cmps": [
         {
@@ -38,7 +40,7 @@ export const wapSection_4_3 = {
                             "id": "3388fhgfdGGGbvCcxzzzzAsd",
                             "type": "img",
                             "className": "icon",
-                            "url": "http://cdn.onlinewebfonts.com/svg/img_483485.png",
+                            "url": draw,
                             "style": {
                                 ...imgStyle,
                                 "width": "50"
@@ -72,7 +74,7 @@ export const wapSection_4_3 = {
                             "id": "3388fhgasdfdGGGbvCcxzzzzAsd",
                             "type": "img",
                             "className": "icon",
-                            "url": "http://cdn.onlinewebfonts.com/svg/img_483485.png",
+                            "url": draw,
                             "style": {
                                 ...imgStyle,
                                 "width": "50"
@@ -106,7 +108,7 @@ export const wapSection_4_3 = {
                             "id": "5675673388fhga56567567sdfdGG776GbvCcxzzzzAsd",
                             "type": "img",
                             "className": "icon",
-                            "url": "http://cdn.onlinewebfonts.com/svg/img_483485.png",
+                            "url": draw,
                             "style": {
                                 ...imgStyle,
                                 "width": "50"

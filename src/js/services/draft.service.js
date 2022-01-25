@@ -20,6 +20,7 @@ function loadDraft() {
     if (!draftWap) {
         draftWap = {
             "name": "new webApp",
+            "thumbnail": "",
             "createdBy": {
                 "_id": "5e26e0b718a0891d4c995527",
                 "username": "Username"
