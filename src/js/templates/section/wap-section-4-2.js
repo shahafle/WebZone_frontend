@@ -33,7 +33,10 @@ export const wapSection_4_2 = {
                     "id": "23497SDFfhsdh334",
                     "type": "container",
                     "className": "section-4-2-txt-container",
-                    "style": { ...containerStyle },
+                    "style": {
+                        ...containerStyle,
+                        "backgroundColor": "#ffffff00",
+                    },
                     "cmps": [
                         {
                             "id": "12367asdgzxcbjkasdkjg1873DDDsgget3",
@@ -73,7 +76,7 @@ export const wapSection_4_2 = {
                                 "textAlign": "center",
                                 "fontSize": "20",
                                 "color": "#1b1b1b",
-                                "backgroundColor": "#ffffff",
+                                "backgroundColor": "#ffffff00",
                                 "borderRadius": "1000"
                             }
                         },
