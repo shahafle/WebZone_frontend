@@ -50,10 +50,14 @@ export const wapHero_4 = {
             "txt": "Monthly Supply.",
             "style": {
                 ...txtStyle,
-                "color": "#1b1b1b",
+                "color": "#d6d6d6",
                 "textAlign": "center",
-                "fontSize": "45",
-                "letterSpacing": "1",
+                "fontSize": "52",
+                "fontWeight": "700",
+                "textShadow": "5px 5px 3px #000000",
+                "fontStyle": "italic"
+
+
             }
         },
         {
