@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
@@ -35,18 +36,23 @@ export function EditAccordion() {
         setExpanded(newExpanded ? panel : false);
     };
 
+    const dispatch = useDispatch();
+
     const currElement = useSelector(state => state.editorModule.currElement)
-    const dispatch = useDispatch()
+    const currHistoryLength = useSelector(state => state.wapModule.wapHistory.length)
+
+    const prevElement = usePrevious(currElement);
+    const prevHistoryLength = usePrevious(currHistoryLength);
 
     useEffect(() => {
-        if (currElement) {
+        if (currElement?.id === prevElement?.id &&
+            prevHistoryLength === currHistoryLength) {
             dispatch(updateWap(currElement));
         }
         window.addEventListener('keydown', onRemoveElementByKey);
 
         return () => window.removeEventListener('keydown', onRemoveElementByKey);
     }, [currElement])
-
 
 
     //Edit functions

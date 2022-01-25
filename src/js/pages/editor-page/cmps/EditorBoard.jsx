@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+
 import { setCurrElement, updateCurrElementAttr } from '../../../store/editor.action'
-import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
+
 import { Droppable } from 'react-beautiful-dnd';
+import { isEmpty } from "lodash";
+
+import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
 import { Loader } from '../../../../assets/imgs/svg/Loader.jsx'
 
 
-
-export function EditorBoard() {
-
+export function EditorBoard({ placeholderProps }) {
    const dispatch = useDispatch();
    const sectionRef = useRef();
 
@@ -16,6 +18,7 @@ export function EditorBoard() {
 
    const wap = useSelector(state => state.wapModule.wap);
    const currElement = useSelector(state => state.editorModule.currElement);
+
 
 
    useEffect(() => {
@@ -57,6 +60,9 @@ export function EditorBoard() {
       dispatch(updateCurrElementAttr(currElement, attr))
    }
 
+
+
+   //RENDER
    if (!wap?.cmps) return <div>Loading...</div>
 
    return <Droppable droppableId='board'>
@@ -71,8 +77,7 @@ export function EditorBoard() {
 
          return <section className='editor-board'
             {...provided.droppableProps}
-            ref={provided.innerRef}
-         >
+            ref={provided.innerRef}>
             {wap.cmps.map((cmp, i) =>
                <DynamicCmp key={i} idx={i} isPublished={false} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
             )}
@@ -80,6 +85,17 @@ export function EditorBoard() {
 
             <div ref={sectionRef}></div>
             {provided.placeholder}
+            {!isEmpty(placeholderProps) && snapshot.isDraggingOver && (
+               <div
+                  className="placeholder"
+                  style={{
+                     top: placeholderProps.clientY,
+                     left: placeholderProps.clientX,
+                     height: placeholderProps.clientHeight,
+                     width: placeholderProps.clientWidth
+                  }}
+               />
+            )}
          </section>
       }}
    </Droppable >

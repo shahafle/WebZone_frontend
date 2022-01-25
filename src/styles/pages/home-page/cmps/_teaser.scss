@@ -1,6 +1,8 @@
 .teaser {
     // background-color: $color1;
-    padding: 80px 100px;
+    padding: 80px 100px 0;
+    position: relative;
+    z-index: 1;
     
     .img-container {
         width: 80%;
