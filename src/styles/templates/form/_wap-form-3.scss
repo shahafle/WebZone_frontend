@@ -1,0 +1,11 @@
+.wap-form-3{
+   display: grid;
+   flex-direction: column;
+   gap: 30px;
+   justify-items: center;
+
+   label{
+      width: 300px;
+      display: grid;
+   }
+}

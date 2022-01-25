@@ -8,7 +8,6 @@ export const txtStyle = {
     'fontSize': '16',
     'fontStyle': 'normal',
     'letterSpacing': '1',
-    // 'lineHeight': '16',
 };
 
 export const btnStyle = {
@@ -28,3 +27,7 @@ export const containerStyle = {
     "backgroundColor": "#ffffff",
     "backgroundImage": "",
 };
+
+export const inputStyle = {
+    ...txtStyle,
+}

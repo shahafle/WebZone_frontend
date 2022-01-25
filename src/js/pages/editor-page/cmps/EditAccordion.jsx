@@ -123,7 +123,7 @@ export function EditAccordion() {
     return (
         <div className="edit-accordion">
 
-            {(currElement.type === 'txt' || currElement.type === 'btn') &&
+            {(currElement.type === 'txt' || currElement.type === 'btn' || currElement.type === 'input') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                         <SummaryTypography>Text</SummaryTypography>
