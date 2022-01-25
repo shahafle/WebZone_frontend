@@ -1,6 +1,6 @@
 .main-header {
     height: $header-height;
-    background-color: $color1;
+    // background-color: $color1;
     padding: 0 30px;
     position: fixed;
     width: 100%;
@@ -21,7 +21,7 @@
     }
 
     &.active-scroll-3 {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.91);
         backdrop-filter: blur(8px);
     }
 
@@ -45,15 +45,12 @@
     }
 
     .btn-login {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 1px solid $color2;
+        padding: 8px 16px;
+        border-block-end:1px solid $color2;
         gap: 10px;
         font-size: 1rem;
         font-family: $main-font;
         font-weight: 500;
-        background-color: inherit;
-
         transition: all 0.3s;
 
         &:hover {

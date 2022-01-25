@@ -1,3 +1,19 @@
+.home:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    //  background-image: url("https://static.wixstatic.com/media/311dce_b91a7b8c8d354b9591174f9ef692168c~mv2.jpg/v1/fill/w_1350,h_1160,al_c,q_85,usm_0.66_1.00_0.01/311dce_b91a7b8c8d354b9591174f9ef692168c~mv2.webp");
+    // background-image: url('https://www.nuffielddental.com.sg/hubfs/Nuffield_Dental_Jan_2021/Images/Group%2023784-1.png');
+    background-image: url('https://limitlesshost.net/wp-content/uploads/2018/08/subbanner-wave-1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: sepia(100%) hue-rotate(181deg) saturate(500%);
+  }
+
 .top-fold {
     & .hero {
         height: 250px;

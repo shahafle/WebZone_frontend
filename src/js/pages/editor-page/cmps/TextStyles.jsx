@@ -111,10 +111,6 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
          </Box>
       </label>
 
-
-      {/* <label>Line height:
-         <input type="range" min={0} max={50} onChange={onChangeStyle} name='lineHeight' value={+elementStyle.lineHeight} />
-      </label> */}
       <label>Text Shadow
          <ThemeProvider theme={theme}>
             <Box sx={{ minWidth: 120 }}>

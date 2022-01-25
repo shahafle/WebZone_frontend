@@ -1,7 +1,7 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
 
 export const wapGallery_3 = {
-   "id": "sdjS6dg",
+   "id": "1asd1sda5",
    "type": "container",
    "category": "wap-gallery",
    "className": "wap-gallery-3",
@@ -64,6 +64,24 @@ export const wapGallery_3 = {
          "id": "1asd",
          "type": "img",
          "url": "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+         "style": { ...imgStyle }
+      },
+      {
+         "id": "s1df65sdf651",
+         "type": "img",
+         "url": "https://images.unsplash.com/photo-1577093929091-838d9fb5c69c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+         "style": { ...imgStyle }
+      },
+      {
+         "id": "db3g2cv18",
+         "type": "img",
+         "url": "https://images.unsplash.com/photo-1601000938305-d0ebe1706d72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+         "style": { ...imgStyle }
+      },
+      {
+         "id": "9s1dfsd19",
+         "type": "img",
+         "url": "https://images.unsplash.com/photo-1611832567101-5bb2c63828ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
          "style": { ...imgStyle }
       }
    ]

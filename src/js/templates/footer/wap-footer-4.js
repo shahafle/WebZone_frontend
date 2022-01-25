@@ -1,4 +1,4 @@
-import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
+import { txtStyle, btnStyle, imgStyle, containerStyle, inputStyle } from '../default-styles';
 
 
 export const wapFooter_4 =
@@ -94,7 +94,8 @@ export const wapFooter_4 =
                             "type": "input",
                             "label": "Full Name",
                             "placeholder": "Your Full Name",
-                            "inputType": "text"
+                            "inputType": "text",
+                            "style": { ...inputStyle }
                         },
 
                         {
@@ -102,7 +103,8 @@ export const wapFooter_4 =
                             "type": "input",
                             "label": "Email",
                             "placeholder": "Your Email Address",
-                            "inputType": "email"
+                            "inputType": "email",
+                            "style": { ...inputStyle }
                         }
 
                     ]

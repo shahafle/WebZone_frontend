@@ -1,6 +1,7 @@
 import { wapService } from '../services/wap.service.js';
 import { draftService } from '../services/draft.service.js';
 import { templateService } from '../services/template.service.js';
+import { loadingStart, loadingDone } from './system.action'
 
 
 // *** KEY NOTES *** //
@@ -14,7 +15,9 @@ import { templateService } from '../services/template.service.js';
 // Load wap from USER collection to editor page
 export function loadWap(wapId) {
     return async (dispatch) => {
+        // dispatch(loadingStart())
         const wap = await wapService.getById(wapId);
+        // dispatch(loadingDone())
         dispatch({ type: 'SET_WAP', wap });
     }
 }
@@ -33,7 +36,8 @@ export function loadWapTemplate(wapTemplateId) {
 
 export function updateWap(elementToUpdate) {
     return (dispatch, getState) => {
-        const { wap } = getState().wapModule;
+        let { wap } = getState().wapModule;
+        wap = JSON.parse(JSON.stringify(wap));
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate);
         draftService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap });
@@ -45,6 +49,7 @@ export function saveWap(cb) {
         const { wap } = getState().wapModule;
         const savedWap = await wapService.save(wap);
         if (cb) cb(savedWap._id)
+
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
     }
 }
@@ -71,7 +76,8 @@ export function resetDraftWap() {
 
 export function removeElement(element) {
     return (dispatch, getState) => {
-        const { wap } = getState().wapModule;
+        let { wap } = getState().wapModule;
+        wap = JSON.parse(JSON.stringify(wap));
         wapService.findTarget(wap, element.id, (cmpsArr, idx) => cmpsArr.splice(idx, 1));
         draftService.saveDraft(wap);
         dispatch({ type: 'UPDATE_WAP', wap });
@@ -81,7 +87,8 @@ export function removeElement(element) {
 // Add element by CLICK
 export function addElement(elementToAdd) {
     return (dispatch, getState) => {
-        const { wap } = getState().wapModule;
+        let { wap } = getState().wapModule;
+        wap = JSON.parse(JSON.stringify(wap));
         elementToAdd = JSON.parse(JSON.stringify(elementToAdd));
         wapService.replaceIds(elementToAdd);
         wap.cmps.push(elementToAdd);
@@ -93,7 +100,8 @@ export function addElement(elementToAdd) {
 
 export function duplicateElement(element) {
     return (dispatch, getState) => {
-        const { wap } = getState().wapModule;
+        let { wap } = getState().wapModule;
+        wap = JSON.parse(JSON.stringify(wap));
         const elementId = element.id
         element = JSON.parse(JSON.stringify(element))
         wapService.replaceIds(element)
@@ -160,15 +168,14 @@ export function undo() {
 
         if (!wapHistory.length) return
         let prevWap = wapHistory.pop()
-
-        prevWap = JSON.parse(JSON.stringify(prevWap));
+        // prevWap = JSON.parse(JSON.stringify(prevWap));
         draftService.saveDraft(prevWap);
-        console.log(wapHistory[wapHistory.length - 1].cmps[0].cmps[0]);
-        console.log(wapHistory[wapHistory.length - 2].cmps[0].cmps[0]);
+        dispatch({ type: 'UNDO_WAP', wap: prevWap, wapHistory });
+
         wapService.findTarget(prevWap, currElement.id, (cmpsArr, idx) => {
-            dispatch({ type: 'UPDATE_CURR_ELEMENT', currElement: cmpsArr[idx] })
+            console.log(cmpsArr, idx);
+            dispatch({ type: 'SET_CURR_ELEMENT', element: cmpsArr[idx] })
         })
 
-        dispatch({ type: 'UNDO_WAP', wap: prevWap, wapHistory });
     }
 }

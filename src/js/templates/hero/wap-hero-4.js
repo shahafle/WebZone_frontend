@@ -1,4 +1,6 @@
 import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles';
+import coffeBeans from '../../../assets/imgs/template_4/cofee_beans.jpeg'
+
 
 export const wapHero_4 = {
     "id": "dhesdfd44Dddsda",
@@ -9,20 +11,48 @@ export const wapHero_4 = {
     "style": {
         ...containerStyle,
         "paddingInline": "50",
-        "paddingBlock": "200",
-        "backgroundImage": "url(https://images.pexels.com/photos/942802/pexels-photo-942802.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)"
+        "paddingBlock": "99",
+        "backgroundImage": `url(${coffeBeans})`
     },
     "cmps": [
+        {
+            "id": "vvJklf8ffffdss",
+            "type": "container",
+            "category": "wap-header",
+            "className": "wap-header-4",
+            "thumbnail": "",
+            "style": {
+                ...containerStyle,
+                "paddingBlock": "75",
+                "backgroundColor": "#ffffff00"
+            },
+            "cmps": [
+                {
+                    "id": "aDDDsgaCCjvj4",
+                    "type": "txt",
+                    "txt": "CoffeeClub",
+                    "style": {
+                        ...txtStyle,
+                        "color": "#d6d6d6",
+                        "fontSize": "52",
+                        "fontWeight": "700",
+                        "textShadow": "5px 5px 3px #000000",
+                        "fontStyle": "italic"
+                    },
+                },
+
+            ]
+        },
         {
             "id": "110ddaas9f7s",
             "type": "txt",
             "className": "wap-hero-4-txt",
-            "txt": "Monthly coffee subscriptions.",
+            "txt": "Monthly Supply.",
             "style": {
                 ...txtStyle,
                 "color": "#1b1b1b",
-                // "textAlign": "center",
-                "fontSize": "65",
+                "textAlign": "center",
+                "fontSize": "45",
                 "letterSpacing": "1",
             }
         },
@@ -37,9 +67,8 @@ export const wapHero_4 = {
                 ...btnStyle,
                 "textAlign": "center",
                 "fontSize": "30",
-                "color": "#ffffff",
-                "backgroundColor": "#6f4e37",
-                "borderRadius": "1000"
+                "color": "#eeeaea",
+                "backgroundColor": "#1b1b1b",
 
             }
         }

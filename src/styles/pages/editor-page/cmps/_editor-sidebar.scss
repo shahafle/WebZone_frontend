@@ -1,20 +1,20 @@
 .sidebar-background {
     margin-top: 5px;
-    padding: 5px 5px 5px 0;
+    padding: 2px 2px 2px 0;
     width: $sidebar-width;
     position: fixed;
     height: calc(100vh - $header-height - 20px);
 
-    background-color: #1d3556b8;
-    border-end-end-radius: 17px;
-    border-start-end-radius: 17px;
+    background-color:#646464b8;
+    // border-end-end-radius: 17px;
+    // border-start-end-radius: 17px;
     box-shadow: 1px 1px 8px 0px #858585;
 }
 
 .editor-sidebar {
     background-color: $color1;
-    border-radius: 17px;
-    border-end-start-radius: 0;
+    // border-radius: 17px;
+    // border-end-start-radius: 0;
     height: 100%;
     gap: 40px;
 
@@ -33,7 +33,7 @@
         border-start-start-radius: 17px;
 
         .tab-background {
-            background-color: #eeeeee;
+            background-color: $color1;
             flex-grow: 1;
             border-start-end-radius: 17px;
             border-start-start-radius: 17px;
@@ -54,7 +54,6 @@
                     border-start-end-radius: 17px;
                     border-start-start-radius: 17px;
                     border-start-start-radius: 0;
-                    background-color: rgb(238, 238, 238);
                 }
 
                 &:not(.active) {
@@ -63,20 +62,18 @@
             }
 
             &.edit {
-                border-start-end-radius: 17px;
-
                 &:not(.active) {
                     border-end-start-radius: 17px;
                 }
                 &.active {
                     border-start-start-radius: 17px;
-                    background-color: #eeeeee;
                 }
             }
-
+            
             &.active {
                 color: initial;
                 font-size: 1.3rem;
+                background-color: $color1;
             }
         }
     }

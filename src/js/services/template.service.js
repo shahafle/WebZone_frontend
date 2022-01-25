@@ -22,6 +22,10 @@ import { wapTxt_2 } from '../templates/txt/wap-txt-2';
 // Footers
 import { wapFooter_1 } from '../templates/footer/wap-footer-1';
 import { wapFooter_2 } from '../templates/footer/wap-footer-2';
+import { wapHero_3 } from '../templates/hero/wap-hero-3';
+import { wapGallery_3 } from '../templates/gallery/wap-gallery-3';
+import { wapForm_3 } from '../templates/form/wap-form-3';
+import { wapSection_3 } from '../templates/section/wap-section-3';
 
 
 export const templateService = {
@@ -37,7 +41,7 @@ const wapTemplates = [
    wapTemplate_2,
 ]
 
-const sectionsCategories = ['wap-header', 'wap-hero', 'wap-text', 'wap-card', 'wap-gallery', 'wap-footer']//map, video,form 'wap-form','wap-section',
+const sectionsCategories = ['wap-header', 'wap-hero', 'wap-section', 'wap-text', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form 'wap-form','wap-section',
 
 const templateSections = [
    wapHeader_1,
@@ -45,12 +49,16 @@ const templateSections = [
    // wapHeader_3,
    wapHero_1,
    wapHero_2,
+   wapHero_3,
+   wapSection_3,
    wapCard_1,
    wapCard_1_2,
    wapCard_2,
    wapCard_2_2,
    wapGallery_1,
+   wapGallery_3,
    wapTxt_2,
+   wapForm_3,
    wapFooter_1,
    wapFooter_2
 ]

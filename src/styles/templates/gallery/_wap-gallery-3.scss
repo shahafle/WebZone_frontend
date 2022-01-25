@@ -2,7 +2,7 @@
    display: grid;
    grid-template-columns: repeat(auto-fill,250px);
    grid-auto-rows: 250px;
-   gap: 100px 120px;
+   gap: 80px;
    place-content: center;
    
    img{
@@ -13,8 +13,7 @@
       transition: all .3s;
       
       &:hover{
-         // transform: scale(1.1);
-         transform: translateY(-135px);
+         transform: translateY(-135px) scale(1.1);
       }
    }
    

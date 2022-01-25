@@ -1,5 +1,5 @@
 export const txtStyle = {
-    'color': '#000000',
+    'color': '#141414',
     'textAlign': 'start',
     'textDecoration': 'none',
     'textShadow': 'none',
@@ -8,13 +8,12 @@ export const txtStyle = {
     'fontSize': '16',
     'fontStyle': 'normal',
     'letterSpacing': '1',
-    // 'lineHeight': '16',
 };
 
 export const btnStyle = {
     ...txtStyle,
     "borderRadius": "0",
-    "backgroundColor": "#ffffff"
+    "backgroundColor": "#f3f3f3"
 };
 
 export const imgStyle = {
@@ -25,6 +24,10 @@ export const imgStyle = {
 export const containerStyle = {
     "paddingInline": "30",
     "paddingBlock": "30",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#f3f3f3",
     "backgroundImage": "",
 };
+
+export const inputStyle = {
+    ...txtStyle,
+}
