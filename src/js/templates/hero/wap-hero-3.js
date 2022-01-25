@@ -16,14 +16,14 @@ export const wapHero_3 = {
       {
          "id": "454gfascf",
          "type": "container", // CONTENT CONTAINER (RIGHT)
-         "style": { ...containerStyle, "backgroundColor": "#ffffff00", "paddingBlock": "200" },
+         "style": { ...containerStyle, "backgroundColor": "#ffffff00", "paddingBlock": "200", "paddingInline": "150" },
          "className": "inner-container flex column",
          "cmps": [
             {
                "id": "zx561l3k5tlad",
                "type": "txt", // TITLE
                "txt": "Something sweet for everyone",
-               "style": { ...txtStyle, "fontSize": "50", "color": "#ffffff", "textAlign": "center", "letterSpacing": "7", "text-shadow": "rgb(0 0 0) 1px 1px 3px" }
+               "style": { ...txtStyle, "fontSize": "50", "color": "#ffffff", "textAlign": "center", "letterSpacing": "7", "textShadow": "rgb(0 0 0) 1px 1px 3px" }
             },
             {
                "id": "dgjp573oj12ptg",

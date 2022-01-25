@@ -34,11 +34,14 @@ export function EditorBoard() {
       if (!sectionRef.current) return;
       const editorWidth = sectionRef.current.offsetWidth;
 
-      if (editorWidth < 600) return 'media-600';
-      else if (editorWidth < 800) return 'media-800';
-      else if (editorWidth < 1000) return 'media-1000';
-      else if (editorWidth < 1200) return 'media-1200';
-      else return '';
+      let classStr = ''
+
+      if (editorWidth < 600) classStr += 'media-600 ';
+      if (editorWidth < 800) classStr += 'media-800 ';
+      if (editorWidth < 1000) classStr += 'media-1000 ';
+      if (editorWidth < 1200) classStr += 'media-1200 ';
+
+      return classStr
    }
 
    const onSetCurrElement = (ev, cmp) => {

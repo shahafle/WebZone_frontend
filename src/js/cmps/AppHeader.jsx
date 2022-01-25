@@ -48,7 +48,7 @@ export function AppHeader() {
                 </nav>
                 <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}>Login <AiOutlineLogin /></button>
             </header>
-            <div className="placeholder"></div>
+            {/* <div className="placeholder"></div> */}
             {/* The above is used for the Editor Page positioning */}
         </>
     )

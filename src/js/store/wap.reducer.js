@@ -8,7 +8,7 @@ import { wapTemplate_5 } from "../templates/wap/wap-template-5";
 const initialState = {
     // wap: null,
     wapHistory: [],
-    wap: wapTemplate_5
+    wap: wapTemplate_3
 }
 
 

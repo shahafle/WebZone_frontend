@@ -1,6 +1,6 @@
 .main-header {
     height: $header-height;
-    background-color: $color1;
+    // background-color: $color1;
     padding: 0 30px;
     position: fixed;
     width: 100%;
@@ -45,9 +45,10 @@
     }
 
     .btn-login {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 1px solid $color2;
+        padding: 8px 16px;
+        // border-radius: 5px;
+        // border: 1px solid $color2;
+        border-block-end:1px solid $color2;
         gap: 10px;
         font-size: 1rem;
         font-family: $main-font;
