@@ -12,7 +12,7 @@ export function Cards() {
 
             <div className="card-container flex">
                 <div className='content-container flex align-center'>
-                    <div className="card-text flex column">
+                    <div className="slide-in-right card-text flex column">
                         <h1>Simple</h1>
                         <h2>Website Editing</h2>
                         <p>The platform provides an easy-to-use editor that allows you to just pick up a premade template and start creating your own website within seconds. You could also start a website from scratch with our user-friendly sidebar.</p>
@@ -23,7 +23,7 @@ export function Cards() {
                             <span className="button-text">Get Started</span>
                         </button>
                     </div>
-                    <div className="card-img">
+                    <div className="slide-in-right card-img">
                         <img src={startBuildingSvg} alt="feature img" />
                     </div>
                 </div>
@@ -31,10 +31,10 @@ export function Cards() {
 
             <div className="card-container flex">
                 <div className='content-container flex align-center'>
-                    <div className="card-img">
+                    <div className="slide-in-left card-img">
                         <img src={resoponsiveSvg} alt="feature img" />
                     </div>
-                    <div className="card-text flex column">
+                    <div className="slide-in-left card-text flex column">
                         <h1>Compatible</h1>
                         <h2>Responsive Design</h2>
                         <p>Every section of the website responds to the width of your device. No matter the size of your screen, we make sure everything looks good for you.</p>
@@ -52,7 +52,7 @@ export function Cards() {
                 <div className='content-container flex align-center'>
                     <div className='other-diagonal'>
 
-                        <div className="card-text flex column">
+                        <div className="slide-in-right card-text flex column">
                             <h1>Inviting</h1>
                             <h2>Build Together</h2>
                             <p>Invite your friends or family to help you build the website of your dreams! Simpley click the "Work Together" link inside the editor and send them a link! Did we mention that the platform is compatible with any device? So what are you waiting for?</p>
@@ -63,7 +63,7 @@ export function Cards() {
                                 <span className="button-text">Lets Go</span>
                             </button>
                         </div>
-                        <div className="card-img">
+                        <div className="slide-in-right card-img">
                             <img src={buildTogetherSvg} alt="feature img" />
                         </div>
                     </div>

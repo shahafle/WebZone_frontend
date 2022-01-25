@@ -11,50 +11,21 @@ export const wapHero_4 = {
     "style": {
         ...containerStyle,
         "paddingInline": "50",
-        "paddingBlock": "99",
+        "paddingBlock": "345",
         "backgroundImage": `url(${coffeBeans})`
     },
     "cmps": [
         {
-            "id": "vvJklf8ffffdss",
-            "type": "container",
-            "category": "wap-header",
-            "className": "wap-header-4",
-            "thumbnail": "",
-            "style": {
-                ...containerStyle,
-                "paddingBlock": "75",
-                "backgroundColor": "#ffffff00"
-            },
-            "cmps": [
-                {
-                    "id": "aDDDsgaCCjvj4",
-                    "type": "txt",
-                    "txt": "CoffeeClub",
-                    "style": {
-                        ...txtStyle,
-                        "color": "#d6d6d6",
-                        "fontSize": "52",
-                        "fontWeight": "700",
-                        "textShadow": "5px 5px 3px #000000",
-                        "fontStyle": "italic"
-                    },
-                },
-
-            ]
-        },
-        {
             "id": "110ddaas9f7s",
             "type": "txt",
             "className": "wap-hero-4-txt",
-            "txt": "Monthly Supply.",
+            "txt": "CoffeClub.",
             "style": {
                 ...txtStyle,
-                "color": "#d6d6d6",
+                "color": "#1b1b1b",
                 "textAlign": "center",
-                "fontSize": "52",
+                "fontSize": "70",
                 "fontWeight": "700",
-                "textShadow": "5px 5px 3px #000000",
                 "fontStyle": "italic"
 
 
