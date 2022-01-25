@@ -9,7 +9,11 @@
     background-color: $color3;
     color: $color1;
     border-radius: 10px;
+    cursor: default;
 
+    // transition: height .3s; // transition when toggling signup/login
+    
+    z-index: 999;
     
     i {
         width: 30px;
@@ -58,6 +62,7 @@
             margin: unset;
             padding: 5px 10px;
             border-radius: 3px;
+            background-color: $color1;
         }
     }
 

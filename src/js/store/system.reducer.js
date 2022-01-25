@@ -9,7 +9,7 @@ const initialState = {
 export function systemReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_IS_LOGIN_SHOWN':
-            return { ...state, isLoginShown: action.bool }
+            return { ...state, isLoginShown: action.shouldShow }
         case 'LOADING_START':
             return { ...state, isLoading: true }
         case 'LOADING_DONE':
@@ -17,4 +17,3 @@ export function systemReducer(state = initialState, action) {
         default: return state
     }
 }
-
