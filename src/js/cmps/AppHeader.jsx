@@ -14,7 +14,8 @@ export function AppHeader() {
     const dispatch = useDispatch();
     const location = useLocation();
 
-    const [scrollClass, setScrollClass] = useState('');
+    const [headerClass, setHeaderClass] = useState('');
+    const [placeholderClass, setPlaceholderClass] = useState('');
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -23,20 +24,31 @@ export function AppHeader() {
     }, [])
 
     useEffect(() => {
-        if (location.pathname !== '/') setScrollClass('');
+        if (location.pathname === '/') setPlaceholderClass('display-none');
+
+        else if (location.pathname.includes('/publish')) {
+            setHeaderClass('display-none');
+            setPlaceholderClass('display-none');
+        }
+
+        else {
+            setHeaderClass('');
+            setPlaceholderClass('');
+        }
+
     }, [location])
 
     const handleScroll = () => {
-        if (window.scrollY < 200) setScrollClass('');
-        if (window.scrollY > 200) setScrollClass('active-scroll-1');
-        if (window.scrollY > 400) setScrollClass('active-scroll-2');
-        if (window.scrollY > 750) setScrollClass('active-scroll-3');
+        if (window.scrollY < 200) setHeaderClass('');
+        if (window.scrollY > 200) setHeaderClass('active-scroll-1');
+        if (window.scrollY > 400) setHeaderClass('active-scroll-2');
+        if (window.scrollY > 750) setHeaderClass('active-scroll-3');
     }
 
 
     return (
         <>
-            <header className={`main-header flex justify-between align-center ${scrollClass}`}>
+            <header className={`main-header flex justify-between align-center ${headerClass}`}>
                 <Link className="clean-link logo" to="/">
                     {/* <YourSvg style={{ width: '100px', height: '100px' }} /> */}
                     <img src={logo} alt="no" />
@@ -48,7 +60,7 @@ export function AppHeader() {
                 </nav>
                 <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}>Login <AiOutlineLogin /></button>
             </header>
-            {/* <div className="placeholder"></div> */}
+            <div className={`placeholder ${placeholderClass === 'display-none' ? 'display-none' : ''}`}></div>
             {/* The above is used for the Editor Page positioning */}
         </>
     )
