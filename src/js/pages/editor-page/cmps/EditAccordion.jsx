@@ -92,36 +92,22 @@ export function EditAccordion() {
     const onRemoveElement = () => {
         if (!currElement) return
         dispatch(removeElement(currElement));
-        dispatch(setUserMsg(toast.error("Andddddd it\'s gone !", {
-            position: "top-right", autoClose: 3000,
-            hideProgressBar: false, closeOnClick: true,
-            pauseOnHover: true, draggable: true,
-            progress: undefined,
-        })))
+        dispatch(setUserMsg({ type: 'error', txt: "Deleted" }))
     }
 
     const onDuplicateElement = () => {
         if (!currElement) return
         dispatch(duplicateElement(currElement));
-        dispatch(setUserMsg(toast("BAM ! Another one", {
-            position: "top-right", autoClose: 3000,
-            hideProgressBar: false, closeOnClick: true,
-            pauseOnHover: true, draggable: true,
-            progress: undefined,
-        })))
+    }
+
+
+    const onUndo = () => {
+        dispatch(undo());
     }
 
     const onRemoveElementByKey = ({ key }) => {
         if (key === 'Delete') onRemoveElement();
     }
-
-    const onUndo = () => {
-        dispatch(undo());
-        dispatch(setUserMsg(toast("I\'m back !", {
-            position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast"
-        })))
-    }
-
 
 
 
@@ -199,8 +185,6 @@ export function EditAccordion() {
                             <InputStyles element={currElement} onChangeAttr={onChangeAttr} />
                         </AccordionDetails>
                     </Accordion>}
-
-                <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
             </>}
 
             <div className='other-action-container flex'>

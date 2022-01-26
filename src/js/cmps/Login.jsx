@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { onSignup, onLogin } from '../store/user.action';
+import { onSignup, onLogin, setUserMsg } from '../store/user.action';
 import { shouldShowLogin } from '../store/system.action';
 
 import userProfile from '../../assets/imgs/user.png';
@@ -36,10 +36,12 @@ export function Login() {
             if (isLogin) {
                 delete credentials.nickname;
                 dispatch(onLogin(credentials));
+                dispatch(setUserMsg({ type: 'success', txt: 'Welcome Back' + credentials.nickname }))
             }
             //  Signup
             if (!isLogin) {
                 dispatch(onSignup(credentials));
+                dispatch(setUserMsg({ type: 'success', txt: 'Welcome ' + credentials.nickname }))
             }
             // dispatch(login(credentials));
 

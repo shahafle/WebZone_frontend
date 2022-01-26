@@ -19,7 +19,7 @@ export function EditorPage() {
    const [placeholderProps, setPlaceholderProps] = useState({});
 
    useEffect(() => {
-      dispatch(loadDraftWap());
+      // dispatch(loadDraftWap());
       // socketService.setup();
    }, [])
 
