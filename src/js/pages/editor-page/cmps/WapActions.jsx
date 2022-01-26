@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, } from 'react-router-dom'
-import { createJpegFromElement } from '../../../services/cloudinary.service'
 
-import { saveWap } from '../../../store/wap.action';
+import { createJpegFromElement } from '../../../services/cloudinary.service';
+
+import { saveWap, workTogether } from '../../../store/wap.action';
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
@@ -17,20 +19,20 @@ export function WapActions() {
 
    const onSaveWap = async () => {
       const editorBoard = document.querySelector('.editor-board')
-      console.log(editorBoard.clientWidth);
-      console.dir(editorBoard);
       wap.thumbnail = await createJpegFromElement(editorBoard, editorBoard.clientWidth, (editorBoard.clientWidth * 0.7))
       dispatch(saveWap());
    }
 
    const onPublish = () => {
       dispatch(saveWap(openPublish));
-
-
    }
 
    const openPublish = (wapId) => {
       window.open(`/publish/${wapId}`, "_blank");
+   }
+
+   const onWorkTogether = () => {
+      dispatch(workTogether());
    }
 
 
@@ -41,6 +43,9 @@ export function WapActions() {
          <FaMobileAlt size={28} className='muted' />
       </div>
       <hr style={{ width: 140 }} />
+
+      <Link to="" onClick={onWorkTogether}>Work Together</Link>
+
       <div className="save-publish-container flex">
          <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>
          {/* <button className="save-btn" onClick={onSaveWap}>Save</button> */}

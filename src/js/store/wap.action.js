@@ -1,6 +1,7 @@
 import { wapService } from '../services/wap.service.js';
 import { draftService } from '../services/draft.service.js';
 import { templateService } from '../services/template.service.js';
+import { socketService } from '../services/socket.service.js';
 import { loadingStart, loadingDone } from './system.action'
 
 
@@ -51,6 +52,24 @@ export function saveWap(cb) {
         if (cb) cb(savedWap._id)
 
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
+    }
+}
+
+
+// *** SOCKET wap actions *** //
+
+export function workTogether() {
+    return async (dispatch, getState) => {
+        const { wap } = getState().wapModule;
+
+
+        socketService.emit('create-room', wap);
+        
+        socketService.on('get-room-details', data => {
+            console.log(data.roomWap)
+            const link = `/editor/room/${data.roomName}`
+            console.log(link);
+         })
     }
 }
 
