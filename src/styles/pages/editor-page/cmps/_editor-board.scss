@@ -7,7 +7,7 @@
    min-height: calc(100vh - $header-height - 30px);
    
    @include for-mobile-layout{
-      margin: 10px;
+      margin: 5px 10px;
    }
 
    :focus-visible{

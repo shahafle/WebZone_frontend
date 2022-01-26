@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { ReactComponent as YourSvg } from '../../assets/webzone/webzone-full-logo-heavy.svg';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { shouldShowLogin } from '../store/system.action';
@@ -10,6 +9,8 @@ import { onLogout } from '../store/user.action';
 import { AiOutlineLogin } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import logo from '../../assets/webzone/webzone-full-logo-small.png'
+
+import { MobileHamburger } from './MobileHamburger';
 
 export function AppHeader() {
 
@@ -62,15 +63,19 @@ export function AppHeader() {
         <>
             <header className={`main-header flex justify-between align-center ${headerClass}`}>
                 <Link className="clean-link logo" to="/">
-                    {/* <YourSvg style={{ width: '100px', height: '100px' }} /> */}
                     <img src={logo} alt="no" />
                 </Link>
+
                 <nav className="nav-menu flex align-center">
                     <NavLink className="clean-link nav-link" to="/templates"> TEMPLATES</NavLink>
                     <NavLink className="clean-link nav-link" to="/editor"> EDITOR</NavLink>
                     <NavLink className="clean-link nav-link" to="/collection"> COLLECTION</NavLink>
+                    <NavLink className="clean-link nav-link" to="/collection"> COLLECTION</NavLink>
                 </nav>
 
+                <MobileHamburger />
+
+                {/* User btn */}
                 {!user && <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}>Login <AiOutlineLogin /></button>}
 
                 {user &&
@@ -82,8 +87,10 @@ export function AppHeader() {
                     </div>}
 
             </header>
+
+
+            {/* Placeholder for the Editor Page positioning */}
             <div className={`placeholder ${placeholderClass === 'display-none' ? 'display-none' : ''}`}></div>
-            {/* The above is used for the Editor Page positioning */}
         </>
     )
 } 

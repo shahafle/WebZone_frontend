@@ -94,7 +94,7 @@
             font-size: 0.9rem;
             
             
-            & > *:not(.upload-img-label) {
+            & > *:not(.upload-img-label):not(.color-picker) {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -152,8 +152,13 @@
             }
             
             &.color-picker,.color-picker{
+                flex-direction: column;  
+
                 .circle-picker{
                     flex-direction: row;
+                    margin-bottom:0 !important;
+                    margin-right:0 !important;
+
                 }
                 
                 &>div{
