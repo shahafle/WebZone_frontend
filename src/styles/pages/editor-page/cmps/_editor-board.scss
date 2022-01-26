@@ -5,14 +5,13 @@
    box-shadow: 0px 1px 8px 0px #808080;
    grid-column: 2/3;
    min-height: calc(100vh - $header-height - 30px);
+   
+   @include for-mobile-layout{
+      margin: 10px;
+   }
 
    :focus-visible{
       outline: none
-   }
-
-   &:hover{
-      cursor: pointer;
-      // cursor: grab;
    }
 
    .delete-element-btn{
@@ -63,5 +62,8 @@
       outline: none;
       padding: 7px;
       border-radius: 3px;
+   }
+   span{
+      display: initial;
    }
 }

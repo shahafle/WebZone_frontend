@@ -173,9 +173,7 @@ export function undo() {
         dispatch({ type: 'UNDO_WAP', wap: prevWap, wapHistory });
 
         wapService.findTarget(prevWap, currElement.id, (cmpsArr, idx) => {
-            console.log(cmpsArr, idx);
             dispatch({ type: 'SET_CURR_ELEMENT', element: cmpsArr[idx] })
         })
-
     }
 }

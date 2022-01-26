@@ -25,8 +25,8 @@ const PrettoSlider = styled(Slider)({
       border: 'none',
    },
    '& .MuiSlider-thumb': {
-      height: 24,
-      width: 24,
+      height: 18,
+      width: 18,
       backgroundColor: '#fff',
       border: '2px solid currentColor',
       '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
@@ -41,15 +41,15 @@ const PrettoSlider = styled(Slider)({
       fontSize: 12,
       background: 'unset',
       padding: 0,
-      width: 32,
-      height: 32,
+      width: 28,
+      height: 28,
       borderRadius: '50% 50% 50% 0',
       backgroundColor: color1,
       transformOrigin: 'bottom left',
       transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
       '&:before': { display: 'none' },
       '&.MuiSlider-valueLabelOpen': {
-         transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
+         transform: 'translate(50%, -80%) rotate(-45deg) scale(1)',
       },
       '& > *': {
          transform: 'rotate(45deg)',

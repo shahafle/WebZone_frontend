@@ -6,14 +6,22 @@ $color3: #2b3039;
 // $color1: #2b3039;
 // $color2: #1d375a;
 // $color3: #fcfcfc;
+
 // Fonts
 $main-font: Montserrat, "sans-serif";
 $sub-font: Bitter, "serif";
 $hand-font: Mali, "cursive";
+
 // Text
 $line-height: 28px;
+
 // Sizes
 $header-height: 70px;
 $minimized-header-height: 30px;
 $sidebar-width: 310px;
+$sidebar-tablet-width: 240px;
 $border-radius: 5px;
+
+//Media
+$media-tablet:850px;
+$media-mobile:680px;

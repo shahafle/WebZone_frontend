@@ -34,6 +34,10 @@
 //COLLECTION PAGE
 @import "./pages/collection-page/collection-page";
 
+//PUBLISH PAGE
+@import "./pages/publish-page";
+
+
 // CMPS
 
 @import "./cmps/app-header";
@@ -48,6 +52,7 @@
 @import "./templates/card/wap-card-1-2";
 @import "./templates/card/wap-card-2";
 @import "./templates/card/wap-card-2-2";
+@import "./templates/card/wap-card-6";
 
 // FOOTERS
 @import "./templates/footer/wap-footer-1";
@@ -62,7 +67,6 @@
 @import "./templates/header/wap-header-1";
 @import "./templates/header/wap-header-2";
 @import "./templates/header/wap-header-3";
-@import "./templates/header/wap-header-6";
 
 // HERO
 @import "./templates/hero/wap-hero-1";
@@ -70,6 +74,7 @@
 @import "./templates/hero/wap-hero-3";
 @import "./templates/hero/wap-hero-4";
 @import "./templates/hero/wap-hero-5";
+@import "./templates/hero/wap-hero-6";
 
 // SECTIONS
 @import "./templates/section/wap-section-4-2";
@@ -82,3 +87,4 @@
 
 //FORM
 @import "./templates/form/wap-form-3";
+@import "./templates/form/wap-form-6";

@@ -3,6 +3,15 @@
    grid-template-columns: $sidebar-width 1fr;
    overflow: auto;
    max-height: calc(100vh - $header-height);
+   
+   @include for-tablet-layout{
+      grid-template-columns: $sidebar-tablet-width 1fr;
+   }
+   
+   @include for-mobile-layout{
+      grid-template-columns: 1fr;
+
+   }
 
    &.drag-active{
       .garbage{
