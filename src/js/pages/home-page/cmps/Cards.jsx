@@ -20,7 +20,7 @@ export function Cards() {
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
-                            <span className="button-text">Get Started</span>
+                            <Link to="/templates"><span className="button-text">Get Started</span></Link>
                         </button>
                     </div>
                     <div className="slide-in-right card-img">
@@ -42,7 +42,7 @@ export function Cards() {
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
                             </span>
-                            <span className="button-text">Start Now</span>
+                            <Link to="/templates"><span className="button-text">Start Now</span></Link>
                         </button>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ export function Cards() {
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
-                                <span className="button-text">Lets Go</span>
+                                <Link to="/templates"><span className="button-text">Lets Go</span></Link>
                             </button>
                         </div>
                         <div className="slide-in-right card-img">
