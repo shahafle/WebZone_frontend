@@ -149,8 +149,9 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
             </Box>
          </ThemeProvider>
       </label>
-      <label>Color</label>
-      <CirclePicker colors={colors} width={255} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} />
+      <label className='color-picker'>Color
+         <CirclePicker colors={colors} width={'100%'} onChange={(ev) => onChangeColor(ev, 'color')} triangle={'hide'} />
+      </label>
       {/* <input type="color" style={{ width: 30, height: 30, marginRight: '1px' }} onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
    </div>
 }

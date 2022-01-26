@@ -1,4 +1,8 @@
+// Frontend Demo :
 import { asyncStorageService } from './async-storage.service.js';
+
+// Backend :
+import { httpService } from "./http.service";
 
 
 export const wapService = {
@@ -21,28 +25,75 @@ const WAP_STORAGE_KEY = 'wap'; // User saved/published waps. This will be wap co
 
 // Get waps
 async function query() {
+    // Frontend Demo :
     return await asyncStorageService.query(WAP_STORAGE_KEY);
+
+    // Backend :
+    // try {
+    //     const waps = await httpService.get('wap');
+    //     return waps;
+    // } catch (err) {
+    //     throw err;
+    // }
 }
 
 // Get wap by id
 async function getById(wapId) {
+    // Frontend Demo :
     return await asyncStorageService.get(WAP_STORAGE_KEY, wapId);
+
+    // Backend :
+    // try {
+    //     const wap = await httpService.get(`wap/${wapId}`);
+    //     return wap;
+    // } catch (err) {
+
+    // }
 }
 
 // Remove wap
 async function remove(wapId) {
+    // Frontend Demo :
     return await asyncStorageService.remove(WAP_STORAGE_KEY, wapId);
+
+    // Backend :
+    // try {
+    //     const removedWap = await httpService.delete(`wap/${wapId}`);
+    //     return removedWap;
+    // } catch (err) {
+
+    // }
 }
 
 // Update an existing wap / Add a new wap
-async function save(wap) {
-    if (wap._id) {
+async function save(wapToSave) {
+    // Frontend Demo :
+    if (wapToSave._id) {
         // Update
-        return await asyncStorageService.put(WAP_STORAGE_KEY, wap);
+        return await asyncStorageService.put(WAP_STORAGE_KEY, wapToSave);
     } else {
         // Add
-        return await asyncStorageService.post(WAP_STORAGE_KEY, wap);
+        return await asyncStorageService.post(WAP_STORAGE_KEY, wapToSave);
     }
+
+    // Backend :
+    // if (wapToSave._id) {
+    //     // Update
+    //     try {
+    //         const updatedWap = await httpService.put(`wap/${wapToSave._id}`, wapToSave);
+    //         return updatedWap;
+    //     } catch (err) {
+
+    //     }
+    // } else {
+    //     // Add
+    //     try {
+    //         const addedWap = await httpService.post('wap', wapToSave);
+    //         return addedWap;
+    //     } catch (err) {
+
+    //     }
+    // }
 }
 
 

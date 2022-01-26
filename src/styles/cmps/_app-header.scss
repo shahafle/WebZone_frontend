@@ -1,15 +1,18 @@
 .main-header {
     height: $header-height;
-    // background-color: $color1;
     padding: 0 100px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
     font-weight: 500;
-
     transition: all .5s;
-
+    
+    @include for-mobile-layout{
+        padding: 0 10px;
+        height: $header-mobile-height;
+    }
+    
     &.active-scroll-1 {
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(4px);
@@ -25,8 +28,14 @@
         backdrop-filter: blur(8px);
     }
 
-    .logo img {
-        display: block;
+    .logo{
+        @include for-mobile-layout{
+            // align-self: end;
+        }
+
+        img {
+            display: block;
+        } 
     }
 
     .nav-menu {
@@ -85,24 +94,17 @@
 
 .placeholder {
     height: $header-height;
+
+    @include for-mobile-layout{
+        height: $header-mobile-height;
+    }
 }
 
 // In EditorPage :
 .main-header.minimized,
 .placeholder.minimized {
     // height: $minimized-header-height;
-    // transform: translateY(-40px);
 
-    // &::after {
-    //     content: "<";
-    //     height: 40px;
-    //     display: block;
-    // }
-
-    // &:hover {
-    //     height: $header-height;
-    //     transform: translateY(0);
-    // }
 }
 
 // In PublishPage :

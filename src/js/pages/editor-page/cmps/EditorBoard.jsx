@@ -36,7 +36,6 @@ export function EditorBoard({ placeholderProps }) {
    const getMediaClass = () => {
       if (!sectionRef.current) return;
       const editorWidth = sectionRef.current.offsetWidth;
-
       let classStr = ''
 
       if (editorWidth < 600) classStr += 'media-600 ';

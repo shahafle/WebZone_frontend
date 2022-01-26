@@ -6,7 +6,7 @@ const colors = ['#1b1b1b', '#3a3a3a', '#707070', '#a0a0a0', '#d6d6d6', '#ffffff'
 
 
 export function BgcStyles({ element, onChangeStyle, onChangeColor }) {
-   return <div className="flex column style-inputs">
+   return <div className="flex column style-inputs color-picker">
       <CirclePicker colors={colors} width={255} onChange={(ev) => onChangeColor(ev, 'backgroundColor')} triangle={'hide'} />
       {/* <input type="color" style={{ width: 30, height: 30, marginRight: '1px' }} onChange={onChangeStyle} name='color' value={elementStyle.color} /> */}
 

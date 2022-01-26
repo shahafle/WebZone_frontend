@@ -1,6 +1,8 @@
 import { storageService } from './storage.service';
+// Frontend Demo :
 import { asyncStorageService } from './async-storage.service';
 
+// Backend :
 import { httpService } from './http.service';
 
 export const userService = {
@@ -27,7 +29,8 @@ async function signup(credentials) {
 
     // Backend :
     // const user = await httpService.post('auth/signup', credentials);
-    // socketService.emit('set-user-socket', user._id);
+    // // socketService.emit('set-user-socket', user._id);
+    // return user;
 }
 
 async function login(credentials) {
@@ -41,8 +44,10 @@ async function login(credentials) {
     } else console.log('Invalid username or password.');
 
     // Backend :
-    // const user = await httpService.post('auth/login', credentials);
-    // socketService.emit('set-user-socket', user._id);
+    //     const user = await httpService.post('auth/login', credentials);
+    //     _setUserSession(user);
+    // // socketService.emit('set-user-socket', user._id);
+    // return user;
 }
 
 async function logout() {
@@ -50,13 +55,14 @@ async function logout() {
     _clearSession();
 
     // Backend :
-    // socketService.emit('unset-user-socket');
+    // // socketService.emit('unset-user-socket');
+    // _clearSession();
     // return await httpService.post('auth/logout');
 }
 
 function getLoggedinUser() {
     // Frontend Demo :
-    return  _getUserFromSession() || null;
+    return _getUserFromSession() || null;
 
     // Backend : ?
 }
