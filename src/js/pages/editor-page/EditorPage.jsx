@@ -28,15 +28,11 @@ export function EditorPage() {
       })
 
       if (wapId) {
-         // console.log(wapId);
          dispatch(joinRoom(wapId));
       }
-
+      
       dispatch(loadDraftWap());
    }, [])
-
-
-
 
 
    const getDraggedDom = draggableId => {

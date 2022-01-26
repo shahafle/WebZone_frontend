@@ -77,6 +77,10 @@ export function createRoom() {
 export function joinRoom(wapId) {
     return (dispatch, getState) => {
         socketService.emit('join-room', wapId);
+        socketService.on('load-wap', wap => {
+            draftService.saveDraft(wap);
+            dispatch({ type: 'SET_WAP', wap });
+        })
     }
 }
 
