@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import { UserMsg } from './js/cmps/UserMsg'
 
 import { routes } from './routes';
 
@@ -10,18 +11,22 @@ import { useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+// const msg = {
+//   type: 'reg',
+//   txt: '',
+//   att: { position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast" }
+// }
 
 
 export function App() {
 
   const isLoginShown = useSelector(state => state.systemModule.isLoginShown);
-  const userMsg = useSelector(state => state.userModule.userMsg)
+
 
   return (
     <section className="main-app">
       <AppHeader />
-      {userMsg && <ToastContainer style={{ top: 0 }} className="toast" theme={'dark'} style={{ zIndex: 1000 }} position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={true} pauseOnFocusLoss draggable pauseOnHover />}
+      <UserMsg />
       <Routes>
         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
       </Routes>

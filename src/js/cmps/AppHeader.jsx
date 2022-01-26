@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { shouldShowLogin } from '../store/system.action';
-import { onLogout } from '../store/user.action';
+import { onLogout, setUserMsg } from '../store/user.action';
 
 import { IoIosLogIn } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
@@ -80,7 +80,7 @@ export function AppHeader() {
                 {user &&
                     <div className="greet-user flex align-center">
                         <p>Hello {user.nickname}</p>
-                        <div className="user-icon-container flex align-center" onClick={() => dispatch(onLogout())}>
+                        <div className="user-icon-container flex align-center" onClick={() => { dispatch(onLogout()) }}>
                             <FaUser />
                         </div>
                     </div>}

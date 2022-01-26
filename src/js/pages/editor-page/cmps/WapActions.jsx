@@ -5,7 +5,7 @@ import { Link, } from 'react-router-dom'
 
 import { createJpegFromElement } from '../../../services/cloudinary.service';
 
-import { saveWap, workTogether } from '../../../store/wap.action';
+import { saveWap, createRoom } from '../../../store/wap.action';
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
@@ -32,7 +32,7 @@ export function WapActions() {
    }
 
    const onWorkTogether = () => {
-      dispatch(workTogether());
+      dispatch(createRoom());
    }
 
 

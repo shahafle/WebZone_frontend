@@ -1,0 +1,8 @@
+.wap-txt-7 {
+    gap: 20px;
+    align-items: center;
+
+    & > :last-child {
+        text-align: center;
+    }
+}
