@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { socketService } from '../../services/socket.service';
-import { loadDraftWap, switchElement, joinRoom } from '../../store/wap.action';
+import { loadDraftWap, switchElement, joinRoom, updateWapInRoom } from '../../store/wap.action';
 
 import { EditorSidebar } from './cmps/EditorSidebar';
 import { EditorBoard } from './cmps/EditorBoard';
@@ -23,9 +23,13 @@ export function EditorPage() {
    useEffect(() => {
       socketService.setup();
 
+      socketService.on('wap-updated', wapId => {
+         dispatch(updateWapInRoom(wapId));
+      })
+
       if (wapId) {
          // console.log(wapId);
-         dispatch(joinRoom());
+         dispatch(joinRoom(wapId));
       }
 
       dispatch(loadDraftWap());
