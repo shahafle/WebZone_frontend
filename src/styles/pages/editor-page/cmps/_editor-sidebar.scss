@@ -6,6 +6,7 @@
     height: calc(100vh - $header-height - 20px);
     background-color:#646464b8;
     box-shadow: 1px 1px 8px 0px #858585;
+    z-index: 5000;
     
     @include for-tablet-layout {
         width: $sidebar-tablet-width;
@@ -18,6 +19,12 @@
         bottom: 0;
         padding: 0;
         box-shadow:0px 4px 12px 5px #2d2d2d;
+        transform: translateY(0%);
+        transition: all .2s;
+        
+        &.close{
+            transform: translateY(102%);
+        }
     }
     
     .editor-sidebar {
@@ -245,6 +252,30 @@
                     }
                 }
             }
+        }
+
+    }
+    .toggle-sidebar-btn{
+        display: none;
+        position: fixed;
+        top: -60px;
+        right: 20px; 
+        width: 50px;
+        height: 50px;
+        transform: rotate(180deg);
+        transition: all .2s;
+        cursor: pointer;
+        color:#1a1a1adb;
+        
+        @include for-mobile-layout{
+            display: inline-block;
+        }
+    }
+    
+    &.close{
+        .toggle-sidebar-btn{
+            top: -100px;
+            transform: rotate(0deg);
         }
     }
 }

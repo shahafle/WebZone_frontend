@@ -17,5 +17,3 @@ export function loadingDone() {
         dispatch({ type: 'LOADING_DONE' });
     }
 }
-
-

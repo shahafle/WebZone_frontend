@@ -1,37 +1,32 @@
 .main-header {
     height: $header-height;
-    padding: 0 100px;
+    padding: 0 7%;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 1100
+    ;
     font-weight: 500;
     transition: all .5s;
     
-    @include for-mobile-layout{
-        padding: 0 10px;
-        height: $header-mobile-height;
-    }
-    
-    &.active-scroll-1 {
-        background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(4px);
+    @include for-tablet-layout{
+        padding: 0 7%;
+        height: $header-tablet-height;
     }
 
-    &.active-scroll-2 {
+
+    &.active-scroll-1 {
         background-color: rgba(255, 255, 255, 0.75);
         backdrop-filter: blur(6px);
     }
 
-    &.active-scroll-3 {
+    &.active-scroll-2 {
         background-color: rgba(255, 255, 255, 0.91);
         backdrop-filter: blur(8px);
     }
 
     .logo{
-        @include for-mobile-layout{
-            // align-self: end;
-        }
+        padding-top: 5px;
 
         img {
             display: block;
@@ -56,9 +51,9 @@
     }
 
     .btn-login {
-        padding: 8px 16px;
+        padding: 8px 12px;
         border-block-end:1px solid $color2;
-        gap: 10px;
+        gap: 8px;
         font-size: 1rem;
         font-family: $main-font;
         font-weight: 500;
@@ -75,7 +70,7 @@
     }
 
     .greet-user {
-        gap: 20px;
+        gap: 10px;
 
         .user-icon-container {
             padding: 10px;
@@ -90,15 +85,120 @@
             }
         }
     }
-}
 
-.placeholder {
-    height: $header-height;
+    .mobile-menu{
+        display: none;
+    }
+    
+    @include for-tablet-layout{
 
-    @include for-mobile-layout{
-        height: $header-mobile-height;
+        //Unset desktop
+.btn-login{
+    border: none;
+    span{
+        display: none;
     }
 }
+
+        .greet-user{
+            p{
+                display: none;
+            }
+        }
+        
+        .nav-menu{
+            display: none;
+        }
+
+        .logo{
+            img{
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+        
+        //Mobile menu style
+        .btn-login,.mobile-menu{
+            display: block;
+            align-items: center;
+            
+            .hamburger-btn{
+                cursor: pointer;
+                width: 27px;
+                height: 27px;
+            }
+            
+            nav{
+                width: 100vw;
+                position: absolute;
+                // top: $header-tablet-height;
+                top: 0;
+                left: 0;
+                background-color: $color2;
+                color: $color1;
+                transform: translateY(0%);
+                transition: all .2s;
+                
+                &.close {
+                    // top: 0;
+                    transform: translateY(-100%);
+                }
+                
+                
+                &>*:not(svg){
+                    padding:25px 15px ;
+                    font-weight: 400;
+                    text-align: center;
+                    border-block-start:1px solid rgba(172, 172, 172, 0.37) ;
+
+                    &:active,&.active{
+                        background-color: #334b6c;
+                    }
+                }
+
+                
+                &>svg{
+                    margin: 15px;
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+    
+    @include for-mobile-layout{
+        
+        &.in-editor{
+            padding: 0 10px;
+            .logo,.greet-user {
+                display: none;
+            }
+        }
+    }
+}
+    
+    
+    
+.placeholder {
+    height: $header-height;
+    
+    @include for-tablet-layout{
+        height: $header-tablet-height;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // In EditorPage :
 .main-header.minimized,

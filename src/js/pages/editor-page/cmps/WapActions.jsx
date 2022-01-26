@@ -44,11 +44,10 @@ export function WapActions() {
       </div>
       <hr style={{ width: 140 }} />
 
-      <Link to="" onClick={onWorkTogether}>Work Together</Link>
+      <Link to="" onClick={onWorkTogether} className='work-together-btn'>Work with Teammates</Link>
 
       <div className="save-publish-container flex">
          <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>
-         {/* <button className="save-btn" onClick={onSaveWap}>Save</button> */}
          <button className="publish-btn" onClick={onPublish}><span>Publish</span></button>
       </div>
    </div>

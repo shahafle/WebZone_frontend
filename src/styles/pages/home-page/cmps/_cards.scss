@@ -14,6 +14,10 @@
         &:nth-child(1) {
             background-color: #d8d8d8;
             color:$color3;
+            
+            @include for-mobile-layout{
+                padding: 100px 7%;
+            }
         }
         
         &:nth-child(2) {
@@ -28,7 +32,7 @@
             .content-container{
                 flex-grow: 1;
                 background-color: #383838;
-                transform: skewY(22deg );
+                transform: skewY(21deg );
                 gap: 0;
                 height: 100vh;
                 
@@ -37,6 +41,10 @@
                     gap: 50px;
                     padding: 50px 7%;
                     transform: skewY(-11deg);
+
+                    @include for-mobile-layout{
+                        flex-direction: column;
+                    }
                 }
             }
         }
@@ -44,6 +52,10 @@
         .content-container{
             gap: 50px;
             transform: skewY(11deg);
+
+            @include for-mobile-layout{
+                flex-direction: column;
+            }
 
             & > * {
                 flex-basis: 50%;
