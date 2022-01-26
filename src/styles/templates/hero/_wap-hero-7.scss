@@ -1,0 +1,20 @@
+.wap-hero-7 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(780px - 218px);
+
+    & > span {
+        flex: 1;
+    }
+
+    .btn-container {
+        & > * {
+            & > * {
+                padding: 5px 5px;
+                border: 3px solid white;
+                margin: 1rem;
+            }
+        }
+    }
+}

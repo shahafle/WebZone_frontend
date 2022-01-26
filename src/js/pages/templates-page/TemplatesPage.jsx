@@ -11,7 +11,6 @@ export function TemplatesPage() {
 
     const wapTemplates = templateService.getWapTemplates();
 
-
     return (
         <main className='templates-page'>
             <div className='head flex column'>

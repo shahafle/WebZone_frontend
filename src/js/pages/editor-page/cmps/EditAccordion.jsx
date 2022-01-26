@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
 import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
+import { setUserMsg } from '../../../store/user.action'
 
 import { TextStyles } from './TextStyles';
 import { ImageStyles } from './ImageStyles';
@@ -90,22 +91,22 @@ export function EditAccordion() {
 
     const onRemoveElement = () => {
         dispatch(removeElement(currElement));
-        toast.error("Andddddd it\'s gone !", {
-            position: "bottom-center", autoClose: 3000,
+        dispatch(setUserMsg(toast.error("Andddddd it\'s gone !", {
+            position: "top-right", autoClose: 3000,
             hideProgressBar: false, closeOnClick: true,
             pauseOnHover: true, draggable: true,
             progress: undefined,
-        })
+        })))
     }
 
     const onDuplicateElement = () => {
         dispatch(duplicateElement(currElement));
-        toast("BAM ! Another one", {
-            position: "bottom-center", autoClose: 3000,
+        dispatch(setUserMsg(toast("BAM ! Another one", {
+            position: "top-right", autoClose: 3000,
             hideProgressBar: false, closeOnClick: true,
             pauseOnHover: true, draggable: true,
             progress: undefined,
-        })
+        })))
     }
 
     const onRemoveElementByKey = ({ key }) => {
@@ -114,12 +115,9 @@ export function EditAccordion() {
 
     const onUndo = () => {
         dispatch(undo());
-        toast("I\'m back !", {
-            position: "bottom-center", autoClose: 3000,
-            hideProgressBar: false, closeOnClick: true,
-            pauseOnHover: true, draggable: true,
-            progress: undefined,
-        })
+        dispatch(setUserMsg(toast("I\'m back !", {
+            position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast"
+        })))
     }
 
 
@@ -128,7 +126,7 @@ export function EditAccordion() {
 
     return (
         <div className="edit-accordion">
-
+            {/* <ToastContainer style={{ top: 0 }} className="toast" theme={'dark'} style={{ zIndex: 1000 }} position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={true} pauseOnFocusLoss draggable pauseOnHover /> */}
             {(currElement.type === 'txt' || currElement.type === 'btn' || currElement.type === 'input') &&
                 <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
@@ -199,7 +197,6 @@ export function EditAccordion() {
                     </AccordionDetails>
                 </Accordion>}
 
-            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
             <div className='other-action-container flex'>
                 <button onClick={onRemoveElement}><FcDeleteRow /></button>
                 <button onClick={onDuplicateElement}><IoDuplicateSharp /></button>

@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { loadWap } from '../../store/wap.action';
 import { wapService } from '../../services/wap.service';
 
+import { Loader } from '../../../assets/imgs/svg/Loader'
+
+
 
 export function CollectionPage() {
 
@@ -27,7 +30,7 @@ export function CollectionPage() {
         setWaps(waps);
     }
 
-    if (!waps) return <div>Loading...</div>
+    if (!waps) return <Loader />
 
     return (
         <main className='collection-page'>
@@ -43,7 +46,7 @@ export function CollectionPage() {
 
             {waps.length > 0 && <section className='collection-grid'>
                 {waps.map(wap => {
-                    return <div key={wap._id}>
+                    return <div className="flex column preview" key={wap._id}>
                         <Link
                             to="/editor"
                             onClick={() => dispatch(loadWap(wap._id))}
@@ -51,7 +54,10 @@ export function CollectionPage() {
                             <div>{wap.name}</div>
                             {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" />}
                         </Link>
-                        <button onClick={() => onRemoveWap(wap._id)}>Remove Wap</button>
+                        <div className="btn-container flex justife-between">
+                            <button className="update-remove-btn" onClick={() => onRemoveWap(wap._id)}>Remove</button>
+                            <button className="update-remove-btn">update</button>
+                        </div>
                     </div>
                 })}
             </section>}

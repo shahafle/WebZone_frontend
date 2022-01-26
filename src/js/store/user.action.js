@@ -61,3 +61,12 @@ export function removeUser(userId) {
 //         }
 //     }
 // }
+
+
+export function setUserMsg(msg) {
+    console.log(msg);
+    return dispatch => {
+        dispatch({ type: 'SET_USER_MSG', msg });
+        setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 3000);
+    }
+}

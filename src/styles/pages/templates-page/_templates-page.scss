@@ -1,5 +1,5 @@
 .templates-page {
-   padding: 30px;
+   padding: 30px 100px;
    display: flex;
    flex-direction: column;
    gap: 40px;
@@ -16,7 +16,7 @@
    .templates-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, 300px);
-      gap: 30px;
+      gap: 45px;
 
       .scratch-thumbnail {
          display: flex;
@@ -41,11 +41,13 @@
 
       & > :first-child {
          & > :last-child {
-            background-image: linear-gradient(rgba(163, 113, 197, 0.3), rgba(0, 0, 0, 0.3));
-            transition: all 0.3s;
+            background-image: linear-gradient(#accbee, #e7f0fd);
+            opacity: 1;
+
+            transition: 0.3s;
 
             &:hover {
-               background-image: linear-gradient(rgba(148, 29, 228, 0.3), rgba(0, 0, 0, 0.3));
+               opacity: 0.6;
             }
 
             display: flex;
@@ -62,12 +64,12 @@
       }
 
       .wap-template-thumbnail {
-         gap: 5px;
+         gap: 15px;
 
          img {
             width: 100%;
             box-shadow: 1px 1px 8px 0px;
-            transition: opacity .5s;
+            transition: opacity 0.5s;
 
             &:hover {
                opacity: 0.6;
@@ -76,8 +78,8 @@
 
          div {
             text-align: start;
-            font-weight: 800;
             font-size: 1.2rem;
+            text-transform: uppercase;
          }
       }
    }
