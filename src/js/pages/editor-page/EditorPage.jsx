@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import { socketService } from '../../services/socket.service';
-import { loadDraftWap, switchElement } from '../../store/wap.action';
+import { loadDraftWap, switchElement, joinRoom } from '../../store/wap.action';
 
 import { EditorSidebar } from './cmps/EditorSidebar';
 import { EditorBoard } from './cmps/EditorBoard';
@@ -14,14 +15,25 @@ import { Droppable } from 'react-beautiful-dnd';
 export function EditorPage() {
 
    const dispatch = useDispatch();
+   const { wapId } = useParams();
 
    const [isDragActive, setDragActive] = useState(false)
    const [placeholderProps, setPlaceholderProps] = useState({});
 
    useEffect(() => {
+      socketService.setup();
+
+      if (wapId) {
+         // console.log(wapId);
+         dispatch(joinRoom());
+      }
+
       dispatch(loadDraftWap());
-      // socketService.setup();
    }, [])
+
+
+
+
 
    const getDraggedDom = draggableId => {
       const domQuery = `[data-rbd-drag-handle-draggable-id='${draggableId}']`;

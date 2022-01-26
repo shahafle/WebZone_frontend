@@ -49,7 +49,7 @@ export function saveWap(cb) {
     return async (dispatch, getState) => {
         const { wap } = getState().wapModule;
         const savedWap = await wapService.save(wap);
-        if (cb) cb(savedWap._id)
+        if (cb) cb(savedWap._id);
 
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
     }
@@ -58,18 +58,21 @@ export function saveWap(cb) {
 
 // *** SOCKET wap actions *** //
 
-export function workTogether() {
+export function createRoom() {
     return async (dispatch, getState) => {
         const { wap } = getState().wapModule;
 
-
         socketService.emit('create-room', wap);
-        
-        socketService.on('get-room-details', data => {
-            console.log(data.roomWap)
-            const link = `/editor/room/${data.roomName}`
-            console.log(link);
-         })
+        wap.id = wapService.getRandomId();
+        navigator.clipboard.writeText(`localhost:3000/editor/${wap.id}`);
+    }
+}
+
+export function joinRoom() {
+    return async (dispatch, getState) => {
+        const { wap } = getState().wapModule;
+
+        socketService.emit('join-room', wap);
     }
 }
 
