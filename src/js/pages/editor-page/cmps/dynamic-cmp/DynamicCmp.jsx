@@ -28,9 +28,6 @@ export function DynamicCmp(props) {
       case 'video': return <WapVideo  {...props} style={style} />
 
       case 'input': return <WapInput  {...props} style={style} />
-
-      default:
-         break;
    }
    // }
 

@@ -1,5 +1,5 @@
 .templates-page {
-   padding: 30px 7%;
+   padding: 0 7% 50px;
    min-height: calc(100vh - $header-height);
    background-image: linear-gradient(to bottom, $color1, #d3dbe6);
 
@@ -8,78 +8,84 @@
       color: $color3;
    }
 
-   .head {
+   .hero {
+      min-height: 30vh;
+      gap: 40px;
+
+      h1 {
+         text-align: center;
+         font-family: $sub-font;
+         font-size: 4rem;
+         animation: tracking-in-expand 3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      }
       p {
+         text-align: center;
          margin-top: 10px;
+         animation: fade-in 1s 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+      hr {
+         width: max(300px, 50%);
+      }
+
+      &:before {
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         opacity: 0.5;
+         background-image: url("https://limitlesshost.net/wp-content/uploads/2018/08/subbanner-wave-1.png");
+         background-repeat: no-repeat;
+         background-size: contain;
+         filter: sepia(100%) hue-rotate(181deg) saturate(500%);
+         pointer-events: none;
       }
    }
 
    .templates-grid {
-      margin-top: 50px;
+      // margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, 350px);
-      gap: 45px;
-      align-self: center;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 450px));
+      gap: 25px;
+      justify-content: center;
 
-      .scratch-thumbnail {
-         & > :first-child {
-            height: 23px;
-         }
+      .wrapper {
+         padding: 30px;
+         border: 1px solid gray;
+         transition: background-color 0.3s;
 
-         & > :last-child {
-            flex-grow: 1;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            box-shadow: inset 0 0 12px 0px #616161;
-         }
-      }
-
-      & > :first-child {
-         & > :last-child {
+         .new-proj {
+            height: 100%;
             background-image: linear-gradient(#accbee, #e7f0fd);
-            opacity: 1;
-
-            transition: 0.3s;
-
-            &:hover {
-               opacity: 0.6;
-            }
-
-            display: flex;
-            flex-grow: 1;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 1px 1px 8px 0px;
-
-            p {
-               font-weight: 800;
-               font-size: 4rem;
-            }
+            position: relative;
          }
-      }
 
-      .wap-template-thumbnail {
-         gap: 15px;
+         .image-container {
+            overflow: hidden;
 
-         img {
-            width: 100%;
-            box-shadow: 1px 1px 8px 0px;
-            transition: opacity 0.5s;
-            aspect-ratio: 1.5/1;
-
-            &:hover {
-               opacity: 0.6;
+            img {
+               width: 100%;
+               display: block;
+               // box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.6);
+               aspect-ratio: 1.5/1;
+               transition: transform 0.5s ease;
             }
          }
 
-         div {
-            text-align: start;
-            font-size: 1.2rem;
+         p {
+            margin-top: 20px;
+            text-align: center;
             text-transform: uppercase;
+         }
+
+         &:hover {
+            // background-color: #dedede;
+            // background-color: #a8c4e9;
+         }
+
+         &:hover img {
+            transform: scale(1.05);
          }
       }
    }
