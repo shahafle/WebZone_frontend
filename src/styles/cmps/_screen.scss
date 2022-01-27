@@ -7,6 +7,6 @@
     backdrop-filter: blur(3px);
     cursor: pointer;
 
-    z-index: 998;
+    z-index: 5005;
     // transition: background-color .3s; // Doesn't work - use animista for fade in on mount and fade out on unmount
 }

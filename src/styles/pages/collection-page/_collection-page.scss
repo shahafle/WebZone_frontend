@@ -1,5 +1,5 @@
 .collection-page {
-    padding: 30px 100px;
+    padding: 30px 7%;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -17,6 +17,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, 300px);
         gap: 45px;
+        align-self: center;
 
         .preview {
             gap: 10px;

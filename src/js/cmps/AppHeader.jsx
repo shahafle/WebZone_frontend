@@ -6,7 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { shouldShowLogin } from '../store/system.action';
 import { onLogout, setUserMsg } from '../store/user.action';
 
-import { AiOutlineLogin } from 'react-icons/ai';
+import { IoIosLogIn } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
 import logo from '../../assets/webzone/webzone-full-logo-small.png'
 
@@ -40,7 +40,7 @@ export function AppHeader() {
 
         // EditorPage :
         else if (location.pathname === '/editor') {
-            setHeaderClass('minimized');
+            setHeaderClass('minimized in-editor');
             setPlaceholderClass('minimized');
         }
 
@@ -54,14 +54,15 @@ export function AppHeader() {
     const handleScroll = () => {
         if (window.scrollY < 140) setHeaderClass('');
         if (window.scrollY > 140) setHeaderClass('active-scroll-1');
-        if (window.scrollY > 400) setHeaderClass('active-scroll-2');
-        if (window.scrollY > 750) setHeaderClass('active-scroll-3');
+        if (window.scrollY > 750) setHeaderClass('active-scroll-2');
     }
 
 
     return (
         <>
+
             <header className={`main-header flex justify-between align-center ${headerClass}`}>
+                <MobileHamburger />
                 <Link className="clean-link logo" to="/">
                     <img src={logo} alt="no" />
                 </Link>
@@ -70,13 +71,11 @@ export function AppHeader() {
                     <NavLink className="clean-link nav-link" to="/templates"> TEMPLATES</NavLink>
                     <NavLink className="clean-link nav-link" to="/editor"> EDITOR</NavLink>
                     <NavLink className="clean-link nav-link" to="/collection"> COLLECTION</NavLink>
-                    <NavLink className="clean-link nav-link" to="/collection"> COLLECTION</NavLink>
                 </nav>
 
-                <MobileHamburger />
 
-                {/* User btn */}
-                {!user && <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}>Login <AiOutlineLogin /></button>}
+                {/* Login/User btn */}
+                {!user && <button className="nav-link btn-login flex align-center" onClick={() => dispatch(shouldShowLogin(true))}><span>Login</span> <IoIosLogIn /></button>}
 
                 {user &&
                     <div className="greet-user flex align-center">

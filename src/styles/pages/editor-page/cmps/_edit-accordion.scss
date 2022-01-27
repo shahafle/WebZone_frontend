@@ -3,13 +3,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 13px;
-
+    
+    @include for-tablet-layout{
+        max-height: calc(100vh - $header-tablet-height - 20px - 233px);
+    }
+    
     @include for-mobile-layout{
         flex-direction: column-reverse;
         display: flex;
-    }
-
-    @include for-mobile-layout{
         overflow-y: unset;
         max-height:unset ;
     }
