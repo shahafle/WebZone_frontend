@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
@@ -20,23 +20,69 @@ export function EditorPage() {
    const [isDragActive, setDragActive] = useState(false);
    const [placeholderProps, setPlaceholderProps] = useState({});
 
+   const [cursors, setCursors] = useState([]);
+
+
    useEffect(() => {
+      dispatch(loadDraftWap());
+
+      // // Socket initialization on connection :
       // socketService.setup();
+      // socketService.off('wap-updated');
 
-      // socketService.on('wap-updated', wapId => {
-      // dispatch(updateWapInRoom(wapId));
-      // })
+      // // User joined via share link :
+      // if (wapId) dispatch(joinRoom(wapId));
 
-      // socketService.on('mouse-moved', pos => {
+      // // Every user listens to wap updates :
+      // socketService.on('wap-updated', wapId => dispatch(updateWapInRoom(wapId)));
 
-      // })
+      // window.addEventListener('mousemove', updateMousePos);
 
-      // if (wapId) {
-      // dispatch(joinRoom(wapId));
+      // // Clear socket on disconnection :
+      // return () => {
+      //    socketService.off('wap-updated');
+      //    socketService.off('mouse-moved');
+      //    socketService.terminate();
+      //    window.removeEventListener('mousemove', updateMousePos);
       // }
-
-      // dispatch(loadDraftWap());
    }, [])
+
+
+   // useEffect(() => {
+   //    socketService.off('mouse-moved');
+
+   //    // Update other users' cursors positions :
+   //    socketService.on('mouse-moved', newCursor => {
+   //       console.log('hello madafaka')
+   //       const cursorIdx = cursors.findIndex(cursor => {
+   //          return cursor.id === newCursor.id;
+   //       });
+   //       if (cursorIdx >= 0) { // If cursor already exists
+   //          if (cursors[cursorIdx].x === newCursor.x && cursors[cursorIdx].y === newCursor.y) return; // If mouse in same position
+
+   //          setCursors(prevCursors => {
+   //             prevCursors[cursorIdx] = newCursor;
+   //             return [...prevCursors];
+   //          })
+   //       } else {
+   //          setCursors(prevCursors => [...prevCursors, newCursor]);
+   //       }
+   //    })
+   // }, [cursors])
+   
+   // let counterRef = useRef()
+   // const updateMousePos = (ev) => {
+   //    console.log(counterRef);
+   //    if (!counterRef.current) counterRef.current = 0;
+   //    counterRef.current++
+
+   //    const pos = { x: ev.clientX, y: ev.clientY };
+
+   //    if (counterRef.current > 10) {
+   //       socketService.emit('mouse-move', pos);
+   //       counterRef.current = 0;
+   //    }
+   // }
 
 
    const getDraggedDom = draggableId => {
@@ -143,16 +189,16 @@ export function EditorPage() {
    }
 
 
+   console.log(cursors);
+
    return <DragDropContext
       onDragEnd={onDragEnd}
       onDragStart={onDragStart}
-      onDragUpdate={onDragUpdate}
-   >
+      onDragUpdate={onDragUpdate}>
 
       <main className={`editor-page ${isDragActive ? 'drag-active' : ''}`}>
          <EditorSidebar />
          <EditorBoard placeholderProps={placeholderProps} />
-
 
          <Droppable droppableId='garbage'>
             {provided => {
@@ -161,7 +207,12 @@ export function EditorPage() {
                   ref={provided.innerRef}>&times;</div>
             }}
          </Droppable>
+
       </main >
+
+      {/* Cursors test : */}
+      {/* {cursors.length > 0 &&
+         cursors.map(cursor => <div key={cursor} className="mouse" style={{ position: 'fixed', top: cursor.pos.y, left: cursor.pos.x, zIndex: '9999' }}>😎😎</div>)} */}
    </DragDropContext>
 
 }

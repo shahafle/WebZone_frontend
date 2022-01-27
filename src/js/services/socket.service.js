@@ -37,6 +37,7 @@ function createSocketService() {
         },
 
         terminate() {
+            socket.emit('force-disconnect');
             socket = null;
         }
     }
