@@ -6,7 +6,7 @@ export const wapTxt_7 = {
     "type": "container",
     "category": "wap-text",
     "className": "wap-txt-7 flex column",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279517/s35hj556exeiaiyagem1.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "70" },
     "cmps": [
         {

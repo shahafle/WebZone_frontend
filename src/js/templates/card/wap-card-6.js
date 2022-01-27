@@ -6,7 +6,7 @@ export const wapCard_6 = {
    "type": "container",
    "category": "wap-card",
    "className": "wap-card-6 flex column",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279565/nasenwul0petrt5hhuao.jpg",
    "style": { ...containerStyle, "paddingInline": "20", "paddingBlock": "110", "backgroundColor": "#1c1c1c" },
    "cmps": [
       //BIG TITLE

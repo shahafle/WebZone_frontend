@@ -6,7 +6,7 @@ export const wapForm_6 = {
    "type": "container",
    "category": "wap-form",
    "className": "wap-form-6 flex column",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279854/bxoycwljbvxln2nqwm73.jpg",
    "style": { ...containerStyle, "paddingInline": "20", "paddingBlock": "60", "backgroundColor": "#1c1c1c" },
    "cmps": [
       //TITLE
