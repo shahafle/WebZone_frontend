@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { loadWap } from '../../store/wap.action';
 import { wapService } from '../../services/wap.service';
 
-import { Loader } from '../../../assets/imgs/svg/Loader'
+import { Loader } from '../../../assets/imgs/svg/Loader';
+import { FaTimes, FaEdit } from 'react-icons/fa';
 
 
 
@@ -33,31 +34,31 @@ export function CollectionPage() {
     if (!waps) return <Loader />
 
     return (
-        <main className='collection-page'>
+        <main className="collection-page">
 
-            {waps.length === 0 && <div className='head flex column'>
+            {waps.length === 0 && <div className="head flex column">
                 <h1>Your collection seems empty!</h1>
                 <p>Pick one of the prebuilt template websites or start from scratch <Link to="/templates">here</Link></p>
             </div>}
 
-            {waps.length > 0 && <div className='head flex column'>
+            {waps.length > 0 && <div className="head flex column">
                 <h1>Your collection</h1>
             </div>}
 
-            {waps.length > 0 && <section className='collection-grid'>
+            {waps.length > 0 && <section className="collection-grid">
                 {waps.map(wap => {
-                    return <div className="flex column preview" key={wap._id}>
+                    return <div className="preview" key={wap._id}>
+                        <div className="flex justify-between align-center">
+                            <p>{wap.name}</p>
+                            <button className="remove-btn flex" onClick={() => onRemoveWap(wap._id)}><FaTimes /></button>
+                        </div>
                         <Link
                             to="/editor"
                             onClick={() => dispatch(loadWap(wap._id))}
-                            className='wap-thumbnail flex column'>
-                            <div>{wap.name}</div>
+                            className="wap-thumbnail">
                             {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" />}
+                            <FaEdit className="edit-icon"/>
                         </Link>
-                        <div className="btn-container flex justife-between">
-                            <button className="update-remove-btn" onClick={() => onRemoveWap(wap._id)}>Remove</button>
-                            <button className="update-remove-btn">update</button>
-                        </div>
                     </div>
                 })}
             </section>}

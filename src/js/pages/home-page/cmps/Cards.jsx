@@ -37,7 +37,7 @@ export function Cards() {
                     <div className="slide-in-left card-text flex column">
                         <h1>Compatible</h1>
                         <h2>Responsive Design</h2>
-                        <p>Every section of the website responds to the width of your device. No matter the size of your screen, we make sure everything looks good for you.</p>
+                        <p>Every section of the website responds to the width of your device. No matter your screen size, we make sure everything looks good for you.</p>
                         <button className="get-started">
                             <span className="circle" aria-hidden="true">
                                 <span className="icon arrow"></span>
@@ -54,7 +54,7 @@ export function Cards() {
                         <div className="card-text flex column slide-in-right">
                             <h1>Inviting</h1>
                             <h2>Build Together</h2>
-                            <p>Invite your friends or family to help you build the website of your dreams! Simpley click the "Work Together" link inside the editor and send them a link! Did we mention that the platform is compatible with any device? So what are you waiting for?</p>
+                            <p>Invite your friends or family to help you build the website of your dreams! Simpley click the "Work Together" link inside the editor and send them the link! Did we mention that the platform is compatible with any device? So what are you waiting for?</p>
                             <button className="get-started">
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>

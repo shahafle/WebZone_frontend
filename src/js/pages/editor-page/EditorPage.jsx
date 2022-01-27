@@ -17,7 +17,7 @@ export function EditorPage() {
    const dispatch = useDispatch();
    const { wapId } = useParams();
 
-   const [isDragActive, setDragActive] = useState(false)
+   const [isDragActive, setDragActive] = useState(false);
    const [placeholderProps, setPlaceholderProps] = useState({});
 
    useEffect(() => {
@@ -25,6 +25,10 @@ export function EditorPage() {
 
       // socketService.on('wap-updated', wapId => {
       // dispatch(updateWapInRoom(wapId));
+      // })
+
+      // socketService.on('mouse-moved', pos => {
+
       // })
 
       // if (wapId) {

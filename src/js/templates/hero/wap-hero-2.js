@@ -11,23 +11,32 @@ export const wapHero_2 = {
     "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "0", "backgroundImage": `url(${bgImg})` },
     "cmps": [
         {
-            "id": "asldfj2lk45",
-            "type": "txt", // JUMBO (CENTER)
-            "txt": "Grow your business.",
-            "style": { ...txtStyle, "color": "#ffffff", "textAlign": "center", "fontFamily": "montserrat", "fontSize": "64", "letterSpacing": "4" }
-        },
+            "id": "lk135jlk1japsfojasjp35",
+            "type": "container",
+            "className": "hero-content",
+            "style": { ...containerStyle, "backgroundColor": "#ffffff00", "paddingBlock": "0" },
+            "cmps": [
+                {
+                    "id": "asldfj2lk45",
+                    "type": "txt", // JUMBO (CENTER)
+                    "txt": "Grow your business.",
+                    "style": { ...txtStyle, "color": "#ffffff", "textAlign": "center", "fontFamily": "montserrat", "fontSize": "64", "letterSpacing": "4" }
+                },
 
-        {
-            "id": "2436t6s5dfg413s5",
-            "type": "txt", // SUB-JUMBO (CENTER)
-            "txt": "Boost your business with a beautiful website.",
-            "style": { ...txtStyle, "color": "#ffffff", "fontSize": "20" }
-        },
-        {
-            "id": "alsrj2lk3j5tsd",
-            "type": "btn", // CTA (CENTER)
-            "url": "#",
-            "txt": "LEARN MORE",
-            "style": { ...btnStyle, "backgroundColor": "#ffffff", "fontSize": "24" }
-        }]
+                {
+                    "id": "2436t6s5dfg413s5",
+                    "type": "txt", // SUB-JUMBO (CENTER)
+                    "txt": "Boost your business with a beautiful website.",
+                    "style": { ...txtStyle, "color": "#ffffff", "fontSize": "20", "textAlign": "center" }
+                },
+                {
+                    "id": "alsrj2lk3j5tsd",
+                    "type": "btn", // CTA (CENTER)
+                    "url": "#",
+                    "txt": "LEARN MORE",
+                    "style": { ...btnStyle, "backgroundColor": "#ffffff", "fontSize": "24" }
+                }
+            ]
+        }
+    ]
 }

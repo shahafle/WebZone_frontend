@@ -214,7 +214,7 @@ export function undo() {
         // prevWap = JSON.parse(JSON.stringify(prevWap));
 
         draftService.saveDraft(prevWap);
-        socketService.emit('update-wap', prevWap);
+        // socketService.emit('update-wap', prevWap);
         dispatch({ type: 'UNDO_WAP', wap: prevWap, wapHistory });
 
         wapService.findTarget(prevWap, currElement.id, (cmpsArr, idx) => {
