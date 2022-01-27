@@ -33,6 +33,7 @@ export function uploadImage(ev, element, isBackground) {
          } else {
             element.url = cloudUrl;
          }
+         console.log(cloudUrl)
          dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement: element })
       } catch (err) {
          console.log(err);

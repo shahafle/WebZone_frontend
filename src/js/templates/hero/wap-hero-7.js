@@ -7,7 +7,7 @@ export const wapHero_7 = {
     "type": "container",
     "category": "wap-hero",
     "className": "wap-hero-7 flex align-center",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643278231/z8pbryyiwefiy82pwxpv.jpg",
     "style": {
         ...containerStyle,
         "backgroundImage": `url(${hero})`,

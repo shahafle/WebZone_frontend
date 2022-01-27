@@ -10,7 +10,6 @@ import { useEffect } from 'react'
 export function UserMsg() {
     const att = { position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast" }
     const userMsg = useSelector(state => state.userModule.userMsg)
-    console.log(userMsg);
     useEffect(() => {
         if (!userMsg) return
         if (userMsg.type === 'reg') {
