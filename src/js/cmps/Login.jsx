@@ -36,12 +36,12 @@ export function Login() {
             if (isLogin) {
                 delete credentials.nickname;
                 dispatch(onLogin(credentials));
-                dispatch(setUserMsg({ type: 'success', txt: 'Welcome Back' + credentials.nickname }))
+                dispatch(setUserMsg({ type: 'success', txt: 'Welcome Back !' }))
             }
             //  Signup
             if (!isLogin) {
                 dispatch(onSignup(credentials));
-                dispatch(setUserMsg({ type: 'success', txt: 'Welcome ' + credentials.nickname }))
+                dispatch(setUserMsg({ type: 'success', txt: 'Welcome' }))
             }
             // dispatch(login(credentials));
 

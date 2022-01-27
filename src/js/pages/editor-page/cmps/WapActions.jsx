@@ -1,11 +1,18 @@
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { Link, } from 'react-router-dom'
 
-import { createRoom } from '../../../store/wap.action';
+
+import { createJpegFromElement } from '../../../services/cloudinary.service';
+
+import { setUserMsg } from '../../../store/user.action';
+import { saveWap, createRoom } from '../../../store/wap.action';
+import { setBoardSize } from '../../../store/editor.action';
+
+import { WapBuildingModal } from '../../../cmps/WapBuilderModal'
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
-import { setBoardSize } from '../../../store/editor.action';
 import { SavePublishBtns } from './ShareSaveBtns';
 
 
@@ -15,6 +22,8 @@ export function WapActions() {
 
    const onWorkTogether = () => {
       dispatch(createRoom());
+      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to Clipboard!' }))
+
    }
 
    const onSetBoardSize = (boardSize) => {

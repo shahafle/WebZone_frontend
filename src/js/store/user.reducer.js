@@ -9,26 +9,21 @@ const initialState = {
 
 
 export function userReducer(state = initialState, action) {
-    let newState = state;
 
     switch (action.type) {
         case 'SET_USER':
-            newState = { ...state, user: action.user }
-            break;
+            return { ...state, user: action.user }
+
         case 'SET_WATCHED_USER':
-            newState = { ...state, watchedUser: action.user }
-            break;
+            return { ...state, watchedUser: action.user }
+
         case 'REMOVE_USER':
-            newState = { ...state, users: state.users.filter(user => user._id !== action.userId) }
-            break;
+            return { ...state, users: state.users.filter(user => user._id !== action.userId) }
+
         case 'SET_USER_MSG':
-            newState = { ...state, userMsg: action.msg }
-            break;
+            return { ...state, userMsg: action.msg }
+
+        default:
+            return state;
     }
-
-    // For debug:
-    // window.userState = newState;
-    // console.log('State:', newState);
-
-    return newState;
 }

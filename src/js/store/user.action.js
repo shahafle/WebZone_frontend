@@ -31,7 +31,7 @@ export function onLogout() {
         try {
             await userService.logout();
             dispatch({ type: 'SET_USER', user: null });
-            dispatch(setUserMsg({ type: 'success', txt: 'Come Back Soon!' }))
+            // dispatch(setUserMsg({ type: 'success', txt: 'Come Back Soon!' }))
         } catch (err) {
 
         }

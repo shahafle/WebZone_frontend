@@ -12,7 +12,7 @@ export function MobileHamburger({ user, shouldShowLogin, onLogout }) {
    const [isMenuOpen, toggleMobileMenu] = useState(false)
 
    const onToggleMenu = () => {
-      dispatch(toggleMobileMenu(!isMenuOpen))
+      toggleMobileMenu(!isMenuOpen)
    }
 
    return <div className='mobile-menu flex column'>

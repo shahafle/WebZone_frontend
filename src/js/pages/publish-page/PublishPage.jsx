@@ -5,7 +5,7 @@ import { loadWap } from '../../store/wap.action'
 import { loadingStart, loadingDone } from '../../store/system.action'
 import { DynamicCmp } from '../editor-page/cmps/dynamic-cmp/DynamicCmp';
 import { wapService } from '../../../js/services/wap.service';
-import { Loader } from '../../../assets/imgs/svg/Loader.jsx'
+import { Loader } from '../../cmps/Loader'
 
 
 
@@ -57,7 +57,7 @@ export function PublishPage() {
         dispatch(loadingDone())
     }
 
-    if (isLoading) return <Loader />
+    if (isLoading) return <Loader color={'#1b1b1b'} />
     return (
         <div className='publish-page'>
             {wap && wap.cmps.map((cmp, i) => {

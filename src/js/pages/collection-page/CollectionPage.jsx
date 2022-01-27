@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { loadWap } from '../../store/wap.action';
 import { wapService } from '../../services/wap.service';
 
-import { Loader } from '../../../assets/imgs/svg/Loader';
+import { Loader } from '../../cmps/Loader'
 import { FaTimes, FaEdit } from 'react-icons/fa';
 
 
@@ -31,7 +31,7 @@ export function CollectionPage() {
         setWaps(waps);
     }
 
-    if (!waps) return <Loader />
+    if (!waps) return <Loader color={'#1b1b1b'} />
 
     return (
         <main className="collection-page">
