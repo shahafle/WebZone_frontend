@@ -42,7 +42,7 @@ export function updateWap(elementToUpdate) {
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate);
         draftService.saveDraft(wap);
 
-        socketService.emit('update-wap', wap);
+        // socketService.emit('update-wap', wap);
 
         dispatch({ type: 'UPDATE_WAP', wap });
     }
@@ -117,7 +117,7 @@ export function removeElement(element) {
         wapService.findTarget(wap, element.id, (cmpsArr, idx) => cmpsArr.splice(idx, 1));
 
         draftService.saveDraft(wap);
-        socketService.emit('update-wap', wap);
+        // socketService.emit('update-wap', wap);
         dispatch({ type: 'UPDATE_WAP', wap });
     }
 }
@@ -132,7 +132,7 @@ export function addElement(elementToAdd) {
         wap.cmps.push(elementToAdd);
 
         draftService.saveDraft(wap);
-        socketService.emit('update-wap', wap);
+        // socketService.emit('update-wap', wap);
         dispatch({ type: 'UPDATE_WAP', wap });
         return elementToAdd;
     }
@@ -148,7 +148,7 @@ export function duplicateElement(element) {
         wapService.findTarget(wap, elementId, (cmpsArr, idx) => cmpsArr.splice(idx, 0, element));
 
         draftService.saveDraft(wap);
-        socketService.emit('update-wap', wap);
+        // socketService.emit('update-wap', wap);
         dispatch({ type: 'UPDATE_WAP', wap })
         return element;
     }
@@ -199,7 +199,7 @@ export function switchElement(res) {
         }
 
         draftService.saveDraft(wap);
-        socketService.emit('update-wap', wap);
+        // socketService.emit('update-wap', wap);
         dispatch({ type: 'UPDATE_WAP', wap });
     }
 }

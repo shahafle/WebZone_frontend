@@ -18,6 +18,7 @@ export function EditorBoard({ placeholderProps }) {
 
    const wap = useSelector(state => state.wapModule.wap);
    const currElement = useSelector(state => state.editorModule.currElement);
+   const boardSize = useSelector(state => state.editorModule.boardSize);
 
 
 
@@ -28,6 +29,9 @@ export function EditorBoard({ placeholderProps }) {
       return () => window.removeEventListener('resize', getMediaClass);
    }, [])
 
+   useEffect(() => {
+      handleResize()
+   }, [boardSize])
 
    const handleResize = () => {
       setMediaClass(getMediaClass())
@@ -59,6 +63,11 @@ export function EditorBoard({ placeholderProps }) {
       dispatch(updateCurrElementAttr(currElement, attr))
    }
 
+   const getBoardSize = () => {
+      if (!boardSize || boardSize === 'desktop') return ''
+      else return boardSize
+   }
+
 
 
    //RENDER
@@ -66,23 +75,26 @@ export function EditorBoard({ placeholderProps }) {
 
    return <Droppable droppableId='board'>
       {(provided, snapshot) => {
+         //No curr element
          if (!wap?.cmps?.length) return <div  {...provided.droppableProps}
             ref={provided.innerRef}
             className='editor-board'><div className="choose-template">
                Pick an element from the sidebar
-               {/* <Loader /> */}
             </div>
          </div>
 
-         return <section className='editor-board'
+         //Board
+         return <section className={`editor-board ${getBoardSize()}`}
             {...provided.droppableProps}
             ref={provided.innerRef}>
             {wap.cmps.map((cmp, i) =>
                <DynamicCmp key={i} idx={i} isPublished={false} onSetCurrElement={onSetCurrElement} cmp={cmp} currElementId={currElement?.id} mediaClass={mediaClass} handleTxtChange={handleTxtChange} />
             )}
 
-
+            {/* Div for boardSize */}
             <div ref={sectionRef}></div>
+
+            {/* Placeholder */}
             {provided.placeholder}
             {!isEmpty(placeholderProps) && snapshot.isDraggingOver && (
                <div
@@ -95,6 +107,7 @@ export function EditorBoard({ placeholderProps }) {
                   }}
                />
             )}
+            {/* Placeholder */}
          </section>
       }}
    </Droppable >

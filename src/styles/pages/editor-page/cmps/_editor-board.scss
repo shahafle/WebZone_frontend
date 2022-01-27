@@ -6,7 +6,19 @@
    grid-column: 2/3;
    min-height: calc(100vh - $header-height - 30px);
    
+   
+   &.tablet{
+      margin: 5px auto 15px;
+      max-width: 900px;
+   }
+   
+   &.mobile{
+      margin: 5px auto 15px;
+      max-width: 500px;
+   }
+
    @include for-mobile-layout{
+      grid-column: unset;
       margin: 5px 10px;
    }
 
@@ -39,6 +51,7 @@
    }
 
    .choose-template  {
+      text-align: center;
       position: absolute;
       top: 20%;
       left: 50%;

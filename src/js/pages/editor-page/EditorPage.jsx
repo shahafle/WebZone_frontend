@@ -21,15 +21,15 @@ export function EditorPage() {
    const [placeholderProps, setPlaceholderProps] = useState({});
 
    useEffect(() => {
-      socketService.setup();
+      // socketService.setup();
 
-      socketService.on('wap-updated', wapId => {
-         dispatch(updateWapInRoom(wapId));
-      })
+      // socketService.on('wap-updated', wapId => {
+      // dispatch(updateWapInRoom(wapId));
+      // })
 
-      if (wapId) {
-         dispatch(joinRoom(wapId));
-      }
+      // if (wapId) {
+      // dispatch(joinRoom(wapId));
+      // }
 
       // dispatch(loadDraftWap());
    }, [])
