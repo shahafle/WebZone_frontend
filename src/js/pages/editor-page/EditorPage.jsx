@@ -10,6 +10,7 @@ import { EditorBoard } from './cmps/EditorBoard';
 
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
+import { SavePublishBtns } from './cmps/ShareSaveBtns';
 
 
 export function EditorPage() {
@@ -35,7 +36,7 @@ export function EditorPage() {
       // dispatch(joinRoom(wapId));
       // }
 
-      // dispatch(loadDraftWap());
+      dispatch(loadDraftWap());
    }, [])
 
 
@@ -161,6 +162,8 @@ export function EditorPage() {
                   ref={provided.innerRef}>&times;</div>
             }}
          </Droppable>
+
+         <SavePublishBtns />
       </main >
    </DragDropContext>
 

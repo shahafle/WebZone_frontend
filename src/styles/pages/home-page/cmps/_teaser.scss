@@ -1,24 +1,28 @@
-.teaser {
-    padding: 80px 100px 0;
-    position: relative;
-    z-index: 1;
-    
-    .img-container {
-        width: 80%;
-        margin: auto;
+.home{
 
-        img {
-            width: 100%;
-            border-radius: 10px;
-        }
-    }
-    
-    
-    @include for-tablet-layout{
-        padding: 80px 7% 0;
-
+    .teaser {
+        padding: 0 100px;
+        position: relative;
+        z-index: 1;
+        
         .img-container {
-            width: unset;
+            width: 80%;
+            margin: auto;
+            
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    
+    
+        @include for-tablet-layout{
+            padding: 80px 7% 0;
+            
+            .img-container {
+                width: unset;
+            }
         }
     }
+
 }

@@ -56,8 +56,8 @@ export function CollectionPage() {
                             to="/editor"
                             onClick={() => dispatch(loadWap(wap._id))}
                             className="wap-thumbnail">
-                            {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" />}
-                            <FaEdit className="edit-icon"/>
+                            {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" onError={({ target }) => target.src = 'http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643291756/phjcgifmh2m2f52n0itr.jpg'} />}
+                            <FaEdit className="edit-icon" />
                         </Link>
                     </div>
                 })}

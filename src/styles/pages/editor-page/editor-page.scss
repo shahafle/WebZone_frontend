@@ -14,6 +14,7 @@
 
    }
 
+   //Garbage
    &.drag-active{
       .garbage{
          opacity: 1;
@@ -33,5 +34,24 @@
       border-radius: 50%;
        z-index: 5005;
       opacity: 0;
+   }
+
+   //Save-Publish on mobile
+   &>.save-publish-container {
+      display: none;
+
+      @include for-mobile-layout{
+         display: flex;
+         position: fixed;
+         top: 0;
+         left: 0;
+         padding:8px 10px;
+         z-index: 5100;
+
+        
+        .media-btns,.work-together-btn{
+            display: none;
+        }
+      }
    }
 }

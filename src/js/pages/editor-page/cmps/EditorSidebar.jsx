@@ -42,7 +42,7 @@ export function EditorSidebar() {
 
             {/* toggle sidebar btn on mobile */}
 
-            <IoIosArrowDropupCircle className='toggle-sidebar-btn' onClick={onToggleSidebar} />
+            <IoIosArrowDropupCircle className='toggle-sidebar-btn' onClick={() => onToggleSidebar()} />
          </div>
 
          <WapActions />

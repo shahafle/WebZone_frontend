@@ -1,11 +1,11 @@
 .edit-accordion {
-    max-height: calc(100vh - $header-height - 20px - 233px);
+    max-height: calc(100vh - $header-height - 280px);
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0 13px;
     
     @include for-tablet-layout{
-        max-height: calc(100vh - $header-tablet-height - 20px - 233px);
+        max-height: calc(100vh - $header-tablet-height - 280px);
     }
     
     @include for-mobile-layout{

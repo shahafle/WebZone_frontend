@@ -4,6 +4,12 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 export function WapDiv(props) {
    const { cmp, onSetCurrElement, currElementId, style, idx, mediaClass, isPublished } = props
 
+   const getItemStyle = (isDragging, draggableStyle) => ({
+      cursor: isDragging ? "grabbing" : "default",
+      ...draggableStyle
+   });
+
+
    if (isPublished) {
       return <span><div
          style={style}
