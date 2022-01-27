@@ -8,6 +8,7 @@ import { createJpegFromElement } from '../../../services/cloudinary.service';
 import { saveWap, createRoom } from '../../../store/wap.action';
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
+import { setBoardSize } from '../../../store/editor.action';
 
 
 
@@ -35,12 +36,16 @@ export function WapActions() {
       dispatch(createRoom());
    }
 
+   const onSetBoardSize = (boardSize) => {
+      dispatch(setBoardSize(boardSize))
+   }
+
 
    return <div className="wap-actions flex column align-center">
       <div className="media-btns flex justify-between align center">
-         <FaDesktop size={28} className='muted' />
-         <FaTabletAlt size={28} className='muted' />
-         <FaMobileAlt size={28} className='muted' />
+         <FaDesktop size={28} className='muted' onClick={() => onSetBoardSize('desktop')} />
+         <FaTabletAlt size={28} className='muted' onClick={() => onSetBoardSize('tablet')} />
+         <FaMobileAlt size={28} className='muted' onClick={() => onSetBoardSize('mobile')} />
       </div>
       <hr style={{ width: 140 }} />
 

@@ -28,6 +28,7 @@ export function uploadImage(ev, element, isBackground) {
       if (!ev.target.value) return
       try {
          const cloudUrl = await uploadImgToCloud(ev)
+         console.log(cloudUrl);
          if (isBackground) {
             element = { ...element, style: { ...element.style, backgroundImage: `url(${cloudUrl})` } }
          } else {
@@ -38,5 +39,12 @@ export function uploadImage(ev, element, isBackground) {
       } catch (err) {
          console.log(err);
       }
+   }
+}
+
+
+export function setBoardSize(boardSize) {
+   return async (dispatch) => {
+      dispatch({ type: 'SET_BOARD_SIZE', boardSize })
    }
 }

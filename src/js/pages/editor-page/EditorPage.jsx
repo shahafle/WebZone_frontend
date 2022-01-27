@@ -24,7 +24,7 @@ export function EditorPage() {
       // socketService.setup();
 
       // socketService.on('wap-updated', wapId => {
-         // dispatch(updateWapInRoom(wapId));
+      // dispatch(updateWapInRoom(wapId));
       // })
 
       // socketService.on('mouse-moved', pos => {
@@ -32,9 +32,9 @@ export function EditorPage() {
       // })
 
       // if (wapId) {
-         // dispatch(joinRoom(wapId));
+      // dispatch(joinRoom(wapId));
       // }
-      
+
       // dispatch(loadDraftWap());
    }, [])
 

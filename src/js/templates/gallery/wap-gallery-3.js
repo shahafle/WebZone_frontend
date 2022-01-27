@@ -5,7 +5,7 @@ export const wapGallery_3 = {
    "type": "container",
    "category": "wap-gallery",
    "className": "wap-gallery-3",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643278601/tdqdohccwvqghrgt34ru.jpg",
    "style": {
       ...containerStyle,
       "paddingInline": "100",
