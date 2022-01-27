@@ -11,6 +11,8 @@ import { EditorBoard } from './cmps/EditorBoard';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
 
+import { WapBuildingModal } from '../../cmps/WapBuilderModal'
+
 
 export function EditorPage() {
 
@@ -144,7 +146,6 @@ export function EditorPage() {
       onDragStart={onDragStart}
       onDragUpdate={onDragUpdate}
    >
-
       <main className={`editor-page ${isDragActive ? 'drag-active' : ''}`}>
          <EditorSidebar />
          <EditorBoard placeholderProps={placeholderProps} />

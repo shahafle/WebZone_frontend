@@ -1,26 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, } from 'react-router-dom'
+import { setUserMsg } from '../../../store/user.action';
 
 import { createJpegFromElement } from '../../../services/cloudinary.service';
 
 import { saveWap, createRoom } from '../../../store/wap.action';
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
+import { WapBuildingModal } from '../../../cmps/WapBuilderModal'
 
 
 
 
 export function WapActions() {
 
+   const [shouldShowModal, setShouldShowModal] = useState(false)
+
    const dispatch = useDispatch();
    const wap = useSelector(state => state.wapModule.wap)
 
    const onSaveWap = async () => {
+      setShouldShowModal(true)
       const editorBoard = document.querySelector('.editor-board')
       wap.thumbnail = await createJpegFromElement(editorBoard, editorBoard.clientWidth, (editorBoard.clientWidth * 0.7))
-      dispatch(saveWap());
+      dispatch(saveWap());///close modal cb
+      setShouldShowModal(false)
    }
 
    const onPublish = () => {
@@ -33,6 +39,8 @@ export function WapActions() {
 
    const onWorkTogether = () => {
       dispatch(createRoom());
+      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to Clipboard!' }))
+
    }
 
 
@@ -45,6 +53,7 @@ export function WapActions() {
       <hr style={{ width: 140 }} />
 
       <Link to="" onClick={onWorkTogether} className='work-together-btn'>Work with Teammates</Link>
+      {shouldShowModal && <WapBuildingModal />}
 
       <div className="save-publish-container flex">
          <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>

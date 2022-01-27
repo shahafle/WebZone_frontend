@@ -7,7 +7,7 @@ import { Droppable } from 'react-beautiful-dnd';
 import { isEmpty } from "lodash";
 
 import { DynamicCmp } from './dynamic-cmp/DynamicCmp'
-import { Loader } from '../../../../assets/imgs/svg/Loader.jsx'
+import { Loader } from '../../../cmps/Loader.jsx'
 
 
 export function EditorBoard({ placeholderProps }) {

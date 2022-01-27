@@ -25,7 +25,7 @@ export function UserMsg() {
     if (!userMsg) return ''
     return (
         <ToastContainer style={{ top: 0 }} className="toast"
-            style={{ zIndex: 1000 }} position="top-right"
+            style={{ zIndex: 1200 }} position="top-right"
             autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={true}
             pauseOnFocusLoss draggable pauseOnHover />
     )
