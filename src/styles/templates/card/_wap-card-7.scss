@@ -1,0 +1,28 @@
+.wap-card-7 {
+    &.media-800 {
+        .container {
+            grid-template-columns: 1fr;
+        }
+    }
+    .container {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        gap: 30px;
+        max-width: 900px;
+        margin: auto;
+
+        .img-1 {
+            box-shadow: -12px 11px 0 0 #00c3ad;
+        }
+        .img-2 {
+            box-shadow: -12px 11px 0 0 #882997;
+        }
+        .txt-btn-container {
+            gap: 30px;
+            .btn {
+                padding: 5px;
+                border: 5px solid #ef4b4d;
+            }
+        }
+    }
+}

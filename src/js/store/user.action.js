@@ -31,6 +31,7 @@ export function onLogout() {
         try {
             await userService.logout();
             dispatch({ type: 'SET_USER', user: null });
+            dispatch(setUserMsg({ type: 'success', txt: 'Come Back Soon!' }))
         } catch (err) {
 
         }
@@ -65,6 +66,7 @@ export function removeUser(userId) {
 
 export function setUserMsg(msg) {
     return dispatch => {
+        console.log(msg);
         dispatch({ type: 'SET_USER_MSG', msg });
         setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 3000);
     }

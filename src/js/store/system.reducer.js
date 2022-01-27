@@ -2,8 +2,8 @@
 
 const initialState = {
     isLoginShown: false,
-    isLoading: false
-
+    isLoading: false,
+    isMobileMenuOpen: false
 }
 
 export function systemReducer(state = initialState, action) {

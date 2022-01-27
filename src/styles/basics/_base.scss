@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
 }
-
+:root {
+    // this is the default value below
+    --toastify-color-progress-light: linear-gradient(to right, #007aff, #007aff) !important;
+}
 html {
     font-size: 16px;
     font-family: $main-font;
