@@ -9,6 +9,10 @@
         height: 100vh;
         padding: 50px 7%;
         transform: skewY(-11deg);
+
+        @include for-mobile-layout{
+            height: unset;
+        }
         
         
         &:nth-child(1) {
@@ -37,12 +41,18 @@
                 height: 100vh;
                 
                 .other-diagonal{
+                    flex-direction: column;
                     flex-basis: unset;
                     gap: 50px;
                     padding: 50px 7%;
                     transform: skewY(-11deg);
+                }
+                
 
-                    @include for-mobile-layout{
+                @include for-mobile-layout{
+                    height: unset;
+
+                    .other-diagonal{
                         flex-direction: column;
                     }
                 }

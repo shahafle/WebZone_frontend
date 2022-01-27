@@ -1,0 +1,111 @@
+.save-publish-container {
+   gap: 1.3rem;
+   
+   button{
+       width: 114px;
+       height: 41px;
+   }
+   
+   @include for-tablet-layout{
+       gap: 0.6rem;
+       button{
+           width: 100px;
+           height: 35px;
+       }
+   }
+   
+
+   /* CTAs SCSS */
+   .save-btn {
+      appearance: none;
+      font-size: 1.2rem;
+      position: relative;
+      transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 200ms cubic-bezier(.694, 0, 0.335, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      white-space: nowrap;
+      border-radius: 7px;
+      border: 1px solid $color2;
+   
+   
+      &:before {
+         animation: opacityFallbackOut .5s step-end forwards;
+         backface-visibility: hidden;
+         background-color: $color2;
+         clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+         content: "";
+         height: 100%;
+         left: 0;
+         position: absolute;
+         top: 0;
+         transform: translateZ(0);
+         transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+         width: 100%;
+         border-radius: 5px;
+      }
+      
+      span {
+         z-index: 1;
+         position: relative;
+         color: $color2;
+      }
+      
+      &:hover{
+         span{
+            color:$color1
+         }
+         
+         &:before {
+            animation: opacityFallbackIn 0s step-start forwards;
+            clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+         }
+      }   
+   }
+   
+   .publish-btn {
+      appearance: none;
+      background-color: $color2;
+      font-size: 1.2rem;
+      position: relative;
+      transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      white-space: nowrap;
+      border-radius: 7px;
+      border: 1px solid $color2;
+      
+      
+      &:before {
+         animation: opacityFallbackOut .5s step-end forwards;
+         backface-visibility: hidden;
+         background-color: #25436e;
+         clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+         content: "";
+         height: 100%;
+         left: 0;
+         position: absolute;
+         top: 0;
+         transform: translateZ(0);
+         transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+         width: 100%;
+         border-radius: 5px;
+      }
+      
+      span {
+         position: relative;
+         color: $color1;
+      }
+      
+      &:hover{
+         
+         &:before {
+            animation: opacityFallbackIn 0s step-start forwards;
+            clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+         }
+      }
+   }   
+}

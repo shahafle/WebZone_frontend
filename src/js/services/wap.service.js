@@ -70,7 +70,9 @@ async function save(wapToSave) {
     // Frontend Demo :
     if (wapToSave._id) {
         // Update
-        return await asyncStorageService.put(WAP_STORAGE_KEY, wapToSave);
+        const savedWap = await asyncStorageService.put(WAP_STORAGE_KEY, wapToSave);
+        console.log(savedWap);
+        return savedWap;
     } else {
         // Add
         return await asyncStorageService.post(WAP_STORAGE_KEY, wapToSave);

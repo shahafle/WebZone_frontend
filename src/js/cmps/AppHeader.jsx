@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { shouldShowLogin } from '../store/system.action';
-import { onLogout, setUserMsg } from '../store/user.action';
+import { onLogout } from '../store/user.action';
 
 import { IoIosLogIn } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
@@ -20,6 +20,7 @@ export function AppHeader() {
     const user = useSelector(state => state.userModule.user);
 
     const [headerClass, setHeaderClass] = useState('');
+    const [scrollHeaderClass, setScrollHeaderClass] = useState('');
     const [placeholderClass, setPlaceholderClass] = useState('');
 
     useEffect(() => {
@@ -52,17 +53,16 @@ export function AppHeader() {
     }, [location])
 
     const handleScroll = () => {
-        if (window.scrollY < 140) setHeaderClass('');
-        if (window.scrollY > 140) setHeaderClass('active-scroll-1');
-        if (window.scrollY > 750) setHeaderClass('active-scroll-2');
+        if (window.scrollY < 140) setScrollHeaderClass('');
+        if (window.scrollY > 140) setScrollHeaderClass('active-scroll-1');
+        if (window.scrollY > 750) setScrollHeaderClass('active-scroll-2');
     }
 
 
     return (
         <>
 
-            <header className={`main-header flex justify-between align-center ${headerClass}`}>
-                <MobileHamburger />
+            <header className={`main-header flex justify-between align-center ${headerClass + ' ' + scrollHeaderClass}`}>
                 <Link className="clean-link logo" to="/">
                     <img src={logo} alt="no" />
                 </Link>
@@ -85,6 +85,7 @@ export function AppHeader() {
                         </div>
                     </div>}
 
+                <MobileHamburger user={user} shouldShowLogin={shouldShowLogin} onLogout={onLogout} />
             </header>
 
 

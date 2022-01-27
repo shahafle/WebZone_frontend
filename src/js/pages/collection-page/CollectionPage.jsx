@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { loadWap } from '../../store/wap.action';
 import { wapService } from '../../services/wap.service';
 
-import { Loader } from '../../../assets/imgs/svg/Loader';
+import { Loader } from '../../cmps/Loader'
 import { FaTimes, FaEdit } from 'react-icons/fa';
 
 
@@ -31,7 +31,7 @@ export function CollectionPage() {
         setWaps(waps);
     }
 
-    if (!waps) return <Loader />
+    if (!waps) return <Loader color={'#1b1b1b'} />
 
     return (
         <main className="collection-page">
@@ -56,8 +56,8 @@ export function CollectionPage() {
                             to="/editor"
                             onClick={() => dispatch(loadWap(wap._id))}
                             className="wap-thumbnail">
-                            {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" />}
-                            <FaEdit className="edit-icon"/>
+                            {wap.thumbnail && <img src={wap.thumbnail} alt="Website Thumbnail" onError={({ target }) => target.src = 'http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643291756/phjcgifmh2m2f52n0itr.jpg'} />}
+                            <FaEdit className="edit-icon" />
                         </Link>
                     </div>
                 })}

@@ -10,6 +10,9 @@ import { EditorBoard } from './cmps/EditorBoard';
 
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
+import { SavePublishBtns } from './cmps/ShareSaveBtns';
+
+import { WapBuildingModal } from '../../cmps/WapBuilderModal'
 
 
 export function EditorPage() {
@@ -208,6 +211,7 @@ export function EditorPage() {
             }}
          </Droppable>
 
+         <SavePublishBtns />
       </main >
 
       {/* Cursors test : */}
