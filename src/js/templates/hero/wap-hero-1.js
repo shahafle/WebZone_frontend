@@ -5,7 +5,7 @@ export const wapHero_1 = {
     "type": "container",
     "category": "wap-hero",
     "className": "wap-hero-1",
-    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642884263/icgjjwnmhdnaqgzxahhs.jpg",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643278264/reqr2ssipjsqn2oa89kn.jpg",
     "style": {
         ...containerStyle,
         "backgroundImage": "url(\"https://cf.bstatic.com/xdata/images/hotel/max1024x768/320449456.jpg?k=172d955a08f0e5ef213b7b2ac3364ae0a40d62713242c0b7b46b0261907d3f26&o=&hp=1\")",

@@ -8,7 +8,7 @@ import { wapCard_7_2 } from '../card/wap-card-7-2'
 export const wapTemplate_7 = {
     "_id": "gghfjskkhvhdhdh234234",
     "name": "Sombrero",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643277153/lle98kfoszhxre0sorie.jpg",
     "createdBy": {
         "_id": "asdjkhagsdiuywqgyuqwbasdf444545fFjf",
         "username": "Roi Yotvat"

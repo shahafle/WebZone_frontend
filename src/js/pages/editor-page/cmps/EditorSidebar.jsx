@@ -17,13 +17,13 @@ export function EditorSidebar() {
 
    useEffect(() => {
       if (!currElement) return;
+      onToggleSidebar(true)
 
       setActiveTab('edit');
    }, [currElement])
 
-   const onToggleSidebar = () => {
-      console.log(isSidebarOpen);
-      toggleSidebar(!isSidebarOpen)
+   const onToggleSidebar = (val = !isSidebarOpen) => {
+      toggleSidebar(val)
    }
 
    return <div className={`sidebar-background ${!isSidebarOpen ? 'close' : ''}`}>

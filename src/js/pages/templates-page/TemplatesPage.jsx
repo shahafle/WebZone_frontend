@@ -13,7 +13,7 @@ export function TemplatesPage() {
 
     return (
         <main className='templates-page'>
-            <div className='head flex column'>
+            <div className='head'>
                 <h1>Template websites</h1>
                 <p>Pick one of the prebuilt template websites below or start from scratch.</p>
             </div>

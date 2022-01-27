@@ -7,7 +7,7 @@ export const wapFooter_4 =
     "type": "container",
     "category": "wap-footer",
     "className": "wap-footer-4",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279893/laeppmj9nxiq9eao6ihu.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "40", "backgroundColor": "#6f4e37" },
     "cmps": [
         {

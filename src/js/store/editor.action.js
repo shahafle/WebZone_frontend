@@ -28,14 +28,23 @@ export function uploadImage(ev, element, isBackground) {
       if (!ev.target.value) return
       try {
          const cloudUrl = await uploadImgToCloud(ev)
+         console.log(cloudUrl);
          if (isBackground) {
             element = { ...element, style: { ...element.style, backgroundImage: `url(${cloudUrl})` } }
          } else {
             element.url = cloudUrl;
          }
+         console.log(cloudUrl)
          dispatch({ type: 'UPDATE_CURR_ELEMENT', updatedElement: element })
       } catch (err) {
          console.log(err);
       }
+   }
+}
+
+
+export function setBoardSize(boardSize) {
+   return async (dispatch) => {
+      dispatch({ type: 'SET_BOARD_SIZE', boardSize })
    }
 }

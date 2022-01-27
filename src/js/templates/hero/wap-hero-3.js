@@ -6,7 +6,7 @@ export const wapHero_3 = {
    "type": "container",
    "category": "wap-hero",
    "className": "wap-hero-3",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643277960/rc8v0alpaylh0nyhtc04.jpg",
    "style": {
       ...containerStyle,
       "backgroundImage": "url(\"https://images.unsplash.com/photo-1490367605959-06955305859b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\")",

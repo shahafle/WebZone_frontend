@@ -5,7 +5,7 @@ export const wapHeader_7 = {
     "type": "container",
     "category": "wap-header",
     "className": "wap-header-7 flex column justify-center align-center",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643278090/sgd8hed1vxzdqpbm1in4.jpg",
     "style": { ...containerStyle, "backgroundColor": "#ffffff" },
     "cmps": [
         {

@@ -5,7 +5,7 @@ export const wapForm_3 = {
    "type": "container",
    "category": "wap-form",
    "className": "wap-form-3",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279800/yuk9dn03xycqdrna1ayr.jpg",
    "style": { ...containerStyle, "paddingInline": "150", "paddingBlock": "200", "backgroundColor": "#bcdcce" },
    "cmps": [
       {

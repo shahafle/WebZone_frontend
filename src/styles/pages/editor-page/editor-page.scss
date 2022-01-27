@@ -6,6 +6,7 @@
    
    @include for-tablet-layout{
       grid-template-columns: $sidebar-tablet-width 1fr;
+      max-height: calc(100vh - $header-tablet-height);
    }
    
    @include for-mobile-layout{

@@ -5,7 +5,7 @@ export const wapCard_7_2 = {
     "type": "container",
     "category": "wap-card",
     "className": "wap-card-7-2",
-    "thumbnail": "",
+    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279736/luquntroojttwbxwzbr0.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "50" },
     "cmps": [
         {

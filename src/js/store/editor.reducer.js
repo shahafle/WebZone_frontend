@@ -1,5 +1,6 @@
 const initialState = {
-   currElement: null
+   currElement: null,
+   boardSize: 'desktop'
 }
 
 export function editorReducer(state = initialState, action) {
@@ -15,6 +16,10 @@ export function editorReducer(state = initialState, action) {
       case 'UPDATE_CURR_ELEMENT': {
          return newState = { ...state, currElement: { ...action.updatedElement } };
       }
+
+      case 'SET_BOARD_SIZE': {
+         return newState = { ...state, boardSize: action.boardSize }
+      };
       default:
          return newState
    }

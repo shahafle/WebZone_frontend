@@ -2,15 +2,17 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Link, } from 'react-router-dom'
-import { setUserMsg } from '../../../store/user.action';
+
 
 import { createJpegFromElement } from '../../../services/cloudinary.service';
 
+import { setUserMsg } from '../../../store/user.action';
 import { saveWap, createRoom } from '../../../store/wap.action';
+import { setBoardSize } from '../../../store/editor.action';
 
-import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 import { WapBuildingModal } from '../../../cmps/WapBuilderModal'
 
+import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 
 
 
@@ -43,12 +45,16 @@ export function WapActions() {
 
    }
 
+   const onSetBoardSize = (boardSize) => {
+      dispatch(setBoardSize(boardSize))
+   }
+
 
    return <div className="wap-actions flex column align-center">
       <div className="media-btns flex justify-between align center">
-         <FaDesktop size={28} className='muted' />
-         <FaTabletAlt size={28} className='muted' />
-         <FaMobileAlt size={28} className='muted' />
+         <FaDesktop size={28} className='muted' onClick={() => onSetBoardSize('desktop')} />
+         <FaTabletAlt size={28} className='muted' onClick={() => onSetBoardSize('tablet')} />
+         <FaMobileAlt size={28} className='muted' onClick={() => onSetBoardSize('mobile')} />
       </div>
       <hr style={{ width: 140 }} />
 
