@@ -12,7 +12,7 @@ export const wapTxt_2 = {
             "id": "asdfjzj235",
             "type": "txt", // // TITLE (CENTER)
             "txt": "WHAT WE BELIEVE IN",
-            "style": { ...txtStyle, "fontFamily": "montserrat", "fontSize": "14" }
+            "style": { ...txtStyle, "fontFamily": "montserrat", "fontSize": "14", "textAlign":"center" }
         },
 
         {

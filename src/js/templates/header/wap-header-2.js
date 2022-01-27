@@ -6,7 +6,7 @@ export const wapHeader_2 = {
     "category": "wap-header",
     "className": "wap-header-2",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642883206/owopvqgsktupsrjwrpzt.jpg",
-    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "0" },
+    "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "15" },
     "cmps": [
         {
             "id": "23l56ktjls",
@@ -17,7 +17,7 @@ export const wapHeader_2 = {
         {
             "id": "45356dgfasdf",
             "type": "container", // NAV-LINKS CONTAINER (CENTER)
-            "style": { ...containerStyle },
+            "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "0" },
             "cmps": [
                 {
                     "id": "45564tdh",

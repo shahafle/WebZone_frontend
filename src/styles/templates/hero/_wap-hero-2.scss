@@ -1,19 +1,35 @@
 .wap-hero-2 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
     height: 70vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
-    span:last-child {
-        margin-top: 100px;
+
+    .hero-content {
+        p {
+            margin-bottom: 40px;
+        }
+        a {
+            display: block;
+            width: fit-content;
+            margin: 100px auto 0;
+            padding: 15px 30px;
+        }
     }
-    a {
-        padding: 15px 30px;
-    }
+
+    // &.media-800 {
+    //     & > span:first-child {
+    //         p {
+    //             font-size: 46px;
+    //         }
+    //     }
+    //     & > span:nth-child(2) {
+    //         p {
+    //             font-size: 16px;
+    //         }
+    //     }
+    // }
 }

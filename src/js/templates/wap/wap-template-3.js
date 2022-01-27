@@ -1,4 +1,3 @@
-import { wapHeader_3 } from '../header/wap-header-3.js'
 import { wapHero_3 } from '../hero/wap-hero-3.js'
 import { wapSection_3 } from '../section/wap-section-3.js'
 import { wapGallery_3 } from '../gallery/wap-gallery-3.js'
@@ -12,7 +11,6 @@ export const wapTemplate_3 = {
       "username": "Shahaf Levi"
    },
    "cmps": [
-      // wapHeader_3,
       wapHero_3,
       wapGallery_3,
       wapSection_3,

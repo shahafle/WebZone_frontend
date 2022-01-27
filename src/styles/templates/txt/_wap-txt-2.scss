@@ -1,12 +1,12 @@
 .wap-txt-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 20px;
 
     & > *:first-child p {
-        padding-top: 60px;
+        padding: 60px 0 20px;
     }
 
     & > *:last-child p {

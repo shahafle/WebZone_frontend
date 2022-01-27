@@ -3,29 +3,46 @@ import { wapTemplate_1 } from '../templates/wap/wap-template-1';
 import { wapTemplate_2 } from '../templates/wap/wap-template-2';
 import { wapTemplate_3 } from '../templates/wap/wap-template-3';
 
-// Headers
-import { wapHeader_1 } from '../templates/header/wap-header-1';
-import { wapHeader_2 } from '../templates/header/wap-header-2';
-import { wapHeader_3 } from '../templates/header/wap-header-3';
-// Heros
-import { wapHero_1 } from '../templates/hero/wap-hero-1';
-import { wapHero_2 } from '../templates/hero/wap-hero-2';
+
 // Cards
 import { wapCard_1 } from '../templates/card/wap-card-1';
 import { wapCard_1_2 } from '../templates/card/wap-card-1-2';
 import { wapCard_2 } from '../templates/card/wap-card-2';
 import { wapCard_2_2 } from '../templates/card/wap-card-2-2';
-// Galleries
-import { wapGallery_1 } from '../templates/gallery/wap-gallery-1';
-// Texts
-import { wapTxt_2 } from '../templates/txt/wap-txt-2';
+import { wapCard_6 } from '../templates/card/wap-card-6';
 // Footers
 import { wapFooter_1 } from '../templates/footer/wap-footer-1';
 import { wapFooter_2 } from '../templates/footer/wap-footer-2';
-import { wapHero_3 } from '../templates/hero/wap-hero-3';
-import { wapGallery_3 } from '../templates/gallery/wap-gallery-3';
+import { wapFooter_4 } from '../templates/footer/wap-footer-4';
+// Forms
 import { wapForm_3 } from '../templates/form/wap-form-3';
+import { wapForm_6 } from '../templates/form/wap-form-6';
+// Galleries
+import { wapGallery_1 } from '../templates/gallery/wap-gallery-1';
+import { wapGallery_3 } from '../templates/gallery/wap-gallery-3';
+// Headers
+import { wapHeader_1 } from '../templates/header/wap-header-1';
+import { wapHeader_2 } from '../templates/header/wap-header-2';
+import { wapHeader_7 } from '../templates/header/wap-header-7';
+// Heros
+import { wapHero_1 } from '../templates/hero/wap-hero-1';
+import { wapHero_2 } from '../templates/hero/wap-hero-2';
+import { wapHero_3 } from '../templates/hero/wap-hero-3';
+import { wapHero_4 } from '../templates/hero/wap-hero-4';
+import { wapHero_5 } from '../templates/hero/wap-hero-5';
+import { wapHero_6 } from '../templates/hero/wap-hero-6';
+import { wapHero_7 } from '../templates/hero/wap-hero-7';
+// Sections
 import { wapSection_3 } from '../templates/section/wap-section-3';
+import { wapSection_4 } from '../templates/section/wap-section-4';
+import { wapSection_4_2 } from '../templates/section/wap-section-4-2';
+import { wapSection_4_3 } from '../templates/section/wap-section-4-3';
+import { wapSection_4_4 } from '../templates/section/wap-section-4-4';
+// Texts
+import { wapTxt_2 } from '../templates/txt/wap-txt-2';
+
+
+
 
 
 export const templateService = {

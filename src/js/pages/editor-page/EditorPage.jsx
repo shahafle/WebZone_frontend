@@ -17,21 +17,25 @@ export function EditorPage() {
    const dispatch = useDispatch();
    const { wapId } = useParams();
 
-   const [isDragActive, setDragActive] = useState(false)
+   const [isDragActive, setDragActive] = useState(false);
    const [placeholderProps, setPlaceholderProps] = useState({});
 
    useEffect(() => {
-      socketService.setup();
+      // socketService.setup();
 
-      socketService.on('wap-updated', wapId => {
-         dispatch(updateWapInRoom(wapId));
-      })
+      // socketService.on('wap-updated', wapId => {
+         // dispatch(updateWapInRoom(wapId));
+      // })
 
-      if (wapId) {
-         dispatch(joinRoom(wapId));
-      }
+      // socketService.on('mouse-moved', pos => {
+
+      // })
+
+      // if (wapId) {
+         // dispatch(joinRoom(wapId));
+      // }
       
-      dispatch(loadDraftWap());
+      // dispatch(loadDraftWap());
    }, [])
 
 

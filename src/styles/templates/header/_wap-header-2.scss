@@ -15,4 +15,26 @@
             padding: 15px 30px;
         }
     }
+
+    &.media-800 {
+        // NAV-LINKS CONTAINER
+        span:nth-child(2) div {
+            display: none;
+            gap: 20px;
+        }
+
+        // CONTACT-US BTN
+        & > span:last-child {
+            & > a:last-of-type {
+                display: none;
+            }
+
+            &::after {
+                content:"☰";
+                display: block;
+                font-size: 1.2rem;
+                font-weight:700;
+            }
+        }
+    }
 }
