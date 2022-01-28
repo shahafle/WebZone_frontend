@@ -1,3 +1,5 @@
+import { utilService } from './util.service.js';
+
 // Frontend Demo :
 import { asyncStorageService } from './async-storage.service.js';
 
@@ -13,7 +15,6 @@ export const wapService = {
     findTarget,
     getScaleUnits,
     replaceIds,
-    getRandomId,
 }
 
 
@@ -131,20 +132,9 @@ function getScaleUnits(style) {
 
 // Replace the ids of all cmps inside a wap TEMPLATE
 function replaceIds(element) {
-    if (!element._id) element.id = getRandomId();
+    if (!element._id) element.id = utilService.getRandomId();
 
     if (element.cmps) {
         element.cmps.forEach(el => replaceIds(el));
     }
-}
-
-function getRandomId(length = 10, array) {
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let id = '';
-
-    for (let i = 0; i < length; i++) {
-        id += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-
-    return id;
 }

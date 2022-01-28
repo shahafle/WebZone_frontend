@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { loadWapTemplate, resetDraftWap } from '../../store/wap.action';
 import { templateService } from '../../services/template.service';
 
-import { FaPlus } from 'react-icons/fa';
 import altImg from '../../../assets/imgs/collection thumbnail alternative.jpg';
+import { FiEdit2,FiEye } from 'react-icons/fi';
 
 
 export function TemplatesPage() {
@@ -42,6 +42,11 @@ export function TemplatesPage() {
                             <img src={wapTemplate.thumbnail} alt="Template Thumbnail" />
                         </div>
                         <p>{wapTemplate.name}</p>
+
+                        <div className="actions flex align-center justify-center">
+                            <FiEye className="preview-icon" title="Preview"/>
+                            <FiEdit2 className="edit-icon" title="Edit"/>
+                        </div>
                     </Link>
                 })}
 

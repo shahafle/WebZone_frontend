@@ -8,8 +8,10 @@ import { useEffect } from 'react'
 
 
 export function UserMsg() {
-    const att = { position: "top-right", autoClose: 3000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast" }
+    const att = { position: "bottom-center", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, className: "toast" }
+    
     const userMsg = useSelector(state => state.userModule.userMsg)
+
     useEffect(() => {
         if (!userMsg) return
         if (userMsg.type === 'reg') {
@@ -21,11 +23,13 @@ export function UserMsg() {
         }
     }, [userMsg])
 
+
     if (!userMsg) return ''
+
     return (
         <ToastContainer style={{ top: 0 }} className="toast"
-            style={{ zIndex: 1200 }} position="top-right"
-            autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick rtl={true}
+            style={{ zIndex: 1200 }} position="bottom-center"
+            autoClose={5000} hideProgressBar={false} newestOnTop closeOnClick 
             pauseOnFocusLoss draggable pauseOnHover />
     )
 }

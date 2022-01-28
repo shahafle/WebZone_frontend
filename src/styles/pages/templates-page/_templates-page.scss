@@ -16,17 +16,19 @@
          text-align: center;
          font-family: $sub-font;
          font-size: 4rem;
-         animation: tracking-in-expand 3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+         animation: fade-in 1s 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
       }
       p {
          text-align: center;
+         font-size: 1.2rem;
          margin-top: 10px;
-         animation: fade-in 1s 3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+         animation: fade-in 1s 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
       }
       hr {
          width: max(300px, 50%);
       }
 
+      // Background Img :
       &:before {
          content: "";
          position: absolute;
@@ -44,7 +46,6 @@
    }
 
    .templates-grid {
-      // margin-top: 50px;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 450px));
       gap: 25px;
@@ -53,6 +54,7 @@
       .wrapper {
          padding: 30px;
          border: 1px solid gray;
+         position: relative;
          transition: background-color 0.3s;
 
          .new-proj {
@@ -67,7 +69,6 @@
             img {
                width: 100%;
                display: block;
-               // box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.6);
                aspect-ratio: 1.5/1;
                transition: transform 0.5s ease;
             }
@@ -79,13 +80,38 @@
             text-transform: uppercase;
          }
 
-         &:hover {
-            // background-color: #dedede;
-            // background-color: #a8c4e9;
+         .actions {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            gap: 20px;
+            background-color: rgba(0, 0, 0, 0);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+
+            .preview-icon,
+            .edit-icon {
+               font-size: 3rem;
+               fill: rgba(255, 255, 255, 1);
+               transition: fill .3s;
+               
+               &:hover {
+                  fill: rgba(255, 255, 255, .5);
+               }
+            }
+         }
+
+         &:hover .actions {
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+            pointer-events: auto;
          }
 
          &:hover img {
-            transform: scale(1.05);
+            // transform: scale(1.05);
          }
       }
    }

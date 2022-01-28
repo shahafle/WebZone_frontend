@@ -1,6 +1,7 @@
 import { wapService } from '../services/wap.service.js';
 import { draftService } from '../services/draft.service.js';
 import { templateService } from '../services/template.service.js';
+import { utilService } from '../services/util.service.js';
 import { socketService } from '../services/socket.service.js';
 import { loadingStart, loadingDone } from './system.action'
 
@@ -65,7 +66,7 @@ export function createRoom() {
     return (dispatch, getState) => {
         const { wap } = getState().wapModule;
 
-        wap.id = wapService.getRandomId();
+        wap.id = utilService.getRandomId();
         draftService.saveDraft(wap);
         dispatch({ type: 'SET_WAP', wap });
 

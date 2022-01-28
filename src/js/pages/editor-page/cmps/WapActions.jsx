@@ -21,8 +21,8 @@ export function WapActions() {
    const dispatch = useDispatch();
 
    const onWorkTogether = () => {
-      dispatch(createRoom());
-      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to Clipboard!' }))
+      // dispatch(createRoom());
+      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to clipboard !' }));
 
    }
 

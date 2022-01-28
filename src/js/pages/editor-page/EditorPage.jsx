@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { socketService } from '../../services/socket.service';
+import { utilService } from '../../services/util.service';
 import { loadDraftWap, switchElement, joinRoom, updateWapInRoom } from '../../store/wap.action';
 
 import { EditorSidebar } from './cmps/EditorSidebar';
@@ -68,6 +69,7 @@ export function EditorPage() {
    //             return [...prevCursors];
    //          })
    //       } else {
+   //          newCursor.color = utilService.getRandomColor();
    //          setCursors(prevCursors => [...prevCursors, newCursor]);
    //       }
    //    })
@@ -192,8 +194,7 @@ export function EditorPage() {
    }
 
 
-   console.log(cursors);
-
+   
    return <DragDropContext
       onDragEnd={onDragEnd}
       onDragStart={onDragStart}

@@ -38,19 +38,26 @@ export function onLogout() {
     }
 }
 
+export function setUserMsg(msg) {
+    return dispatch => {
+        dispatch({ type: 'SET_USER_MSG', msg });
+        setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 5000);
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-export function removeUser(userId) {
-    return async dispatch => {
-        try {
-            await userService.remove(userId);
-            dispatch({ type: 'REMOVE_USER', userId });
-        } catch (err) {
+// export function removeUser(userId) {
+//     return async dispatch => {
+//         try {
+//             await userService.remove(userId);
+//             dispatch({ type: 'REMOVE_USER', userId });
+//         } catch (err) {
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 // export function loadAndWatchUser(userId) {
 //     return async (dispatch) => {
@@ -62,12 +69,3 @@ export function removeUser(userId) {
 //         }
 //     }
 // }
-
-
-export function setUserMsg(msg) {
-    return dispatch => {
-        console.log(msg);
-        dispatch({ type: 'SET_USER_MSG', msg });
-        setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 3000);
-    }
-}

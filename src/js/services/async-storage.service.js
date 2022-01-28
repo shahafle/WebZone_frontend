@@ -1,5 +1,6 @@
 import { storageService } from './storage.service.js';
 import { wapService } from './wap.service.js';
+import { utilService } from './util.service.js';
 
 import { wapTemplate_1 } from '../templates/wap/wap-template-1';
 import { wapTemplate_2 } from '../templates/wap/wap-template-2';
@@ -48,7 +49,7 @@ async function remove(entityStorageKey, entityId) {
 
 // Add a new entity
 function post(entityStorageKey, entityToAdd) {
-    entityToAdd._id = wapService.getRandomId();
+    entityToAdd._id = utilService.getRandomId();
     const entities = _loadEntitiesFromStorage(entityStorageKey) || [];
     entities.push(entityToAdd);
     _saveEntitiesToStorage(entityStorageKey, entities);

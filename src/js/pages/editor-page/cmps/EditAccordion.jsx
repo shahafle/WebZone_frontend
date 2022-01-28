@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { usePrevious } from '../../../hooks/usePrevious';
 
@@ -31,13 +30,14 @@ import { InputStyles } from './InputStyles';
 
 
 export function EditAccordion() {
-    const [expanded, setExpanded] = React.useState('panel1');
+
+    const dispatch = useDispatch();
+
+    const [expanded, setExpanded] = useState('panel1');
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
-
-    const dispatch = useDispatch();
 
     const currElement = useSelector(state => state.editorModule.currElement)
     const currHistoryLength = useSelector(state => state.wapModule.wapHistory.length)
@@ -51,6 +51,26 @@ export function EditAccordion() {
             dispatch(updateWap(currElement));
         }
         window.addEventListener('keydown', onRemoveElementByKey);
+
+        // Accordions Auto-Open :
+        switch (currElement.type) {
+            case 'txt':
+                setExpanded('panel1');
+                break;
+            case 'btn':
+                setExpanded('panel1');
+                break;
+            case 'img':
+                setExpanded('panel2');
+                break;
+            case 'container':
+                setExpanded('panel4');
+                break;
+            case 'input':
+                setExpanded('panel6');
+                break;
+            default:
+        }
 
         return () => window.removeEventListener('keydown', onRemoveElementByKey);
     }, [currElement])
