@@ -74,7 +74,7 @@ export function EditorPage() {
    //       }
    //    })
    // }, [cursors])
-   
+
    // let counterRef = useRef()
    // const updateMousePos = (ev) => {
    //    console.log(counterRef);
@@ -194,7 +194,7 @@ export function EditorPage() {
    }
 
 
-   
+
    return <DragDropContext
       onDragEnd={onDragEnd}
       onDragStart={onDragStart}
