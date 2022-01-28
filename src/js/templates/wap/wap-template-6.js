@@ -7,10 +7,6 @@ export const wapTemplate_6 = {
    "_id": "65s1s1s1s",
    "name": "Fullstuck bootcamp",
    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643277083/su7ud6ul5whrktnajxv0.jpg",
-   "createdBy": {
-      "_id": "5e26e0b718df151d4c995527",
-      "username": "Shahaf Levi"
-   },
    "cmps": [
       wapHero_6,
       wapCard_6,

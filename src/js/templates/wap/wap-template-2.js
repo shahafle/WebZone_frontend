@@ -9,10 +9,6 @@ export const wapTemplate_2 = {
     "_id": "dsg3l4j6lkdsjglkjsd523",
     "name": "Fintech",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642926238/pjnqoxzkezbkafne8mtn.jpg",
-    "createdBy": {
-        "_id": "436kljtlwkdjgajpi214jprfzlkf",
-        "username": "Noy Morgenshtein"
-    },
     "cmps": [wapHeader_2, wapHero_2, wapTxt_2, wapCard_2, wapCard_2_2, wapFooter_2],
     "isTemplate": true
 }

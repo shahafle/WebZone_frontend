@@ -66,7 +66,6 @@ export function removeUser(userId) {
 
 export function setUserMsg(msg) {
     return dispatch => {
-        console.log(msg);
         dispatch({ type: 'SET_USER_MSG', msg });
         setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 3000);
     }

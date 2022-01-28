@@ -9,10 +9,6 @@ export const wapTemplate_1 = {
     "_id": "5e28393890dd7201a06d4e44",
     "name": "Resort",
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1642926845/rlhviliowwd0fi2oblsm.jpg",
-    "createdBy": {
-        "_id": "asdjkhagsdiuywqgyuqwbasdf444545fFjf",
-        "username": "Roi Yotvat"
-    },
     "cmps": [wapHeader_1, wapHero_1, wapCard_1, wapCard_1_2, wapGallery_1, wapFooter_1,],
     "isTemplate": true
 }
