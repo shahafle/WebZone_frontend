@@ -7,10 +7,6 @@ export const wapTemplate_3 = {
    "_id": "5e19d93890dd7201a06d32d4",
    "name": "Confectionery",
    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643276882/gpqbe8ujodzjaho0imaz.jpg",
-   "createdBy": {
-      "_id": "5e26e0b718df151d4c995527",
-      "username": "Shahaf Levi"
-   },
    "cmps": [
       wapHero_3,
       wapGallery_3,

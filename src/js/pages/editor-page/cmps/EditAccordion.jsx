@@ -112,7 +112,6 @@ export function EditAccordion() {
     const onRemoveElement = () => {
         if (!currElement) return
         dispatch(removeElement(currElement));
-        dispatch(setUserMsg({ type: 'error', txt: "Deleted" }))
     }
 
     const onDuplicateElement = () => {

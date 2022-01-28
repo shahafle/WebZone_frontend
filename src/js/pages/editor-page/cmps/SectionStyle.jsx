@@ -70,10 +70,10 @@ export function SectionStyle({ element, onChangeStyle, onUploadImg }) {
         <label>Image link
             <input className="url-input" onChange={onChangeStyle} type="url" name='backgroundImage' />
         </label>
-        <label className="upload-img-label flex justify-around" >
+        <label className="upload-img-label flex" >
             Upload Image
-            <FaUpload />
-            <input style={{ display: 'none' }} onChange={(ev) => onUploadImg(ev, true)} type="file" />
+            <input onChange={(ev) => onUploadImg(ev, true)} type="file" />
+            <div className='upload-img-btn' ><FaUpload /></div>
         </label>
     </div>
 }
