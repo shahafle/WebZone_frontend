@@ -13,7 +13,7 @@ import { WapBuildingModal } from '../../../cmps/WapBuilderModal'
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
-import { SavePublishBtns } from './ShareSaveBtns';
+import { SavePublishBtns } from './SavePublishBtns';
 
 
 export function WapActions() {
@@ -21,7 +21,7 @@ export function WapActions() {
    const dispatch = useDispatch();
 
    const onWorkTogether = () => {
-      // dispatch(createRoom());
+      dispatch(createRoom());
       dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to clipboard !' }));
 
    }

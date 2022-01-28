@@ -11,9 +11,9 @@ import { EditorBoard } from './cmps/EditorBoard';
 
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
-import { SavePublishBtns } from './cmps/ShareSaveBtns';
+import { SavePublishBtns } from './cmps/SavePublishBtns';
+import { FaMousePointer } from 'react-icons/fa';
 
-import { WapBuildingModal } from '../../cmps/WapBuilderModal'
 
 
 export function EditorPage() {
@@ -53,28 +53,32 @@ export function EditorPage() {
 
 
    // useEffect(() => {
+   //    // On every cursors update resubscribe the user to mouse-moved event :
    //    socketService.off('mouse-moved');
 
    //    // Update other users' cursors positions :
    //    socketService.on('mouse-moved', newCursor => {
-   //       console.log('hello madafaka')
-   //       const cursorIdx = cursors.findIndex(cursor => {
-   //          return cursor.id === newCursor.id;
-   //       });
-   //       if (cursorIdx >= 0) { // If cursor already exists
-   //          if (cursors[cursorIdx].x === newCursor.x && cursors[cursorIdx].y === newCursor.y) return; // If mouse in same position
+   //       const cursorIdx = cursors.findIndex(cursor => cursor.id === newCursor.id);
+   //       if (cursorIdx >= 0) {
+   //          // If cursor already exists, update cursors :
+   //          // if (cursors[cursorIdx].x === newCursor.x && cursors[cursorIdx].y === newCursor.y) return; // If mouse in same position as last update
 
    //          setCursors(prevCursors => {
    //             prevCursors[cursorIdx] = newCursor;
    //             return [...prevCursors];
    //          })
    //       } else {
+   //          // If cursor didn't exist, add to cursors :
    //          newCursor.color = utilService.getRandomColor();
    //          setCursors(prevCursors => [...prevCursors, newCursor]);
    //       }
    //    })
    // }, [cursors])
-   
+
+   // const updateMousePos = (ev) => {
+   //    const pos = { x: ev.clientX, y: ev.clientY };
+   //    socketService.emit('mouse-move', pos);
+   // }
    // let counterRef = useRef()
    // const updateMousePos = (ev) => {
    //    console.log(counterRef);
@@ -194,7 +198,7 @@ export function EditorPage() {
    }
 
 
-   
+
    return <DragDropContext
       onDragEnd={onDragEnd}
       onDragStart={onDragStart}
@@ -217,7 +221,17 @@ export function EditorPage() {
 
       {/* Cursors test : */}
       {/* {cursors.length > 0 &&
-         cursors.map(cursor => <div key={cursor} className="mouse" style={{ position: 'fixed', top: cursor.pos.y, left: cursor.pos.x, zIndex: '9999' }}>😎😎</div>)} */}
+         cursors.map(cursor => {
+            return <div
+               key={cursor}
+               style={{
+                  position: 'fixed',
+                  top: cursor.pos.y,
+                  left: cursor.pos.x,
+                  zIndex: '9999',
+                  color: cursor.color
+               }}><FaMousePointer /></div>
+         })} */}
    </DragDropContext>
 
 }

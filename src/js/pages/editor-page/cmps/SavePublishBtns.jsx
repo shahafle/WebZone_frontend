@@ -27,6 +27,8 @@ export function SavePublishBtns() {
    const openPublish = (wapId) => {
       window.open(`/publish/${wapId}`, "_blank");
    }
+
+   
    return <div className="save-publish-container flex">
       <button className="save-btn" onClick={onSaveWap}><span>Save</span></button>
       <button className="publish-btn" onClick={onPublish}><span>Publish</span></button>
