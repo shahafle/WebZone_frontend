@@ -53,6 +53,16 @@ export function EditAccordion() {
         window.addEventListener('keydown', onRemoveElementByKey);
 
         // Accordions Auto-Open :
+        openAccordion();
+
+        return () => window.removeEventListener('keydown', onRemoveElementByKey);
+    }, [currElement])
+
+
+    const openAccordion = () => {
+        if (!currElement || !prevElement) return;
+        if (currElement.type === prevElement.type) return;
+
         switch (currElement.type) {
             case 'txt':
                 setExpanded('panel1');
@@ -71,12 +81,9 @@ export function EditAccordion() {
                 break;
             default:
         }
+    }
 
-        return () => window.removeEventListener('keydown', onRemoveElementByKey);
-    }, [currElement])
-
-
-    //Edit functions
+    // Edit functions
 
     const onChangeStyle = ({ target }) => {
         const style = {

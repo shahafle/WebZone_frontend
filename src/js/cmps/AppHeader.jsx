@@ -40,7 +40,7 @@ export function AppHeader() {
         }
 
         // EditorPage :
-        else if (location.pathname === '/editor') {
+        else if (location.pathname.includes('/editor')) {
             setHeaderClass('minimized in-editor');
             setPlaceholderClass('minimized');
         }

@@ -6,13 +6,12 @@
     top: 0;
     z-index: 1100;
     font-weight: 500;
-    transition: all .5s;
-    
-    @include for-tablet-layout{
+    transition: all 0.5s;
+
+    @include for-tablet-layout {
         padding: 0 7%;
         height: $header-tablet-height;
     }
-
 
     &.active-scroll-1 {
         background-color: rgba(255, 255, 255, 0.75);
@@ -24,17 +23,17 @@
         backdrop-filter: blur(8px);
     }
 
-    .logo{
+    .logo {
         img {
             display: block;
-        } 
+        }
     }
 
     .nav-menu {
         gap: 3rem;
         font-size: 0.9rem;
         .nav-link {
-            transition: opacity .2s, color .2s;
+            transition: opacity 0.2s, color 0.2s;
 
             &:hover {
                 opacity: 0.6;
@@ -49,7 +48,7 @@
 
     .btn-login {
         padding: 8px 12px;
-        border-block-end:1px solid $color2;
+        border-block-end: 1px solid $color2;
         gap: 8px;
         font-size: 1rem;
         font-family: $main-font;
@@ -83,40 +82,39 @@
         }
     }
 
-    .mobile-menu{
+    .mobile-menu {
         display: none;
     }
-    
-    @include for-tablet-layout{
 
+    @include for-tablet-layout {
         //Unset desktop
-        &>.btn-login, &>.greet-user{
+        & > .btn-login,
+        & > .greet-user {
             display: none;
         }
 
-        .nav-menu{
+        .nav-menu {
             display: none;
         }
 
-        .logo{
-            img{
+        .logo {
+            img {
                 width: 110px;
             }
         }
 
-        
         //Mobile menu style
-        .mobile-menu{
+        .mobile-menu {
             display: block;
             align-items: center;
-            
-            .hamburger-btn{
+
+            .hamburger-btn {
                 cursor: pointer;
                 width: 27px;
                 height: 27px;
             }
-        
-            nav{
+
+            nav {
                 width: 100vw;
                 position: absolute;
                 top: 0;
@@ -125,89 +123,74 @@
                 color: $color1;
                 direction: rtl;
                 transform: translateY(0%);
-                transition: all .2s;
+                transition: all 0.2s;
                 z-index: 5100;
-                
+
                 &.close {
                     transform: translateY(-100%);
                 }
-                
-                &>*{
-                    padding:25px 15px ;
+
+                & > * {
+                    padding: 25px 15px;
                     font-weight: 400;
                     text-align: center;
-                    border-block-start:1px solid rgba(172, 172, 172, 0.37) ;
-                    
+                    border-block-start: 1px solid rgba(172, 172, 172, 0.37);
 
-                    &:active:not(.top-bar),&.active{
+                    &:active:not(.top-bar),
+                    &.active {
                         background-color: #334b6c;
                     }
                 }
 
-                .top-bar{
+                .top-bar {
                     display: flex;
                     align-items: center;
                     padding: 0 7% 0 5%;
                     height: 70px;
                     justify-content: space-between;
 
-                    .btn-login{
+                    .btn-login {
                         color: $color1;
                     }
                 }
             }
         }
     }
-    
-    @include for-mobile-layout{
-        
-        &.in-editor{
+
+    @include for-mobile-layout {
+        &.in-editor {
             padding: 5px 7% 0;
             direction: rtl;
-            
-            &>.logo,&>.btn-login {
+
+            & > .logo,
+            & > .btn-login {
                 display: none;
             }
         }
     }
 }
 
-
-
 .placeholder {
     height: $header-height;
-    
-    @include for-tablet-layout{
+
+    @include for-tablet-layout {
         height: $header-tablet-height;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // In EditorPage :
 .main-header.minimized,
 .placeholder.minimized {
     // height: $minimized-header-height;
-
 }
 
 // In PublishPage :
 .main-header.display-none,
 .placeholder.display-none {
     display: none;
-    
-    &.active-scroll-1,&.active-scroll-2  {
-        display: none;
 
+    &.active-scroll-1,
+    &.active-scroll-2 {
+        display: none;
     }
 }
