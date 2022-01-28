@@ -14,7 +14,7 @@ import 'aos/dist/aos.css';
 export function Cards() {
 
     useEffect(() => {
-        Aos.init({ duration: 1000 });
+        Aos.init({ duration: 1500 });
     }, [])
 
 
