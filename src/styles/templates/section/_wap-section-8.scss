@@ -1,0 +1,54 @@
+.wap-section-8{
+   min-height: 70vh;
+   justify-content: center;
+
+   .layout-container{
+      width: 90%;
+      margin: auto;
+      align-items: center;
+      border-radius: 40px;
+      gap: 20px;
+      
+      &>*{
+         flex-basis: 50%;
+         display: grid;
+         place-content: center;
+      }
+      
+      .content-container{
+         gap: 20px;
+
+         .btns-container{
+            gap: 20px;
+
+            a{
+               min-width: 140px;    
+               min-height: 50px;
+               display: grid;
+               place-content: center;
+               border: 1px solid #f6f6f6;
+
+            }
+         }
+      }
+   }
+
+   &.media-1000{
+      .layout-container{
+         flex-direction: column-reverse;
+         gap: 70px;
+
+         img{
+            width:330px !important;
+         }
+
+         .content-container{
+            align-items: center;
+
+            p{
+               text-align: center !important;
+            }
+         }
+      }
+   }
+}

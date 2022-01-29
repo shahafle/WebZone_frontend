@@ -1,0 +1,25 @@
+.wap-header-8{
+
+   .layout-container{
+      max-width: 90%;
+      margin: auto;
+
+      .header{
+         align-items: center;
+         justify-content: space-between;
+
+         .nav{
+            gap:8px;
+         }
+         
+         .media-icons{
+            align-items: center;
+            gap: 7px;
+            
+            img{
+               filter: brightness(500);
+            }
+         }
+      }
+   }
+}

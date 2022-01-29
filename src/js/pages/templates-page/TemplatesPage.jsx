@@ -26,7 +26,7 @@ export function TemplatesPage() {
 
                 <Link to="/editor" className="wrapper flex column" onClick={() => dispatch(resetDraftWap())}>
                     <div className="new-proj">
-                        <div className="image-container">
+                        <div className="image-container new">
                             <img src={altImg} alt="" />
                         </div>
                     </div>
@@ -43,10 +43,10 @@ export function TemplatesPage() {
                         </div>
                         <p>{wapTemplate.name}</p>
 
-                        <div className="actions flex align-center justify-center">
+                        {/* <div className="actions flex align-center justify-center">
                             <FiEye className="preview-icon" title="Preview"/>
                             <FiEdit2 className="edit-icon" title="Edit"/>
-                        </div>
+                        </div> */}
                     </Link>
                 })}
 

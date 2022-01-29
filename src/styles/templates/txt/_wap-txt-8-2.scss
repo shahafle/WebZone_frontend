@@ -1,0 +1,17 @@
+.wap-txt-8-2{
+   min-height: 50vh;
+
+   .layout-container{
+      max-width: 90%;
+      margin: auto;
+      gap: 20px;
+
+      p{
+         width: 80ch;
+      }
+
+      .muted{
+         opacity: 0.6;
+      }
+   }
+}

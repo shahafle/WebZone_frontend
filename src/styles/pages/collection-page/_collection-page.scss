@@ -6,17 +6,63 @@
         color: $color3;
     }
 
-    .head {
-        gap: 10px;
+    .hero {
+        min-height: 30vh;
+        gap: 40px;
+
+        h1 {
+            text-align: center;
+            font-size: 4rem;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 10px;
+
+            a {
+                color: #3928e2;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        // Background Img :
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-image: url("https://limitlesshost.net/wp-content/uploads/2018/08/subbanner-wave-1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: sepia(100%) hue-rotate(181deg) saturate(500%);
+            pointer-events: none;
+        }
     }
 
     .collection-grid {
         margin-top: 50px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 60px;
+        justify-content: space-evenly;
+
+        @media (max-width: 1700px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include for-tablet-layout {
+            grid-template-columns: 1fr;
+        }
 
         .preview {
+            position: relative;
+
             p {
                 text-transform: uppercase;
                 font-size: 1.2rem;
@@ -26,14 +72,14 @@
                 display: block;
                 margin-top: 10px;
                 position: relative;
-                
+
                 img {
                     width: 100%;
                     box-shadow: 1px 1px 8px 0px;
                     aspect-ratio: 1.5/1;
                     transition: opacity 0.3s;
                 }
-                
+
                 .edit-icon {
                     position: absolute;
                     top: 50%;
@@ -46,26 +92,86 @@
                 }
 
                 &:hover img {
-                    opacity: 0.6;
+                    opacity: 0.8;
                 }
                 &:hover .edit-icon {
                     opacity: 1;
                 }
             }
 
-            .remove-btn {
-                padding: 10px;
-                font-size: 18px;
-                border-radius: 50%;
-                transition: all 0.3s;
+            .menu {
+                position: absolute;
+                top: -4px;
+                right: 0;
+                z-index: 1;
 
-                &:hover {
-                    background-color: #f57e69;
-                    & > svg {
-                        fill: #eaeaea;
+                .menu-btn {
+                    cursor: pointer;
+                    font-size: 1.4rem;
+                    display: flex;
+                    padding: 8px;
+                    border-radius: 50%;
+                    background-color: rgba(211, 211, 211, 0);
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background-color: #eeeeee;
                     }
                 }
+
+                ul {
+                    max-height: 0;
+                    overflow: hidden;
+                    background-color: #eeeeee;
+                    border-radius: 10px;
+                    transform: translateX(10%);
+                    border: 0px solid #cfcfcf;
+                    box-sizing: content-box;
+                    user-select: none;
+                    transition: border 0.3s, max-height 0.3s;
+
+                    li {
+                        padding: 20px;
+                        width: 150px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: all 0.3s;
+
+                        a {
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            background-color: #e0e0e0;
+                        }
+                    }
+                }
+
+                // input[type="checkbox"]:checked ~ .menu-btn {
+                //     background-color:#eeeeee;
+                // }
+
+                input[type="checkbox"]:checked + ul {
+                    max-height: 999px;
+                    border: 1px solid #cfcfcf;
+                }
             }
+
+            // .remove-btn {
+            //     padding: 10px;
+            //     font-size: 18px;
+            //     border-radius: 50%;
+            //     transition: all 0.3s;
+
+            //     &:hover {
+            //         background-color: #f57e69;
+            //         & > svg {
+            //             fill: #eaeaea;
+            //         }
+            //     }
+            // }
         }
 
         .scratch-thumbnail {

@@ -26,7 +26,7 @@ export function EditorBoard({ placeholderProps }) {
       window.addEventListener('resize', handleResize);
       handleResize();
 
-      return () => window.removeEventListener('resize', getMediaClass);
+      return () => window.removeEventListener('resize', handleResize);
    }, [])
 
    useEffect(() => {
