@@ -11,7 +11,7 @@ import { wapTemplate_8 } from "../templates/wap/wap-template-8";
 const initialState = {
     // wap: null,
     wapHistory: [],
-    wap: wapTemplate_8
+    wap: wapTemplate_4
 }
 
 
@@ -31,3 +31,5 @@ export function wapReducer(state = initialState, action) {
             return newState;
     }
 }
+
+

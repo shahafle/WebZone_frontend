@@ -9,6 +9,13 @@
     background-position: center;
     background-repeat: no-repeat;
 
+    &.media-800 {
+        .section-4-3-content {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
     .section-4-3-content {
         display: flex;
         justify-content: center;

@@ -69,8 +69,9 @@ export const wapSection_4_4 = {
                 {
                     "id": "qweqwekkkfodppdosurher633",
                     "type": "img",
+                    "className": "pot",
                     "url": pot,
-                    "style": { ...imgStyle }
+                    "style": { ...imgStyle, "width": "470" }
                 },
             ]
 

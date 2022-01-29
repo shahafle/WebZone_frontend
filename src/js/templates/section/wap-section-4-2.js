@@ -27,8 +27,9 @@ export const wapSection_4_2 = {
                 {
                     "id": "dfkF43asdasdasdjfjfFFFasgas123123",
                     "type": "img",
+                    "className": "cupImg",
                     "url": cup,
-                    "style": { ...imgStyle }
+                    "style": { ...imgStyle, "width": "470" }
                 },
                 {
                     "id": "23497SDFfhsdh334",

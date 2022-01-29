@@ -21,7 +21,7 @@ export const wapCard_7 = {
                 "type": "img",
                 "className": "img-1",
                 "url": takos,
-                "style": { ...imgStyle }
+                "style": { ...imgStyle, "width": "425" }
             },
             {
                 "id": "asd9087xckjvhsd98sdfjxcv",
@@ -68,7 +68,7 @@ export const wapCard_7 = {
                 "type": "img",
                 "className": "img-2",
                 "url": drinks,
-                "style": { ...imgStyle }
+                "style": { ...imgStyle, "width": "425" }
             },
             ]
         }

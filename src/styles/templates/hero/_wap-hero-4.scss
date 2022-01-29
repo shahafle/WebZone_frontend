@@ -1,4 +1,12 @@
 .wap-hero-4 {
+    &.media-800 {
+        display: flex;
+        flex-direction: column;
+        .wap-hero-4-txt {
+            font-size: 45px !important;
+        }
+    }
+
     display: flex;
     justify-content: space-around;
     // gap: 90px;
