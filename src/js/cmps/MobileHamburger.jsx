@@ -15,6 +15,12 @@ export function MobileHamburger({ user, shouldShowLogin, onLogout }) {
       toggleMobileMenu(!isMenuOpen)
    }
 
+   const onLogin = () => {
+      dispatch(shouldShowLogin(true));
+      onToggleMenu();
+   }
+
+
    return <div className='mobile-menu flex column'>
       <AiOutlineMenu onClick={onToggleMenu} className='hamburger-btn' />
 
@@ -25,7 +31,7 @@ export function MobileHamburger({ user, shouldShowLogin, onLogout }) {
 
             {/* User */}
             {!user && <button className="nav-link btn-login flex align-center"
-               onClick={() => dispatch(shouldShowLogin(true))}><span>Login</span> <IoIosLogIn /></button>}
+               onClick={onLogin}><span>Login</span> <IoIosLogIn /></button>}
 
             {user &&
                <div className="greet-user flex align-center">

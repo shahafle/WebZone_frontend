@@ -1,15 +1,10 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-
-
-import { createJpegFromElement } from '../../../services/cloudinary.service';
+import { useNavigate } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 import { setUserMsg } from '../../../store/user.action';
-import { saveWap, createRoom } from '../../../store/wap.action';
+import { createRoom } from '../../../store/wap.action';
 import { setBoardSize } from '../../../store/editor.action';
-
-import { WapBuildingModal } from '../../../cmps/WapBuilderModal'
 
 import { FaMobileAlt, FaTabletAlt, FaDesktop } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
@@ -19,15 +14,27 @@ import { SavePublishBtns } from './SavePublishBtns';
 export function WapActions() {
 
    const dispatch = useDispatch();
+   const navigate = useNavigate();
+   const { wapId } = useParams();
 
    const onWorkTogether = () => {
-      dispatch(createRoom());
-      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to clipboard !' }));
+      // If user is already in a room but wants to copy a link again
+      if (wapId) {
+         navigator.clipboard.writeText(`localhost:3000/editor/${wapId}`); // DONT FORGET TO CHANGE LOCALHOST ON BUILD
+         dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to clipboard !' }));
+         return
+      }
 
+      dispatch(createRoom(redirect));
+      dispatch(setUserMsg({ type: 'success', txt: 'Invitation copied to clipboard !' }));
    }
 
    const onSetBoardSize = (boardSize) => {
       dispatch(setBoardSize(boardSize))
+   }
+
+   const redirect = (wapId) => {
+      navigate(`/editor/${wapId}`);
    }
 
 

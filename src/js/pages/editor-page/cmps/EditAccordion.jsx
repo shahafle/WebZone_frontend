@@ -203,7 +203,7 @@ export function EditAccordion() {
                     </Accordion>}
 
                 {currElement.type === 'input' &&
-                    <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+                    <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                             <SummaryTypography>Input</SummaryTypography>
                         </AccordionSummary>

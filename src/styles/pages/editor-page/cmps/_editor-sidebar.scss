@@ -4,60 +4,59 @@
     width: $sidebar-width;
     position: fixed;
     height: calc(100vh - $header-height - 20px);
-    background-color:#646464b8;
+    background-color: #646464b8;
     box-shadow: 1px 1px 8px 0px #858585;
-    z-index: 5000;
-    
+    z-index: 1;
+
     @include for-tablet-layout {
         width: $sidebar-tablet-width;
         height: calc(100vh - $header-tablet-height - 20px);
     }
-    
-    @include for-mobile-layout{
+
+    @include for-mobile-layout {
         width: 100vw;
         height: 45vh;
-        z-index: 1000;
         bottom: 0;
         padding: 0;
-        box-shadow:0px 4px 12px 5px #2d2d2d;
+        box-shadow: 0px 4px 12px 5px #2d2d2d;
         transform: translateY(0%);
-        transition: all .2s;
-        
-        &.close{
+        transition: all 0.2s;
+
+        &.close {
             transform: translateY(102%);
         }
     }
-    
+
     .editor-sidebar {
         background-color: $color1;
         height: 100%;
         gap: 40px;
-        
-        @include for-mobile-layout{
-            overflow:auto ;
+
+        @include for-mobile-layout {
+            overflow: auto;
         }
 
         .top-container {
             flex-grow: 1;
-            
+
             &::-webkit-scrollbar {
                 width: 10px;
-            }    
+            }
         }
-        
+
         .tabs {
             height: 57px;
             background-color: #dbdbdb;
             border-start-end-radius: 17px;
             border-start-start-radius: 17px;
-            
+
             .tab-background {
                 background-color: $color1;
                 flex-grow: 1;
                 border-start-end-radius: 17px;
                 border-start-start-radius: 17px;
             }
-            
+
             .tab {
                 display: grid;
                 place-content: center;
@@ -67,19 +66,19 @@
                 height: 100%;
                 background-color: #dbdbdb;
                 transition: all 0.2s;
-                
+
                 &.add {
                     &.active {
                         border-start-end-radius: 17px;
                         border-start-start-radius: 17px;
                         border-start-start-radius: 0;
                     }
-                    
+
                     &:not(.active) {
                         border-end-end-radius: 17px;
                     }
                 }
-                
+
                 &.edit {
                     &:not(.active) {
                         border-end-start-radius: 17px;
@@ -88,7 +87,7 @@
                         border-start-start-radius: 17px;
                     }
                 }
-                
+
                 &.active {
                     color: initial;
                     font-size: 1.3rem;
@@ -96,29 +95,27 @@
                 }
             }
         }
-        
+
         .style-inputs {
             gap: 20px;
             font-size: 0.9rem;
-            
-            
-            & > *:not(.color-picker) {
+
+            & > * {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                
+
                 @include for-tablet-layout {
-                    flex-direction: column;   
+                    flex-direction: column;
                     align-items: stretch;
                     gap: 10px;
                 }
-                
-                
+
                 .btns-container {
                     height: 27px;
                     width: 100px;
                     justify-content: space-between;
-                    
+
                     button {
                         font-size: 1.2rem;
                         width: 27px;
@@ -128,7 +125,7 @@
                             &.active {
                                 color: $color2;
                             }
-                            
+
                             &.muted {
                                 path {
                                     fill: rgba($color2, 0.5);
@@ -139,7 +136,7 @@
                     &.decorations {
                         button {
                             border-radius: 3px;
-                            
+
                             &:first-child {
                                 font-weight: 700;
                             }
@@ -149,7 +146,7 @@
                             &:last-child {
                                 text-decoration: underline;
                             }
-                            
+
                             &.active {
                                 color: $color2;
                                 background-color: rgba($color2, 0.1);
@@ -158,14 +155,9 @@
                     }
                 }
             }
-            
 
-            .color-input-container{
-                .popover-close{
-                    right: 100vw;
-                }
-
-                .color-input{
+            .color-input-container {
+                .color-input {
                     border:1px solid #aeaeae45;
                     border-radius: 50%;
                     padding: 5px;
@@ -174,46 +166,44 @@
                     font-size: 1rem;
                     position: absolute;
                     left: 0;
-                    top: 20px;
-                    z-index: 5000;
-                    // bottom: 20px;
-                    // right: 20px;
-                    
-                    svg{
+                    top: 27px;
+                    z-index: 1;
+
+                    svg {
                         color: #a6a6a6;
                         mix-blend-mode: exclusion;
                     }
                 }
             }
 
-
-            &.color-picker,.color-picker{
-                flex-direction: column;  
-                justify-content: unset;
+            &.color-picker,
+            .color-picker {
+                flex-direction: column;
+                align-items: start;
                 position: relative;
+                gap: 5px;
 
-
-                .circle-picker{
+                .circle-picker {
                     flex-direction: row;
-                    margin-bottom:0 !important;
-                    margin-right:0 !important;
+                    margin-bottom: 0 !important;
+                    margin-right: 0 !important;
                     width: unset !important;
 
-                    &>:first-child>div>span>div{
+                    & > :first-child > div > span > div {
                         border: none;
                     }
                 }
-                
-                &>div{
+
+                & > div {
                     gap: 10px;
                     align-items: center;
-                    
-                    &>span{
-                        &>div{
+
+                    & > span {
+                        & > div {
                             margin-right: 0 !important;
                             margin-bottom: 0 !important;
-                            &>span{
-                                &>div{
+                            & > span {
+                                & > div {
                                     border: 1px solid #aeaeae45;
                                 }
                             }
@@ -221,7 +211,7 @@
                     }
                 }
             }
-            
+
             .url-input {
                 height: 35px;
                 border-radius: 5px;
@@ -230,7 +220,7 @@
                 outline: 1px solid #cbcfd5;
                 border: none;
             }
-            
+
             .upload-img-label {
                 // font-weight: 500;
                 // border-radius: 5px;
@@ -243,16 +233,16 @@
                 transition: 200ms;
                 // background-color: #1d375a2b;
                 justify-content: space-between;
-                
-                @include for-tablet-layout{
+
+                @include for-tablet-layout {
                     align-items: start;
                 }
 
-                input{
+                input {
                     display: none;
                 }
-                
-                .upload-img-btn{
+
+                .upload-img-btn {
                     // background-color: #e7e7e7db;
                     padding: 10px 15px;
                     font-size: 1rem;
@@ -260,20 +250,18 @@
                     background-color: #e7e7e7db;
                     outline: 1px solid #cbcfd5;
 
-
                     &:hover {
                         background-color: #a8b2bf;
                     }
                 }
-                
             }
         }
-        
+
         .other-action-container {
             padding: 20px;
             justify-content: center;
             gap: 1.5rem;
-            
+
             button {
                 width: 40px;
                 height: 40px;
@@ -283,45 +271,44 @@
                 border-block-end: 2px solid $color2;
                 cursor: pointer;
                 transition: 200ms;
-                
+
                 path {
                     fill: $color2;
                 }
-                
+
                 &:first-child {
                     font-size: 1.4rem;
                 }
                 &:hover {
                     background-color: $color2;
                     color: white;
-                    
+
                     path {
                         fill: $color1;
                     }
                 }
             }
         }
-
     }
-    .toggle-sidebar-btn{
+    .toggle-sidebar-btn {
         display: none;
         position: fixed;
         top: -60px;
-        right: 20px; 
+        right: 20px;
         width: 50px;
         height: 50px;
         transform: rotate(180deg);
-        transition: all .2s;
+        transition: all 0.2s;
         cursor: pointer;
-        color:#474747cc;
-        
-        @include for-mobile-layout{
+        color: #474747cc;
+
+        @include for-mobile-layout {
             display: inline-block;
         }
     }
-    
-    &.close{
-        .toggle-sidebar-btn{
+
+    &.close {
+        .toggle-sidebar-btn {
             top: -100px;
             transform: rotate(0deg);
         }

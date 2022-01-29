@@ -24,40 +24,39 @@ const LOGGEDIN_USER_STORAGE_KEY = 'loggedinUser'; // currently logged in user in
 
 async function signup(credentials) {
     // Frontend Demo :
-    const user = await asyncStorageService.post(USER_STORAGE_KEY, credentials);
-    return _setUserSession(user); // <-- Login after signup
+    // const user = await asyncStorageService.post(USER_STORAGE_KEY, credentials);
 
     // Backend :
-    // const user = await httpService.post('auth/signup', credentials);
-    // // socketService.emit('set-user-socket', user._id);
-    // return user;
+    const user = await httpService.post('auth/signup', credentials);
+    // socketService.emit('set-user-socket', user._id); <- ?
+
+    return _setUserSession(user); // <-- Login after signup
 }
 
 async function login(credentials) {
     // Frontend Demo :
-    const users = await asyncStorageService.query(USER_STORAGE_KEY);
-    const user = users.find(user => user.username === credentials.username && user.password === credentials.password);
-    if (user) {
-        console.log('Loggedin Successfully');
-        console.log(user);
-        return _setUserSession(user);
-    } else console.log('Invalid username or password.');
+    // const users = await asyncStorageService.query(USER_STORAGE_KEY);
+    // const user = users.find(user => user.username === credentials.username && user.password === credentials.password);
+    // if (user) {
+    //     console.log('Loggedin Successfully');
+    //     console.log(user);
+    // } else return console.log('Invalid username or password.');
 
     // Backend :
-    //     const user = await httpService.post('auth/login', credentials);
-    //     _setUserSession(user);
-    // // socketService.emit('set-user-socket', user._id);
-    // return user;
+    const user = await httpService.post('auth/login', credentials);
+    // socketService.emit('set-user-socket', user._id);
+
+    return _setUserSession(user);
 }
 
 async function logout() {
     // Frontend Demo :
-    _clearSession();
+    // _clearSession();
 
     // Backend :
-    // // socketService.emit('unset-user-socket');
-    // _clearSession();
-    // return await httpService.post('auth/logout');
+    _clearSession();
+    // socketService.emit('unset-user-socket');
+    return await httpService.post('auth/logout');
 }
 
 function getLoggedinUser() {
@@ -65,6 +64,7 @@ function getLoggedinUser() {
     return _getUserFromSession() || null;
 
     // Backend : ?
+
 }
 
 // This is relevant when backend is connected

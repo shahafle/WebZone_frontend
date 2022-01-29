@@ -1,18 +1,18 @@
-import { useEffect, useState, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { socketService } from '../../services/socket.service';
-import { utilService } from '../../services/util.service';
 import { loadDraftWap, switchElement, joinRoom, updateWapInRoom } from '../../store/wap.action';
 
 import { EditorSidebar } from './cmps/EditorSidebar';
 import { EditorBoard } from './cmps/EditorBoard';
+import { SavePublishBtns } from './cmps/SavePublishBtns';
+import { Cursors } from './cmps/Cursors';
 
 import { DragDropContext } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
-import { SavePublishBtns } from './cmps/SavePublishBtns';
-import { FaMousePointer } from 'react-icons/fa';
+
 
 
 
@@ -24,74 +24,30 @@ export function EditorPage() {
    const [isDragActive, setDragActive] = useState(false);
    const [placeholderProps, setPlaceholderProps] = useState({});
 
-   const [cursors, setCursors] = useState([]);
-
 
    useEffect(() => {
       // dispatch(loadDraftWap());
 
-      // // Socket initialization on connection :
-      // socketService.setup();
-      // socketService.off('wap-updated');
+      // Socket initialization on connection happens inside Cursors.jsx component
+      
+      // User joined via share link :
+      if (wapId) {
+         dispatch(joinRoom(wapId));
+      }
+      
+      // Every user listens to wap updates :
+      socketService.off('wap-updated'); // reset just in case
+      socketService.on('wap-updated', wapId => dispatch(updateWapInRoom(wapId)));
 
-      // // User joined via share link :
-      // if (wapId) dispatch(joinRoom(wapId));
 
-      // // Every user listens to wap updates :
-      // socketService.on('wap-updated', wapId => dispatch(updateWapInRoom(wapId)));
-
-      // window.addEventListener('mousemove', updateMousePos);
-
-      // // Clear socket on disconnection :
-      // return () => {
-      //    socketService.off('wap-updated');
-      //    socketService.off('mouse-moved');
-      //    socketService.terminate();
-      //    window.removeEventListener('mousemove', updateMousePos);
-      // }
+      return () => {
+         // Reset states just in case of memory leak :
+         setDragActive(false);
+         setPlaceholderProps({});
+         // Clear socket on disconnection :
+         socketService.off('wap-updated');
+      }
    }, [])
-
-
-   // useEffect(() => {
-   //    // On every cursors update resubscribe the user to mouse-moved event :
-   //    socketService.off('mouse-moved');
-
-   //    // Update other users' cursors positions :
-   //    socketService.on('mouse-moved', newCursor => {
-   //       const cursorIdx = cursors.findIndex(cursor => cursor.id === newCursor.id);
-   //       if (cursorIdx >= 0) {
-   //          // If cursor already exists, update cursors :
-   //          // if (cursors[cursorIdx].x === newCursor.x && cursors[cursorIdx].y === newCursor.y) return; // If mouse in same position as last update
-
-   //          setCursors(prevCursors => {
-   //             prevCursors[cursorIdx] = newCursor;
-   //             return [...prevCursors];
-   //          })
-   //       } else {
-   //          // If cursor didn't exist, add to cursors :
-   //          newCursor.color = utilService.getRandomColor();
-   //          setCursors(prevCursors => [...prevCursors, newCursor]);
-   //       }
-   //    })
-   // }, [cursors])
-
-   // const updateMousePos = (ev) => {
-   //    const pos = { x: ev.clientX, y: ev.clientY };
-   //    socketService.emit('mouse-move', pos);
-   // }
-   // let counterRef = useRef()
-   // const updateMousePos = (ev) => {
-   //    console.log(counterRef);
-   //    if (!counterRef.current) counterRef.current = 0;
-   //    counterRef.current++
-
-   //    const pos = { x: ev.clientX, y: ev.clientY };
-
-   //    if (counterRef.current > 10) {
-   //       socketService.emit('mouse-move', pos);
-   //       counterRef.current = 0;
-   //    }
-   // }
 
 
    const getDraggedDom = draggableId => {
@@ -216,22 +172,11 @@ export function EditorPage() {
             }}
          </Droppable>
 
-         <SavePublishBtns />
+         {/* <SavePublishBtns /> */}
       </main >
 
-      {/* Cursors test : */}
-      {/* {cursors.length > 0 &&
-         cursors.map(cursor => {
-            return <div
-               key={cursor}
-               style={{
-                  position: 'fixed',
-                  top: cursor.pos.y,
-                  left: cursor.pos.x,
-                  zIndex: '9999',
-                  color: cursor.color
-               }}><FaMousePointer /></div>
-         })} */}
+      <Cursors wapId={wapId} />
+
    </DragDropContext>
 
 }

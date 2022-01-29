@@ -12,9 +12,7 @@
     cursor: default;
 
     // transition: height .3s; // transition when toggling signup/login
-    
-    z-index: 999;
-    
+
     i {
         width: 30px;
         height: 30px;
@@ -40,6 +38,7 @@
         background-color: $color1;
         margin: 0 auto 20px;
         border-radius: 50%;
+        cursor: pointer;
 
         img {
             width: 100%;
@@ -47,7 +46,7 @@
     }
 
     form {
-        gap: 20px;
+        gap: 25px;
 
         .wrapper {
             gap: 10px;
@@ -87,7 +86,7 @@
     .facebook-login {
         width: 100%;
         height: 35px;
-        margin: 20px auto;
+        margin: 25px auto;
         border-radius: 3px;
 
         .icon {
@@ -110,7 +109,7 @@
 
     span {
         text-decoration: underline;
-        color:#a15fde;
+        color: #a15fde;
         cursor: pointer;
 
         &:hover {
