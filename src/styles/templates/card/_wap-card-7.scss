@@ -1,9 +1,23 @@
 .wap-card-7 {
-    &.media-800 {
+    &.media-1000 {
         .container {
             grid-template-columns: 1fr;
+            .img-1,
+            .img-2 {
+                width: 230px !important;
+            }
+            & span,
+            p {
+                text-align: center !important;
+            }
         }
     }
+
+    // &.media-800 {
+    //     .container {
+    //         grid-template-columns: 1fr;
+    //     }
+    // }
     .container {
         grid-template-columns: 1fr 1fr;
         display: grid;

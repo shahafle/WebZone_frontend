@@ -27,7 +27,7 @@ export const wapTxt_7 = {
             "type": "img",
             "className": "img-container",
             "url": marakas,
-            "style": { ...imgStyle, "width": "15" }
+            "style": { ...imgStyle, "width": "100" }
 
         },
 
