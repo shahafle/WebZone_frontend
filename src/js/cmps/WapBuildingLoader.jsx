@@ -1,8 +1,8 @@
 import { Screen } from './Screen'
-import { Loader } from '../cmps/Loader'
+import { Loader } from './Loader'
 
 
-export function WapBuildingModal() {
+export function WapBuildingLoader() {
 
 
     return (

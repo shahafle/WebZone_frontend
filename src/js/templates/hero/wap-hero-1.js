@@ -42,7 +42,7 @@ export const wapHero_1 = {
         //     }
         // },
         {
-            "id": "sscvnjf8",
+            "id": "2346j2peojfgpoxjflk23j5",
             "type": "btn",
             "url": "https://www.google.com",
             "txt": "Order now",

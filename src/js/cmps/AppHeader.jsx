@@ -10,7 +10,7 @@ import { SavePublishBtns } from '../pages/editor-page/cmps/SavePublishBtns';
 
 import { IoIosLogIn } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
-import { MdLogout} from 'react-icons/md';
+import { MdLogout } from 'react-icons/md';
 import logo from '../../assets/webzone/webzone-full-logo-small.png'
 
 import { MobileHamburger } from './MobileHamburger';
@@ -59,8 +59,8 @@ export function AppHeader() {
     }, [location])
 
     const handleScroll = () => {
-        if (window.scrollY < 140) setScrollHeaderClass('');
-        if (window.scrollY > 140) setScrollHeaderClass('active-scroll-1');
+        if (window.scrollY < 50) setScrollHeaderClass('');
+        if (window.scrollY > 50) setScrollHeaderClass('active-scroll-1');
         if (window.scrollY > 750) setScrollHeaderClass('active-scroll-2');
     }
 
@@ -88,7 +88,7 @@ export function AppHeader() {
                         <p>Hello {user.nickname}</p>
                         <div className="user-icon-container flex align-center" onClick={() => { dispatch(onLogout()) }}>
                             {/* <FaUser /> */}
-                            <MdLogout style={{fontSize: '1.2rem'}}/>
+                            <MdLogout title="Logout" style={{ fontSize: "1.2rem" }} />
                         </div>
                     </div>}
 

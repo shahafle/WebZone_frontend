@@ -15,9 +15,8 @@ import { FcDeleteRow } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action'
-import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action'
-import { setUserMsg } from '../../../store/user.action'
+import { updateWap, removeElement, duplicateElement, undo } from '../../../store/wap.action';
+import { updateCurrElementStyle, updateCurrElementAttr, uploadImage } from '../../../store/editor.action';
 
 import { TextStyles } from './TextStyles';
 import { ImageStyles } from './ImageStyles';

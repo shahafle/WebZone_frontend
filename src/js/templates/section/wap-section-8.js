@@ -48,7 +48,7 @@ export const wapSection_8 = {
                      "className": "btns-container flex",
                      "cmps": [
                         {
-                           "id": "sscvnjf8",
+                           "id": "2jk46h2k4jhtwdoifjapiodfj",
                            "type": "btn",
                            "url": "https://www.google.com",
                            "txt": "Order now",
@@ -56,7 +56,7 @@ export const wapSection_8 = {
                            "style": { ...btnStyle, "borderRadius": "10", "color": "#5d49e1" }
                         },
                         {
-                           "id": "sscvnjf8",
+                           "id": "5p36j3ip4o6jtlsdkjfgslkf",
                            "type": "btn",
                            "url": "https://www.google.com",
                            "txt": "Order now",

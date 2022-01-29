@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -5,12 +6,16 @@ import { loadWapTemplate, resetDraftWap } from '../../store/wap.action';
 import { templateService } from '../../services/template.service';
 
 import altImg from '../../../assets/imgs/collection thumbnail alternative.jpg';
-import { FiEdit2,FiEye } from 'react-icons/fi';
+import { FiEdit2, FiEye } from 'react-icons/fi';
 
 
 export function TemplatesPage() {
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
 
     const wapTemplates = templateService.getWapTemplates();
 

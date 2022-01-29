@@ -53,6 +53,7 @@ export function saveWap(cb) {
     return async (dispatch, getState) => {
         const { wap } = getState().wapModule;
         const savedWap = await wapService.save(wap);
+        console.log('savedWap:', savedWap)
         if (cb) cb(savedWap._id);
 
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe
@@ -77,7 +78,6 @@ export function createRoom(redirect) {
 
 export function joinRoom(wapId) {
     return (dispatch, getState) => {
-        console.log(wapId)
         socketService.emit('join-room', wapId);
         socketService.on('load-wap', wap => {
             draftService.saveDraft(wap);
