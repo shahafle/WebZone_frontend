@@ -1,0 +1,28 @@
+.wap-txt-8{
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   .layout-container{
+      max-width: 90%;
+      margin: auto;
+      align-items: center;
+      gap: 15px;
+      
+      .txt-container{
+         gap: 15px;
+      }
+      
+      .partners-container{
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 20px;
+      }
+      
+      a{
+         padding: 8px 12px;
+         box-shadow:inset 0px -2px 4px 0px;
+      }
+   }
+
+}

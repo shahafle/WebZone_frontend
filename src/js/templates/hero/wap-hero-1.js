@@ -42,7 +42,6 @@ export const wapHero_1 = {
         //     }
         // },
         {
-
             "id": "sscvnjf8",
             "type": "btn",
             "url": "https://www.google.com",

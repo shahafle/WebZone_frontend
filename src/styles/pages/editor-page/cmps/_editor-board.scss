@@ -5,6 +5,7 @@
    box-shadow: 0px 1px 8px 0px #808080;
    grid-column: 2/3;
    min-height: calc(100vh - $header-height - 30px);
+   overflow: hidden;
    
    
    &.tablet{
