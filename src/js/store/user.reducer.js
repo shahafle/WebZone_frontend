@@ -3,8 +3,8 @@ import { userService } from '../services/user.service.js';
 
 const initialState = {
     user: userService.getLoggedinUser(),
-    // watchedUser: null,
     userMsg: null
+    // watchedUser: null,
 }
 
 

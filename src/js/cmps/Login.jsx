@@ -41,7 +41,7 @@ export function Login() {
             //  Signup
             if (!isLogin) {
                 dispatch(onSignup(credentials));
-                dispatch(setUserMsg({ type: 'success', txt: 'Welcome' }))
+                dispatch(setUserMsg({ type: 'success', txt: `Welcome ${credentials.nickname} !` }))
             }
             // dispatch(login(credentials));
 

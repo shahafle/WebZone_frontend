@@ -28,7 +28,7 @@ const theme = createTheme({
    palette: {
       primary: {
          // main: color1,
-         main: '#eeeeee'
+         main: '#000000'
       },
    }
 })
@@ -76,6 +76,7 @@ const PrettoSlider = styled(Slider)({
 
 
 export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
+
    return <div className="flex column style-inputs">
       <div>
          Align
@@ -116,9 +117,8 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
          <ThemeProvider theme={theme}>
             <Box sx={{ minWidth: 120 }}>
                <FormControl color='primary' focused={false} fullWidth>
-                  <Select
-                     name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
-                     <MenuItem value="none">none</MenuItem>
+                  <Select name="textShadow" onChange={onChangeStyle} value={elementStyle.textShadow}>
+                     <MenuItem value="none">None</MenuItem>
                      <MenuItem value="1px 1px 3px #000000">Light</MenuItem>
                      <MenuItem value="5px 5px 3px #000000">Medium</MenuItem>
                      <MenuItem value="10px 10px 5px #000000">Strong</MenuItem>
@@ -132,8 +132,7 @@ export function TextStyles({ elementStyle, onChangeStyle, onChangeColor }) {
          <ThemeProvider theme={theme}>
             <Box sx={{ minWidth: 120 }}>
                <FormControl color='primary' focused={false} fullWidth>
-                  <Select
-                     name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
+                  <Select name="fontFamily" onChange={onChangeStyle} value={elementStyle.fontFamily}>
                      <MenuItem sx={{ fontFamily: 'montserrat' }} value="montserrat">Montserrat</MenuItem>
                      <MenuItem sx={{ fontFamily: 'nunitosans' }} value="nunitosans">Nunito Sans</MenuItem>
                      <MenuItem sx={{ fontFamily: 'poppins' }} value="poppins">Poppins</MenuItem>

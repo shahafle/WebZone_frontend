@@ -6,8 +6,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { shouldShowLogin } from '../store/system.action';
 import { onLogout } from '../store/user.action';
 
+import { SavePublishBtns } from '../pages/editor-page/cmps/SavePublishBtns';
+
 import { IoIosLogIn } from 'react-icons/io';
 import { FaUser } from 'react-icons/fa';
+import { MdLogout} from 'react-icons/md';
 import logo from '../../assets/webzone/webzone-full-logo-small.png'
 
 import { MobileHamburger } from './MobileHamburger';
@@ -31,7 +34,10 @@ export function AppHeader() {
 
     useEffect(() => {
         // HomePage :
-        if (location.pathname === '/') setPlaceholderClass('display-none');
+        if (location.pathname === '/') {
+            setHeaderClass('');
+            setPlaceholderClass('display-none');
+        }
 
         // PublishPage :
         else if (location.pathname.includes('/publish')) {
@@ -81,11 +87,15 @@ export function AppHeader() {
                     <div className="greet-user flex align-center">
                         <p>Hello {user.nickname}</p>
                         <div className="user-icon-container flex align-center" onClick={() => { dispatch(onLogout()) }}>
-                            <FaUser />
+                            {/* <FaUser /> */}
+                            <MdLogout style={{fontSize: '1.2rem'}}/>
                         </div>
                     </div>}
 
                 <MobileHamburger user={user} shouldShowLogin={shouldShowLogin} onLogout={onLogout} />
+
+                {(location.pathname.includes('/editor')) && <SavePublishBtns />}
+
             </header>
 
 

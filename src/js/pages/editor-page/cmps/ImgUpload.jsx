@@ -3,7 +3,7 @@
 export function ImgUpload({ elementStyle, onChangeStyle }) {
 
     const onSearchImg = () => {
-        console.log('hi');
+        
     }
 
     return (<div>

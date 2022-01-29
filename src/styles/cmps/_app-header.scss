@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1100;
+    z-index: 2;
     font-weight: 500;
     transition: all 0.5s;
 
@@ -124,7 +124,7 @@
                 direction: rtl;
                 transform: translateY(0%);
                 transition: all 0.2s;
-                z-index: 5100;
+                z-index: 1;
 
                 &.close {
                     transform: translateY(-100%);
@@ -159,11 +159,25 @@
 
     @include for-mobile-layout {
         &.in-editor {
-            padding: 5px 7% 0;
+            padding: 5px 7% 0 10px;
             direction: rtl;
 
             & > .logo,
             & > .btn-login {
+                display: none;
+            }
+        }
+    }
+
+    //Save-Publish on mobile
+    & > .save-publish-container {
+        display: none;
+
+        @include for-mobile-layout {
+            display: flex;
+
+            .media-btns,
+            .work-together-btn {
                 display: none;
             }
         }

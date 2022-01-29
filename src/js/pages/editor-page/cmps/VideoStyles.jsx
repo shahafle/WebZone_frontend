@@ -1,8 +1,7 @@
 export function VideoStyles({ element, onChangeAttr }) {
 
    const onSetUrl = (ev) => {
-      ev.target.value = embedUrl(ev.target.value)
-      console.log(ev.target.value);
+      ev.target.value = embedUrl(ev.target.value);
       onChangeAttr(ev)
    }
 
