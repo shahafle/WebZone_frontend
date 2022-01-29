@@ -36,7 +36,8 @@ export function ColorInput({ currColor, onChange }) {
 
       {showColorInput && <div style={popover} className={showColorInput ? '' : 'popover-close'}>
          <div style={screen} onClick={onToggleColorInput} className='color-input-screen' />
-         <ChromePicker onChange={onChange} color={currColor} />
+         <ChromePicker disableAlpha={true}
+            onChange={onChange} color={currColor} />
       </div>}
    </div>
 }

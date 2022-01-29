@@ -1,12 +1,15 @@
 .wap-card-7-2 {
     border: 7px solid #00c3ad;
 
-    &.media-800 {
+    &.media-1000 {
         .cards-container {
             grid-template-columns: 1fr;
         }
     }
     .cards-container {
+        span {
+            margin: auto;
+        }
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 15px;

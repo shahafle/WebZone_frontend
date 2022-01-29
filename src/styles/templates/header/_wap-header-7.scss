@@ -1,6 +1,25 @@
 .wap-header-7 {
+    &.media-800 {
+        .btn-container {
+            // justify-content: space-between;
+            // gap: 15px;
+            display: none;
+        }
+        .wap-7-hamburger-container {
+            display: block;
+            .wap-7-hamburger {
+                display: block;
+            }
+        }
+    }
     .btn-container {
         justify-content: space-between;
         gap: 15px;
+    }
+    .wap-7-hamburger-container {
+        display: none;
+        .wap-7-hamburger {
+            display: none;
+        }
     }
 }

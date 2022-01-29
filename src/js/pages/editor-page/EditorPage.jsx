@@ -28,7 +28,7 @@ export function EditorPage() {
 
 
    useEffect(() => {
-      dispatch(loadDraftWap());
+      // dispatch(loadDraftWap());
 
       // // Socket initialization on connection :
       // socketService.setup();

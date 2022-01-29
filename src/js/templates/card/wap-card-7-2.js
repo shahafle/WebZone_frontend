@@ -20,6 +20,7 @@ export const wapCard_7_2 = {
             "className": "cards-container",
             "style": { ...containerStyle, "backgroundColor": "#ffffff00", },
             "cmps": [
+
                 {
                     "id": "23498234723622",
                     "type": "container",
@@ -29,8 +30,8 @@ export const wapCard_7_2 = {
                         {
                             "id": "1231728934923823129asdhksdjfkjsdihuxcvi",
                             "type": "txt",
-                            "txt": "Maria Souzale",
-                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30" },
+                            "txt": "Maria Suoz",
+                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30", "textAlign": "center" },
                         },
                         {
                             "id": "232353523ghsdkkjsfhdfhcgcbdg365467",
@@ -59,8 +60,8 @@ export const wapCard_7_2 = {
                         {
                             "id": "xcvnmbjdfkjdfkjcnvbjdkfjg",
                             "type": "txt",
-                            "txt": "Ja Muranti",
-                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30" },
+                            "txt": "Jamur anti",
+                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30", "textAlign": "center" },
                         },
                         {
                             "id": "ghjdfkjdfhcfffv873458734ikdgkbhj",
@@ -88,8 +89,8 @@ export const wapCard_7_2 = {
                         {
                             "id": "sdfvjckvlksdlksdjklkwr",
                             "type": "txt",
-                            "txt": "DJ Monak G",
-                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30" },
+                            "txt": "DJ Monbak",
+                            "style": { ...txtStyle, "fontWeight": "700", "color": "#ef4b4d", "fontSize": "30", "textAlign": "center" },
                         },
                         {
                             "id": "sdfsdflcbsdflkljvc987234jkh",

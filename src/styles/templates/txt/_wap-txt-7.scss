@@ -1,4 +1,10 @@
 .wap-txt-7 {
+    &.media-1000 {
+        & > * > * {
+            text-align: center !important;
+        }
+    }
+
     gap: 20px;
     align-items: center;
 

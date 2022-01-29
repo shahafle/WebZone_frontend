@@ -15,6 +15,21 @@ export const wapHeader_7 = {
             "style": { ...txtStyle, "color": "#ef4b4d", "fontSize": "45", "fontWeight": "700" },
         },
         {
+            "id": "234982374sdkifjh293847wie",
+            "type": "container",
+            "className": "wap-7-hamburger-container",
+            "style": { ...containerStyle, "backgroundColor": "#ffffff" },
+            "cmps": [
+                {
+                    "id": "fgjdhsjsdfjkxcjhsdf",
+                    "type": "txt",
+                    "className": "wap-7-hamburger",
+                    "txt": "☰",
+                    "style": { ...txtStyle, "color": "#ef4b4d", "fontSize": "20", "fontWeight": "700", "backgroundColor": "#ffffff" },
+                },
+            ]
+        },
+        {
             "id": "ddhcdgsDcgcgFFvjcS123995863",
             "type": "container",
             "className": "btn-container flex",
@@ -55,6 +70,8 @@ export const wapHeader_7 = {
                     "txt": "CONTACT US",
                     "style": { ...btnStyle, "color": "#ef4b4d", "fontSize": "20", "fontWeight": "700", "backgroundColor": "#ffffff" },
                 },
+
+
             ]
         }
     ]

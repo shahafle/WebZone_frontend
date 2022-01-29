@@ -10,6 +10,7 @@ export const wapCard_7 = {
     "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643279686/gaeniz6rcmde8punwkt6.jpg",
     "style": { ...containerStyle, "paddingInline": "30", "paddingBlock": "50" },
     "cmps": [
+
         {
             "id": "asdkjASDkjhxcv",
             "type": "container",
@@ -39,7 +40,7 @@ export const wapCard_7 = {
                         "type": "btn",
                         "className": "btn",
                         "url": "http://www.google.com",
-                        "txt": "see the menu",
+                        "txt": "Menu",
                         "style": { ...btnStyle, "color": "#ef4b4d", "fontWeight": "700", "fontSize": "28" }
                     }
                 ]

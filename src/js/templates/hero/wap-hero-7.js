@@ -29,7 +29,7 @@ export const wapHero_7 = {
                 {
                     "id": "d66fghctvnfgtdds",
                     "type": "container",
-                    "className": "btn-container flex justify-center",
+                    "className": "btn-container flex",
                     "style": { ...containerStyle, "backgroundColor": "#ffffff00", },
                     "cmps": [
                         {
