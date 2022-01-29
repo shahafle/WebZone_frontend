@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { onSignup, onLogin, setUserMsg } from '../store/user.action';
+import { onSignup, onLogin } from '../store/user.action';
 import { shouldShowLogin } from '../store/system.action';
 
 import userProfile from '../../assets/imgs/user.png';
@@ -36,14 +36,11 @@ export function Login() {
             if (isLogin) {
                 delete credentials.nickname;
                 dispatch(onLogin(credentials));
-                dispatch(setUserMsg({ type: 'success', txt: 'Welcome Back !' }))
             }
             //  Signup
             if (!isLogin) {
                 dispatch(onSignup(credentials));
-                dispatch(setUserMsg({ type: 'success', txt: `Welcome ${credentials.nickname} !` }))
             }
-            // dispatch(login(credentials));
 
             setCredentials({ username: '', password: '', nickname: '' });
             dispatch(shouldShowLogin(false));
@@ -67,7 +64,7 @@ export function Login() {
         // screen gets a callback function to hide itself
         <Screen cb={() => dispatch(shouldShowLogin(false))}>
             {/* section gets a simple cb to stop propagating and hiding the screen where unwanted */}
-            <section className="login" onClick={(ev) => ev.stopPropagation()}>
+            <section className="login" onClick={ev => ev.stopPropagation()}>
                 <i className="flex justify-center align-center" onClick={() => dispatch(shouldShowLogin(false))}>&times;</i>
                 <div className="pfp">
                     <img src={userProfile} alt="" />

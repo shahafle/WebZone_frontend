@@ -4,6 +4,7 @@ import { socketService } from '../../../services/socket.service';
 import { utilService } from '../../../services/util.service';
 
 import { FaMousePointer } from 'react-icons/fa';
+import { BsCursorFill } from 'react-icons/bs';
 
 
 export function Cursors({ wapId }) {
@@ -63,6 +64,7 @@ export function Cursors({ wapId }) {
     return <>
         {cursors.length > 0 &&
             cursors.map(cursor => {
+                console.log(cursor.color)
                 return <div
                     key={cursor.id}
                     style={{
@@ -70,8 +72,8 @@ export function Cursors({ wapId }) {
                         top: cursor.pos.y,
                         left: cursor.pos.x,
                         zIndex: '9999',
-                        color: cursor.color
-                    }}><FaMousePointer fill={cursor.color} />
+                        transform: 'rotate(280deg)'
+                    }}><BsCursorFill fill={cursor.color} fontSize={'1.5rem'} />
                 </div>
             })}
     </>

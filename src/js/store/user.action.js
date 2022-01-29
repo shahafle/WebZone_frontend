@@ -6,6 +6,7 @@ export function onSignup(credentials) {
         try {
             const user = await userService.signup(credentials);
             dispatch({ type: 'SET_USER', user });
+            dispatch(setUserMsg({ type: 'success', txt: `Welcome ${credentials.nickname} !`, timer: 4000 }));
         } catch (err) {
             console.log('Something went wrong, check the provided credentials')
             console.log(credentials);
@@ -19,6 +20,7 @@ export function onLogin(credentials) {
         try {
             const user = await userService.login(credentials);
             dispatch({ type: 'SET_USER', user });
+            dispatch(setUserMsg({ type: 'success', txt: 'Welcome Back !', timer: 4000 }));
         } catch (err) {
             console.log('Something went wrong, invalid username or password, compare credentials to db');
             console.log(credentials);
@@ -31,7 +33,7 @@ export function onLogout() {
         try {
             await userService.logout();
             dispatch({ type: 'SET_USER', user: null });
-            // dispatch(setUserMsg({ type: 'success', txt: 'Come Back Soon!' }))
+            dispatch(setUserMsg({ type: 'reg', txt: 'Come Back Soon!', timer: 3000 }));
         } catch (err) {
 
         }
@@ -41,7 +43,7 @@ export function onLogout() {
 export function setUserMsg(msg) {
     return dispatch => {
         dispatch({ type: 'SET_USER_MSG', msg });
-        setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), 5000);
+        setTimeout(() => dispatch({ type: 'SET_USER_MSG', msg: null }), msg.timer);
     }
 }
 
