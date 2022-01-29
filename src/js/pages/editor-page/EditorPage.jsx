@@ -26,15 +26,15 @@ export function EditorPage() {
 
 
    useEffect(() => {
-      // dispatch(loadDraftWap());
+      dispatch(loadDraftWap());
 
       // Socket initialization on connection happens inside Cursors.jsx component
-      
+
       // User joined via share link :
       if (wapId) {
          dispatch(joinRoom(wapId));
       }
-      
+
       // Every user listens to wap updates :
       socketService.off('wap-updated'); // reset just in case
       socketService.on('wap-updated', wapId => dispatch(updateWapInRoom(wapId)));
@@ -172,7 +172,7 @@ export function EditorPage() {
             }}
          </Droppable>
 
-         {/* <SavePublishBtns /> */}
+         {/* <img src="https://www.apple.com/v/iphone-13/d/images/overview/chip/ar_hardware__fklaa9gj5diu_large.png" alt="iphone" className='iphone-frame' /> */}
       </main >
 
       <Cursors wapId={wapId} />

@@ -5,7 +5,7 @@ export const wapTxt_8 = {
    "type": "container",
    "category": "wap-text",
    "className": "wap-txt-8",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643475725/yt6fda5escoliduc6q9t.png",
    "style": { ...containerStyle, "backgroundImage": "url(http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383314/nmekmg82km01edubwg0f.svg)", "backgroundColor": "#0b0b0b", "paddingInline": "0" },
    "cmps": [
       {
@@ -43,32 +43,32 @@ export const wapTxt_8 = {
                   {
                      "id": "sdf32135g1hj351g51sdfs",
                      "type": "img",
-                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383091/jy40v1apmhfrlcc8zw5c.png",
-                     "style": { ...imgStyle }
+                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643461572/nranuwoe2k8r64p71ldf.png",
+                     "style": { ...imgStyle, "width": "auto" }
                   },
                   {
                      "id": "y30uik220vb1n",
                      "type": "img",
-                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383091/jy40v1apmhfrlcc8zw5c.png",
-                     "style": { ...imgStyle }
+                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643461954/hazhostmactmr6fqrkxs.png",
+                     "style": { ...imgStyle, "width": "auto" }
                   },
                   {
                      "id": "f654gtfr",
                      "type": "img",
-                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383091/jy40v1apmhfrlcc8zw5c.png",
-                     "style": { ...imgStyle }
+                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643461603/zhvuyvmwmsivnqm6d3yl.png",
+                     "style": { ...imgStyle, "width": "auto" }
                   },
                   {
                      "id": "20654jhm651dfsdfdf",
                      "type": "img",
-                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383091/jy40v1apmhfrlcc8zw5c.png",
-                     "style": { ...imgStyle }
+                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643461632/gdy5hthwblhbqwgwcelu.png",
+                     "style": { ...imgStyle, "width": "auto" }
                   },
                   {
                      "id": "yh61f3ger",
                      "type": "img",
-                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643383091/jy40v1apmhfrlcc8zw5c.png",
-                     "style": { ...imgStyle }
+                     "url": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643461648/dfdrjr6vczl1ndiftysw.png",
+                     "style": { ...imgStyle, "width": "auto" }
                   },
                ]
             },

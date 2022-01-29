@@ -28,6 +28,9 @@
                place-content: center;
                border: 1px solid #f6f6f6;
 
+               &:hover{
+                  filter:brightness(1.1)
+               }
             }
          }
       }

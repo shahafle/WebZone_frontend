@@ -45,7 +45,7 @@ export function WapActions() {
          <FaMobileAlt size={28} className='muted' onClick={() => onSetBoardSize('mobile')} />
       </div>
 
-      <button onClick={onWorkTogether} className='work-together-btn'>Work with Teammates <IoIosPeople /></button>
+      <button onClick={onWorkTogether} className='work-together-btn'>Work Together <IoIosPeople /></button>
 
       <SavePublishBtns />
    </div>

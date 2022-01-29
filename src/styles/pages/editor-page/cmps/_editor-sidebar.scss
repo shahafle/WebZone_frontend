@@ -156,6 +156,8 @@
                 }
             }
 
+
+
             .color-input-container {
                 .color-input {
                     border:1px solid #aeaeae45;
@@ -168,14 +170,21 @@
                     left: 0;
                     top: 27px;
                     z-index: 1;
-
+                    
                     svg {
                         color: #a6a6a6;
                         mix-blend-mode: exclusion;
                     }
+                    
                 }
             }
-
+             
+            &.color-picker{
+                .color-input {
+                top: 4px;
+                }
+            }
+            
             &.color-picker,
             .color-picker {
                 flex-direction: column;

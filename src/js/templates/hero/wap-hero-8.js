@@ -5,7 +5,7 @@ export const wapHero_8 = {
    "type": "container",
    "category": "wap-hero",
    "className": "wap-hero-8",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643475642/e00zmzao81ohpjjm9amb.png",
    "style": { ...containerStyle, "backgroundColor": "#0b0b0b", "paddingInline": "0", },
    "cmps": [
       {

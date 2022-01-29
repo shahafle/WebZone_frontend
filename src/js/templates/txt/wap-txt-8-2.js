@@ -5,33 +5,33 @@ export const wapTxt_8_2 = {
    "type": "container",
    "category": "wap-text",
    "className": "wap-txt-8-2",
-   "thumbnail": "",
-   "style": { ...containerStyle, "paddingInline": "0" },
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643475774/v3rqvigapr53t0gfedwb.png",
+   "style": { ...containerStyle, "paddingInline": "0", "backgroundImage": "url('http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643470590/fztm9hiwbi9awjnqi21p.jpg')" },
    "cmps": [
       {
          "id": "1hsd1sdsdfg",
          "type": "container",
-         "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "86", "paddingInline": "20" },
+         "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "200", "backgroundColor": "transparent" },
          "className": "layout-container flex column",
          "cmps": [
             {
                "id": "liklpkilkuj",
                "type": "txt",
                "txt": "Creative Agency based out of New York",
-               "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "45" }
+               "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "45", "color": "#f6f6f6" }
             },
             {
                "id": "brtnidf",
                "type": "txt",
                "txt": "Category",
                "className": "muted",
-               "style": { ...txtStyle, "fontFamily": "montserrat", "textDecoration": "underline" }
+               "style": { ...txtStyle, "fontFamily": "montserrat", "textDecoration": "underline", "color": "#f6f6f6" }
             },
             {
                "id": "9843215354",
                "type": "txt",
-               "txt": "We believe that the human dimensions essential to start any successful project and that this is where splendid emotional relationships between the company and people are born. Intuition and strategy integrate the research methodology that we also apply to traditional media.",
-               "style": { ...txtStyle, "fontFamily": "montserrat" }
+               "txt": "Grow your business, establish your brand, and put your customers first.",
+               "style": { ...txtStyle, "fontFamily": "montserrat", "color": "#f6f6f6" }
             },
          ]
       }

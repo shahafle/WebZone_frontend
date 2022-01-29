@@ -59,7 +59,7 @@ export function Cursors({ wapId }) {
         setCursors(filteredCursors);
     }
 
-    
+
     return <>
         {cursors.length > 0 &&
             cursors.map(cursor => {

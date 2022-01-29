@@ -5,58 +5,58 @@ export const wapSection_8 = {
    "type": "container",
    "category": "wap-section",
    "className": "wap-section-8 flex column",
-   "thumbnail": "",
+   "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643475880/t2rb9onq8q3fjg7ruw0y.png",
    "style": { ...containerStyle, "paddingInline": "0", },
    "cmps": [
       {
-         "id": "jodmg85edd41",
+         "id": "FG52D41G51",
          "type": "container",
-         "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "86", "paddingInline": "20", "backgroundColor": "#5d49e1" },
+         "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "60", "paddingInline": "20", "backgroundImage": "linear-gradient(29deg, #04071a, #350564)" },
          "className": "layout-container flex",
          "cmps": [
             //Img (left)
             {
-               "id": "qweqwekkkfodppdosurher633",
+               "id": "S1DF6565FG1H6DFGH",
                "type": "img",
                "url": "https://yourcryptolibrary.com/wp-content/uploads/2021/11/coins-crypto.png",
                "style": { ...imgStyle, "width": "460" }
             },
             //Content (right)
             {
-               "id": "jodmg85edd41",
+               "id": "JKL131H51K",
                "type": "container",
                "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "0", "backgroundColor": "transparent" },
                "className": "content-container flex column",
                "cmps": [
                   {
-                     "id": "j6551jjmf65",
+                     "id": "df1bdf1bv3df1vb3df01vb",
                      "type": "txt",
                      "txt": "BUILDING BRANDS ON THE WEB",
                      "style": { ...txtStyle, "fontFamily": "montserrat", "color": "#f6f6f6" }
                   },
                   {
-                     "id": "51g6df2gjk",
+                     "id": "BA11B65B",
                      "type": "txt",
                      "txt": "Creative Agency based out of New York",
                      "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "40", "color": "#f6f6f6" }
                   },
                   //Buttons container
                   {
-                     "id": "jodmg85edd41",
+                     "id": "d3sf216sd5f1sdf",
                      "type": "container",
                      "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "0", "backgroundColor": "transparent" },
                      "className": "btns-container flex",
                      "cmps": [
                         {
-                           "id": "sscvnjf8",
+                           "id": "sdf2s4dfv1sd6f4v",
                            "type": "btn",
                            "url": "https://www.google.com",
                            "txt": "Order now",
                            "className": "cta",
-                           "style": { ...btnStyle, "borderRadius": "10", "color": "#5d49e1" }
+                           "style": { ...btnStyle, "borderRadius": "10", "color": "#1d1654" }
                         },
                         {
-                           "id": "sscvnjf8",
+                           "id": "uyjmn5ki65y",
                            "type": "btn",
                            "url": "https://www.google.com",
                            "txt": "Order now",
