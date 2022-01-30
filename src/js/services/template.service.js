@@ -69,14 +69,14 @@ export const templateService = {
 }
 
 const wapTemplates = [
-   wapTemplate_1,
-   wapTemplate_2,
+   wapTemplate_7,
    wapTemplate_3,
+   wapTemplate_6,
    wapTemplate_4,
    // wapTemplate_5,
-   wapTemplate_6,
-   wapTemplate_7,
    wapTemplate_8,
+   wapTemplate_2,
+   wapTemplate_1,
 ]
 
 const sectionsCategories = ['wap-header', 'wap-hero', 'wap-section', 'wap-text', 'wap-card', 'wap-gallery', 'wap-form', 'wap-footer']//map, video,form 'wap-form','wap-section',

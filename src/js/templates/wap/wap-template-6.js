@@ -5,7 +5,7 @@ import { wapForm_6 } from '../form/wap-form-6.js'
 
 export const wapTemplate_6 = {
    "_id": "65s1s1s1s",
-   "name": "Fullstack bootcamp",
+   "name": "Online School",
    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643277083/su7ud6ul5whrktnajxv0.jpg",
    "cmps": [
       wapHero_6,

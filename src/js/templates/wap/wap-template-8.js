@@ -9,7 +9,7 @@ import { wapTxt_2 } from '../txt/wap-txt-2.js'
 
 export const wapTemplate_8 = {
    // "_id": "sa61S2S62S62S",
-   "name": "Demo",
+   "name": "Modern",
    "thumbnail": "http://res.cloudinary.com/dpmzxdfuh/image/upload/v1643484967/gtkafgdv3puwbpgm1635.png",
    "cmps": [wapHeader_8, wapHero_8, wapCard_8, wapTxt_2, wapSection_8, wapTxt_8],
    "isTemplate": true
