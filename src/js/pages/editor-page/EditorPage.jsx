@@ -26,7 +26,7 @@ export function EditorPage() {
 
 
    useEffect(() => {
-      dispatch(loadDraftWap());
+      // dispatch(loadDraftWap());
 
       // Socket initialization on connection happens inside Cursors.jsx component
 

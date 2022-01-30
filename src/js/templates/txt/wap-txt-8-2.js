@@ -17,20 +17,20 @@ export const wapTxt_8_2 = {
             {
                "id": "liklpkilkuj",
                "type": "txt",
-               "txt": "Creative Agency based out of New York",
-               "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "45", "color": "#f6f6f6" }
+               "txt": ` "An investment in knowledge pays the best interest." — Benjamin Franklin`,
+               "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "47", "color": "#f6f6f6" }
             },
             {
                "id": "brtnidf",
                "type": "txt",
-               "txt": "Category",
+               "txt": "Growth",
                "className": "muted",
                "style": { ...txtStyle, "fontFamily": "montserrat", "textDecoration": "underline", "color": "#f6f6f6" }
             },
             {
                "id": "9843215354",
                "type": "txt",
-               "txt": "Grow your business, establish your brand, and put your customers first.",
+               "txt": "It's far too easy for investors to lose perspective. Whenever something big goes wrong, a lot of people panic and sell their investments. Looking at history, the markets recovered from the 2008 financial crisis, the dotcom crash, and even the Great Depression, so they'll probably get through whatever comes next as well.",
                "style": { ...txtStyle, "fontFamily": "montserrat", "color": "#f6f6f6" }
             },
          ]

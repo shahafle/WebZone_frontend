@@ -14,3 +14,5 @@ export const wapTemplate_8 = {
    "cmps": [wapHeader_8, wapHero_8, wapCard_8, wapTxt_2, wapSection_8, wapTxt_8],
    "isTemplate": true
 }
+
+
