@@ -24,13 +24,13 @@ export const wapHero_8 = {
                   {
                      "id": "j6551jjmf65",
                      "type": "txt",
-                     "txt": "BUILDING BRANDS ON THE WEB",
+                     "txt": "invest in people.",
                      "style": { ...txtStyle, "color": "#efefee", "fontFamily": "montserrat" }
                   },
                   {
                      "id": "51g6df2gjk",
                      "type": "txt",
-                     "txt": "Creative Agency based out of New York",
+                     "txt": "Successful Investing Starts With Courage",
                      "style": { ...txtStyle, "color": "#efefee", "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "40" }
                   },
                   //BORDERS

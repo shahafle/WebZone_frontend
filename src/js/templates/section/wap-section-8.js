@@ -31,13 +31,13 @@ export const wapSection_8 = {
                   {
                      "id": "df1bdf1bv3df1vb3df01vb",
                      "type": "txt",
-                     "txt": "BUILDING BRANDS ON THE WEB",
+                     "txt": "BUILDING BRANDS ON THE MARKET",
                      "style": { ...txtStyle, "fontFamily": "montserrat", "color": "#f6f6f6" }
                   },
                   {
                      "id": "BA11B65B",
                      "type": "txt",
-                     "txt": "Creative Agency based out of New York",
+                     "txt": "The Future of Finance is Here",
                      "style": { ...txtStyle, "fontFamily": "montserrat", "fontWeight": "700", "fontSize": "40", "color": "#f6f6f6" }
                   },
                   //Buttons container
