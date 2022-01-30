@@ -14,12 +14,25 @@
          
          .media-icons{
             align-items: center;
-            gap: 7px;
+            gap: 13px;
             
             img{
                filter: brightness(500);
             }
          }
+      }
+      .hamburger{
+         display: none;
+      }
+   }
+
+   &.media-600{
+      .nav{
+         display: none;
+
+      }
+      .hamburger{
+         display: inline;
       }
    }
 }

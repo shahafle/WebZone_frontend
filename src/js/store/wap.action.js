@@ -41,6 +41,7 @@ export function updateWap(elementToUpdate) {
         let { wap } = getState().wapModule;
         wap = JSON.parse(JSON.stringify(wap));
         wapService.findTarget(wap, elementToUpdate.id, (cmpsArr, idx) => cmpsArr[idx] = elementToUpdate);
+        console.log(wap);
         draftService.saveDraft(wap);
 
         if (wap.id) socketService.emit('update-wap', wap);
@@ -53,7 +54,6 @@ export function saveWap(cb) {
     return async (dispatch, getState) => {
         const { wap } = getState().wapModule;
         const savedWap = await wapService.save(wap);
-        console.log('savedWap:', savedWap)
         if (cb) cb(savedWap._id);
 
         // dispatch({ type: 'SAVE_WAP', wap }); // we can use this to add a key of "last saved" maybe

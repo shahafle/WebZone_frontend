@@ -17,7 +17,7 @@
    &.drag-active {
       .garbage {
          opacity: 1;
-         right: 20px;
+         right: 34px;
       }
    }
    .garbage {
@@ -26,12 +26,13 @@
       position: fixed;
       right: -50px;
       bottom: 20px;
-      background-color: rgba(185, 58, 58, 0.397);
+      background-color: rgb(218 55 55 / 86%);
       font-size: 4rem;
       width: 78px;
       text-align: center;
       border-radius: 50%;
       z-index: 5000;
+      color: white;
       opacity: 0;
    }
 }

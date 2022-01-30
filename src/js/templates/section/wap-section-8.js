@@ -59,7 +59,7 @@ export const wapSection_8 = {
                            "id": "ju15jh4h5h1g1fg",
                            "type": "btn",
                            "url": "https://www.google.com",
-                           "txt": "Order now",
+                           "txt": "Learn More",
                            "className": "sub-btn",
                            "style": { ...btnStyle, "borderRadius": "10", "backgroundColor": "transparent", "color": "#f6f6f6" }
                         }

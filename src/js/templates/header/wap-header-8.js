@@ -24,8 +24,8 @@ export const wapHeader_8 = {
                   {
                      "id": "s1g55xfgh415j41",
                      "type": "txt",
-                     "txt": "Brand.",
-                     "style": { ...imgStyle, "width": "70", "color": "#efefee" }
+                     "txt": "Ziggo.",
+                     "style": { ...txtStyle, "color": "#efefee", "fontSize": "29" }
                   },
                   //NAV
                   {
@@ -34,15 +34,6 @@ export const wapHeader_8 = {
                      "style": { ...containerStyle, "paddingInline": "0", "paddingBlock": "0", "backgroundColor": "#ffffff00" },
                      "className": "nav flex",
                      "cmps": [
-                        //Mobile hamburger
-                        // {
-                        //    "id": "d21d2d2d1sd",
-                        //    "type": "btn",
-                        //    "url": "#",
-                        //    "txt": "Menu",
-                        //    "className": "hamburger",
-                        //    "style": { ...btnStyle, "backgroundColor": "#ffffff00", "color": "#fcfcfc" }
-                        // },
                         //Nav links
                         {
                            "id": "fmdsfdsfsdffgfg",
@@ -91,6 +82,13 @@ export const wapHeader_8 = {
                            "type": "img",
                            "url": "https://freeiconshop.com/wp-content/uploads/edd/instagram-new-color-flat.png",
                            "style": { ...imgStyle, "width": "26" }
+                        },
+                        {
+                           "id": "df65g63df1g3fg",
+                           "type": "img",
+                           "url": "https://cdn.iconscout.com/icon/free/png-256/hamburger-menu-462145.png",
+                           "className": "hamburger",
+                           "style": { ...imgStyle, "width": "32" }
                         },
                      ]
                   }

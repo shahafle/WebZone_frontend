@@ -2,7 +2,7 @@ import { txtStyle, btnStyle, imgStyle, containerStyle } from '../default-styles'
 import marakas from '../../../assets/imgs/sombrerro/marakas.png'
 
 export const wapTxt_7 = {
-    "id": "asdhjfj4857hfh",
+    "id": "f4d855g46f4df52c1gfg",
     "type": "container",
     "category": "wap-text",
     "className": "wap-txt-7 flex column",
