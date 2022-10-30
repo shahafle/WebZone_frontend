@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+<sub>This repository contains only **client side** of _Webzone_ app </sub>
+# Webzone- website builder app inspired by _Wix_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website builder app inspired by _Wix_.com
 
-## Available Scripts
+### [Go to app in production](https://webzone.onrender.com/)
 
-In the project directory, you can run:
+For those of you who are not familiar yet with _Wix_, read about it [here](#wix-description). 
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/88834944/198869046-457eb628-98bf-490a-9eff-6a8e8b5fcee1.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Wix description
+_Wix_ is an app in which anyone can build a website to himself. Whether it’s your first time creating or you’re a long time expert, you'll be able to get yourself a personalized and professional website by simple features and tools. Users building websites and projects lunching it and are able to edit it any time. There are many features in _Wix_, such as objects customization, detailed editing, logo editing, pre-made sectinos and website templates and more. Webzone performs most of them, actually the main app use use cases.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
+🧰 Framework: React  
+🔌 Server enviroment: Node.js  
+💾 Database: MongoDB  
+🎨 Style: Sass
 
-### `npm test`
+The technology stack we used was MERN - MongoDB, Express, React, Node.js.
+The app uses webSockets to update the website in real-time and work with teamates online.
+API architecture is REST, and we used middlewares to authenticate and authorize actions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We have used many third side libraries for many features, such as D&D, google login, screen capture and more.
 
-### `npm run build`
+## Getting started
+**Note!** This repository contains only client side of the project. To run the app properly, you have to run server side too.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Head to the repository on top and clone the project or download the files.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone https://github.com/shahafle/WebZone_frontend.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Enter the WebZone_frontend folder and make sure you have node_modules installed. After that we will initiate the server with 'npm start':
 
-### `npm run eject`
+```
+cd WebZone_frontend
+npm i 
+npm start
+```
+You shuold get a console ouput that the server is up and running at localhost:3000. Your client side is running!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Now you have to run server side. Change directory back to get out of frontend directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd ..
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Go to the [backend repository here](https://github.com/shahafle/WebZone_backend) and clone the project or download the files. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+git clone https://github.com/shahafle/WebZone_backend.git
+```
 
-## Learn More
+Enter the WebZone_backend folder and repeat the same process as done to run the frontend.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+cd WebZone_backend
+npm i 
+npm run server:dev
+```
+You shuold get a console ouput that the server is up and running at port 3030. Server is running!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Authors
+* [Shahaf Levi](https://github.com/shahafle)
+* [Roi Yotvat](https://github.com/roiyot26)
+* [Noy morgenshtein](https://github.com/Noy25)
