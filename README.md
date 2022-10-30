@@ -1,4 +1,6 @@
-<sub>This repository contains only **client side** of _Webzone_ app </sub>
+<sub>This repository contains only **client side** of _Webzone_ app</sub>  
+<sub><a href="https://github.com/shahafle/WebZone_backend">Go to backend repository</a></sub>
+
 # Webzone- website builder app inspired by _Wix_
 
 Website builder app inspired by _Wix_.com
@@ -63,6 +65,7 @@ npm run server:dev
 ```
 You shuold get a console ouput that the server is up and running at port 3030. Server is running!
 
+Everything is ready! The App should be opened automatically, enjoy!
 
 ## Authors
 * [Shahaf Levi](https://github.com/shahafle)
